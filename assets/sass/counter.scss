@@ -1,0 +1,142 @@
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+
+/* General styles */
+.social-count-plus {
+    .clear {
+        clear: both;
+    }
+
+    ul {
+        list-style: none !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        background: none;
+        clear: none !important;
+        float: left;
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        width: 60px;
+    }
+
+    .vertical li {
+        @include pie-clearfix;
+        display: block;
+        float: none;
+        padding-bottom: 10px;
+        width: 100%;
+    }
+
+    span {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Icons */
+    a {
+        @include transition(all 0.4s ease);
+        display: block;
+        margin: 0 auto;
+        opacity: 1;
+    }
+
+    a:hover {
+        opacity: 0.7;
+    }
+
+    .default a {
+        background: transparent url('../images/sprite-default.png') no-repeat;
+        height: 32px;
+        width: 32px;
+    }
+
+    .circle a {
+        background: transparent url('../images/sprite-circle.png') no-repeat;
+        height: 36px;
+        width: 36px;
+    }
+
+    .vertical a {
+        float: left;
+    }
+
+    .vertical .items {
+        float: left;
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    /* Counters */
+    .count {
+        color: #333;
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 16px;
+        margin: 5px 0 0;
+        padding: 0;
+    }
+
+    .vertical .count {
+        margin-top: 3px;
+    }
+
+    /* Labels */
+    .label {
+        color: #333;
+        line-height: 16px;
+        font-size: 9px;
+        font-weight: normal;
+        text-transform: capitalize;
+    }
+
+    /* Twitter */
+    .default .count-twitter a {
+        background-position: 0 0;
+    }
+
+    .circle .count-twitter a {
+        background-position: 0 0;
+    }
+
+    /* Facebook */
+    .default .count-facebook a {
+        background-position: -32px 0;
+    }
+
+    .circle .count-facebook a {
+        background-position: -36px 0;
+    }
+
+    /* YouTube */
+    .default .count-youtube a {
+        background-position: -64px 0;
+    }
+
+    .circle .count-youtube a {
+        background-position: -72px 0;
+    }
+
+    /* Posts */
+    .default .count-posts a {
+        background-position: -96px 0;
+    }
+
+    .circle .count-posts a {
+        background-position: -108px 0;
+    }
+
+    /* Comments */
+    .default .count-comments a {
+        background-position: -128px 0;
+    }
+
+    .circle .count-comments a {
+        background-position: -144px 0;
+    }
+}

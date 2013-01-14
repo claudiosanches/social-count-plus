@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Social Count Plus v2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-01-13 22:46:00+0000\n"
+"Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: classes/class-widget.php:14
+#@ socialcountplus
+msgid "Display the counter"
+msgstr "Exibir o contador"
+
+#. translators: plugin header field 'Name'
+#: classes/class-widget.php:15
+#: social-count-plus.php:0
+#: social-count-plus.php:272
+#: social-count-plus.php:273
+#@ socialcountplus
+msgid "Social Count Plus"
+msgstr "Social Count Plus"
+
+#: classes/class-widget.php:26
+#@ socialcountplus
+msgid "Title"
+msgstr "Título"
+
+#. translators: plugin header field 'PluginURI'
+#. translators: plugin header field 'AuthorURI'
+#: social-count-plus.php:0
+#@ socialcountplus
+msgid "http://claudiosmweb.com/"
+msgstr "http://claudiosmweb.com/"
+
+#. translators: plugin header field 'Author'
+#: social-count-plus.php:0
+#@ socialcountplus
+msgid "claudiosanches"
+msgstr "claudiosanches"
+
+#. translators: plugin header field 'Version'
+#: social-count-plus.php:0
+#@ socialcountplus
+msgid "2.0"
+msgstr "2.0"
+
+#: social-count-plus.php:73
+#@ socialcountplus
+msgid "Twitter"
+msgstr "Twitter"
+
+#: social-count-plus.php:78
+#@ socialcountplus
+msgid "Display Twitter counter"
+msgstr "Exibir o contador do Twitter"
+
+#: social-count-plus.php:85
+#@ socialcountplus
+msgid "Twitter username"
+msgstr "Nome de usuário no Twitter"
+
+#: social-count-plus.php:88
+#@ socialcountplus
+msgid "Insert the Twitter username. Example: ferramentasblog"
+msgstr "Insira seu nome de usuário no Twitter. Exemplo: ferramentasblog"
+
+#: social-count-plus.php:93
+#@ socialcountplus
+msgid "Facebook"
+msgstr "Facebook"
+
+#: social-count-plus.php:98
+#@ socialcountplus
+msgid "Display Facebook counter"
+msgstr "Exibir o contador do Facebook"
+
+#: social-count-plus.php:105
+#@ socialcountplus
+msgid "Facebook Page ID"
+msgstr "ID da página no Facebook"
+
+#: social-count-plus.php:108
+#@ socialcountplus
+msgid "ID Facebook page. Must be the numeric ID.<br />You can find this information clicking to edit your page on facebook. The URL will be similar to this:<br />https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
+msgstr "ID da página do Facebook. Deve ser a identificação numérica.<br />Você pode encontrar essa informação clicando para editar sua página no facebook. A URL será semelhante a esta:<br />https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
+
+#: social-count-plus.php:113
+#@ socialcountplus
+msgid "YouTube"
+msgstr "YouTube"
+
+#: social-count-plus.php:118
+#@ socialcountplus
+msgid "Display YouTube counter"
+msgstr "Exibir o contador do YouTube"
+
+#: social-count-plus.php:125
+#@ socialcountplus
+msgid "YouTube username"
+msgstr "Nome de usuário no YouTube"
+
+#: social-count-plus.php:128
+#@ socialcountplus
+msgid "Insert the YouTube username. Example: lemos81"
+msgstr "Insira o nome de usuário do YouTube. Exemplo: lemos81"
+
+#: social-count-plus.php:133
+#@ socialcountplus
+msgid "Posts"
+msgstr "Posts"
+
+#: social-count-plus.php:138
+#@ socialcountplus
+msgid "Display Posts counter"
+msgstr "Exibir o contador de Posts"
+
+#: social-count-plus.php:145
+#@ socialcountplus
+msgid "Comments"
+msgstr "Comentários"
+
+#: social-count-plus.php:150
+#@ socialcountplus
+msgid "Display Comments counter"
+msgstr "Exibir o contador de Comentários"
+
+#: social-count-plus.php:157
+#: social-count-plus.php:304
+#@ socialcountplus
+msgid "Design"
+msgstr "Estilos"
+
+#: social-count-plus.php:162
+#@ socialcountplus
+msgid "Layout Models"
+msgstr "Modelos"
+
+#: social-count-plus.php:304
+#@ socialcountplus
+msgid "Settings"
+msgstr "Configurações"
+
+#: social-count-plus.php:304
+#@ socialcountplus
+msgid "Shortcodes and Functions"
+msgstr "Shortcodes e Funções"
+
+#: social-count-plus.php:330
+#@ socialcountplus
+msgid "Use this library to generate your own model layout or display specific data counters."
+msgstr "Utilize esta biblioteca para gerar o seu próprio modelo de layout ou exibir contadores de dados específicos."
+
+#: social-count-plus.php:332
+#@ socialcountplus
+msgid "Shortcodes"
+msgstr "Shortcodes"
+
+#: social-count-plus.php:336
+#: social-count-plus.php:361
+#@ socialcountplus
+msgid "Twitter counter"
+msgstr "Contador do Twitter"
+
+#: social-count-plus.php:340
+#: social-count-plus.php:365
+#@ socialcountplus
+msgid "Facebook counter"
+msgstr "Contador do Facebook"
+
+#: social-count-plus.php:344
+#: social-count-plus.php:369
+#@ socialcountplus
+msgid "YouTube counter"
+msgstr "Contador do YouTube"
+
+#: social-count-plus.php:348
+#: social-count-plus.php:373
+#@ socialcountplus
+msgid "Posts counter"
+msgstr "Contador de Posts"
+
+#: social-count-plus.php:352
+#: social-count-plus.php:377
+#@ socialcountplus
+msgid "Comments counter"
+msgstr "Contador de Comentários"
+
+#: social-count-plus.php:357
+#@ socialcountplus
+msgid "Functions"
+msgstr "Funções"
+
+#: social-count-plus.php:381
+#@ socialcountplus
+msgid "Full widget"
+msgstr "Widget completo"
+
+#: social-count-plus.php:519
+#@ socialcountplus
+msgid "Activate/Deactivate"
+msgstr "Ativar/Desativar"
+
+#: social-count-plus.php:645
+#@ socialcountplus
+msgid "followers"
+msgstr "seguidores"
+
+#: social-count-plus.php:648
+#@ socialcountplus
+msgid "likes"
+msgstr "fãs"
+
+#: social-count-plus.php:651
+#@ socialcountplus
+msgid "subscribers"
+msgstr "assinantes"
+
+#: social-count-plus.php:654
+#@ socialcountplus
+msgid "posts"
+msgstr "posts"
+
+#: social-count-plus.php:657
+#@ socialcountplus
+msgid "comments"
+msgstr "comentários"
+
+#. translators: plugin header field 'Description'
+#: social-count-plus.php:0
+#@ socialcountplus
+msgid "Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments."
+msgstr "Mostrar a contagem de seguidores no Twitter, fãs do Facebook, assinantes do YouTube, posts e comentários."
+
