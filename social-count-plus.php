@@ -645,7 +645,7 @@ class Social_Count_Plus {
                 $html .= ( isset( $settings['facebook_active'] ) ) ? $this->get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $count['facebook'], __( 'likes', 'socialcountplus' ) ) : '';
 
                 // YouTube counter.
-                $html .= ( isset( $settings['youtube_user'] ) ) ? $this->get_view_li( 'youtube', 'www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'socialcountplus' ) ) : '';
+                $html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', 'www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'socialcountplus' ) ) : '';
 
                 // Posts counter.
                 $html .= ( isset( $settings['posts_active'] ) ) ? $this->get_view_li( 'posts', get_home_url(), $count['posts'], __( 'posts', 'socialcountplus' ) ) : '';

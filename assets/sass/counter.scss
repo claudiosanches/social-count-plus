@@ -50,15 +50,17 @@
     }
 
     .default a {
-        background: transparent url('../images/sprite-default.png') no-repeat;
-        height: 32px;
-        width: 32px;
+        background-color: transparent !important;
+        background-image: url('../images/sprite-default.png') !important;
+        background-repeat: no-repeat !important;
+        height: 32px !important;
+        width: 32px !important;
     }
 
     .circle a {
-        background: transparent url('../images/sprite-circle.png') no-repeat;
-        height: 36px;
-        width: 36px;
+        background-image: url('../images/sprite-circle.png') !important;
+        height: 36px !important;
+        width: 36px !important;
     }
 
     .vertical a {
@@ -97,46 +99,46 @@
 
     /* Twitter */
     .default .count-twitter a {
-        background-position: 0 0;
+        background-position: 0 0 !important;
     }
 
     .circle .count-twitter a {
-        background-position: 0 0;
+        background-position: 0 0 !important;
     }
 
     /* Facebook */
     .default .count-facebook a {
-        background-position: -32px 0;
+        background-position: -32px 0 !important;
     }
 
     .circle .count-facebook a {
-        background-position: -36px 0;
+        background-position: -36px 0 !important;
     }
 
     /* YouTube */
     .default .count-youtube a {
-        background-position: -64px 0;
+        background-position: -64px 0 !important;
     }
 
     .circle .count-youtube a {
-        background-position: -72px 0;
+        background-position: -72px 0 !important;
     }
 
     /* Posts */
     .default .count-posts a {
-        background-position: -96px 0;
+        background-position: -96px 0 !important;
     }
 
     .circle .count-posts a {
-        background-position: -108px 0;
+        background-position: -108px 0 !important;
     }
 
     /* Comments */
     .default .count-comments a {
-        background-position: -128px 0;
+        background-position: -128px 0 !important;
     }
 
     .circle .count-comments a {
-        background-position: -144px 0;
+        background-position: -144px 0 !important;
     }
 }
