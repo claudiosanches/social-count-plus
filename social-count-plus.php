@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches
  * Author URI: http://claudiosmweb.com/
- * Version: 2.0.2
+ * Version: 2.1
  * License: GPLv2 or later
  * Text Domain: socialcountplus
  * Domain Path: /languages/
