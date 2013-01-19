@@ -89,9 +89,10 @@ class Social_Count_Plus_Counter {
                 // Get youtube data.
                 $youtube_data = wp_remote_get( 'http://gdata.youtube.com/feeds/api/users/' . $youtube_user );
 
-                if ( is_wp_error( $youtube_data ) ) {
+                if ( is_wp_error( $youtube_data ) || '404' == $youtube_data['response']['code'] ) {
                     $count['youtube'] = ( isset( $cache['youtube'] ) ) ? $cache['youtube'] : 0;
                 } else {
+                    print_r($youtube_data['response']['code']);
                     $youtube_body = str_replace( 'yt:', '', $youtube_data['body'] );
                     $youtube_xml = new SimpleXmlElement( $youtube_body, LIBXML_NOCDATA );
                     $youtube_count = (string) $youtube_xml->statistics['subscriberCount'];
