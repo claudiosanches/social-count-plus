@@ -33,7 +33,7 @@ The cache avoids not only that your blog be seeking new results every time a pag
 * Facebook: `<?php echo get_scp_facebook(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
-* Widget: `<?php get_scp_widget(); ?>`
+* Widget: `<?php echo get_scp_widget(); ?>`
 
 ### Descrição em Português: ###
 
@@ -58,7 +58,7 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 * Facebook: `<?php echo get_scp_facebook(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
-* Widget: `<?php get_scp_widget(); ?>`
+* Widget: `<?php echo get_scp_widget(); ?>`
 
 == Installation ==
 

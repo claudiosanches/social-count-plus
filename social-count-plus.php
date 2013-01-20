@@ -376,7 +376,7 @@ class Social_Count_Plus {
             $html .= '</tr>';
             $html .= '<tr>';
                 $html .= '<th scope="row">' . __( 'Full widget', 'socialcountplus' ) . '</th>';
-                $html .= '<td><p><code>&lt;?php get_scp_widget(); ?&gt;</code></p></td>';
+                $html .= '<td><p><code>&lt;?php echo get_scp_widget(); ?&gt;</code></p></td>';
             $html .= '</tr>';
         $html .= '</table>';
 
