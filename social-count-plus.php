@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches
  * Author URI: http://claudiosmweb.com/
- * Version: 2.1
+ * Version: 2.1.1
  * License: GPLv2 or later
  * Text Domain: socialcountplus
  * Domain Path: /languages/
@@ -31,7 +31,7 @@ class Social_Count_Plus {
         add_action( 'admin_init', array( &$this, 'plugin_settings' ) );
 
         // Reset transients when save a post.
-        add_action( 'publish_post', array( &$this, 'reset_transients' ) );
+        // add_action( 'publish_post', array( &$this, 'reset_transients' ) );
 
         // Scripts.
         add_action( 'wp_enqueue_scripts', array( &$this, 'scripts' ) );

@@ -4,7 +4,7 @@
 **Tags:** facebook, twitter, youtube, counter, widget, shortcode  
 **Requires at least:** 3.4  
 **Tested up to:** 3.5  
-**Stable tag:** 2.1  
+**Stable tag:** 2.1.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -108,6 +108,10 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 
 
 ## Changelog ##
+
+### 2.1.1 22/01/2013 ###
+
+* Removed cleaning transients to save a post.
 
 ### 2.1 18/01/2013 ###
 
