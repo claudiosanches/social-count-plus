@@ -4,6 +4,23 @@
  */
 class Social_Count_Plus_Counter {
 
+    protected function twitter_oauth( $user, $key, $key_secret, $access_token, $access_secret ) {
+        require_once SOCIAL_COUNT_PLUS_PATH . 'classes/class-twitter-oauth-authorization.php';
+
+        $screen_name = 'screen_name=' . $user;
+        $oauth = new Social_Count_Plus_Twitter_Oauth_Authorization(
+            'https://api.twitter.com/1.1/users/show.json',
+            $screen_name,
+            'GET',
+            $key,
+            $key_secret,
+            $access_token,
+            $access_secret
+        );
+
+        return $oauth->header();
+    }
+
     /**
      * Update transients and cache.
      */
@@ -30,13 +47,35 @@ class Social_Count_Plus_Counter {
         );
 
         // Twitter.
-        if ( isset( $settings['twitter_active'] ) ) {
+        if (
+            isset( $settings['twitter_active'] )
+            && ! empty( $settings['twitter_consumer_key'] )
+            && ! empty( $settings['twitter_consumer_secret'] )
+            && ! empty( $settings['twitter_access_token'] )
+            && ! empty( $settings['twitter_access_token_secret'] )
+        ) {
             // Test if twitter_user is empty.
             if ( ! empty( $settings['twitter_user'] ) ) {
                 $twitter_user = $settings['twitter_user'];
 
+                $twitter_data_params = array(
+                    'method'     => 'GET',
+                    'sslverify'  => false,
+                    'timeout'    => 30,
+                    'headers'    => array(
+                        'Content-Type' => 'application/x-www-form-urlencoded',
+                        'Authorization' => $this->twitter_oauth(
+                            $twitter_user,
+                            $settings['twitter_consumer_key'],
+                            $settings['twitter_consumer_secret'],
+                            $settings['twitter_access_token'],
+                            $settings['twitter_access_token_secret']
+                        )
+                    )
+                );
+
                 // Get twitter data.
-                $twitter_data = wp_remote_get( 'http://api.twitter.com/1/users/show.json?screen_name=' . $twitter_user );
+                $twitter_data = wp_remote_get( 'https://api.twitter.com/1.1/users/show.json?screen_name=' . $twitter_user, $twitter_data_params );
 
                 if ( is_wp_error( $twitter_data ) ) {
                     $count['twitter'] = ( isset( $cache['twitter'] ) ) ? $cache['twitter'] : 0;
