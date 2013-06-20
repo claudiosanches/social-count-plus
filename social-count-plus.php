@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Social Count Plus
- * Plugin URI: http://claudiosmweb.com/
+ * Plugin URI: https://github.com/claudiosmweb/social-count-plus
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches
  * Author URI: http://claudiosmweb.com/
- * Version: 2.2
+ * Version: 2.3.0
  * License: GPLv2 or later
  * Text Domain: socialcountplus
  * Domain Path: /languages/
@@ -65,6 +65,8 @@ class Social_Count_Plus {
      */
     protected function default_settings() {
 
+        $twitter_oauth_description = sprintf( __( 'Create an APP on Twitter in %s and get this information', 'socialcountplus' ), '<a href="https://dev.twitter.com/apps">https://dev.twitter.com/apps</a>' );
+
         $settings = array(
             'twitter' => array(
                 'title' => __( 'Twitter', 'socialcountplus' ),
@@ -83,6 +85,38 @@ class Social_Count_Plus {
                 'default' => null,
                 'type' => 'text',
                 'description' => __( 'Insert the Twitter username. Example: ferramentasblog', 'socialcountplus' ),
+                'section' => 'twitter',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'twitter_consumer_key' => array(
+                'title' => __( 'Twitter Consumer key', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => $twitter_oauth_description,
+                'section' => 'twitter',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'twitter_consumer_secret' => array(
+                'title' => __( 'Twitter Consumer secret', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => $twitter_oauth_description,
+                'section' => 'twitter',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'twitter_access_token' => array(
+                'title' => __( 'Twitter Access token', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => $twitter_oauth_description,
+                'section' => 'twitter',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'twitter_access_token_secret' => array(
+                'title' => __( 'Twitter Access token secret', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => $twitter_oauth_description,
                 'section' => 'twitter',
                 'menu' => 'socialcountplus_settings'
             ),
@@ -278,6 +312,8 @@ class Social_Count_Plus {
      * Plugin settings page.
      */
     public function settings_page() {
+        $settings = get_option( 'socialcountplus_settings' );
+
         // Create tabs current class.
         $current_tab = '';
         if ( isset( $_GET['tab'] ) ) {
@@ -300,6 +336,27 @@ class Social_Count_Plus {
             <h2 class="nav-tab-wrapper">
                 <a href="admin.php?page=socialcountplus&amp;tab=settings" class="nav-tab <?php echo $current_tab == 'settings' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Settings', 'socialcountplus' ); ?></a><a href="admin.php?page=socialcountplus&amp;tab=design" class="nav-tab <?php echo $current_tab == 'design' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Design', 'socialcountplus' ); ?></a><a href="admin.php?page=socialcountplus&amp;tab=shortcodes" class="nav-tab <?php echo $current_tab == 'shortcodes' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Shortcodes and Functions', 'socialcountplus' ); ?></a>
             </h2>
+
+            <?php
+                if ( isset( $settings['twitter_active'] ) && (
+                    empty( $settings['twitter_user'] )
+                    || empty( $settings['twitter_consumer_key'] )
+                    || empty( $settings['twitter_consumer_secret'] )
+                    || empty( $settings['twitter_access_token'] )
+                    || empty( $settings['twitter_access_token_secret'] )
+                ) ) :
+             ?>
+                <div class="error">
+                    <p><?php _e( 'To use the counter of Twitter you need to fill the fields:', 'socialcountplus' ); ?></p>
+                    <ul style="list-style: disc; margin-left: 20px;">
+                        <li><strong><?php _e( 'Twitter username', 'socialcountplus' ); ?></strong></li>
+                        <li><strong><?php _e( 'Twitter Consumer key', 'socialcountplus' ); ?></strong></li>
+                        <li><strong><?php _e( 'Twitter Consumer secret', 'socialcountplus' ); ?></strong></li>
+                        <li><strong><?php _e( 'Twitter Access token', 'socialcountplus' ); ?></strong></li>
+                        <li><strong><?php _e( 'Twitter Access token secret', 'socialcountplus' ); ?></strong></li>
+                    </ul>
+                </div>
+            <?php endif; ?>
 
             <form method="post" action="options.php">
                 <?php
