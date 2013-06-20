@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
+
 /**
  * Social_Count_Plus_Twitter_Oauth_Authorization class.
  *

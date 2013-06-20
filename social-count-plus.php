@@ -11,8 +11,15 @@
  * Domain Path: /languages/
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+// Sets the plugin path.
 define( 'SOCIAL_COUNT_PLUS_PATH', plugin_dir_path( __FILE__ ) );
 
+/**
+ * Social_Count_Plus class.
+ */
 class Social_Count_Plus {
 
     /**
