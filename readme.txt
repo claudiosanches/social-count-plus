@@ -4,7 +4,7 @@ Donate link: http://claudiosmweb.com/doacoes/
 Tags: facebook, twitter, youtube, counter, widget, shortcode
 Requires at least: 3.4
 Tested up to: 3.5.1
-Stable tag: 2.2
+Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,10 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 4. Widget.
 
 == Changelog ==
+
+= 2.3.0 20/06/2013 =
+
+* Updated the Twitter API to 1.1 version.
 
 = 2.2 19/04/2013 =
 
