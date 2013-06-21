@@ -31,6 +31,7 @@ class Social_Count_Plus {
         // Load textdomain.
         add_action( 'plugins_loaded', array( &$this, 'languages' ), 0 );
 
+
         // Adds admin menu.
         add_action( 'admin_menu', array( &$this, 'menu' ) );
 
@@ -49,6 +50,9 @@ class Social_Count_Plus {
 
         // Install default settings.
         register_activation_hook( __FILE__, array( &$this, 'install' ) );
+
+        // Actions links.
+        add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( &$this, 'action_links' ) );
     }
 
     /**
@@ -56,6 +60,26 @@ class Social_Count_Plus {
      */
     public function languages() {
         load_plugin_textdomain( 'socialcountplus', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+    }
+
+    /**
+     * Adds custom settings url in plugins page.
+     *
+     * @param  array $links Default links.
+     *
+     * @return array        Default links and settings link.
+     */
+    public function action_links( $links ) {
+
+        $settings = array(
+            'settings' => sprintf(
+                '<a href="%s">%s</a>',
+                admin_url( 'options-general.php?page=socialcountplus' ),
+                __( 'Settings', 'socialcountplus' )
+            )
+        );
+
+        return array_merge( $settings, $links );
     }
 
     /**
