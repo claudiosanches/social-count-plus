@@ -1,7 +1,7 @@
 {
   "name": "social-count-plus",
   "description": "Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "~0.4.1",

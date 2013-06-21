@@ -42,11 +42,12 @@ class Social_Count_Plus_Counter {
 
         // Default count array.
         $count = array(
-            'twitter' => 0,
-            'facebook' => 0,
-            'youtube' => 0,
-            'posts' => 0,
-            'comments' => 0,
+            'twitter'    => 0,
+            'facebook'   => 0,
+            'youtube'    => 0,
+            'googleplus' => 0,
+            'posts'      => 0,
+            'comments'   => 0,
         );
 
         // Twitter.
@@ -62,11 +63,11 @@ class Social_Count_Plus_Counter {
                 $twitter_user = $settings['twitter_user'];
 
                 $twitter_data_params = array(
-                    'method'     => 'GET',
-                    'sslverify'  => false,
-                    'timeout'    => 30,
-                    'headers'    => array(
-                        'Content-Type' => 'application/x-www-form-urlencoded',
+                    'method'    => 'GET',
+                    'sslverify' => false,
+                    'timeout'   => 30,
+                    'headers'   => array(
+                        'Content-Type'  => 'application/x-www-form-urlencoded',
                         'Authorization' => $this->twitter_oauth(
                             $twitter_user,
                             $settings['twitter_consumer_key'],
@@ -143,6 +144,40 @@ class Social_Count_Plus_Counter {
                         $cache['youtube'] = $youtube_count;
                     } else {
                         $count['youtube'] = ( isset( $cache['youtube'] ) ) ? $cache['youtube'] : 0;
+                    }
+                }
+            }
+        }
+
+        // Google Plus.
+        if ( isset( $settings['googleplus_active'] ) ) {
+            // Test if googleplus_id is empty.
+            if ( ! empty( $settings['googleplus_id'] ) ) {
+                $googleplus_id = 'https://plus.google.com/' . $settings['googleplus_id'];
+
+                $googleplus_data_params = array(
+                    'method'    => 'POST',
+                    'sslverify' => false,
+                    'timeout'   => 30,
+                    'headers'   => array( 'Content-Type' => 'application/json' ),
+                    'body'      => '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"' . $googleplus_id . '","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]'
+                );
+
+                // Get googleplus data.
+                $googleplus_data = wp_remote_get( 'https://clients6.google.com/rpc', $googleplus_data_params );
+
+                if ( is_wp_error( $googleplus_data ) || '400' <= $googleplus_data['response']['code'] ) {
+                    $count['googleplus'] = ( isset( $cache['googleplus'] ) ) ? $cache['googleplus'] : 0;
+                } else {
+                    $googleplus_response = json_decode( $googleplus_data['body'], true );
+
+                    if ( isset( $googleplus_response[0]['result']['metadata']['globalCounts']['count'] ) ) {
+                        $googleplus_count = $googleplus_response[0]['result']['metadata']['globalCounts']['count'];
+
+                        $count['googleplus'] = $googleplus_count;
+                        $cache['googleplus'] = $googleplus_count;
+                    } else {
+                        $count['googleplus'] = ( isset( $cache['googleplus'] ) ) ? $cache['googleplus'] : 0;
                     }
                 }
             }

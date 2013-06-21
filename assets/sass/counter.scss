@@ -59,7 +59,7 @@
 
     .circle a {
         background-image: url('../images/sprite-circle.png') !important;
-        height: 36px !important;
+        height: 37px !important;
         width: 36px !important;
     }
 
@@ -124,21 +124,30 @@
         background-position: -72px 0 !important;
     }
 
-    /* Posts */
-    .default .count-posts a {
+    /* Google Plus */
+    .default .count-googleplus a {
         background-position: -96px 0 !important;
     }
 
-    .circle .count-posts a {
+    .circle .count-googleplus a {
         background-position: -108px 0 !important;
+    }
+
+    /* Posts */
+    .default .count-posts a {
+        background-position: -128px 0 !important;
+    }
+
+    .circle .count-posts a {
+        background-position: -144px 0 !important;
     }
 
     /* Comments */
     .default .count-comments a {
-        background-position: -128px 0 !important;
+        background-position: -160px 0 !important;
     }
 
     .circle .count-comments a {
-        background-position: -144px 0 !important;
+        background-position: -180px 0 !important;
     }
 }

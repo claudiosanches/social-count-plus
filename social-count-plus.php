@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches
  * Author URI: http://claudiosmweb.com/
- * Version: 2.3.0
+ * Version: 2.4.0
  * License: GPLv2 or later
  * Text Domain: socialcountplus
  * Domain Path: /languages/
@@ -143,7 +143,7 @@ class Social_Count_Plus {
                 'title' => __( 'Facebook Page ID', 'socialcountplus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'ID Facebook page. Must be the numeric ID.<br />You can find this information clicking to edit your page on facebook. The URL will be similar to this:<br />https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>', 'socialcountplus' ),
+                'description' => __( 'ID Facebook page. Must be the numeric ID.<br />You can find this information clicking to edit your page on Facebook. The URL will be similar to this:<br />https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>', 'socialcountplus' ),
                 'section' => 'facebook',
                 'menu' => 'socialcountplus_settings'
             ),
@@ -165,6 +165,26 @@ class Social_Count_Plus {
                 'type' => 'text',
                 'description' => __( 'Insert the YouTube username. Example: lemos81', 'socialcountplus' ),
                 'section' => 'youtube',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'googleplus' => array(
+                'title' => __( 'Google Plus', 'socialcountplus' ),
+                'type' => 'section',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'googleplus_active' => array(
+                'title' => __( 'Display Google Plus counter', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'checkbox',
+                'section' => 'googleplus',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'googleplus_id' => array(
+                'title' => __( 'Google Plus page ID', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => __( 'Google Plus page ID. Must be the numeric ID.<br />You can find this information clicking to edit your page on Google Plus. The URL will be similar to this:<br />https://plus.google.com/<strong>115161266310935247804</strong>', 'socialcountplus' ),
+                'section' => 'googleplus',
                 'menu' => 'socialcountplus_settings'
             ),
             'posts' => array(
@@ -242,13 +262,15 @@ class Social_Count_Plus {
         if ( get_option( 'scp_show_twitter' ) ) {
 
             $settings = array(
-                'twitter_active' => ( 'true' == get_option( 'scp_show_twitter' ) ) ? 1 : '',
-                'twitter_user' => get_option( 'scp_twitter' ),
+                'twitter_active'  => ( 'true' == get_option( 'scp_show_twitter' ) ) ? 1 : '',
+                'twitter_user'    => get_option( 'scp_twitter' ),
                 'facebook_active' => ( 'true' == get_option( 'scp_show_facebook' ) ) ? 1 : '',
-                'facebook_id'  => get_option( 'scp_facebook' ),
+                'facebook_id'     => get_option( 'scp_facebook' ),
                 // 'youtube_active' => '',
-                // 'youtube_user' => '',
-                'posts_active' => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
+                'youtube_user'    => '',
+                // 'googleplup_active' => '',
+                'googleplus_id'   => '',
+                'posts_active'    => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
                 'comments_active' => ( 'true' == get_option( 'scp_show_comment' ) ) ? 1 : '',
             );
 
@@ -406,6 +428,10 @@ class Social_Count_Plus {
                 $html .= '<td><p><code>[scp code=&quot;youtube&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
+                $html .= '<th scope="row">' . __( 'Google Plus counter', 'socialcountplus' ) . '</th>';
+                $html .= '<td><p><code>[scp code=&quot;googleplus&quot;]</code></p></td>';
+            $html .= '</tr>';
+            $html .= '<tr>';
                 $html .= '<th scope="row">' . __( 'Posts counter', 'socialcountplus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;posts&quot;]</code></p></td>';
             $html .= '</tr>';
@@ -429,6 +455,10 @@ class Social_Count_Plus {
             $html .= '<tr>';
                 $html .= '<th scope="row">' . __( 'YouTube counter', 'socialcountplus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_youtube(); ?&gt;</code></p></td>';
+            $html .= '</tr>';
+            $html .= '<tr>';
+                $html .= '<th scope="row">' . __( 'Google Plus counter', 'socialcountplus' ) . '</th>';
+                $html .= '<td><p><code>&lt;?php echo get_scp_googleplus(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
                 $html .= '<th scope="row">' . __( 'Posts counter', 'socialcountplus' ) . '</th>';
@@ -641,7 +671,7 @@ class Social_Count_Plus {
             if ( isset( $input[$key] ) ) {
 
                 // Strip all HTML and PHP tags and properly handle quoted strings.
-                $output[$key] = strip_tags( stripslashes( $input[$key] ) );
+                $output[$key] = sanitize_text_field( $input[$key] );
             }
         }
 
@@ -711,6 +741,9 @@ class Social_Count_Plus {
                 // YouTube counter.
                 $html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', 'www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'socialcountplus' ) ) : '';
 
+                // Google Plus counter.
+                $html .= ( isset( $settings['googleplus_active'] ) ) ? $this->get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'socialcountplus' ) ) : '';
+
                 // Posts counter.
                 $html .= ( isset( $settings['posts_active'] ) ) ? $this->get_view_li( 'posts', get_home_url(), $count['posts'], __( 'posts', 'socialcountplus' ) ) : '';
 
@@ -752,6 +785,9 @@ class Social_Count_Plus {
                 break;
             case 'youtube':
                 $counter = $count['youtube'];
+                break;
+            case 'googleplus':
+                $counter = $count['googleplus'];
                 break;
             case 'posts':
                 $counter = $count['posts'];

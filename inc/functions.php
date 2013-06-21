@@ -50,6 +50,18 @@ function get_scp_youtube() {
 }
 
 /**
+ * Google Plus counter function.
+ *
+ * @return int Google Plus count.
+ */
+function get_scp_googleplus() {
+    global $social_count_plus_counter;
+    $count = $social_count_plus_counter->update_transients();
+
+    return $count['googleplus'];
+}
+
+/**
  * Posts counter function.
  *
  * @return int Posts count.
