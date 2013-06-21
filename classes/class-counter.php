@@ -32,9 +32,8 @@ class Social_Count_Plus_Counter {
         $count = get_transient( 'socialcountplus_counter' );
 
         // Test transient if exist.
-        if ( false != $count ) {
+        if ( false != $count )
             return $count;
-        }
 
         // Get options.
         $settings = get_option( 'socialcountplus_settings' );

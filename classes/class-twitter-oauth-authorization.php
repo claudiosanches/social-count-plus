@@ -51,9 +51,8 @@ class Social_Count_Plus_Twitter_Oauth_Authorization {
         $return = array();
         ksort( $params );
 
-        foreach( $params as $key => $value ) {
+        foreach( $params as $key => $value )
             $return[] = $key . '=' . $value;
-        }
 
         return $method . "&" . rawurlencode( $url ) . '&' . rawurlencode( implode( '&', $return ) ) . '%26' . rawurlencode( $query );
     }
@@ -90,9 +89,8 @@ class Social_Count_Plus_Twitter_Oauth_Authorization {
         $return = 'OAuth ';
         $values = array();
 
-        foreach( $this->signature() as $key => $value ) {
+        foreach( $this->signature() as $key => $value )
             $values[] = $key . '="' . rawurlencode( $value ) . '"';
-        }
 
         $return .= implode( ', ', $values );
 

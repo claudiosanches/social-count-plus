@@ -48,9 +48,8 @@ class SocialCountPlus extends WP_Widget {
 
         $title = empty( $instance['title'] ) ? ' ' : apply_filters( 'widget_title', $instance['title'] );
 
-        if ( ! empty( $title ) ) {
+        if ( ! empty( $title ) )
             echo $before_title . $title . $after_title;
-        }
 
         // Display widget
         echo $this->plugin_view;
