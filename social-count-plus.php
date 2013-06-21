@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches
  * Author URI: http://claudiosmweb.com/
- * Version: 2.4.0
+ * Version: 2.5.0
  * License: GPLv2 or later
  * Text Domain: socialcountplus
  * Domain Path: /languages/
@@ -42,6 +42,7 @@ class Social_Count_Plus {
 
         // Scripts.
         add_action( 'wp_enqueue_scripts', array( &$this, 'scripts' ) );
+        add_action( 'admin_enqueue_scripts', array( &$this, 'admin_scripts' ) );
 
         // Adds shortcode.
         add_shortcode( 'scp', array( &$this, 'shortcode' ) );
@@ -63,6 +64,17 @@ class Social_Count_Plus {
     public function scripts() {
         wp_register_style( 'socialcountplus-style', plugins_url( 'assets/css/counter.css', __FILE__ ), array(), '2.0', 'all' );
         wp_enqueue_style( 'socialcountplus-style' );
+    }
+
+    /**
+     * Register admin scripts.
+     */
+    public function admin_scripts() {
+        wp_enqueue_script( 'wp-color-picker' );
+        wp_enqueue_style( 'wp-color-picker' );
+
+        wp_register_script( 'socialcountplus-admin', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), null, true );
+        wp_enqueue_script( 'socialcountplus-admin' );
     }
 
     /**
@@ -228,6 +240,13 @@ class Social_Count_Plus {
                 ),
                 'section' => 'design',
                 'menu' => 'socialcountplus_design'
+            ),
+            'text_color' => array(
+                'title' => __( 'Text Color', 'socialcountplus' ),
+                'default' => '#333333',
+                'type' => 'color',
+                'section' => 'design',
+                'menu' => 'socialcountplus_design'
             )
         );
 
@@ -345,17 +364,15 @@ class Social_Count_Plus {
 
         // Create tabs current class.
         $current_tab = '';
-        if ( isset( $_GET['tab'] ) ) {
+        if ( isset( $_GET['tab'] ) )
             $current_tab = $_GET['tab'];
-        } else {
+        else
             $current_tab = 'settings';
-        }
 
         // Reset transients when save settings page.
         if ( isset( $_GET['settings-updated'] ) ) {
-            if ( true == $_GET['settings-updated'] ) {
+            if ( true == $_GET['settings-updated'] )
                 $this->counter->reset_transients();
-            }
         }
 
         ?>
@@ -392,14 +409,12 @@ class Social_Count_Plus {
                     if ( 'design' == $current_tab ) {
                         settings_fields( 'socialcountplus_design' );
                         do_settings_sections( 'socialcountplus_design' );
+                        submit_button();
                     } else if ( 'shortcodes' == $current_tab ) {
                         $this->page_shortcodes();
                     } else {
                         settings_fields( 'socialcountplus_settings' );
                         do_settings_sections( 'socialcountplus_settings' );
-                    }
-
-                    if ( 'shortcodes' != $current_tab ) {
                         submit_button();
                     }
                 ?>
@@ -485,9 +500,8 @@ class Social_Count_Plus {
         $settings = 'socialcountplus_settings';
 
         // Create option in wp_options.
-        if ( false == get_option( $settings ) ) {
+        if ( false == get_option( $settings ) )
             $this->update();
-        }
 
         foreach ( $this->default_settings() as $key => $value ) {
 
@@ -544,6 +558,20 @@ class Social_Count_Plus {
                         )
                     );
                     break;
+                case 'color':
+                    add_settings_field(
+                        $key,
+                        $value['title'],
+                        array( &$this , 'color_element_callback' ),
+                        $value['menu'],
+                        $value['section'],
+                        array(
+                            'menu' => $value['menu'],
+                            'id' => $key,
+                            'description' => isset( $value['description'] ) ? $value['description'] : ''
+                        )
+                    );
+                    break;
 
                 default:
                     break;
@@ -570,18 +598,16 @@ class Social_Count_Plus {
 
         $options = get_option( $menu );
 
-        if ( isset( $options[$id] ) ) {
+        if ( isset( $options[$id] ) )
             $current = $options[$id];
-        } else {
+        else
             $current = isset( $args['default'] ) ? $args['default'] : '';
-        }
 
         $html = sprintf( '<input type="text" id="%1$s" name="%2$s[%1$s]" value="%3$s" class="%4$s" />', $id, $menu, $current, $class );
 
         // Displays option description.
-        if ( isset( $args['description'] ) ) {
+        if ( isset( $args['description'] ) )
             $html .= sprintf( '<p class="description">%s</p>', $args['description'] );
-        }
 
         echo $html;
     }
@@ -599,20 +625,18 @@ class Social_Count_Plus {
 
         $options = get_option( $menu );
 
-        if ( isset( $options[$id] ) ) {
+        if ( isset( $options[$id] ) )
             $current = $options[$id];
-        } else {
+        else
             $current = isset( $args['default'] ) ? $args['default'] : '';
-        }
 
         $html = sprintf( '<input type="checkbox" id="%1$s" name="%2$s[%1$s]" value="1"%3$s />', $id, $menu, checked( 1, $current, false ) );
 
         $html .= sprintf( '<label for="%s"> %s</label><br />', $id, __( 'Activate/Deactivate', 'socialcountplus' ) );
 
         // Displays option description.
-        if ( isset( $args['description'] ) ) {
+        if ( isset( $args['description'] ) )
             $html .= sprintf( '<p class="description">%s</p>', $args['description'] );
-        }
 
         echo $html;
     }
@@ -630,11 +654,10 @@ class Social_Count_Plus {
 
         $options = get_option( $menu );
 
-        if ( isset( $options[$id] ) ) {
+        if ( isset( $options[$id] ) )
             $current = $options[$id];
-        } else {
+        else
             $current = isset( $args['default'] ) ? $args['default'] : '#ffffff';
-        }
 
         $html = '';
         $key = 0;
@@ -646,9 +669,35 @@ class Social_Count_Plus {
         }
 
         // Displays option description.
-        if ( isset( $args['description'] ) ) {
+        if ( isset( $args['description'] ) )
             $html .= sprintf( '<p class="description">%s</p>', $args['description'] );
-        }
+
+        echo $html;
+    }
+
+    /**
+     * Color element fallback.
+     *
+     * @param  array $args Field arguments.
+     *
+     * @return string      Color field.
+     */
+    public function color_element_callback( $args ) {
+        $menu = $args['menu'];
+        $id = $args['id'];
+
+        $options = get_option( $menu );
+
+        if ( isset( $options[$id] ) )
+            $current = $options[$id];
+        else
+            $current = isset( $args['default'] ) ? $args['default'] : '#333333';
+
+        $html = sprintf( '<input type="text" id="%1$s" name="%2$s[%1$s]" value="%3$s" class="social-count-plus-color-field" />', $id, $menu, $current );
+
+        // Displays option description.
+        if ( isset( $args['description'] ) )
+            $html .= sprintf( '<p class="description">%s</p>', $args['description'] );
 
         echo $html;
     }
@@ -668,10 +717,10 @@ class Social_Count_Plus {
         foreach ( $input as $key => $value ) {
 
             // Check to see if the current option has a value. If so, process it.
-            if ( isset( $input[$key] ) ) {
+            if ( isset( $input[ $key ] ) ) {
 
                 // Strip all HTML and PHP tags and properly handle quoted strings.
-                $output[$key] = sanitize_text_field( $input[$key] );
+                $output[ $key ] = sanitize_text_field( $input[ $key ] );
             }
         }
 
@@ -689,12 +738,12 @@ class Social_Count_Plus {
      *
      * @return string         HTML li element.
      */
-    public function get_view_li( $slug, $url, $count, $title ) {
+    public function get_view_li( $slug, $url, $count, $title, $color ) {
         $html = sprintf( '<li class="count-%s">', $slug );
             $html .= sprintf( '<a class="icon" href="%s" target="_blank"></a>', esc_url( $url ) );
             $html .= '<span class="items">';
-                $html .= sprintf( '<span class="count">%s</span>', apply_filters( 'social_count_plus_number_format', $count ) );
-                $html .= sprintf( '<span class="label">%s</span>', $title );
+                $html .= sprintf( '<span class="count" style="color: %s !important;">%s</span>', $color, apply_filters( 'social_count_plus_number_format', $count ) );
+                $html .= sprintf( '<span class="label" style="color: %s !important;">%s</span>', $color, $title );
             $html .= '</span>';
         $html .= '</li>';
 
@@ -710,6 +759,7 @@ class Social_Count_Plus {
         $settings = get_option( 'socialcountplus_settings' );
         $design = get_option( 'socialcountplus_design' );
         $count = $this->counter->update_transients();
+        $color = isset( $design['text_color'] ) ? $design['text_color'] : '#333333';
 
         // Sets widget design.
         $style = '';
@@ -733,22 +783,22 @@ class Social_Count_Plus {
             $html .= '<ul class="' . $style . '">';
 
                 // Twitter counter.
-                $html .= ( isset( $settings['twitter_active'] ) ) ? $this->get_view_li( 'twitter', 'http://twitter.com/' . $settings['twitter_user'], $count['twitter'], __( 'followers', 'socialcountplus' ) ) : '';
+                $html .= ( isset( $settings['twitter_active'] ) ) ? $this->get_view_li( 'twitter', 'http://twitter.com/' . $settings['twitter_user'], $count['twitter'], __( 'followers', 'socialcountplus' ), $color ) : '';
 
                 // Facebook counter.
-                $html .= ( isset( $settings['facebook_active'] ) ) ? $this->get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $count['facebook'], __( 'likes', 'socialcountplus' ) ) : '';
+                $html .= ( isset( $settings['facebook_active'] ) ) ? $this->get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $count['facebook'], __( 'likes', 'socialcountplus' ), $color ) : '';
 
                 // YouTube counter.
-                $html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', 'www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'socialcountplus' ) ) : '';
+                $html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', 'www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'socialcountplus' ), $color ) : '';
 
                 // Google Plus counter.
-                $html .= ( isset( $settings['googleplus_active'] ) ) ? $this->get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'socialcountplus' ) ) : '';
+                $html .= ( isset( $settings['googleplus_active'] ) ) ? $this->get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'socialcountplus' ), $color ) : '';
 
                 // Posts counter.
-                $html .= ( isset( $settings['posts_active'] ) ) ? $this->get_view_li( 'posts', get_home_url(), $count['posts'], __( 'posts', 'socialcountplus' ) ) : '';
+                $html .= ( isset( $settings['posts_active'] ) ) ? $this->get_view_li( 'posts', get_home_url(), $count['posts'], __( 'posts', 'socialcountplus' ), $color ) : '';
 
                 // Comments counter.
-                $html .= ( isset( $settings['comments_active'] ) ) ? $this->get_view_li( 'comments', get_home_url(), $count['comments'], __( 'comments', 'socialcountplus' ) ) : '';
+                $html .= ( isset( $settings['comments_active'] ) ) ? $this->get_view_li( 'comments', get_home_url(), $count['comments'], __( 'comments', 'socialcountplus' ), $color ) : '';
 
             $html .= '</ul>';
             $html .= '<div class="clear"></div>';
