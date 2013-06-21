@@ -14,6 +14,7 @@ module.exports = function(grunt) {
                 ".gitignore",
                 ".sass-cache/",
                 "node_modules/",
+                "PSDs/",
                 "assets/sass/",
                 "Gruntfile.js",
                 "README.md",
