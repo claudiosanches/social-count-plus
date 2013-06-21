@@ -1,7 +1,7 @@
 # Social Count Plus #
 **Contributors:** claudiosanches  
 **Donate link:** http://claudiosmweb.com/doacoes/  
-**Tags:** facebook, twitter, youtube, counter, widget, shortcode  
+**Tags:** facebook, twitter, youtube, google, counter, widget, shortcode  
 **Requires at least:** 3.4  
 **Tested up to:** 3.5.1  
 **Stable tag:** 2.4.0  
@@ -12,18 +12,20 @@ Display the counting Twitter followers, Facebook fans, YouTube subscribers posts
 
 ## Description ##
 
-The Social Count Plus performs counting Twitter followers, Facebook fans, YouTube subscribers, posts and comments.
+The Social Count Plus performs counting Twitter followers, Facebook fans, YouTube subscribers, Google Plus page followers, posts and comments.
 
 You can view this information via a widget (with account options models icons) or Shortcodes (to be used in posts and pages) or by functions in PHP.
 
 The results of the counters are cached and new values ​​are checked only once a day. This cache can be wiped when published a new post.
 
-The cache avoids not only that your blog be seeking new results every time a page is loaded, but also prevents collapse of services from Twitter and Facebook, if one of these services does not respond , the counter displays the last count it was successful.
+The cache avoids not only that your blog be seeking new results every time a page is loaded, but also prevents collapse of services from Twitter and Facebook, if one of these services does not respond, the counter displays the last count it was successful.
 
 #### Shortcodes ####
 
 * Twitter: `[scp code="twitter"]`
 * Facebook: `[scp code="facebook"]`
+* YouTube: `[scp code="youtube"]`
+* Google Plus: `[scp code="googleplus"]`
 * Posts: `[scp code="posts"]`
 * Comments: `[scp code="comments"]`
 
@@ -31,13 +33,15 @@ The cache avoids not only that your blog be seeking new results every time a pag
 
 * Twitter: `<?php echo get_scp_twitter(); ?>`
 * Facebook: `<?php echo get_scp_facebook(); ?>`
+* YouTube: `<?php echo get_scp_youtube(); ?>`
+* Google Plus: `<?php echo get_scp_googleplus(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
 * Widget: `<?php echo get_scp_widget(); ?>`
 
 ### Descrição em Português: ###
 
-O Social Count Plus faz a contagem de seguidores no Twitter, fãs no Facebook, assinantes do YouTube, total de posts e comentários.
+O Social Count Plus faz a contagem de seguidores no Twitter, fãs no Facebook, assinantes do YouTube, seguidores em páginas do Google Plus, total de posts e comentários.
 
 Você pode exibir estas contagens através de um widget, com Shortcodes ou por funções em PHP.
 
@@ -49,13 +53,17 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 
 * Twitter: `[scp code="twitter"]`
 * Facebook: `[scp code="facebook"]`
+* YouTube: `[scp code="youtube"]`
+* Google Plus: `[scp code="googleplus"]`
 * Posts: `[scp code="posts"]`
 * Comments: `[scp code="comments"]`
 
-#### Funções ####
+#### Functions ####
 
 * Twitter: `<?php echo get_scp_twitter(); ?>`
 * Facebook: `<?php echo get_scp_facebook(); ?>`
+* YouTube: `<?php echo get_scp_youtube(); ?>`
+* Google Plus: `<?php echo get_scp_googleplus(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
 * Widget: `<?php echo get_scp_widget(); ?>`
