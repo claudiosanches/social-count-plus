@@ -39,6 +39,10 @@ The cache avoids not only that your blog be seeking new results every time a pag
 * Comments: `<?php echo get_scp_comments(); ?>`
 * Widget: `<?php echo get_scp_widget(); ?>`
 
+#### Contribute ####
+
+You can contribute to the source code in our [GitHub](https://github.com/claudiosmweb/social-count-plus) page.
+
 ### Descrição em Português: ###
 
 O Social Count Plus faz a contagem de seguidores no Twitter, fãs no Facebook, assinantes do YouTube, seguidores em páginas do Google Plus, total de posts e comentários.
@@ -67,6 +71,10 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
 * Widget: `<?php echo get_scp_widget(); ?>`
+
+#### Coloborar ####
+
+Você pode contribuir com código-fonte em nossa página no [GitHub](https://github.com/claudiosmweb/social-count-plus).
 
 ## Installation ##
 
