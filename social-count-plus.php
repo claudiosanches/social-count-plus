@@ -97,7 +97,7 @@ class Social_Count_Plus {
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_style( 'wp-color-picker' );
 
-        wp_register_script( 'socialcountplus-admin', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), null, true );
+        wp_register_script( 'socialcountplus-admin', plugins_url( 'assets/js/admin.min.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), null, true );
         wp_enqueue_script( 'socialcountplus-admin' );
     }
 
