@@ -4,7 +4,7 @@
 **Tags:** facebook, twitter, youtube, google, counter, widget, shortcode  
 **Requires at least:** 3.4  
 **Tested up to:** 3.5.1  
-**Stable tag:** 2.4.0  
+**Stable tag:** 2.5.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -116,6 +116,10 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 
 
 ## Changelog ##
+
+### 2.5.0 21/06/2013 ###
+
+* Added option to change the text color of the widget.
 
 ### 2.4.0 21/06/2013 ###
 
