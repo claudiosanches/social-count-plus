@@ -4,7 +4,7 @@ Donate link: http://claudiosmweb.com/doacoes/
 Tags: facebook, twitter, youtube, google, counter, widget, shortcode
 Requires at least: 3.4
 Tested up to: 3.5.1
-Stable tag: 2.5.0
+Stable tag: 2.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -116,6 +116,10 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 4. Widget.
 
 == Changelog ==
+
+= 2.6.0 21/06/2013 =
+
+* Added uninstall file.
 
 = 2.5.0 21/06/2013 =
 
