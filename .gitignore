@@ -1,3 +1,4 @@
 node_modules/
 .sass-cache/
 assets/css/counter.css
+assets/js/admin.min.js

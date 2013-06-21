@@ -44,8 +44,18 @@ module.exports = function(grunt) {
                 "curly": true
             },
             all: [
-                "Gruntfile.js"
+                "Gruntfile.js",
+                "assets/js/admin.js"
             ]
+        },
+
+        // uglify to concat and minify
+        uglify: {
+            dist: {
+                files: {
+                    "assets/js/admin.min.js": ["assets/js/admin.js"]
+                }
+            }
         },
 
         // compass and scss
@@ -56,6 +66,12 @@ module.exports = function(grunt) {
                     force: true,
                     outputStyle: "compressed"
                 }
+            },
+            js: {
+                files: [
+                    "<%= jshint.all %>"
+                ],
+                tasks: ["jshint", "uglify"]
             }
         },
 
@@ -113,6 +129,7 @@ module.exports = function(grunt) {
     // load tasks
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-compass");
     grunt.loadNpmTasks("grunt-rsync");
     grunt.loadNpmTasks("grunt-shell");
@@ -120,7 +137,8 @@ module.exports = function(grunt) {
     // default task
     grunt.registerTask("default", [
         "jshint",
-        "compass"
+        "compass",
+        "uglify"
     ]);
 
     // deploy task
