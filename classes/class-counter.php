@@ -45,6 +45,7 @@ class Social_Count_Plus_Counter {
             'facebook'   => 0,
             'youtube'    => 0,
             'googleplus' => 0,
+            'steam'      => 0,
             'posts'      => 0,
             'comments'   => 0,
         );
@@ -181,6 +182,33 @@ class Social_Count_Plus_Counter {
                 }
             }
         }
+
+		// Steam
+		if (
+			isset( $settings['steam_active'] )
+			&& ! empty( $settings['steam_group_name'] ) ) {
+			
+			$steam_group_page_http_rq = wp_remote_get( 'http://steamcommunity.com/groups/' . $settings['steam_group_name'] );
+			if ( is_wp_error( $steam_group_page_http_rq ) ) {
+				$count['steam'] = ( isset( $cache['steam'] ) ) ? $cache['steam'] : 0;
+			} else {
+				$steam_group_page = wp_remote_retrieve_body( $steam_group_page_http_rq );
+				$dom = new DomDocument();
+				$dom->loadHTML( $steam_group_page );
+				$xpath = new DOMXPath( $dom );
+				$members_node = $xpath->query('//div[@class="membercount members"]//span[@class="count "]');
+				if ( !empty ( $members ) ) {
+					$member_count = $members_node->item(0)->textContent;
+					$count['steam'] = $member_count;
+					$cache['steam'] = $member_count;
+				} else {
+					$count['steam'] = ( isset( $cache['steam'] ) ) ? $cache['steam'] : 0;
+				}
+			}
+			
+
+		}
+		
 
         // Posts.
         if ( isset( $settings['posts_active'] ) ) {

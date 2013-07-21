@@ -223,6 +223,26 @@ class Social_Count_Plus {
                 'section' => 'googleplus',
                 'menu' => 'socialcountplus_settings'
             ),
+            'steam' => array(
+                'title' => __( 'Steam', 'socialcountplus' ),
+                'type' => 'section',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'steam_active' => array(
+                'title' => __( 'Display Steam counter', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'checkbox',
+                'section' => 'steam',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'steam_group_name' => array(
+                'title' => __( 'Steam group name', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => __( 'Insert the Steam Community group name. Example: DOTALT', 'socialcountplus' ),
+                'section' => 'steam',
+                'menu' => 'socialcountplus_settings'
+            ),
             'posts' => array(
                 'title' => __( 'Posts', 'socialcountplus' ),
                 'type' => 'section',
@@ -313,6 +333,8 @@ class Social_Count_Plus {
                 'youtube_user'    => '',
                 // 'googleplup_active' => '',
                 'googleplus_id'   => '',
+                'steam_active'    => '',
+                'steam_group_name' => '',
                 'posts_active'    => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
                 'comments_active' => ( 'true' == get_option( 'scp_show_comment' ) ) ? 1 : '',
             );
@@ -805,6 +827,9 @@ class Social_Count_Plus {
 
         $html = '<div class="social-count-plus">';
             $html .= '<ul class="' . $style . '">';
+
+                // Steam counter
+                $html .= ( isset( $settings['steam_active'] ) ) ? $this->get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'socialcountplus' ), $color ) : '';
 
                 // Twitter counter.
                 $html .= ( isset( $settings['twitter_active'] ) ) ? $this->get_view_li( 'twitter', 'http://twitter.com/' . $settings['twitter_user'], $count['twitter'], __( 'followers', 'socialcountplus' ), $color ) : '';
