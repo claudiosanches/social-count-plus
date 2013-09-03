@@ -45,6 +45,7 @@ class Social_Count_Plus_Counter {
             'facebook'   => 0,
             'youtube'    => 0,
             'googleplus' => 0,
+            'instagram'  => 0,
             'steam'      => 0,
             'posts'      => 0,
             'comments'   => 0,
@@ -53,11 +54,12 @@ class Social_Count_Plus_Counter {
         // Twitter.
         if (
             isset( $settings['twitter_active'] )
+            && isset( $settings['twitter_user'] )
+            && ! empty( $settings['twitter_user'] )
             && ! empty( $settings['twitter_consumer_key'] )
             && ! empty( $settings['twitter_consumer_secret'] )
             && ! empty( $settings['twitter_access_token'] )
             && ! empty( $settings['twitter_access_token_secret'] )
-            && ! empty( $settings['twitter_user'] )
         ) {
             $twitter_user = $settings['twitter_user'];
 
@@ -97,7 +99,7 @@ class Social_Count_Plus_Counter {
         }
 
         // Facebook.
-        if ( isset( $settings['facebook_active'] ) && ! empty( $settings['facebook_id'] ) ) {
+        if ( isset( $settings['facebook_active'] ) && isset( $settings['facebook_id'] ) && ! empty( $settings['facebook_id'] ) ) {
 
             // Get facebook data.
             $facebook_data = wp_remote_get( 'http://api.facebook.com/restserver.php?method=facebook.fql.query&query=SELECT%20fan_count%20FROM%20page%20WHERE%20page_id=' . $settings['facebook_id'] );
@@ -118,7 +120,7 @@ class Social_Count_Plus_Counter {
         }
 
         // YouTube.
-        if ( isset( $settings['youtube_active'] ) && ! empty( $settings['youtube_user'] ) ) {
+        if ( isset( $settings['youtube_active'] ) && isset( $settings['youtube_user'] ) && ! empty( $settings['youtube_user'] ) ) {
 
             // Get youtube data.
             $youtube_data = wp_remote_get( 'http://gdata.youtube.com/feeds/api/users/' . $settings['youtube_user'] );
@@ -140,7 +142,7 @@ class Social_Count_Plus_Counter {
         }
 
         // Google Plus.
-        if ( isset( $settings['googleplus_active'] ) && ! empty( $settings['googleplus_id'] ) ) {
+        if ( isset( $settings['googleplus_active'] ) && isset( $settings['googleplus_id'] ) && ! empty( $settings['googleplus_id'] ) ) {
             $googleplus_id = 'https://plus.google.com/' . $settings['googleplus_id'];
 
             $googleplus_data_params = array(
@@ -170,8 +172,39 @@ class Social_Count_Plus_Counter {
             }
         }
 
+        // Instagram.
+        if (
+            isset( $settings['instagram_active'] )
+            && isset( $settings['instagram_user_id'] )
+            && ! empty( $settings['instagram_user_id'] )
+            && isset( $settings['instagram_access_token'] )
+            && ! empty( $settings['instagram_access_token'] )
+        ) {
+            // Get googleplus data.
+            $instagram_data = wp_remote_get( 'https://api.instagram.com/v1/users/' . $settings['instagram_user_id'] . '/?access_token=' . $settings['instagram_access_token'] );
+
+            if ( is_wp_error( $instagram_data ) || '400' <= $instagram_data['response']['code'] ) {
+                $count['instagram'] = ( isset( $cache['instagram'] ) ) ? $cache['instagram'] : 0;
+            } else {
+                $instagram_response = json_decode( $instagram_data['body'], true );
+
+                if (
+                    isset( $instagram_response['meta']['code'] )
+                    && 200 == $instagram_response['meta']['code']
+                    && isset( $instagram_response['data']['counts']['followed_by'] )
+                ) {
+                    $instagram_count = $instagram_response['data']['counts']['followed_by'];
+
+                    $count['instagram'] = $instagram_count;
+                    $cache['instagram'] = $instagram_count;
+                } else {
+                    $count['instagram'] = ( isset( $cache['instagram'] ) ) ? $cache['instagram'] : 0;
+                }
+            }
+        }
+
         // Steam.
-        if ( isset( $settings['steam_active'] ) && ! empty( $settings['steam_group_name'] ) ) {
+        if ( isset( $settings['steam_active'] ) && isset( $settings['steam_group_name'] ) && ! empty( $settings['steam_group_name'] ) ) {
 
             // Get steam data.
             $steam_data = wp_remote_get( 'http://steamcommunity.com/groups/' . $settings['steam_group_name'] . '/memberslistxml/?xml=1' );

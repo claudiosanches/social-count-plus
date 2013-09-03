@@ -107,6 +107,8 @@ class Social_Count_Plus {
 
         $twitter_oauth_description = sprintf( __( 'Create an APP on Twitter in %s and get this information', 'socialcountplus' ), '<a href="https://dev.twitter.com/apps">https://dev.twitter.com/apps</a>' );
 
+        $instagram_access_token = sprintf( __( 'Get the this information in %s' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
+
         $settings = array(
             'twitter' => array(
                 'title' => __( 'Twitter', 'socialcountplus' ),
@@ -240,6 +242,42 @@ class Social_Count_Plus {
                 'section' => 'steam',
                 'menu' => 'socialcountplus_settings'
             ),
+            'instagram' => array(
+                'title' => __( 'Instagram', 'socialcountplus' ),
+                'type' => 'section',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'instagram_active' => array(
+                'title' => __( 'Display Instagram counter', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'checkbox',
+                'section' => 'instagram',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'instagram_username' => array(
+                'title' => __( 'Instagram Username', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => __( 'Insert the Instagram Username.', 'socialcountplus' ),
+                'section' => 'instagram',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'instagram_user_id' => array(
+                'title' => __( 'Instagram User ID', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => __( 'Insert the Instagram User ID.', 'socialcountplus' ) . ' ' . $instagram_access_token,
+                'section' => 'instagram',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'instagram_access_token' => array(
+                'title' => __( 'Instagram Access Token', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => __( 'Insert the Instagram Access Token.', 'socialcountplus' ) . ' ' . $instagram_access_token,
+                'section' => 'instagram',
+                'menu' => 'socialcountplus_settings'
+            ),
             'posts' => array(
                 'title' => __( 'Posts', 'socialcountplus' ),
                 'type' => 'section',
@@ -321,18 +359,22 @@ class Social_Count_Plus {
         if ( get_option( 'scp_show_twitter' ) ) {
 
             $settings = array(
-                'twitter_active'   => ( 'true' == get_option( 'scp_show_twitter' ) ) ? 1 : '',
-                'twitter_user'     => get_option( 'scp_twitter' ),
-                'facebook_active'  => ( 'true' == get_option( 'scp_show_facebook' ) ) ? 1 : '',
-                'facebook_id'      => get_option( 'scp_facebook' ),
-                // 'youtube_active'  => '',
-                'youtube_user'     => '',
-                // 'googleplup_active'  => '',
-                'googleplus_id'    => '',
-                'steam_active'     => '',
-                'steam_group_name' => '',
-                'posts_active'     => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
-                'comments_active'  => ( 'true' == get_option( 'scp_show_comment' ) ) ? 1 : '',
+                'twitter_active'         => ( 'true' == get_option( 'scp_show_twitter' ) ) ? 1 : '',
+                'twitter_user'           => get_option( 'scp_twitter' ),
+                'facebook_active'        => ( 'true' == get_option( 'scp_show_facebook' ) ) ? 1 : '',
+                'facebook_id'            => get_option( 'scp_facebook' ),
+                // 'youtube_active'         => '',
+                'youtube_user'           => '',
+                'googleplup_active'      => '',
+                // 'googleplus_id'          => '',
+                'steam_active'           => '',
+                'steam_group_name'       => '',
+                'instagram_active'       => '',
+                'instagram_username'     => '',
+                'instagram_user_id'      => '',
+                'instagram_access_token' => '',
+                'posts_active'           => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
+                'comments_active'        => ( 'true' == get_option( 'scp_show_comment' ) ) ? 1 : '',
             );
 
             $model = 0;
@@ -835,6 +877,9 @@ class Social_Count_Plus {
 
                 // Google Plus counter.
                 $html .= ( isset( $settings['googleplus_active'] ) ) ? $this->get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'socialcountplus' ), $color ) : '';
+
+                // Instagram counter.
+                $html .= ( isset( $settings['instagram_active'] ) ) ? $this->get_view_li( 'instagram', 'http://instagram.com/' . $settings['instagram_username'], $count['instagram'], __( 'followers', 'socialcountplus' ), $color ) : '';
 
                 // Steam counter
                 $html .= ( isset( $settings['steam_active'] ) ) ? $this->get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'socialcountplus' ), $color ) : '';
