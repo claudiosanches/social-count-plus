@@ -767,7 +767,7 @@ class Social_Count_Plus {
         }
 
         // Return the array processing any additional functions filtered by this action.
-        return apply_filters( 'socialcountplus_validate_input', $output, $input );
+        return apply_filters( 'social_count_plus_validate_input', $output, $input );
     }
 
     /**
