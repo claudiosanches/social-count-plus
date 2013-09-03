@@ -905,12 +905,12 @@ class Social_Count_Plus {
 } // Close Social_Count_Plus class.
 
 // Include classes.
-require_once SOCIAL_COUNT_PLUS_PATH . 'classes/class-widget.php';
-require_once SOCIAL_COUNT_PLUS_PATH . 'classes/class-counter.php';
+require_once SOCIAL_COUNT_PLUS_PATH . 'includes/class-widget.php';
+require_once SOCIAL_COUNT_PLUS_PATH . 'includes/class-counter.php';
 
 // Init classes.
 $social_count_plus_counter = new Social_Count_Plus_Counter;
 $social_count_plus = new Social_Count_Plus( $social_count_plus_counter );
 
-// Include functions.
-require_once SOCIAL_COUNT_PLUS_PATH . 'inc/functions.php';
+// Include front-end helper functions.
+require_once SOCIAL_COUNT_PLUS_PATH . 'inc/front-end-helpers.php';

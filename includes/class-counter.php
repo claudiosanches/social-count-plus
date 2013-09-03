@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 class Social_Count_Plus_Counter {
 
     protected function twitter_oauth( $user, $key, $key_secret, $access_token, $access_secret ) {
-        require_once SOCIAL_COUNT_PLUS_PATH . 'classes/class-twitter-oauth-authorization.php';
+        require_once SOCIAL_COUNT_PLUS_PATH . 'includes/class-twitter-oauth-authorization.php';
 
         $screen_name = 'screen_name=' . $user;
         $oauth = new Social_Count_Plus_Twitter_Oauth_Authorization(
