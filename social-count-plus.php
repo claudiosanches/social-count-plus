@@ -824,9 +824,6 @@ class Social_Count_Plus {
         $html = '<div class="social-count-plus">';
             $html .= '<ul class="' . $style . '">';
 
-                // Steam counter
-                $html .= ( isset( $settings['steam_active'] ) ) ? $this->get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'socialcountplus' ), $color ) : '';
-
                 // Twitter counter.
                 $html .= ( isset( $settings['twitter_active'] ) ) ? $this->get_view_li( 'twitter', 'http://twitter.com/' . $settings['twitter_user'], $count['twitter'], __( 'followers', 'socialcountplus' ), $color ) : '';
 
@@ -838,6 +835,9 @@ class Social_Count_Plus {
 
                 // Google Plus counter.
                 $html .= ( isset( $settings['googleplus_active'] ) ) ? $this->get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'socialcountplus' ), $color ) : '';
+
+                // Steam counter
+                $html .= ( isset( $settings['steam_active'] ) ) ? $this->get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'socialcountplus' ), $color ) : '';
 
                 // Posts counter.
                 $html .= ( isset( $settings['posts_active'] ) ) ? $this->get_view_li( 'posts', get_home_url(), $count['posts'], __( 'posts', 'socialcountplus' ), $color ) : '';
@@ -909,4 +909,4 @@ $social_count_plus_counter = new Social_Count_Plus_Counter;
 $social_count_plus = new Social_Count_Plus( $social_count_plus_counter );
 
 // Include front-end helper functions.
-require_once SOCIAL_COUNT_PLUS_PATH . 'inc/front-end-helpers.php';
+require_once SOCIAL_COUNT_PLUS_PATH . 'includes/front-end-helpers.php';
