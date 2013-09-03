@@ -62,6 +62,18 @@ function get_scp_googleplus() {
 }
 
 /**
+ * Steam Community member counter function.
+ *
+ * @return int Steam Community group member count.
+ */
+function get_scp_steam() {
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
+	
+	return $count['steam'];
+}
+
+/**
  * Posts counter function.
  *
  * @return int Posts count.
