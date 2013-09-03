@@ -871,29 +871,7 @@ class Social_Count_Plus {
             )
         );
 
-        switch ( $code ) {
-            case 'twitter':
-                $counter = $count['twitter'];
-                break;
-            case 'facebook':
-                $counter = $count['facebook'];
-                break;
-            case 'youtube':
-                $counter = $count['youtube'];
-                break;
-            case 'googleplus':
-                $counter = $count['googleplus'];
-                break;
-            case 'posts':
-                $counter = $count['posts'];
-                break;
-            case 'comments':
-                $counter = $count['comments'];
-                break;
-            default :
-
-                break;
-        }
+        $counter = $count[ $code ];
 
         return apply_filters( 'social_count_plus_number_format', $counter );
     }
