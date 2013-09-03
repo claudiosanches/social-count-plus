@@ -86,8 +86,7 @@ class Social_Count_Plus {
      * Register scripts.
      */
     public function scripts() {
-        wp_register_style( 'socialcountplus-style', plugins_url( 'assets/css/counter.css', __FILE__ ), array(), '2.0', 'all' );
-        wp_enqueue_style( 'socialcountplus-style' );
+        wp_enqueue_style( 'socialcountplus-style', plugins_url( 'assets/css/counter.css', __FILE__ ), array(), '2.0', 'all' );
     }
 
     /**
@@ -96,9 +95,7 @@ class Social_Count_Plus {
     public function admin_scripts() {
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_style( 'wp-color-picker' );
-
-        wp_register_script( 'socialcountplus-admin', plugins_url( 'assets/js/admin.min.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), null, true );
-        wp_enqueue_script( 'socialcountplus-admin' );
+        wp_enqueue_script( 'socialcountplus-admin', plugins_url( 'assets/js/admin.min.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), null, true );
     }
 
     /**
