@@ -303,11 +303,10 @@ class Social_Count_Plus {
 
         foreach ( $this->default_settings() as $key => $value ) {
             if ( 'section' != $value['type'] ) {
-                if ( 'socialcountplus_design' == $value['menu'] ) {
+                if ( 'socialcountplus_design' == $value['menu'] )
                     $design[ $key ] = $value['default'];
-                } else {
+                else
                     $settings[ $key ] = $value['default'];
-                }
             }
         }
 
@@ -322,18 +321,18 @@ class Social_Count_Plus {
         if ( get_option( 'scp_show_twitter' ) ) {
 
             $settings = array(
-                'twitter_active'  => ( 'true' == get_option( 'scp_show_twitter' ) ) ? 1 : '',
-                'twitter_user'    => get_option( 'scp_twitter' ),
-                'facebook_active' => ( 'true' == get_option( 'scp_show_facebook' ) ) ? 1 : '',
-                'facebook_id'     => get_option( 'scp_facebook' ),
-                // 'youtube_active' => '',
-                'youtube_user'    => '',
-                // 'googleplup_active' => '',
-                'googleplus_id'   => '',
-                'steam_active'    => '',
+                'twitter_active'   => ( 'true' == get_option( 'scp_show_twitter' ) ) ? 1 : '',
+                'twitter_user'     => get_option( 'scp_twitter' ),
+                'facebook_active'  => ( 'true' == get_option( 'scp_show_facebook' ) ) ? 1 : '',
+                'facebook_id'      => get_option( 'scp_facebook' ),
+                // 'youtube_active'  => '',
+                'youtube_user'     => '',
+                // 'googleplup_active'  => '',
+                'googleplus_id'    => '',
+                'steam_active'     => '',
                 'steam_group_name' => '',
-                'posts_active'    => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
-                'comments_active' => ( 'true' == get_option( 'scp_show_comment' ) ) ? 1 : '',
+                'posts_active'     => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
+                'comments_active'  => ( 'true' == get_option( 'scp_show_comment' ) ) ? 1 : '',
             );
 
             $model = 0;
@@ -641,8 +640,8 @@ class Social_Count_Plus {
 
         $options = get_option( $menu );
 
-        if ( isset( $options[$id] ) )
-            $current = $options[$id];
+        if ( isset( $options[ $id ] ) )
+            $current = $options[ $id ];
         else
             $current = isset( $args['default'] ) ? $args['default'] : '';
 
@@ -668,8 +667,8 @@ class Social_Count_Plus {
 
         $options = get_option( $menu );
 
-        if ( isset( $options[$id] ) )
-            $current = $options[$id];
+        if ( isset( $options[ $id ] ) )
+            $current = $options[ $id ];
         else
             $current = isset( $args['default'] ) ? $args['default'] : '';
 
@@ -697,8 +696,8 @@ class Social_Count_Plus {
 
         $options = get_option( $menu );
 
-        if ( isset( $options[$id] ) )
-            $current = $options[$id];
+        if ( isset( $options[ $id ] ) )
+            $current = $options[ $id ];
         else
             $current = isset( $args['default'] ) ? $args['default'] : '#ffffff';
 
@@ -731,8 +730,8 @@ class Social_Count_Plus {
 
         $options = get_option( $menu );
 
-        if ( isset( $options[$id] ) )
-            $current = $options[$id];
+        if ( isset( $options[ $id ] ) )
+            $current = $options[ $id ];
         else
             $current = isset( $args['default'] ) ? $args['default'] : '#333333';
 
