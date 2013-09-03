@@ -219,7 +219,7 @@ class Social_Count_Plus_Counter {
         update_option( 'socialcountplus_cache', $cache );
 
         // Update counter transient.
-        set_transient( 'socialcountplus_counter', $count, 60*60*24 ); // 24 horas de cache
+        set_transient( 'socialcountplus_counter', $count, apply_filters( 'social_count_plus_transient_time', 60*60*24 ) ); // 24 hours.
 
         return $count;
     }
