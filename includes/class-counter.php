@@ -46,6 +46,7 @@ class Social_Count_Plus_Counter {
             'youtube'    => 0,
             'googleplus' => 0,
             'instagram'  => 0,
+            'soundcloud' => 0,
             'steam'      => 0,
             'posts'      => 0,
             'comments'   => 0,
@@ -203,6 +204,33 @@ class Social_Count_Plus_Counter {
             }
         }
 
+        // SoundCloud.
+        if (
+            isset( $settings['soundcloud_active'] )
+            && isset( $settings['soundcloud_username'] )
+            && ! empty( $settings['soundcloud_username'] )
+            && isset( $settings['soundcloud_user_id'] )
+            && ! empty( $settings['soundcloud_user_id'] )
+        ) {
+            // Get googleplus data.
+            $soundcloud_data = wp_remote_get( 'http://api.soundcloud.com/users/' . $settings['soundcloud_username'] . '.json?client_id=' . $settings['soundcloud_user_id'] );
+
+            if ( is_wp_error( $soundcloud_data ) || '400' <= $soundcloud_data['response']['code'] ) {
+                $count['soundcloud'] = ( isset( $cache['soundcloud'] ) ) ? $cache['soundcloud'] : 0;
+            } else {
+                $soundcloud_response = json_decode( $soundcloud_data['body'], true );
+
+                if ( isset( $soundcloud_response['followers_count'] ) ) {
+                    $soundcloud_count = $soundcloud_response['followers_count'];
+
+                    $count['soundcloud'] = $soundcloud_count;
+                    $cache['soundcloud'] = $soundcloud_count;
+                } else {
+                    $count['soundcloud'] = ( isset( $cache['soundcloud'] ) ) ? $cache['soundcloud'] : 0;
+                }
+            }
+        }
+
         // Steam.
         if ( isset( $settings['steam_active'] ) && isset( $settings['steam_group_name'] ) && ! empty( $settings['steam_group_name'] ) ) {
 
@@ -212,8 +240,12 @@ class Social_Count_Plus_Counter {
             if ( is_wp_error( $steam_data ) || '400' <= $steam_data['response']['code'] ) {
                 $count['steam'] = ( isset( $cache['steam'] ) ) ? $cache['steam'] : 0;
             } else {
-                $steam_xml = new SimpleXmlElement( $steam_data['body'], LIBXML_NOCDATA );
-                $steam_count = (string) $steam_xml->groupDetails->memberCount;
+                try {
+                    $steam_xml = @new SimpleXmlElement( $steam_data['body'], LIBXML_NOCDATA );
+                    $steam_count = (string) $steam_xml->groupDetails->memberCount;
+                } catch (Exception $e) {
+                    $steam_xml = ( isset( $cache['steam'] ) ) ? $cache['steam'] : 0;
+                }
 
                 if ( $steam_count ) {
                     $count['steam'] = $steam_count;

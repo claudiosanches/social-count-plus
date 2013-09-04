@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches
  * Author URI: http://claudiosmweb.com/
- * Version: 2.6.0
+ * Version: 2.7.0
  * License: GPLv2 or later
  * Text Domain: socialcountplus
  * Domain Path: /languages/
@@ -105,9 +105,9 @@ class Social_Count_Plus {
      */
     protected function default_settings() {
 
-        $twitter_oauth_description = sprintf( __( 'Create an APP on Twitter in %s and get this information', 'socialcountplus' ), '<a href="https://dev.twitter.com/apps">https://dev.twitter.com/apps</a>' );
+        $twitter_oauth_description = sprintf( __( 'Create an APP on Twitter in %s and get this information', 'socialcountplus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
 
-        $instagram_access_token = sprintf( __( 'Get the this information in %s' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
+        $instagram_access_token = sprintf( __( 'Get the this information in %s' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
 
         $settings = array(
             'twitter' => array(
@@ -278,6 +278,34 @@ class Social_Count_Plus {
                 'section' => 'instagram',
                 'menu' => 'socialcountplus_settings'
             ),
+            'soundcloud' => array(
+                'title' => __( 'SoundCloud', 'socialcountplus' ),
+                'type' => 'section',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'soundcloud_active' => array(
+                'title' => __( 'Display SoundCloud counter', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'checkbox',
+                'section' => 'soundcloud',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'soundcloud_username' => array(
+                'title' => __( 'SoundCloud Username', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => __( 'Insert the SoundCloud Username.', 'socialcountplus' ),
+                'section' => 'soundcloud',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'soundcloud_user_id' => array(
+                'title' => __( 'SoundCloud User ID', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => sprintf( __( 'Insert the SoundCloud APP Client ID. Generate this information in %s', 'socialcountplus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' ),
+                'section' => 'soundcloud',
+                'menu' => 'socialcountplus_settings'
+            ),
             'posts' => array(
                 'title' => __( 'Posts', 'socialcountplus' ),
                 'type' => 'section',
@@ -365,14 +393,17 @@ class Social_Count_Plus {
                 'facebook_id'            => get_option( 'scp_facebook' ),
                 // 'youtube_active'         => '',
                 'youtube_user'           => '',
-                'googleplup_active'      => '',
-                // 'googleplus_id'          => '',
-                'steam_active'           => '',
+                // 'googleplup_active'      => '',
+                'googleplus_id'          => '',
+                // 'steam_active'           => '',
                 'steam_group_name'       => '',
-                'instagram_active'       => '',
+                // 'instagram_active'       => '',
                 'instagram_username'     => '',
                 'instagram_user_id'      => '',
                 'instagram_access_token' => '',
+                // 'soundcloud_active'      => '',
+                'soundcloud_username'    => '',
+                'soundcloud_user_id'     => '',
                 'posts_active'           => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
                 'comments_active'        => ( 'true' == get_option( 'scp_show_comment' ) ) ? 1 : '',
             );
@@ -508,6 +539,9 @@ class Social_Count_Plus {
         <?php
     }
 
+    /**
+     * Shortcode pages.
+     */
     private function page_shortcodes() {
         $html = '<p>' . __( 'Use this library to generate your own model layout or display specific data counters.', 'socialcountplus' ) . '</p>';
 
@@ -873,13 +907,16 @@ class Social_Count_Plus {
                 $html .= ( isset( $settings['facebook_active'] ) ) ? $this->get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $count['facebook'], __( 'likes', 'socialcountplus' ), $color ) : '';
 
                 // YouTube counter.
-                $html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', 'www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', 'http://www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'socialcountplus' ), $color ) : '';
 
                 // Google Plus counter.
                 $html .= ( isset( $settings['googleplus_active'] ) ) ? $this->get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'socialcountplus' ), $color ) : '';
 
                 // Instagram counter.
                 $html .= ( isset( $settings['instagram_active'] ) ) ? $this->get_view_li( 'instagram', 'http://instagram.com/' . $settings['instagram_username'], $count['instagram'], __( 'followers', 'socialcountplus' ), $color ) : '';
+
+                // SoundCloud counter.
+                $html .= ( isset( $settings['soundcloud_active'] ) ) ? $this->get_view_li( 'soundcloud', 'https://soundcloud.com/' . $settings['soundcloud_username'], $count['soundcloud'], __( 'followers', 'socialcountplus' ), $color ) : '';
 
                 // Steam counter
                 $html .= ( isset( $settings['steam_active'] ) ) ? $this->get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'socialcountplus' ), $color ) : '';
