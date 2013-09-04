@@ -62,6 +62,30 @@ function get_scp_googleplus() {
 }
 
 /**
+ * Instagram counter function.
+ *
+ * @return int Instagram Plus count.
+ */
+function get_scp_instagram() {
+    global $social_count_plus_counter;
+    $count = $social_count_plus_counter->update_transients();
+
+    return $count['googleplus'];
+}
+
+/**
+ * SoundCloud counter function.
+ *
+ * @return int SoundCloud Plus count.
+ */
+function get_scp_soundcloud() {
+    global $social_count_plus_counter;
+    $count = $social_count_plus_counter->update_transients();
+
+    return $count['googleplus'];
+}
+
+/**
  * Steam Community member counter function.
  *
  * @return int Steam Community group member count.
