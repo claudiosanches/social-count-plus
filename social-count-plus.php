@@ -976,7 +976,7 @@ class Social_Count_Plus {
     }
 
     /**
-     * Shortcodes;
+     * Shortcodes.
      *
      * @param  array $atts  Shortcode attributes.
      *
