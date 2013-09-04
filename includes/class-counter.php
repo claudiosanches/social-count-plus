@@ -209,7 +209,7 @@ class Social_Count_Plus_Counter {
             // Get steam data.
             $steam_data = wp_remote_get( 'http://steamcommunity.com/groups/' . $settings['steam_group_name'] . '/memberslistxml/?xml=1' );
 
-            if ( is_wp_error( $steam_data ) ) {
+            if ( is_wp_error( $steam_data ) || '400' <= $steam_data['response']['code'] ) {
                 $count['steam'] = ( isset( $cache['steam'] ) ) ? $cache['steam'] : 0;
             } else {
                 $steam_xml = new SimpleXmlElement( $steam_data['body'], LIBXML_NOCDATA );
