@@ -107,7 +107,7 @@ class Social_Count_Plus {
 
         $twitter_oauth_description = sprintf( __( 'Create an APP on Twitter in %s and get this information', 'socialcountplus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
 
-        $instagram_access_token = sprintf( __( 'Get the this information in %s' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
+        $instagram_access_token = sprintf( __( 'Get the this information in %s', 'socialcountplus' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
 
         $settings = array(
             'twitter' => array(
@@ -278,8 +278,8 @@ class Social_Count_Plus {
                 'section' => 'soundcloud',
                 'menu' => 'socialcountplus_settings'
             ),
-            'soundcloud_user_id' => array(
-                'title' => __( 'SoundCloud User ID', 'socialcountplus' ),
+            'soundcloud_client_id' => array(
+                'title' => __( 'SoundCloud Client ID', 'socialcountplus' ),
                 'default' => null,
                 'type' => 'text',
                 'description' => sprintf( __( 'Insert the SoundCloud APP Client ID. Generate this information in %s', 'socialcountplus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' ),
@@ -403,7 +403,7 @@ class Social_Count_Plus {
                 'instagram_access_token' => '',
                 // 'soundcloud_active'      => '',
                 'soundcloud_username'    => '',
-                'soundcloud_user_id'     => '',
+                'soundcloud_client_id'   => '',
                 // 'steam_active'           => '',
                 'steam_group_name'       => '',
                 'posts_active'           => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
@@ -464,7 +464,7 @@ class Social_Count_Plus {
                     'instagram_user_id'      => '',
                     'instagram_access_token' => '',
                     'soundcloud_username'    => '',
-                    'soundcloud_user_id'     => '',
+                    'soundcloud_client_id'   => '',
                     'steam_group_name'       => '',
                 );
 

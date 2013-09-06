@@ -209,11 +209,11 @@ class Social_Count_Plus_Counter {
             isset( $settings['soundcloud_active'] )
             && isset( $settings['soundcloud_username'] )
             && ! empty( $settings['soundcloud_username'] )
-            && isset( $settings['soundcloud_user_id'] )
-            && ! empty( $settings['soundcloud_user_id'] )
+            && isset( $settings['soundcloud_client_id'] )
+            && ! empty( $settings['soundcloud_client_id'] )
         ) {
             // Get googleplus data.
-            $soundcloud_data = wp_remote_get( 'http://api.soundcloud.com/users/' . $settings['soundcloud_username'] . '.json?client_id=' . $settings['soundcloud_user_id'] );
+            $soundcloud_data = wp_remote_get( 'http://api.soundcloud.com/users/' . $settings['soundcloud_username'] . '.json?client_id=' . $settings['soundcloud_client_id'] );
 
             if ( is_wp_error( $soundcloud_data ) || '400' <= $soundcloud_data['response']['code'] ) {
                 $count['soundcloud'] = ( isset( $cache['soundcloud'] ) ) ? $cache['soundcloud'] : 0;
