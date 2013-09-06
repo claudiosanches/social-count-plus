@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Social Count Plus v2.7.0\n"
+"Project-Id-Version: Social Count Plus v2.7.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-09-06 03:30:51+0000\n"
+"PO-Revision-Date: 2013-09-06 03:51:38+0000\n"
 "Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -201,7 +201,7 @@ msgstr "Ativar/Desativar"
 #: social-count-plus.php:953
 #: social-count-plus.php:962
 #: social-count-plus.php:965
-#: social-count-plus.php:968
+#: social-count-plus.php:971
 #@ socialcountplus
 msgid "followers"
 msgstr "seguidores"
@@ -314,12 +314,6 @@ msgstr ""
 msgid "Text Color"
 msgstr "Cor do texto"
 
-#. translators: plugin header field 'Version'
-#: social-count-plus.php:0
-#@ socialcountplus
-msgid "2.7.0"
-msgstr "2.7.0"
-
 #: social-count-plus.php:110
 #, php-format
 #@ socialcountplus
@@ -366,48 +360,48 @@ msgstr "Access Token do Instagram"
 msgid "Insert the Instagram Access Token."
 msgstr "Insira o seu Access Token do Instagram"
 
-#: social-count-plus.php:262
+#: social-count-plus.php:282
 #@ socialcountplus
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: social-count-plus.php:267
+#: social-count-plus.php:287
 #@ socialcountplus
 msgid "Display SoundCloud counter"
 msgstr "Exibir o contador do SoundCloud"
 
-#: social-count-plus.php:274
+#: social-count-plus.php:294
 #@ socialcountplus
 msgid "SoundCloud Username"
 msgstr "Nome de usuário no SoundCloud"
 
-#: social-count-plus.php:277
+#: social-count-plus.php:297
 #@ socialcountplus
 msgid "Insert the SoundCloud Username."
 msgstr "Insira seu nome de usuário no SoundCloud."
 
-#: social-count-plus.php:285
+#: social-count-plus.php:305
 #, php-format
 #@ socialcountplus
 msgid "Insert the SoundCloud APP Client ID. Generate this information in %s"
 msgstr "Insira seu APP Client ID do SoundCloud. Gere esta informação em %s"
 
-#: social-count-plus.php:290
+#: social-count-plus.php:262
 #@ socialcountplus
 msgid "Steam"
 msgstr "Steam"
 
-#: social-count-plus.php:295
+#: social-count-plus.php:267
 #@ socialcountplus
 msgid "Display Steam counter"
 msgstr "Exibir o contador do Steam"
 
-#: social-count-plus.php:302
+#: social-count-plus.php:274
 #@ socialcountplus
 msgid "Steam group name"
 msgstr "Nome do grupo no Steam"
 
-#: social-count-plus.php:305
+#: social-count-plus.php:277
 #@ socialcountplus
 msgid "Insert the Steam Community group name. Example: DOTALT"
 msgstr "Insira o nome do grupo no Stteam Community. Exemplo: DOTALT"
@@ -418,24 +412,24 @@ msgstr "Insira o nome do grupo no Stteam Community. Exemplo: DOTALT"
 msgid "Instagram counter"
 msgstr "Contador do Instagram"
 
-#: social-count-plus.php:590
-#: social-count-plus.php:631
+#: social-count-plus.php:594
+#: social-count-plus.php:635
 #@ socialcountplus
 msgid "SoundCloud counter"
 msgstr "Contador do SoundCloud"
 
-#: social-count-plus.php:594
-#: social-count-plus.php:635
+#: social-count-plus.php:590
+#: social-count-plus.php:631
 #@ socialcountplus
 msgid "Steam counter"
 msgstr "Contador do Steam"
 
-#: social-count-plus.php:971
+#: social-count-plus.php:968
 #@ socialcountplus
 msgid "members"
 msgstr "membros"
 
-#: social-count-plus.php:282
+#: social-count-plus.php:302
 #@ socialcountplus
 msgid "SoundCloud Client ID"
 msgstr "Client ID do SoundCloud"
@@ -445,4 +439,10 @@ msgstr "Client ID do SoundCloud"
 #@ socialcountplus
 msgid "claudiosanches, felipesantana"
 msgstr "claudiosanches, felipesantana"
+
+#. translators: plugin header field 'Version'
+#: social-count-plus.php:0
+#@ socialcountplus
+msgid "2.7.1"
+msgstr "2.7.1"
 

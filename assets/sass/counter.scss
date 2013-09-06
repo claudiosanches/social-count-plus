@@ -105,10 +105,9 @@
     }
 
     /* Sprites */
-    $icons: twitter, facebook, youtube, googleplus, posts, comments, instagram, soundcloud, steam;
+    $icons: twitter facebook youtube googleplus posts comments instagram steam soundcloud;
+    $i: 0;
     @each $icon in $icons {
-        $i: index($icons, $icon);
-
         .default .count-#{$icon} a {
             background-position: (-32px*$i) 0 !important;
         }
@@ -120,5 +119,7 @@
         .flat .count-#{$icon} a {
             background-position: (-32px*$i) 0 !important;
         }
+
+        $i: $i+1;
     }
 }

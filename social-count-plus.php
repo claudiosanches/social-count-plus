@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches, felipesantana
  * Author URI: http://claudiosmweb.com/
- * Version: 2.7.0
+ * Version: 2.7.1
  * License: GPLv2 or later
  * Text Domain: socialcountplus
  * Domain Path: /languages/
@@ -258,6 +258,26 @@ class Social_Count_Plus {
                 'section' => 'instagram',
                 'menu' => 'socialcountplus_settings'
             ),
+            'steam' => array(
+                'title' => __( 'Steam', 'socialcountplus' ),
+                'type' => 'section',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'steam_active' => array(
+                'title' => __( 'Display Steam counter', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'checkbox',
+                'section' => 'steam',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'steam_group_name' => array(
+                'title' => __( 'Steam group name', 'socialcountplus' ),
+                'default' => null,
+                'type' => 'text',
+                'description' => __( 'Insert the Steam Community group name. Example: DOTALT', 'socialcountplus' ),
+                'section' => 'steam',
+                'menu' => 'socialcountplus_settings'
+            ),
             'soundcloud' => array(
                 'title' => __( 'SoundCloud', 'socialcountplus' ),
                 'type' => 'section',
@@ -284,26 +304,6 @@ class Social_Count_Plus {
                 'type' => 'text',
                 'description' => sprintf( __( 'Insert the SoundCloud APP Client ID. Generate this information in %s', 'socialcountplus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' ),
                 'section' => 'soundcloud',
-                'menu' => 'socialcountplus_settings'
-            ),
-            'steam' => array(
-                'title' => __( 'Steam', 'socialcountplus' ),
-                'type' => 'section',
-                'menu' => 'socialcountplus_settings'
-            ),
-            'steam_active' => array(
-                'title' => __( 'Display Steam counter', 'socialcountplus' ),
-                'default' => null,
-                'type' => 'checkbox',
-                'section' => 'steam',
-                'menu' => 'socialcountplus_settings'
-            ),
-            'steam_group_name' => array(
-                'title' => __( 'Steam group name', 'socialcountplus' ),
-                'default' => null,
-                'type' => 'text',
-                'description' => __( 'Insert the Steam Community group name. Example: DOTALT', 'socialcountplus' ),
-                'section' => 'steam',
                 'menu' => 'socialcountplus_settings'
             ),
             'posts' => array(
@@ -401,11 +401,11 @@ class Social_Count_Plus {
                 'instagram_username'     => '',
                 'instagram_user_id'      => '',
                 'instagram_access_token' => '',
+                // 'steam_active'           => '',
+                'steam_group_name'       => '',
                 // 'soundcloud_active'      => '',
                 'soundcloud_username'    => '',
                 'soundcloud_client_id'   => '',
-                // 'steam_active'           => '',
-                'steam_group_name'       => '',
                 'posts_active'           => ( 'true' == get_option( 'scp_show_posts' ) ) ? 1 : '',
                 'comments_active'        => ( 'true' == get_option( 'scp_show_comment' ) ) ? 1 : '',
             );
@@ -463,9 +463,9 @@ class Social_Count_Plus {
                     'instagram_username'     => '',
                     'instagram_user_id'      => '',
                     'instagram_access_token' => '',
+                    'steam_group_name'       => '',
                     'soundcloud_username'    => '',
                     'soundcloud_client_id'   => '',
-                    'steam_group_name'       => '',
                 );
 
                 update_option( 'socialcountplus_settings', array_merge( $new_options, $settings ) );
@@ -587,12 +587,12 @@ class Social_Count_Plus {
                 $html .= '<td><p><code>[scp code=&quot;instagram&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'SoundCloud counter', 'socialcountplus' ) . '</th>';
-                $html .= '<td><p><code>[scp code=&quot;soundcloud&quot;]</code></p></td>';
-            $html .= '</tr>';
-            $html .= '<tr>';
                 $html .= '<th scope="row">' . __( 'Steam counter', 'socialcountplus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;steam&quot;]</code></p></td>';
+            $html .= '</tr>';
+            $html .= '<tr>';
+                $html .= '<th scope="row">' . __( 'SoundCloud counter', 'socialcountplus' ) . '</th>';
+                $html .= '<td><p><code>[scp code=&quot;soundcloud&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
                 $html .= '<th scope="row">' . __( 'Posts counter', 'socialcountplus' ) . '</th>';
@@ -628,12 +628,12 @@ class Social_Count_Plus {
                 $html .= '<td><p><code>&lt;?php echo get_scp_instagram(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'SoundCloud counter', 'socialcountplus' ) . '</th>';
-                $html .= '<td><p><code>&lt;?php echo get_scp_soundcloud(); ?&gt;</code></p></td>';
-            $html .= '</tr>';
-            $html .= '<tr>';
                 $html .= '<th scope="row">' . __( 'Steam counter', 'socialcountplus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_steam(); ?&gt;</code></p></td>';
+            $html .= '</tr>';
+            $html .= '<tr>';
+                $html .= '<th scope="row">' . __( 'SoundCloud counter', 'socialcountplus' ) . '</th>';
+                $html .= '<td><p><code>&lt;?php echo get_scp_soundcloud(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
                 $html .= '<th scope="row">' . __( 'Posts counter', 'socialcountplus' ) . '</th>';
@@ -964,11 +964,11 @@ class Social_Count_Plus {
                 // Instagram counter.
                 $html .= ( isset( $settings['instagram_active'] ) ) ? $this->get_view_li( 'instagram', 'http://instagram.com/' . $settings['instagram_username'], $count['instagram'], __( 'followers', 'socialcountplus' ), $color ) : '';
 
-                // SoundCloud counter.
-                $html .= ( isset( $settings['soundcloud_active'] ) ) ? $this->get_view_li( 'soundcloud', 'https://soundcloud.com/' . $settings['soundcloud_username'], $count['soundcloud'], __( 'followers', 'socialcountplus' ), $color ) : '';
-
                 // Steam counter
                 $html .= ( isset( $settings['steam_active'] ) ) ? $this->get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'socialcountplus' ), $color ) : '';
+
+                // SoundCloud counter.
+                $html .= ( isset( $settings['soundcloud_active'] ) ) ? $this->get_view_li( 'soundcloud', 'https://soundcloud.com/' . $settings['soundcloud_username'], $count['soundcloud'], __( 'followers', 'socialcountplus' ), $color ) : '';
 
                 // Posts counter.
                 $html .= ( isset( $settings['posts_active'] ) ) ? $this->get_view_li( 'posts', get_home_url(), $count['posts'], __( 'posts', 'socialcountplus' ), $color ) : '';

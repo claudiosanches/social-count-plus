@@ -8,11 +8,11 @@
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
-Display the counting data of Twitter, Facebook, YouTube, Instagram, SoundCloud, Steam Community, posts and comments.
+Display the counting data of Twitter, Facebook, YouTube, Instagram, Steam Community, SoundCloud posts and comments.
 
 ## Description ##
 
-The Social Count Plus performs counting Twitter followers, Facebook fans, YouTube subscribers, Google Plus page followers, Instagram followers, SoundCloud follwers, Steam Community group members, number of posts and comments.
+The Social Count Plus performs counting Twitter followers, Facebook fans, YouTube subscribers, Google Plus page followers, Instagram followers, Steam Community group members, SoundCloud follwers, number of posts and comments.
 
 You can view this information via a widget (with account options models icons) or Shortcodes (to be used in posts and pages) or by functions in PHP.
 
@@ -27,8 +27,8 @@ The cache avoids not only that your blog be seeking new results every time a pag
 * YouTube: `[scp code="youtube"]`
 * Google Plus: `[scp code="googleplus"]`
 * Instagram: `[scp code="instagram"]`
-* SoundCloud: `[scp code="soundcloud"]`
 * Steam: `[scp code="steam"]`
+* SoundCloud: `[scp code="soundcloud"]`
 * Posts: `[scp code="posts"]`
 * Comments: `[scp code="comments"]`
 
@@ -39,8 +39,8 @@ The cache avoids not only that your blog be seeking new results every time a pag
 * YouTube: `<?php echo get_scp_youtube(); ?>`
 * Google Plus: `<?php echo get_scp_googleplus(); ?>`
 * Instagram: `<?php echo get_scp_instagram(); ?>`
-* SoundCloud: `<?php echo get_scp_soundcloud(); ?>`
 * Steam: `<?php echo get_scp_steam(); ?>`
+* SoundCloud: `<?php echo get_scp_soundcloud(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
 * Widget: `<?php echo get_scp_widget(); ?>`
@@ -57,7 +57,7 @@ You can contribute to the source code in our [GitHub](https://github.com/claudio
 
 ### Descrição em Português: ###
 
-O Social Count Plus faz a contagem de seguidores no Twitter, fãs no Facebook, assinantes do YouTube, seguidores em páginas do Google Plus, seguidores no Instagram, seguidores no SoundCloud, membros em grupos do Steam Community, total de posts e comentários.
+O Social Count Plus faz a contagem de seguidores no Twitter, fãs no Facebook, assinantes do YouTube, seguidores em páginas do Google Plus, seguidores no Instagram, membros em grupos do Steam Community, seguidores no SoundCloud, total de posts e comentários.
 
 Você pode exibir estas contagens através de um widget, com Shortcodes ou por funções em PHP.
 
@@ -72,8 +72,8 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 * YouTube: `[scp code="youtube"]`
 * Google Plus: `[scp code="googleplus"]`
 * Instagram: `[scp code="instagram"]`
-* SoundCloud: `[scp code="soundcloud"]`
 * Steam: `[scp code="steam"]`
+* SoundCloud: `[scp code="soundcloud"]`
 * Posts: `[scp code="posts"]`
 * Comments: `[scp code="comments"]`
 
@@ -84,8 +84,8 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 * YouTube: `<?php echo get_scp_youtube(); ?>`
 * Google Plus: `<?php echo get_scp_googleplus(); ?>`
 * Instagram: `<?php echo get_scp_instagram(); ?>`
-* SoundCloud: `<?php echo get_scp_soundcloud(); ?>`
 * Steam: `<?php echo get_scp_steam(); ?>`
+* SoundCloud: `<?php echo get_scp_soundcloud(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
 * Widget: `<?php echo get_scp_widget(); ?>`
@@ -173,11 +173,15 @@ add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transi
 
 ## Changelog ##
 
+### 2.7.1 - 06/09/2013 ###
+
+* Fixed icons order.
+
 ### 2.7.0 - 06/09/2013 ###
 
 * Added Intagram counter.
-* Added SoundCloud counter.
 * Added Steam counter.
+* Added SoundCloud counter.
 * Added `social_count_plus_transient_time` filter.
 * Added flat icons.
 
