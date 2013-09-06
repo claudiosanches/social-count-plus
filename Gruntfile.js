@@ -67,12 +67,6 @@ module.exports = function(grunt) {
                     force: true,
                     outputStyle: "compressed"
                 }
-            },
-            js: {
-                files: [
-                    "<%= jshint.all %>"
-                ],
-                tasks: ["jshint", "uglify"]
             }
         },
 
@@ -83,6 +77,12 @@ module.exports = function(grunt) {
                     "assets/sass/**"
                 ],
                 tasks: ["compass"]
+            },
+            js: {
+                files: [
+                    "<%= jshint.all %>"
+                ],
+                tasks: ["jshint", "uglify"]
             }
         },
 
