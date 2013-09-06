@@ -1,18 +1,18 @@
 === Social Count Plus ===
-Contributors: claudiosanches
+Contributors: claudiosanches, felipesantana
 Donate link: http://claudiosmweb.com/doacoes/
-Tags: facebook, twitter, youtube, google, counter, widget, shortcode
-Requires at least: 3.4
-Tested up to: 3.5.1
-Stable tag: 2.6.0
+Tags: facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode
+Requires at least: 3.5
+Tested up to: 3.6
+Stable tag: 2.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
+Display the counting data of Twitter, Facebook, YouTube, Instagram, SoundCloud, Steam Community, posts and comments.
 
 == Description ==
 
-The Social Count Plus performs counting Twitter followers, Facebook fans, YouTube subscribers, Google Plus page followers, posts and comments.
+The Social Count Plus performs counting Twitter followers, Facebook fans, YouTube subscribers, Google Plus page followers, Instagram followers, SoundCloud follwers, Steam Community group members, number of posts and comments.
 
 You can view this information via a widget (with account options models icons) or Shortcodes (to be used in posts and pages) or by functions in PHP.
 
@@ -26,6 +26,9 @@ The cache avoids not only that your blog be seeking new results every time a pag
 * Facebook: `[scp code="facebook"]`
 * YouTube: `[scp code="youtube"]`
 * Google Plus: `[scp code="googleplus"]`
+* Instagram: `[scp code="instagram"]`
+* SoundCloud: `[scp code="soundcloud"]`
+* Steam: `[scp code="steam"]`
 * Posts: `[scp code="posts"]`
 * Comments: `[scp code="comments"]`
 
@@ -35,6 +38,9 @@ The cache avoids not only that your blog be seeking new results every time a pag
 * Facebook: `<?php echo get_scp_facebook(); ?>`
 * YouTube: `<?php echo get_scp_youtube(); ?>`
 * Google Plus: `<?php echo get_scp_googleplus(); ?>`
+* Instagram: `<?php echo get_scp_instagram(); ?>`
+* SoundCloud: `<?php echo get_scp_soundcloud(); ?>`
+* Steam: `<?php echo get_scp_steam(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
 * Widget: `<?php echo get_scp_widget(); ?>`
@@ -43,9 +49,15 @@ The cache avoids not only that your blog be seeking new results every time a pag
 
 You can contribute to the source code in our [GitHub](https://github.com/claudiosmweb/social-count-plus) page.
 
+#### Credits ####
+
+* Flat icons set, Instagram, SoundCloud and Steam icons by [Felipe Santana](http://wordpress.org/support/profile/felipesantana)
+* Steam counter by [Tadas Krivickas](http://wordpress.org/support/profile/tkrivickas)
+* Instagram access token generator by [Pedro Rogério](http://www.pinceladasdaweb.com.br/)
+
 ### Descrição em Português: ###
 
-O Social Count Plus faz a contagem de seguidores no Twitter, fãs no Facebook, assinantes do YouTube, seguidores em páginas do Google Plus, total de posts e comentários.
+O Social Count Plus faz a contagem de seguidores no Twitter, fãs no Facebook, assinantes do YouTube, seguidores em páginas do Google Plus, seguidores no Instagram, seguidores no SoundCloud, membros em grupos do Steam Community, total de posts e comentários.
 
 Você pode exibir estas contagens através de um widget, com Shortcodes ou por funções em PHP.
 
@@ -59,15 +71,21 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 * Facebook: `[scp code="facebook"]`
 * YouTube: `[scp code="youtube"]`
 * Google Plus: `[scp code="googleplus"]`
+* Instagram: `[scp code="instagram"]`
+* SoundCloud: `[scp code="soundcloud"]`
+* Steam: `[scp code="steam"]`
 * Posts: `[scp code="posts"]`
 * Comments: `[scp code="comments"]`
 
-#### Functions ####
+#### Funções ####
 
 * Twitter: `<?php echo get_scp_twitter(); ?>`
 * Facebook: `<?php echo get_scp_facebook(); ?>`
 * YouTube: `<?php echo get_scp_youtube(); ?>`
 * Google Plus: `<?php echo get_scp_googleplus(); ?>`
+* Instagram: `<?php echo get_scp_instagram(); ?>`
+* SoundCloud: `<?php echo get_scp_soundcloud(); ?>`
+* Steam: `<?php echo get_scp_steam(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
 * Widget: `<?php echo get_scp_widget(); ?>`
@@ -75,6 +93,12 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 #### Coloborar ####
 
 Você pode contribuir com código-fonte em nossa página no [GitHub](https://github.com/claudiosmweb/social-count-plus).
+
+#### Créditos ####
+
+* Pacote de icons flat, Icones do Instagram, SoundCloud e Steam por [Felipe Santana](http://wordpress.org/support/profile/felipesantana)
+* Contador do Steam por [Tadas Krivickas](http://wordpress.org/support/profile/tkrivickas)
+* Gerador de Access Token do Instagram por [Pedro Rogério](http://www.pinceladasdaweb.com.br/)
 
 == Installation ==
 
@@ -98,6 +122,18 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 * Because you need to have a fan page with more than 15 people in it to run the Facebook API.
 
+= How to changing the amount of times the counter is updated daily? =
+
+* You can change using the filter `social_count_plus_transient_time`.  Example:
+
+```php
+function social_count_plus_custom_transient_time( $time ) {
+    return 43200; // 12 hours in seconds.
+}
+
+add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transient_time' );
+```
+
 ### FAQ em Português: ###
 
 = Qual é a licença do plugin? =
@@ -108,6 +144,18 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 * Porque você precisa ter uma fã page com mais de 15 pessoas nela para funcionar a API do Facebook.
 
+= Como alterar a quantidade de vezes que o contador é atualizado por dia? =
+
+* Você pode modificar usando o filtro `social_count_plus_transient_time`.  Exemplo:
+
+```php
+function social_count_plus_custom_transient_time( $time ) {
+    return 43200; // 12 horas em segundos.
+}
+
+add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transient_time' );
+```
+
 == Screenshots ==
 
 1. Plugin settings.
@@ -117,40 +165,48 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 == Changelog ==
 
-= 2.6.0 21/06/2013 =
+= 2.7.0 - 06/09/2013 =
+
+* Added Intagram counter.
+* Added SoundCloud counter.
+* Added Steam counter.
+* Added `social_count_plus_transient_time` filter.
+* Added flat icons.
+
+= 2.6.0 - 21/06/2013 =
 
 * Added uninstall file.
 
-= 2.5.0 21/06/2013 =
+= 2.5.0 - 21/06/2013 =
 
 * Added option to change the text color of the widget.
 
-= 2.4.0 21/06/2013 =
+= 2.4.0 - 21/06/2013 =
 
 * Added Google Plus counter.
 
-= 2.3.0 20/06/2013 =
+= 2.3.0 - 20/06/2013 =
 
 * Updated the Twitter API to 1.1 version.
 
-= 2.2 19/04/2013 =
+= 2.2 - 19/04/2013 =
 
 * Added `social_count_plus_number_format` filter.
 
-= 2.1.1 22/01/2013 =
+= 2.1.1 - 22/01/2013 =
 
 * Removed cleaning transients to save a post.
 
-= 2.1 18/01/2013 =
+= 2.1 - 18/01/2013 =
 
 * Fixed a bug that was generated by adding an incorrect user the option of YouTube.
 
-= 2.0.1 14/01/2013 =
+= 2.0.1 - 14/01/2013 =
 
 * Fixed styles.
 * Fixed YouTube widget icon.
 
-= 2.0 14/01/2013 =
+= 2.0 - 14/01/2013 =
 
 * Source code reformulation.
 * Added YouTube counter.

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Social Count Plus v2.7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-09-06 03:17:42+0000\n"
+"PO-Revision-Date: 2013-09-06 03:30:51+0000\n"
 "Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,12 +44,6 @@ msgstr "Título"
 #@ socialcountplus
 msgid "http://claudiosmweb.com/"
 msgstr "http://claudiosmweb.com/"
-
-#. translators: plugin header field 'Author'
-#: social-count-plus.php:0
-#@ socialcountplus
-msgid "claudiosanches"
-msgstr "claudiosanches"
 
 #: social-count-plus.php:114
 #@ socialcountplus
@@ -445,4 +439,10 @@ msgstr "membros"
 #@ socialcountplus
 msgid "SoundCloud Client ID"
 msgstr "Client ID do SoundCloud"
+
+#. translators: plugin header field 'Author'
+#: social-count-plus.php:0
+#@ socialcountplus
+msgid "claudiosanches, felipesantana"
+msgstr "claudiosanches, felipesantana"
 
