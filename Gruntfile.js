@@ -86,6 +86,22 @@ module.exports = function(grunt) {
             }
         },
 
+        // image optimization
+        imagemin: {
+            dist: {
+                options: {
+                    optimizationLevel: 7,
+                    progressive: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: "assets/images/",
+                    src: ["**/*.png"],
+                    dest: "assets/images/"
+                }]
+            }
+        },
+
         // rsync commands used to take the files to svn repository
         rsync: {
             tag: {
@@ -132,6 +148,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-compass");
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks("grunt-rsync");
     grunt.loadNpmTasks("grunt-shell");
 
