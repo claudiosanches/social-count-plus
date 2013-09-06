@@ -3,6 +3,8 @@
 
 /* General styles */
 .social-count-plus {
+    @include pie-clearfix;
+
     .clear {
         clear: both;
     }
@@ -28,6 +30,7 @@
         display: block;
         float: none;
         padding-bottom: 10px;
+        text-align: left;
         width: 100%;
     }
 
@@ -63,6 +66,12 @@
         width: 36px !important;
     }
 
+    .flat a {
+        background-image: url('../images/sprite-flat.png') !important;
+        height: 32px !important;
+        width: 32px !important;
+    }
+
     .vertical a {
         float: left;
     }
@@ -95,57 +104,21 @@
         text-transform: capitalize;
     }
 
-    /* Twitter */
-    .default .count-twitter a {
-        background-position: 0 0 !important;
-    }
+    /* Sprites */
+    $icons: twitter, facebook, youtube, googleplus, posts, comments, instagram, soundcloud, steam;
+    @each $icon in $icons {
+        $i: index($icons, $icon);
 
-    .circle .count-twitter a {
-        background-position: 0 0 !important;
-    }
+        .default .count-#{$icon} a {
+            background-position: (-32px*$i) 0 !important;
+        }
 
-    /* Facebook */
-    .default .count-facebook a {
-        background-position: -32px 0 !important;
-    }
+        .circle .count-#{$icon} a {
+            background-position: (-36px*$i) 0 !important;
+        }
 
-    .circle .count-facebook a {
-        background-position: -36px 0 !important;
-    }
-
-    /* YouTube */
-    .default .count-youtube a {
-        background-position: -64px 0 !important;
-    }
-
-    .circle .count-youtube a {
-        background-position: -72px 0 !important;
-    }
-
-    /* Google Plus */
-    .default .count-googleplus a {
-        background-position: -96px 0 !important;
-    }
-
-    .circle .count-googleplus a {
-        background-position: -108px 0 !important;
-    }
-
-    /* Posts */
-    .default .count-posts a {
-        background-position: -128px 0 !important;
-    }
-
-    .circle .count-posts a {
-        background-position: -144px 0 !important;
-    }
-
-    /* Comments */
-    .default .count-comments a {
-        background-position: -160px 0 !important;
-    }
-
-    .circle .count-comments a {
-        background-position: -180px 0 !important;
+        .flat .count-#{$icon} a {
+            background-position: (-32px*$i) 0 !important;
+        }
     }
 }

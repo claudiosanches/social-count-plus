@@ -343,7 +343,9 @@ class Social_Count_Plus {
                     'design-default.png',
                     'design-default-vertical.png',
                     'design-circle.png',
-                    'design-circle-vertical.png'
+                    'design-circle-vertical.png',
+                    'design-flat.png',
+                    'design-flat-vertical.png',
                 ),
                 'section' => 'design',
                 'menu' => 'socialcountplus_design'
@@ -932,6 +934,12 @@ class Social_Count_Plus {
             case 3:
                 $style = 'circle vertical';
                 break;
+            case 4:
+                $style = 'flat';
+                break;
+            case 5:
+                $style = 'flat vertical';
+                break;
 
             default:
                 $style = 'default';
@@ -969,7 +977,6 @@ class Social_Count_Plus {
                 $html .= ( isset( $settings['comments_active'] ) ) ? $this->get_view_li( 'comments', get_home_url(), $count['comments'], __( 'comments', 'socialcountplus' ), $color ) : '';
 
             $html .= '</ul>';
-            $html .= '<div class="clear"></div>';
         $html .= '</div>';
 
         return $html;
