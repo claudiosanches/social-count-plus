@@ -3,8 +3,8 @@ Contributors: claudiosanches, felipesantana
 Donate link: http://claudiosmweb.com/doacoes/
 Tags: facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode
 Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 2.7.0
+Tested up to: 3.7
+Stable tag: 2.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -164,6 +164,11 @@ add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transi
 4. Widget.
 
 == Changelog ==
+
+= 2.7.2 - 26/10/2013 =
+
+* Fixed the textdomain for new WordPress 3.7 standard.
+* Fixed the icons padding.
 
 = 2.7.1 - 06/09/2013 =
 

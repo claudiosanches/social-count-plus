@@ -13,8 +13,8 @@ class SocialCountPlus extends WP_Widget {
     function SocialCountPlus() {
         global $social_count_plus;
 
-        $widget_ops = array( 'social_count_plus' => 'SocialCountPlus', 'description' => __( 'Display the counter', 'socialcountplus' ) );
-        $this->WP_Widget( 'SocialCountPlus', __( 'Social Count Plus', 'socialcountplus' ), $widget_ops );
+        $widget_ops = array( 'social_count_plus' => 'SocialCountPlus', 'description' => __( 'Display the counter', 'social-count-plus' ) );
+        $this->WP_Widget( 'SocialCountPlus', __( 'Social Count Plus', 'social-count-plus' ), $widget_ops );
 
         $this->plugin_view = $social_count_plus->view();
     }
@@ -25,7 +25,7 @@ class SocialCountPlus extends WP_Widget {
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
 
-        echo sprintf( '<p><label for="%1$s">%2$s: <input class="widefat" id="%1$s" name="%3$s" type="text" value="%4$s" /></label></p>', $this->get_field_id( 'title' ), __( 'Title', 'socialcountplus' ), $this->get_field_name( 'title' ), esc_attr( $instance['title'] ) );
+        echo sprintf( '<p><label for="%1$s">%2$s: <input class="widefat" id="%1$s" name="%3$s" type="text" value="%4$s" /></label></p>', $this->get_field_id( 'title' ), __( 'Title', 'social-count-plus' ), $this->get_field_name( 'title' ), esc_attr( $instance['title'] ) );
     }
 
     /**

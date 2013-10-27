@@ -5,9 +5,9 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches, felipesantana
  * Author URI: http://claudiosmweb.com/
- * Version: 2.7.1
+ * Version: 2.7.2
  * License: GPLv2 or later
- * Text Domain: socialcountplus
+ * Text Domain: social-count-plus
  * Domain Path: /languages/
  */
 
@@ -59,7 +59,7 @@ class Social_Count_Plus {
      * Load translations.
      */
     public function languages() {
-        load_plugin_textdomain( 'socialcountplus', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        load_plugin_textdomain( 'social-count-plus', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
     }
 
     /**
@@ -74,8 +74,8 @@ class Social_Count_Plus {
         $settings = array(
             'settings' => sprintf(
                 '<a href="%s">%s</a>',
-                admin_url( 'options-general.php?page=socialcountplus' ),
-                __( 'Settings', 'socialcountplus' )
+                admin_url( 'options-general.php?page=social-count-plus' ),
+                __( 'Settings', 'social-count-plus' )
             )
         );
 
@@ -105,33 +105,33 @@ class Social_Count_Plus {
      */
     protected function default_settings() {
 
-        $twitter_oauth_description = sprintf( __( 'Create an APP on Twitter in %s and get this information', 'socialcountplus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
+        $twitter_oauth_description = sprintf( __( 'Create an APP on Twitter in %s and get this information', 'social-count-plus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
 
-        $instagram_access_token = sprintf( __( 'Get the this information in %s', 'socialcountplus' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
+        $instagram_access_token = sprintf( __( 'Get the this information in %s', 'social-count-plus' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
 
         $settings = array(
             'twitter' => array(
-                'title' => __( 'Twitter', 'socialcountplus' ),
+                'title' => __( 'Twitter', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_settings'
             ),
             'twitter_active' => array(
-                'title' => __( 'Display Twitter counter', 'socialcountplus' ),
+                'title' => __( 'Display Twitter counter', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'checkbox',
                 'section' => 'twitter',
                 'menu' => 'socialcountplus_settings'
             ),
             'twitter_user' => array(
-                'title' => __( 'Twitter username', 'socialcountplus' ),
+                'title' => __( 'Twitter username', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'Insert the Twitter username. Example: ferramentasblog', 'socialcountplus' ),
+                'description' => __( 'Insert the Twitter username. Example: ferramentasblog', 'social-count-plus' ),
                 'section' => 'twitter',
                 'menu' => 'socialcountplus_settings'
             ),
             'twitter_consumer_key' => array(
-                'title' => __( 'Twitter Consumer key', 'socialcountplus' ),
+                'title' => __( 'Twitter Consumer key', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
                 'description' => $twitter_oauth_description,
@@ -139,7 +139,7 @@ class Social_Count_Plus {
                 'menu' => 'socialcountplus_settings'
             ),
             'twitter_consumer_secret' => array(
-                'title' => __( 'Twitter Consumer secret', 'socialcountplus' ),
+                'title' => __( 'Twitter Consumer secret', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
                 'description' => $twitter_oauth_description,
@@ -147,7 +147,7 @@ class Social_Count_Plus {
                 'menu' => 'socialcountplus_settings'
             ),
             'twitter_access_token' => array(
-                'title' => __( 'Twitter Access token', 'socialcountplus' ),
+                'title' => __( 'Twitter Access token', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
                 'description' => $twitter_oauth_description,
@@ -155,7 +155,7 @@ class Social_Count_Plus {
                 'menu' => 'socialcountplus_settings'
             ),
             'twitter_access_token_secret' => array(
-                'title' => __( 'Twitter Access token secret', 'socialcountplus' ),
+                'title' => __( 'Twitter Access token secret', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
                 'description' => $twitter_oauth_description,
@@ -163,180 +163,180 @@ class Social_Count_Plus {
                 'menu' => 'socialcountplus_settings'
             ),
             'facebook' => array(
-                'title' => __( 'Facebook', 'socialcountplus' ),
+                'title' => __( 'Facebook', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_settings'
             ),
             'facebook_active' => array(
-                'title' => __( 'Display Facebook counter', 'socialcountplus' ),
+                'title' => __( 'Display Facebook counter', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'checkbox',
                 'section' => 'facebook',
                 'menu' => 'socialcountplus_settings'
             ),
             'facebook_id' => array(
-                'title' => __( 'Facebook Page ID', 'socialcountplus' ),
+                'title' => __( 'Facebook Page ID', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'ID Facebook page. Must be the numeric ID.<br />You can find this information clicking to edit your page on Facebook. The URL will be similar to this:<br />https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>', 'socialcountplus' ),
+                'description' => __( 'ID Facebook page. Must be the numeric ID.<br />You can find this information clicking to edit your page on Facebook. The URL will be similar to this:<br />https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>', 'social-count-plus' ),
                 'section' => 'facebook',
                 'menu' => 'socialcountplus_settings'
             ),
             'youtube' => array(
-                'title' => __( 'YouTube', 'socialcountplus' ),
+                'title' => __( 'YouTube', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_settings'
             ),
             'youtube_active' => array(
-                'title' => __( 'Display YouTube counter', 'socialcountplus' ),
+                'title' => __( 'Display YouTube counter', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'checkbox',
                 'section' => 'youtube',
                 'menu' => 'socialcountplus_settings'
             ),
             'youtube_user' => array(
-                'title' => __( 'YouTube username', 'socialcountplus' ),
+                'title' => __( 'YouTube username', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'Insert the YouTube username. Example: lemos81', 'socialcountplus' ),
+                'description' => __( 'Insert the YouTube username. Example: lemos81', 'social-count-plus' ),
                 'section' => 'youtube',
                 'menu' => 'socialcountplus_settings'
             ),
             'googleplus' => array(
-                'title' => __( 'Google Plus', 'socialcountplus' ),
+                'title' => __( 'Google Plus', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_settings'
             ),
             'googleplus_active' => array(
-                'title' => __( 'Display Google Plus counter', 'socialcountplus' ),
+                'title' => __( 'Display Google Plus counter', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'checkbox',
                 'section' => 'googleplus',
                 'menu' => 'socialcountplus_settings'
             ),
             'googleplus_id' => array(
-                'title' => __( 'Google Plus page ID', 'socialcountplus' ),
+                'title' => __( 'Google Plus page ID', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'Google Plus page ID. Must be the numeric ID.<br />You can find this information clicking to edit your page on Google Plus. The URL will be similar to this:<br />https://plus.google.com/<strong>115161266310935247804</strong>', 'socialcountplus' ),
+                'description' => __( 'Google Plus page ID. Must be the numeric ID.<br />You can find this information clicking to edit your page on Google Plus. The URL will be similar to this:<br />https://plus.google.com/<strong>115161266310935247804</strong>', 'social-count-plus' ),
                 'section' => 'googleplus',
                 'menu' => 'socialcountplus_settings'
             ),
             'instagram' => array(
-                'title' => __( 'Instagram', 'socialcountplus' ),
+                'title' => __( 'Instagram', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_settings'
             ),
             'instagram_active' => array(
-                'title' => __( 'Display Instagram counter', 'socialcountplus' ),
+                'title' => __( 'Display Instagram counter', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'checkbox',
                 'section' => 'instagram',
                 'menu' => 'socialcountplus_settings'
             ),
             'instagram_username' => array(
-                'title' => __( 'Instagram Username', 'socialcountplus' ),
+                'title' => __( 'Instagram Username', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'Insert the Instagram Username.', 'socialcountplus' ),
+                'description' => __( 'Insert the Instagram Username.', 'social-count-plus' ),
                 'section' => 'instagram',
                 'menu' => 'socialcountplus_settings'
             ),
             'instagram_user_id' => array(
-                'title' => __( 'Instagram User ID', 'socialcountplus' ),
+                'title' => __( 'Instagram User ID', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'Insert the Instagram User ID.', 'socialcountplus' ) . ' ' . $instagram_access_token,
+                'description' => __( 'Insert the Instagram User ID.', 'social-count-plus' ) . ' ' . $instagram_access_token,
                 'section' => 'instagram',
                 'menu' => 'socialcountplus_settings'
             ),
             'instagram_access_token' => array(
-                'title' => __( 'Instagram Access Token', 'socialcountplus' ),
+                'title' => __( 'Instagram Access Token', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'Insert the Instagram Access Token.', 'socialcountplus' ) . ' ' . $instagram_access_token,
+                'description' => __( 'Insert the Instagram Access Token.', 'social-count-plus' ) . ' ' . $instagram_access_token,
                 'section' => 'instagram',
                 'menu' => 'socialcountplus_settings'
             ),
             'steam' => array(
-                'title' => __( 'Steam', 'socialcountplus' ),
+                'title' => __( 'Steam', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_settings'
             ),
             'steam_active' => array(
-                'title' => __( 'Display Steam counter', 'socialcountplus' ),
+                'title' => __( 'Display Steam counter', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'checkbox',
                 'section' => 'steam',
                 'menu' => 'socialcountplus_settings'
             ),
             'steam_group_name' => array(
-                'title' => __( 'Steam group name', 'socialcountplus' ),
+                'title' => __( 'Steam group name', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'Insert the Steam Community group name. Example: DOTALT', 'socialcountplus' ),
+                'description' => __( 'Insert the Steam Community group name. Example: DOTALT', 'social-count-plus' ),
                 'section' => 'steam',
                 'menu' => 'socialcountplus_settings'
             ),
             'soundcloud' => array(
-                'title' => __( 'SoundCloud', 'socialcountplus' ),
+                'title' => __( 'SoundCloud', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_settings'
             ),
             'soundcloud_active' => array(
-                'title' => __( 'Display SoundCloud counter', 'socialcountplus' ),
+                'title' => __( 'Display SoundCloud counter', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'checkbox',
                 'section' => 'soundcloud',
                 'menu' => 'socialcountplus_settings'
             ),
             'soundcloud_username' => array(
-                'title' => __( 'SoundCloud Username', 'socialcountplus' ),
+                'title' => __( 'SoundCloud Username', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => __( 'Insert the SoundCloud Username.', 'socialcountplus' ),
+                'description' => __( 'Insert the SoundCloud Username.', 'social-count-plus' ),
                 'section' => 'soundcloud',
                 'menu' => 'socialcountplus_settings'
             ),
             'soundcloud_client_id' => array(
-                'title' => __( 'SoundCloud Client ID', 'socialcountplus' ),
+                'title' => __( 'SoundCloud Client ID', 'social-count-plus' ),
                 'default' => null,
                 'type' => 'text',
-                'description' => sprintf( __( 'Insert the SoundCloud APP Client ID. Generate this information in %s', 'socialcountplus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' ),
+                'description' => sprintf( __( 'Insert the SoundCloud APP Client ID. Generate this information in %s', 'social-count-plus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' ),
                 'section' => 'soundcloud',
                 'menu' => 'socialcountplus_settings'
             ),
             'posts' => array(
-                'title' => __( 'Posts', 'socialcountplus' ),
+                'title' => __( 'Posts', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_settings'
             ),
             'posts_active' => array(
-                'title' => __( 'Display Posts counter', 'socialcountplus' ),
+                'title' => __( 'Display Posts counter', 'social-count-plus' ),
                 'default' => 1,
                 'type' => 'checkbox',
                 'section' => 'posts',
                 'menu' => 'socialcountplus_settings'
             ),
             'comments' => array(
-                'title' => __( 'Comments', 'socialcountplus' ),
+                'title' => __( 'Comments', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_settings'
             ),
             'comments_active' => array(
-                'title' => __( 'Display Comments counter', 'socialcountplus' ),
+                'title' => __( 'Display Comments counter', 'social-count-plus' ),
                 'default' => 1,
                 'type' => 'checkbox',
                 'section' => 'comments',
                 'menu' => 'socialcountplus_settings'
             ),
             'design' => array(
-                'title' => __( 'Design', 'socialcountplus' ),
+                'title' => __( 'Design', 'social-count-plus' ),
                 'type' => 'section',
                 'menu' => 'socialcountplus_design'
             ),
             'models' => array(
-                'title' => __( 'Layout Models', 'socialcountplus' ),
+                'title' => __( 'Layout Models', 'social-count-plus' ),
                 'default' => 0,
                 'type' => 'models',
                 'options' => array(
@@ -351,7 +351,7 @@ class Social_Count_Plus {
                 'menu' => 'socialcountplus_design'
             ),
             'text_color' => array(
-                'title' => __( 'Text Color', 'socialcountplus' ),
+                'title' => __( 'Text Color', 'social-count-plus' ),
                 'default' => '#333333',
                 'type' => 'color',
                 'section' => 'design',
@@ -481,10 +481,10 @@ class Social_Count_Plus {
      */
     public function menu() {
         add_options_page(
-            __( 'Social Count Plus', 'socialcountplus' ),
-            __( 'Social Count Plus', 'socialcountplus' ),
+            __( 'Social Count Plus', 'social-count-plus' ),
+            __( 'Social Count Plus', 'social-count-plus' ),
             'manage_options',
-            'socialcountplus',
+            'social-count-plus',
             array( &$this, 'settings_page' )
         );
     }
@@ -513,7 +513,7 @@ class Social_Count_Plus {
         <div class="wrap">
             <?php screen_icon( 'options-general' ); ?>
             <h2 class="nav-tab-wrapper">
-                <a href="admin.php?page=socialcountplus&amp;tab=settings" class="nav-tab <?php echo $current_tab == 'settings' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Settings', 'socialcountplus' ); ?></a><a href="admin.php?page=socialcountplus&amp;tab=design" class="nav-tab <?php echo $current_tab == 'design' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Design', 'socialcountplus' ); ?></a><a href="admin.php?page=socialcountplus&amp;tab=shortcodes" class="nav-tab <?php echo $current_tab == 'shortcodes' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Shortcodes and Functions', 'socialcountplus' ); ?></a>
+                <a href="admin.php?page=social-count-plus&amp;tab=settings" class="nav-tab <?php echo $current_tab == 'settings' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Settings', 'social-count-plus' ); ?></a><a href="admin.php?page=social-count-plus&amp;tab=design" class="nav-tab <?php echo $current_tab == 'design' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Design', 'social-count-plus' ); ?></a><a href="admin.php?page=social-count-plus&amp;tab=shortcodes" class="nav-tab <?php echo $current_tab == 'shortcodes' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Shortcodes and Functions', 'social-count-plus' ); ?></a>
             </h2>
 
             <?php
@@ -526,13 +526,13 @@ class Social_Count_Plus {
                 ) ) :
              ?>
                 <div class="error">
-                    <p><?php _e( 'To use the counter of Twitter you need to fill the fields:', 'socialcountplus' ); ?></p>
+                    <p><?php _e( 'To use the counter of Twitter you need to fill the fields:', 'social-count-plus' ); ?></p>
                     <ul style="list-style: disc; margin-left: 20px;">
-                        <li><strong><?php _e( 'Twitter username', 'socialcountplus' ); ?></strong></li>
-                        <li><strong><?php _e( 'Twitter Consumer key', 'socialcountplus' ); ?></strong></li>
-                        <li><strong><?php _e( 'Twitter Consumer secret', 'socialcountplus' ); ?></strong></li>
-                        <li><strong><?php _e( 'Twitter Access token', 'socialcountplus' ); ?></strong></li>
-                        <li><strong><?php _e( 'Twitter Access token secret', 'socialcountplus' ); ?></strong></li>
+                        <li><strong><?php _e( 'Twitter username', 'social-count-plus' ); ?></strong></li>
+                        <li><strong><?php _e( 'Twitter Consumer key', 'social-count-plus' ); ?></strong></li>
+                        <li><strong><?php _e( 'Twitter Consumer secret', 'social-count-plus' ); ?></strong></li>
+                        <li><strong><?php _e( 'Twitter Access token', 'social-count-plus' ); ?></strong></li>
+                        <li><strong><?php _e( 'Twitter Access token secret', 'social-count-plus' ); ?></strong></li>
                     </ul>
                 </div>
             <?php endif; ?>
@@ -561,90 +561,90 @@ class Social_Count_Plus {
      * Shortcode pages.
      */
     private function page_shortcodes() {
-        $html = '<p>' . __( 'Use this library to generate your own model layout or display specific data counters.', 'socialcountplus' ) . '</p>';
+        $html = '<p>' . __( 'Use this library to generate your own model layout or display specific data counters.', 'social-count-plus' ) . '</p>';
 
-        $html .= '<h3>' . __( 'Shortcodes', 'socialcountplus' ) . '</h3>';
+        $html .= '<h3>' . __( 'Shortcodes', 'social-count-plus' ) . '</h3>';
 
         $html .= '<table class="form-table">';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Twitter counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Twitter counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;twitter&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Facebook counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Facebook counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;facebook&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'YouTube counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'YouTube counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;youtube&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Google Plus counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Google Plus counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;googleplus&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Instagram counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Instagram counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;instagram&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Steam counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Steam counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;steam&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'SoundCloud counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'SoundCloud counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;soundcloud&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Posts counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Posts counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;posts&quot;]</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Comments counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Comments counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>[scp code=&quot;comments&quot;]</code></p></td>';
             $html .= '</tr>';
         $html .= '</table>';
 
-        $html .= '<h3>' . __( 'Functions', 'socialcountplus' ) . '</h3>';
+        $html .= '<h3>' . __( 'Functions', 'social-count-plus' ) . '</h3>';
 
         $html .= '<table class="form-table">';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Twitter counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Twitter counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_twitter(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Facebook counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Facebook counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_facebook(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'YouTube counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'YouTube counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_youtube(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Google Plus counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Google Plus counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_googleplus(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Instagram counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Instagram counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_instagram(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Steam counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Steam counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_steam(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'SoundCloud counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'SoundCloud counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_soundcloud(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Posts counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Posts counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_posts(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Comments counter', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Comments counter', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_comments(); ?&gt;</code></p></td>';
             $html .= '</tr>';
             $html .= '<tr>';
-                $html .= '<th scope="row">' . __( 'Full widget', 'socialcountplus' ) . '</th>';
+                $html .= '<th scope="row">' . __( 'Full widget', 'social-count-plus' ) . '</th>';
                 $html .= '<td><p><code>&lt;?php echo get_scp_widget(); ?&gt;</code></p></td>';
             $html .= '</tr>';
         $html .= '</table>';
@@ -793,7 +793,7 @@ class Social_Count_Plus {
 
         $html = sprintf( '<input type="checkbox" id="%1$s" name="%2$s[%1$s]" value="1"%3$s />', $id, $menu, checked( 1, $current, false ) );
 
-        $html .= sprintf( '<label for="%s"> %s</label><br />', $id, __( 'Activate/Deactivate', 'socialcountplus' ) );
+        $html .= sprintf( '<label for="%s"> %s</label><br />', $id, __( 'Activate/Deactivate', 'social-count-plus' ) );
 
         // Displays option description.
         if ( isset( $args['description'] ) )
@@ -950,31 +950,31 @@ class Social_Count_Plus {
             $html .= '<ul class="' . $style . '">';
 
                 // Twitter counter.
-                $html .= ( isset( $settings['twitter_active'] ) ) ? $this->get_view_li( 'twitter', 'http://twitter.com/' . $settings['twitter_user'], $count['twitter'], __( 'followers', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['twitter_active'] ) ) ? $this->get_view_li( 'twitter', 'http://twitter.com/' . $settings['twitter_user'], $count['twitter'], __( 'followers', 'social-count-plus' ), $color ) : '';
 
                 // Facebook counter.
-                $html .= ( isset( $settings['facebook_active'] ) ) ? $this->get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $count['facebook'], __( 'likes', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['facebook_active'] ) ) ? $this->get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $count['facebook'], __( 'likes', 'social-count-plus' ), $color ) : '';
 
                 // YouTube counter.
-                $html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', 'http://www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', 'http://www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'social-count-plus' ), $color ) : '';
 
                 // Google Plus counter.
-                $html .= ( isset( $settings['googleplus_active'] ) ) ? $this->get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['googleplus_active'] ) ) ? $this->get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'social-count-plus' ), $color ) : '';
 
                 // Instagram counter.
-                $html .= ( isset( $settings['instagram_active'] ) ) ? $this->get_view_li( 'instagram', 'http://instagram.com/' . $settings['instagram_username'], $count['instagram'], __( 'followers', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['instagram_active'] ) ) ? $this->get_view_li( 'instagram', 'http://instagram.com/' . $settings['instagram_username'], $count['instagram'], __( 'followers', 'social-count-plus' ), $color ) : '';
 
                 // Steam counter
-                $html .= ( isset( $settings['steam_active'] ) ) ? $this->get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['steam_active'] ) ) ? $this->get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'social-count-plus' ), $color ) : '';
 
                 // SoundCloud counter.
-                $html .= ( isset( $settings['soundcloud_active'] ) ) ? $this->get_view_li( 'soundcloud', 'https://soundcloud.com/' . $settings['soundcloud_username'], $count['soundcloud'], __( 'followers', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['soundcloud_active'] ) ) ? $this->get_view_li( 'soundcloud', 'https://soundcloud.com/' . $settings['soundcloud_username'], $count['soundcloud'], __( 'followers', 'social-count-plus' ), $color ) : '';
 
                 // Posts counter.
-                $html .= ( isset( $settings['posts_active'] ) ) ? $this->get_view_li( 'posts', get_home_url(), $count['posts'], __( 'posts', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['posts_active'] ) ) ? $this->get_view_li( 'posts', get_home_url(), $count['posts'], __( 'posts', 'social-count-plus' ), $color ) : '';
 
                 // Comments counter.
-                $html .= ( isset( $settings['comments_active'] ) ) ? $this->get_view_li( 'comments', get_home_url(), $count['comments'], __( 'comments', 'socialcountplus' ), $color ) : '';
+                $html .= ( isset( $settings['comments_active'] ) ) ? $this->get_view_li( 'comments', get_home_url(), $count['comments'], __( 'comments', 'social-count-plus' ), $color ) : '';
 
             $html .= '</ul>';
         $html .= '</div>';
