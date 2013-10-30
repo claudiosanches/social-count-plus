@@ -126,13 +126,11 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 * You can change using the filter `social_count_plus_transient_time`.  Example:
 
-```php
-function social_count_plus_custom_transient_time( $time ) {
-    return 43200; // 12 hours in seconds.
-}
+    function social_count_plus_custom_transient_time( $time ) {
+        return 43200; // 12 hours in seconds.
+    }
 
-add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transient_time' );
-```
+    add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transient_time' );
 
 ### FAQ em Português: ###
 
@@ -148,13 +146,11 @@ add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transi
 
 * Você pode modificar usando o filtro `social_count_plus_transient_time`.  Exemplo:
 
-```php
-function social_count_plus_custom_transient_time( $time ) {
-    return 43200; // 12 horas em segundos.
-}
+    function social_count_plus_custom_transient_time( $time ) {
+        return 43200; // 12 horas em segundos.
+    }
 
-add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transient_time' );
-```
+    add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transient_time' );
 
 ## Screenshots ##
 
