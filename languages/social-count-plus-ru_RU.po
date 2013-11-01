@@ -1,0 +1,447 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Social Count Plus v2.7.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/social-count-plus\n"
+"POT-Creation-Date: 2013-10-27 00:42:32+00:00\n"
+"PO-Revision-Date: 2013-10-31 13:10+0400\n"
+"Last-Translator: Elvis TEAM <elviswebteam@gmail.com>\n"
+"Language-Team: Elvis WT <elviswebteam@gmail.com>\n"
+"Language: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ social-count-plus
+#: includes/class-widget.php:16
+msgid "Display the counter"
+msgstr "Показывать счетчик"
+
+# @ social-count-plus
+#. #-#-#-#-#  social-count-plus.pot (Social Count Plus 2.7.1)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/class-widget.php:17 novo.php:484 novo.php:485
+#: social-count-plus.php:484 social-count-plus.php:485
+msgid "Social Count Plus"
+msgstr "Соц счетчики +"
+
+# @ social-count-plus
+#: includes/class-widget.php:28
+msgid "Title"
+msgstr "Заголовок"
+
+# @ social-count-plus
+#: novo.php:78 novo.php:516 social-count-plus.php:78 social-count-plus.php:516
+msgid "Settings"
+msgstr "Настройки"
+
+# @ social-count-plus
+#: novo.php:108 social-count-plus.php:108
+msgid "Create an APP on Twitter in %s and get this information"
+msgstr "Создайте приложение в Twitter %s и получите эту информацию"
+
+# @ social-count-plus
+#: novo.php:110 social-count-plus.php:110
+msgid "Get the this information in %s"
+msgstr "Получите эту информацию здесь %s"
+
+# @ social-count-plus
+#: novo.php:114 social-count-plus.php:114
+msgid "Twitter"
+msgstr "Twitter"
+
+# @ social-count-plus
+#: novo.php:119 social-count-plus.php:119
+msgid "Display Twitter counter"
+msgstr "Показывать счетчик Twitter"
+
+# @ social-count-plus
+#: novo.php:126 novo.php:531 social-count-plus.php:126
+#: social-count-plus.php:531
+msgid "Twitter username"
+msgstr "Пользователь Twitter"
+
+# @ social-count-plus
+#: novo.php:129 social-count-plus.php:129
+msgid "Insert the Twitter username. Example: ferramentasblog"
+msgstr "Введите имя пользователя Twitter. Пример: ferramentasblog"
+
+# @ social-count-plus
+#: novo.php:134 novo.php:532 social-count-plus.php:134
+#: social-count-plus.php:532
+msgid "Twitter Consumer key"
+msgstr "Twitter Consumer key"
+
+# @ social-count-plus
+#: novo.php:142 novo.php:533 social-count-plus.php:142
+#: social-count-plus.php:533
+msgid "Twitter Consumer secret"
+msgstr "Twitter Consumer secret"
+
+# @ social-count-plus
+#: novo.php:150 novo.php:534 social-count-plus.php:150
+#: social-count-plus.php:534
+msgid "Twitter Access token"
+msgstr "Twitter Access token"
+
+# @ social-count-plus
+#: novo.php:158 novo.php:535 social-count-plus.php:158
+#: social-count-plus.php:535
+msgid "Twitter Access token secret"
+msgstr "Twitter Access token secret"
+
+# @ social-count-plus
+#: novo.php:166 social-count-plus.php:166
+msgid "Facebook"
+msgstr "Facebook"
+
+# @ social-count-plus
+#: novo.php:171 social-count-plus.php:171
+msgid "Display Facebook counter"
+msgstr "Показывать счетчик Facebook"
+
+# @ social-count-plus
+#: novo.php:178 social-count-plus.php:178
+msgid "Facebook Page ID"
+msgstr "ID страницы Facebook"
+
+# @ social-count-plus
+#: novo.php:181 social-count-plus.php:181
+msgid ""
+"ID Facebook page. Must be the numeric ID.<br />You can find this information "
+"clicking to edit your page on Facebook. The URL will be similar to this:<br /"
+">https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
+msgstr ""
+"ID страницы Facebook. Должно быть числовое значение.<br />Вы можете найти "
+"эту информацию, нажав на кнопку \"Редактировать\" на станице. Ссылка будет "
+"похожа на:<br />https://www.facebook.com/pages/edit/?"
+"id=<strong>162354720442454</strong>"
+
+# @ social-count-plus
+#: novo.php:186 social-count-plus.php:186
+msgid "YouTube"
+msgstr "YouTube"
+
+# @ social-count-plus
+#: novo.php:191 social-count-plus.php:191
+msgid "Display YouTube counter"
+msgstr "Показывать счетчик YouTube"
+
+# @ social-count-plus
+#: novo.php:198 social-count-plus.php:198
+msgid "YouTube username"
+msgstr "Пользователь YouTube"
+
+# @ social-count-plus
+#: novo.php:201 social-count-plus.php:201
+msgid "Insert the YouTube username. Example: lemos81"
+msgstr "Введите имя пользователя YouTube. Пример: lemos81"
+
+# @ social-count-plus
+#: novo.php:206 social-count-plus.php:206
+msgid "Google Plus"
+msgstr "Google Plus"
+
+# @ social-count-plus
+#: novo.php:211 social-count-plus.php:211
+msgid "Display Google Plus counter"
+msgstr "Показывать счетчик Google+"
+
+# @ social-count-plus
+#: novo.php:218 social-count-plus.php:218
+msgid "Google Plus page ID"
+msgstr "ID страницы Google+"
+
+# @ social-count-plus
+#: novo.php:221 social-count-plus.php:221
+msgid ""
+"Google Plus page ID. Must be the numeric ID.<br />You can find this "
+"information clicking to edit your page on Google Plus. The URL will be "
+"similar to this:<br />https://plus.google.com/<strong>115161266310935247804</"
+"strong>"
+msgstr ""
+"ID страницы Google+. Должно быть числовое значение.<br />Вы можете найти эту "
+"информацию, нажав на кнопку \"Редактировать\" на станице профиля. Ссылка "
+"будет похожа на:<br />https://plus.google.com/<strong>115161266310935247804</"
+"strong>"
+
+# @ social-count-plus
+#: novo.php:226 social-count-plus.php:226
+msgid "Instagram"
+msgstr "Instagram"
+
+# @ social-count-plus
+#: novo.php:231 social-count-plus.php:231
+msgid "Display Instagram counter"
+msgstr "Показывать счетчик Instagram"
+
+# @ social-count-plus
+#: novo.php:238 social-count-plus.php:238
+msgid "Instagram Username"
+msgstr "Пользователь Instagram"
+
+# @ social-count-plus
+#: novo.php:241 social-count-plus.php:241
+msgid "Insert the Instagram Username."
+msgstr "Введите имя пользователя Instagram."
+
+# @ social-count-plus
+#: novo.php:246 social-count-plus.php:246
+msgid "Instagram User ID"
+msgstr "ID пользователя Instagram"
+
+# @ social-count-plus
+#: novo.php:249 social-count-plus.php:249
+msgid "Insert the Instagram User ID."
+msgstr "Введите ID пользователя Instagram."
+
+# @ social-count-plus
+#: novo.php:254 social-count-plus.php:254
+msgid "Instagram Access Token"
+msgstr "Instagram Access Token"
+
+# @ social-count-plus
+#: novo.php:257 social-count-plus.php:257
+msgid "Insert the Instagram Access Token."
+msgstr "Введите Instagram Access Token."
+
+# @ social-count-plus
+#: novo.php:262 social-count-plus.php:262
+msgid "Steam"
+msgstr "Steam"
+
+# @ social-count-plus
+#: novo.php:267 social-count-plus.php:267
+msgid "Display Steam counter"
+msgstr "Показывать счетчик Steam"
+
+# @ social-count-plus
+#: novo.php:274 social-count-plus.php:274
+msgid "Steam group name"
+msgstr "Группа в Steam"
+
+# @ social-count-plus
+#: novo.php:277 social-count-plus.php:277
+msgid "Insert the Steam Community group name. Example: DOTALT"
+msgstr "Введите имя группы из сообщества Steam. Пример: DOTALT"
+
+# @ social-count-plus
+#: novo.php:282 social-count-plus.php:282
+msgid "SoundCloud"
+msgstr "SoundCloud"
+
+# @ social-count-plus
+#: novo.php:287 social-count-plus.php:287
+msgid "Display SoundCloud counter"
+msgstr "Показывать счетчик SoundCloud"
+
+# @ social-count-plus
+#: novo.php:294 social-count-plus.php:294
+msgid "SoundCloud Username"
+msgstr "Пользователь SoundCloud"
+
+# @ social-count-plus
+#: novo.php:297 social-count-plus.php:297
+msgid "Insert the SoundCloud Username."
+msgstr "Введиет имя пользователя SoundCloud."
+
+# @ social-count-plus
+#: novo.php:302 social-count-plus.php:302
+msgid "SoundCloud Client ID"
+msgstr "ID клиента SoundCloud"
+
+# @ social-count-plus
+#: novo.php:305 social-count-plus.php:305
+msgid "Insert the SoundCloud APP Client ID. Generate this information in %s"
+msgstr "Введите ID приложения SoundCloud. Получите ID на странице %s"
+
+# @ social-count-plus
+#: novo.php:310 social-count-plus.php:310
+msgid "Posts"
+msgstr "Записи"
+
+# @ social-count-plus
+#: novo.php:315 social-count-plus.php:315
+msgid "Display Posts counter"
+msgstr "Показывать счетчик записей"
+
+# @ social-count-plus
+#: novo.php:322 social-count-plus.php:322
+msgid "Comments"
+msgstr "Комментарии"
+
+# @ social-count-plus
+#: novo.php:327 social-count-plus.php:327
+msgid "Display Comments counter"
+msgstr "Показывать счетчик комментариев"
+
+# @ social-count-plus
+#: novo.php:334 novo.php:516 social-count-plus.php:334
+#: social-count-plus.php:516
+msgid "Design"
+msgstr "Внешний вид"
+
+# @ social-count-plus
+#: novo.php:339 social-count-plus.php:339
+msgid "Layout Models"
+msgstr "Внешний вид"
+
+# @ social-count-plus
+#: novo.php:354 social-count-plus.php:354
+msgid "Text Color"
+msgstr "Цвет текста"
+
+# @ social-count-plus
+#: novo.php:516 social-count-plus.php:516
+msgid "Shortcodes and Functions"
+msgstr "Шоткоды и функции"
+
+# @ social-count-plus
+#: novo.php:529 social-count-plus.php:529
+msgid "To use the counter of Twitter you need to fill the fields:"
+msgstr "Чтобы использовать счетчик Twitter, нужно заполнить поля ниже:"
+
+# @ social-count-plus
+#: novo.php:564 social-count-plus.php:564
+msgid ""
+"Use this library to generate your own model layout or display specific data "
+"counters."
+msgstr ""
+"Используйте эту библиотеку для создания своего собственного стиля счетчиков."
+
+# @ social-count-plus
+#: novo.php:566 social-count-plus.php:566
+msgid "Shortcodes"
+msgstr "Шоткоды"
+
+# @ social-count-plus
+#: novo.php:570 novo.php:611 social-count-plus.php:570
+#: social-count-plus.php:611
+msgid "Twitter counter"
+msgstr "Счетчик Twitter"
+
+# @ social-count-plus
+#: novo.php:574 novo.php:615 social-count-plus.php:574
+#: social-count-plus.php:615
+msgid "Facebook counter"
+msgstr "Счетчик Facebook"
+
+# @ social-count-plus
+#: novo.php:578 novo.php:619 social-count-plus.php:578
+#: social-count-plus.php:619
+msgid "YouTube counter"
+msgstr "Счетчик YouTube"
+
+# @ social-count-plus
+#: novo.php:582 novo.php:623 social-count-plus.php:582
+#: social-count-plus.php:623
+msgid "Google Plus counter"
+msgstr "Счетчик Google+"
+
+# @ social-count-plus
+#: novo.php:586 novo.php:627 social-count-plus.php:586
+#: social-count-plus.php:627
+msgid "Instagram counter"
+msgstr "Счетчик Instagram"
+
+# @ social-count-plus
+#: novo.php:590 novo.php:631 social-count-plus.php:590
+#: social-count-plus.php:631
+msgid "Steam counter"
+msgstr "Счетчик Steam"
+
+# @ social-count-plus
+#: novo.php:594 novo.php:635 social-count-plus.php:594
+#: social-count-plus.php:635
+msgid "SoundCloud counter"
+msgstr "Счетчик SoundCloud"
+
+# @ social-count-plus
+#: novo.php:598 novo.php:639 social-count-plus.php:598
+#: social-count-plus.php:639
+msgid "Posts counter"
+msgstr "Счетчик записей"
+
+# @ social-count-plus
+#: novo.php:602 novo.php:643 social-count-plus.php:602
+#: social-count-plus.php:643
+msgid "Comments counter"
+msgstr "Счетчик комментариев"
+
+# @ social-count-plus
+#: novo.php:607 social-count-plus.php:607
+msgid "Functions"
+msgstr "Функции"
+
+# @ social-count-plus
+#: novo.php:647 social-count-plus.php:647
+msgid "Full widget"
+msgstr "Виджет"
+
+# @ social-count-plus
+#: novo.php:796 social-count-plus.php:796
+msgid "Activate/Deactivate"
+msgstr "Включить/Отключить"
+
+# @ social-count-plus
+#: novo.php:953 novo.php:962 novo.php:965 novo.php:971
+#: social-count-plus.php:953 social-count-plus.php:962
+#: social-count-plus.php:965 social-count-plus.php:971
+msgid "followers"
+msgstr "последователи"
+
+# @ social-count-plus
+#: novo.php:956 social-count-plus.php:956
+msgid "likes"
+msgstr "отметки \"нравится\""
+
+# @ social-count-plus
+#: novo.php:959 social-count-plus.php:959
+msgid "subscribers"
+msgstr "подписчики"
+
+# @ social-count-plus
+#: novo.php:968 social-count-plus.php:968
+msgid "members"
+msgstr "участники"
+
+# @ social-count-plus
+#: novo.php:974 social-count-plus.php:974
+msgid "posts"
+msgstr "записи"
+
+# @ social-count-plus
+#: novo.php:977 social-count-plus.php:977
+msgid "comments"
+msgstr "комментарии"
+
+# @ social-count-plus
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/claudiosmweb/social-count-plus"
+msgstr "https://github.com/claudiosmweb/social-count-plus"
+
+# @ social-count-plus
+#. Description of the plugin/theme
+msgid ""
+"Display the counting Twitter followers, Facebook fans, YouTube subscribers "
+"posts and comments."
+msgstr ""
+"Показывать кол-во последователей Twitter, фанов Facebook, подписчиков "
+"YouTube, записей и комментариев."
+
+# @ social-count-plus
+#. Author of the plugin/theme
+msgid "claudiosanches, felipesantana"
+msgstr "claudiosanches, felipesantana"
+
+# @ social-count-plus
+#. Author URI of the plugin/theme
+msgid "http://claudiosmweb.com/"
+msgstr "http://claudiosmweb.com/"
