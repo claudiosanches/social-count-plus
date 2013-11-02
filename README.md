@@ -4,7 +4,7 @@
 **Tags:** facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode  
 **Requires at least:** 3.5  
 **Tested up to:** 3.7.1  
-**Stable tag:** 2.7.3  
+**Stable tag:** 2.7.4  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -168,6 +168,10 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 
 ## Changelog ##
+
+### 2.7.4 - 02/11/2013 ###
+
+* Added Albanian translation by Lorenc.
 
 ### 2.7.3 - 31/10/2013 ###
 
