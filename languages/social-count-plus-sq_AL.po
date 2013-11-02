@@ -19,125 +19,125 @@ msgstr ""
 "Language: pt_BR\n"
 "X-Poedit-SearchPath-0: .\n"
 
-# @ socialcountplus
+# @ social-count-plus
 #: includes/class-widget.php:16
 msgid "Display the counter"
 msgstr "Shfaq numëruesin"
 
-# @ socialcountplus
+# @ social-count-plus
 #. translators: plugin header field 'Name'
 #: includes/class-widget.php:17 social-count-plus.php:0
 #: social-count-plus.php:484 social-count-plus.php:485
 msgid "Social Count Plus"
 msgstr "Social Count Plus"
 
-# @ socialcountplus
+# @ social-count-plus
 #: includes/class-widget.php:28
 msgid "Title"
 msgstr "Titulli"
 
-# @ socialcountplus
+# @ social-count-plus
 #. translators: plugin header field 'AuthorURI'
 #: social-count-plus.php:0
 msgid "http://claudiosmweb.com/"
 msgstr "http://claudiosmweb.com/"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:114
 msgid "Twitter"
 msgstr "Twitter"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:119
 msgid "Display Twitter counter"
 msgstr "Shfaq numëruesin për Twitter"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:126 social-count-plus.php:531
 msgid "Twitter username"
 msgstr "Emër përdoruesi për Twitter"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:129
 msgid "Insert the Twitter username. Example: ferramentasblog"
 msgstr "Fut emrin e përdoruesit për Twitter. Për shembull: AsamblejaPG"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:166
 msgid "Facebook"
 msgstr "Facebook"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:171
 msgid "Display Facebook counter"
 msgstr "Shfaq numëruesin për Facebook"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:178
 msgid "Facebook Page ID"
 msgstr "ID për faqen në Facebook"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:186
 msgid "YouTube"
 msgstr "YouTube"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:191
 msgid "Display YouTube counter"
 msgstr "Shfaq numëruesin për YouTube"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:198
 msgid "YouTube username"
 msgstr "Emër përdoruesi për YouTube"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:201
 msgid "Insert the YouTube username. Example: lemos81"
 msgstr "Fut emrin e përdoruesit për YouTube. Për shembull: AsamblejaBiblike"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:310
 msgid "Posts"
 msgstr "Postime"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:315
 msgid "Display Posts counter"
 msgstr "Shfaq numëruesin për postimet"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:322
 msgid "Comments"
 msgstr "Komentet"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:327
 msgid "Display Comments counter"
 msgstr "Shfaq numëruesin për komentet"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:334 social-count-plus.php:516
 msgid "Design"
 msgstr "Dizajni"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:339
 msgid "Layout Models"
 msgstr "Modele të paraqitjes"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:78 social-count-plus.php:516
 msgid "Settings"
 msgstr "Cilësimet"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:516
 msgid "Shortcodes and Functions"
 msgstr "Kodet dhe Funksionet"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:564
 msgid ""
 "Use this library to generate your own model layout or display specific data "
@@ -146,78 +146,78 @@ msgstr ""
 "Përdor këtë bibliotekë për të krijuar një model vetjak të paraqitjes ose për "
 "të shfaqur të dhëna specifike numërimi."
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:566
 msgid "Shortcodes"
 msgstr "Kode"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:570 social-count-plus.php:611
 msgid "Twitter counter"
 msgstr "Numërues për Twitter"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:574 social-count-plus.php:615
 msgid "Facebook counter"
 msgstr "Numërues për Facebook"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:578 social-count-plus.php:619
 msgid "YouTube counter"
 msgstr "Numërues për YouTube"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:598 social-count-plus.php:639
 msgid "Posts counter"
 msgstr "Numërues për postimet"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:602 social-count-plus.php:643
 msgid "Comments counter"
 msgstr "Numërues për komentet"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:607
 msgid "Functions"
 msgstr "Funksione"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:647
 msgid "Full widget"
 msgstr "Widget i plotë"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:796
 msgid "Activate/Deactivate"
 msgstr "Aktivizo/Çaktivizo"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:953 social-count-plus.php:962
 #: social-count-plus.php:965 social-count-plus.php:971
 msgid "followers"
 msgstr "ndjekës"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:956
 msgid "likes"
 msgstr "pëlqime"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:959
 msgid "subscribers"
 msgstr "pajtimtarë"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:974
 msgid "posts"
 msgstr "postime"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:977
 msgid "comments"
 msgstr "komente"
 
-# @ socialcountplus
+# @ social-count-plus
 #. translators: plugin header field 'Description'
 #: social-count-plus.php:0
 msgid ""
@@ -227,65 +227,65 @@ msgstr ""
 "Shfaq numërimin për ndjekësit në Twitter, fanast në Facebook, pajtimtarët në "
 "YouTube, postimet dhe komentet."
 
-# @ socialcountplus
+# @ social-count-plus
 #. translators: plugin header field 'PluginURI'
 #: social-count-plus.php:0
 msgid "https://github.com/claudiosmweb/social-count-plus"
 msgstr "https://github.com/claudiosmweb/social-count-plus"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:108
 #, php-format
 msgid "Create an APP on Twitter in %s and get this information"
 msgstr "Krijo një APP në Twitter në %s dhe merre këtë informacion"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:134 social-count-plus.php:532
 msgid "Twitter Consumer key"
 msgstr "Çelës Përdoruesi për Twitter"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:142 social-count-plus.php:533
 msgid "Twitter Consumer secret"
 msgstr "Kod sekret Përdoruesi për Twitter"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:150 social-count-plus.php:534
 msgid "Twitter Access token"
 msgstr "Shenjë hyrjeje për Twitter"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:158 social-count-plus.php:535
 msgid "Twitter Access token secret"
 msgstr "Shenjë sekrete hyrjeje për Twitter"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:529
 msgid "To use the counter of Twitter you need to fill the fields:"
 msgstr ""
 "Për të përdorur numëruesin për Twitter ju duhet të plotësoni këto fusha:"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:206
 msgid "Google Plus"
 msgstr "Google Plus"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:211
 msgid "Display Google Plus counter"
 msgstr "Shfaq numëruesin për Google Plus"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:218
 msgid "Google Plus page ID"
 msgstr "ID për faqen në Google Plus"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:582 social-count-plus.php:623
 msgid "Google Plus counter"
 msgstr "Numërues për Google Plus"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:181
 msgid ""
 "ID Facebook page. Must be the numeric ID.<br />You can find this information "
@@ -297,7 +297,7 @@ msgstr ""
 "Facebook. Adresa URL do të jetë e ngjashme me këtë:<br />https://www."
 "facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:221
 msgid ""
 "Google Plus page ID. Must be the numeric ID.<br />You can find this "
@@ -310,135 +310,135 @@ msgstr ""
 "tënde në Google Plus. Adresa URL do të jetë e ngjashme me këtë:<br />https://"
 "plus.google.com/<strong>115161266310935247804</strong>"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:354
 msgid "Text Color"
 msgstr "Ngjyra e tekstit"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:110
 #, php-format
 msgid "Get the this information in %s"
 msgstr "Merre këtë informacion në %s"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:226
 msgid "Instagram"
 msgstr "Instagram"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:231
 msgid "Display Instagram counter"
 msgstr "Shfaq numëruesin për Instagram"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:238
 msgid "Instagram Username"
 msgstr "Emër përdoruesi për Instagram"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:241
 msgid "Insert the Instagram Username."
 msgstr "Fut emrin e përdoruesit për Instagram."
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:246
 msgid "Instagram User ID"
 msgstr "ID për përdoruesin në Instagram"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:249
 msgid "Insert the Instagram User ID."
 msgstr "Fut ID e përdoruesit për Instagram."
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:254
 msgid "Instagram Access Token"
 msgstr "Shenjë hyrjeje për Instagram"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:257
 msgid "Insert the Instagram Access Token."
 msgstr "Fut shenjën e hyrjes për Instagram"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:282
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:287
 msgid "Display SoundCloud counter"
 msgstr "Shfaq numëruesin për SoundCloud"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:294
 msgid "SoundCloud Username"
 msgstr "Emër përdoruesi për SoundCloud"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:297
 msgid "Insert the SoundCloud Username."
 msgstr "Fut emrin e përdoruesit për SoundCloud."
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:305
 #, php-format
 msgid "Insert the SoundCloud APP Client ID. Generate this information in %s"
 msgstr "Fut ID përdoruesi APP për SoundCloud. Nxirre këtë informacion në %s"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:262
 msgid "Steam"
 msgstr "Steam"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:267
 msgid "Display Steam counter"
 msgstr "Shfaq numëruesin për Steam"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:274
 msgid "Steam group name"
 msgstr "Emër grupi për Steam"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:277
 msgid "Insert the Steam Community group name. Example: DOTALT"
 msgstr "Fut emrin e grupit të komunitetit Steam. Për shembull: DOTALT"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:586 social-count-plus.php:627
 msgid "Instagram counter"
 msgstr "Numërues për Instagram"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:594 social-count-plus.php:635
 msgid "SoundCloud counter"
 msgstr "Numërues për SoundCloud"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:590 social-count-plus.php:631
 msgid "Steam counter"
 msgstr "Numërues për Steam"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:968
 msgid "members"
 msgstr "anëtarë"
 
-# @ socialcountplus
+# @ social-count-plus
 #: social-count-plus.php:302
 msgid "SoundCloud Client ID"
 msgstr "ID Klienti për SoundCloud"
 
-# @ socialcountplus
+# @ social-count-plus
 #. translators: plugin header field 'Author'
 #: social-count-plus.php:0
 msgid "claudiosanches, felipesantana"
 msgstr "claudiosanches, felipesantana"
 
-# @ socialcountplus
+# @ social-count-plus
 #. translators: plugin header field 'Version'
 #: social-count-plus.php:0
 msgid "2.7.1"
