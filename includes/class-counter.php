@@ -108,13 +108,13 @@ class Social_Count_Plus_Counter {
             if ( is_wp_error( $facebook_data ) ) {
                 $count['facebook'] = ( isset( $cache['facebook'] ) ) ? $cache['facebook'] : 0;
             } else {
-                $facebook_xml = new SimpleXmlElement( $facebook_data['body'], LIBXML_NOCDATA );
-                $facebook_count = (string) $facebook_xml->page->fan_count;
+                try {
+                    $facebook_xml = @new SimpleXmlElement( $facebook_data['body'], LIBXML_NOCDATA );
+                    $facebook_count = (int) $facebook_xml->page->fan_count;
 
-                if ( $facebook_count ) {
                     $count['facebook'] = $facebook_count;
                     $cache['facebook'] = $facebook_count;
-                } else {
+                } catch ( Exception $e ) {
                     $count['facebook'] = ( isset( $cache['facebook'] ) ) ? $cache['facebook'] : 0;
                 }
             }
@@ -129,14 +129,14 @@ class Social_Count_Plus_Counter {
             if ( is_wp_error( $youtube_data ) || '400' <= $youtube_data['response']['code'] ) {
                 $count['youtube'] = ( isset( $cache['youtube'] ) ) ? $cache['youtube'] : 0;
             } else {
-                $youtube_body = str_replace( 'yt:', '', $youtube_data['body'] );
-                $youtube_xml = new SimpleXmlElement( $youtube_body, LIBXML_NOCDATA );
-                $youtube_count = (string) $youtube_xml->statistics['subscriberCount'];
+                try {
+                    $youtube_body = str_replace( 'yt:', '', $youtube_data['body'] );
+                    $youtube_xml = @new SimpleXmlElement( $youtube_body, LIBXML_NOCDATA );
+                    $youtube_count = (int) $youtube_xml->statistics['subscriberCount'];
 
-                if ( $youtube_count ) {
                     $count['youtube'] = $youtube_count;
                     $cache['youtube'] = $youtube_count;
-                } else {
+                } catch ( Exception $e ) {
                     $count['youtube'] = ( isset( $cache['youtube'] ) ) ? $cache['youtube'] : 0;
                 }
             }
@@ -215,15 +215,11 @@ class Social_Count_Plus_Counter {
             } else {
                 try {
                     $steam_xml = @new SimpleXmlElement( $steam_data['body'], LIBXML_NOCDATA );
-                    $steam_count = (string) $steam_xml->groupDetails->memberCount;
-                } catch (Exception $e) {
-                    $steam_xml = ( isset( $cache['steam'] ) ) ? $cache['steam'] : 0;
-                }
+                    $steam_count = (int) $steam_xml->groupDetails->memberCount;
 
-                if ( $steam_count ) {
                     $count['steam'] = $steam_count;
                     $cache['steam'] = $steam_count;
-                } else {
+                } catch ( Exception $e ) {
                     $count['steam'] = ( isset( $cache['steam'] ) ) ? $cache['steam'] : 0;
                 }
             }
