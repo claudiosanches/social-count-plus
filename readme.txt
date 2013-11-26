@@ -4,7 +4,7 @@ Donate link: http://claudiosmweb.com/doacoes/
 Tags: facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode
 Requires at least: 3.5
 Tested up to: 3.7.1
-Stable tag: 2.7.5
+Stable tag: 2.7.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -160,6 +160,10 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 4. Widget.
 
 == Changelog ==
+
+= 2.7.6 - 26/11/2013 =
+
+* Added fr_FR translation by Gilles Santacreu.
 
 = 2.7.5 - 13/11/2013 =
 
