@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches, felipesantana
  * Author URI: http://claudiosmweb.com/
- * Version: 2.7.6
+ * Version: 2.7.7
  * License: GPLv2 or later
  * Text Domain: social-count-plus
  * Domain Path: /languages/
@@ -510,7 +510,6 @@ class Social_Count_Plus {
         ?>
 
         <div class="wrap">
-            <?php screen_icon( 'options-general' ); ?>
             <h2 class="nav-tab-wrapper">
                 <a href="admin.php?page=social-count-plus&amp;tab=settings" class="nav-tab <?php echo $current_tab == 'settings' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Settings', 'social-count-plus' ); ?></a><a href="admin.php?page=social-count-plus&amp;tab=design" class="nav-tab <?php echo $current_tab == 'design' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Design', 'social-count-plus' ); ?></a><a href="admin.php?page=social-count-plus&amp;tab=shortcodes" class="nav-tab <?php echo $current_tab == 'shortcodes' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Shortcodes and Functions', 'social-count-plus' ); ?></a>
             </h2>
