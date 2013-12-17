@@ -70,7 +70,7 @@ function get_scp_instagram() {
     global $social_count_plus_counter;
     $count = $social_count_plus_counter->update_transients();
 
-    return $count['googleplus'];
+    return $count['instagram'];
 }
 
 /**
@@ -82,7 +82,7 @@ function get_scp_soundcloud() {
     global $social_count_plus_counter;
     $count = $social_count_plus_counter->update_transients();
 
-    return $count['googleplus'];
+    return $count['soundcloud'];
 }
 
 /**
