@@ -4,7 +4,7 @@
 **Tags:** facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode  
 **Requires at least:** 3.8  
 **Tested up to:** 3.8  
-**Stable tag:** 2.7.8  
+**Stable tag:** 2.7.9  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -168,6 +168,10 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 
 ## Changelog ##
+
+### 2.7.9 - 29/12/2013 ###
+
+* Added rel="nofollow" in social icons URLs.
 
 ### 2.7.8 - 17/12/2013 ###
 

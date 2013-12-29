@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches, felipesantana
  * Author URI: http://claudiosmweb.com/
- * Version: 2.7.8
+ * Version: 2.7.9
  * License: GPLv2 or later
  * Text Domain: social-count-plus
  * Domain Path: /languages/
@@ -899,7 +899,7 @@ class Social_Count_Plus {
      */
     public function get_view_li( $slug, $url, $count, $title, $color ) {
         $html = sprintf( '<li class="count-%s">', $slug );
-            $html .= sprintf( '<a class="icon" href="%s" target="_blank"></a>', esc_url( $url ) );
+            $html .= sprintf( '<a class="icon" href="%s" target="_blank" rel="nofollow"></a>', esc_url( $url ) );
             $html .= '<span class="items">';
                 $html .= sprintf( '<span class="count" style="color: %s !important;">%s</span>', $color, apply_filters( 'social_count_plus_number_format', $count ) );
                 $html .= sprintf( '<span class="label" style="color: %s !important;">%s</span>', $color, $title );
