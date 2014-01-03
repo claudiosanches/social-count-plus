@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 2.7.9
+Stable tag: 2.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,6 +161,11 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 == Changelog ==
 
+= 2.8.0 - 03/01/2014 =
+
+* Added option to insert `rel="nofollow"` in social URLs.
+* Added option to insert `target="_blank"` in social URLs.
+
 = 2.7.9 - 29/12/2013 =
 
 * Added rel="nofollow" in social icons URLs.
@@ -262,6 +267,13 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 = 1.0 =
 
 * Initial release.
+
+== Upgrade Notice ==
+
+= 2.8.0 =
+
+* Added option to insert `rel="nofollow"` in social URLs.
+* Added option to insert `target="_blank"` in social URLs.
 
 == License ==
 
