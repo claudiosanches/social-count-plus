@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
  * @return int FeedBurner count.
  */
 function get_scp_feed() {
-    return 0;
+	return 0;
 }
 
 /**
@@ -19,10 +19,10 @@ function get_scp_feed() {
  * @return int Twitter count.
  */
 function get_scp_twitter() {
-    global $social_count_plus_counter;
-    $count = $social_count_plus_counter->update_transients();
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
 
-    return $count['twitter'];
+	return $count['twitter'];
 }
 
 /**
@@ -31,10 +31,10 @@ function get_scp_twitter() {
  * @return int Facebook count.
  */
 function get_scp_facebook() {
-    global $social_count_plus_counter;
-    $count = $social_count_plus_counter->update_transients();
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
 
-    return $count['facebook'];
+	return $count['facebook'];
 }
 
 /**
@@ -43,10 +43,10 @@ function get_scp_facebook() {
  * @return int YouTube count.
  */
 function get_scp_youtube() {
-    global $social_count_plus_counter;
-    $count = $social_count_plus_counter->update_transients();
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
 
-    return $count['youtube'];
+	return $count['youtube'];
 }
 
 /**
@@ -55,10 +55,10 @@ function get_scp_youtube() {
  * @return int Google Plus count.
  */
 function get_scp_googleplus() {
-    global $social_count_plus_counter;
-    $count = $social_count_plus_counter->update_transients();
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
 
-    return $count['googleplus'];
+	return $count['googleplus'];
 }
 
 /**
@@ -67,10 +67,10 @@ function get_scp_googleplus() {
  * @return int Instagram Plus count.
  */
 function get_scp_instagram() {
-    global $social_count_plus_counter;
-    $count = $social_count_plus_counter->update_transients();
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
 
-    return $count['instagram'];
+	return $count['instagram'];
 }
 
 /**
@@ -79,10 +79,10 @@ function get_scp_instagram() {
  * @return int SoundCloud Plus count.
  */
 function get_scp_soundcloud() {
-    global $social_count_plus_counter;
-    $count = $social_count_plus_counter->update_transients();
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
 
-    return $count['soundcloud'];
+	return $count['soundcloud'];
 }
 
 /**
@@ -103,10 +103,10 @@ function get_scp_steam() {
  * @return int Posts count.
  */
 function get_scp_posts() {
-    global $social_count_plus_counter;
-    $count = $social_count_plus_counter->update_transients();
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
 
-    return $count['posts'];
+	return $count['posts'];
 }
 
 /**
@@ -115,10 +115,10 @@ function get_scp_posts() {
  * @return int Comments count.
  */
 function get_scp_comments() {
-    global $social_count_plus_counter;
-    $count = $social_count_plus_counter->update_transients();
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
 
-    return $count['comments'];
+	return $count['comments'];
 }
 
 /**
@@ -127,10 +127,10 @@ function get_scp_comments() {
  * @return array All counts.
  */
 function get_scp_all() {
-    global $social_count_plus_counter;
-    $count = $social_count_plus_counter->update_transients();
+	global $social_count_plus_counter;
+	$count = $social_count_plus_counter->update_transients();
 
-    return $count;
+	return $count;
 }
 
 /**
@@ -139,7 +139,7 @@ function get_scp_all() {
  * @return int Widget count.
  */
 function get_scp_widget() {
-    global $social_count_plus;
+	global $social_count_plus;
 
-    return $social_count_plus->view();
+	return $social_count_plus->view();
 }
