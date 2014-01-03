@@ -329,6 +329,19 @@ class Social_Count_Plus {
                 'section' => 'comments',
                 'menu' => 'socialcountplus_settings'
             ),
+            'settings' => array(
+                'title' => __( 'Settings', 'social-count-plus' ),
+                'type' => 'section',
+                'menu' => 'socialcountplus_settings'
+            ),
+            'nofollow' => array(
+                'title' => __( 'Add nofollow in URLs', 'social-count-plus' ),
+                'default' => 1,
+                'type' => 'checkbox',
+                'section' => 'settings',
+                'menu' => 'socialcountplus_settings',
+                'description' => __( 'This option add rel="nofollow" in all counters URLs.' )
+            ),
             'design' => array(
                 'title' => __( 'Design', 'social-count-plus' ),
                 'type' => 'section',
