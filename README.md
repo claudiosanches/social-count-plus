@@ -4,7 +4,7 @@
 **Tags:** facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode  
 **Requires at least:** 3.8  
 **Tested up to:** 3.8  
-**Stable tag:** 2.8.0  
+**Stable tag:** 2.8.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -169,6 +169,10 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 ## Changelog ##
 
+### 2.8.1 - 05/02/2014 ###
+
+* Added Swedish translation by [Ramrod](http://profiles.wordpress.org/ramrod).
+
 ### 2.8.0 - 03/01/2014 ###
 
 * Added option to insert `rel="nofollow"` in social URLs.
@@ -278,10 +282,9 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 ## Upgrade Notice ##
 
-### 2.8.0 ###
+### 2.8.1 ###
 
-* Added option to insert `rel="nofollow"` in social URLs.
-* Added option to insert `target="_blank"` in social URLs.
+* Added Swedish translation by [Ramrod](http://profiles.wordpress.org/ramrod).
 
 ## License ##
 
