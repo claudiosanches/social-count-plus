@@ -1,0 +1,469 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Social Count Plus v2.7.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-02-05 16:31+0100\n"
+"Last-Translator: Mattias Hägerström <syndare@filmparadiset.se>\n"
+"Language-Team: Mattias Hägerström <syndare@filmparadiset.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: sv_SE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ social-count-plus
+#: includes/class-widget.php:16
+msgid "Display the counter"
+msgstr "Visa räknare"
+
+# @ social-count-plus
+#. translators: plugin header field 'Name'
+#: includes/class-widget.php:17 social-count-plus.php:0
+#: social-count-plus.php:506 social-count-plus.php:507
+msgid "Social Count Plus"
+msgstr "Social Count Plus"
+
+# @ social-count-plus
+#: includes/class-widget.php:28
+msgid "Title"
+msgstr "Titel"
+
+# @ social-count-plus
+#. translators: plugin header field 'AuthorURI'
+#: social-count-plus.php:0
+msgid "http://claudiosmweb.com/"
+msgstr "http://claudiosmweb.com/"
+
+# @ social-count-plus
+#: social-count-plus.php:113
+msgid "Twitter"
+msgstr "Twitter"
+
+# @ social-count-plus
+#: social-count-plus.php:118
+msgid "Display Twitter counter"
+msgstr "Visa Twitter-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:125 social-count-plus.php:552
+msgid "Twitter username"
+msgstr "Twitter-användarnamn"
+
+# @ social-count-plus
+#: social-count-plus.php:128
+msgid "Insert the Twitter username. Example: ferramentasblog"
+msgstr "Infoga Twitter-användarnamn. Till Exempel: ferramentasblog"
+
+# @ social-count-plus
+#: social-count-plus.php:165
+msgid "Facebook"
+msgstr "Facebook"
+
+# @ social-count-plus
+#: social-count-plus.php:170
+msgid "Display Facebook counter"
+msgstr "Visa Facebook-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:177
+msgid "Facebook Page ID"
+msgstr "Facebook sid-ID"
+
+# @ social-count-plus
+#: social-count-plus.php:185
+msgid "YouTube"
+msgstr "YouTube"
+
+# @ social-count-plus
+#: social-count-plus.php:190
+msgid "Display YouTube counter"
+msgstr "Visa Youtube-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:197
+msgid "YouTube username"
+msgstr "Youtube-användarnamn"
+
+# @ social-count-plus
+#: social-count-plus.php:200
+msgid "Insert the YouTube username. Example: lemos81"
+msgstr "Infoga Youtube-användarnamn: Till exempel: lemos81"
+
+# @ social-count-plus
+#: social-count-plus.php:309
+msgid "Posts"
+msgstr "Inlägg"
+
+# @ social-count-plus
+#: social-count-plus.php:314
+msgid "Display Posts counter"
+msgstr "Visa inläggsräknare"
+
+# @ social-count-plus
+#: social-count-plus.php:321
+msgid "Comments"
+msgstr "Kommentarer"
+
+# @ social-count-plus
+#: social-count-plus.php:326
+msgid "Display Comments counter"
+msgstr "Visa kommentarsräknare"
+
+# @ social-count-plus
+#: social-count-plus.php:354 social-count-plus.php:537
+msgid "Design"
+msgstr "Design"
+
+# @ social-count-plus
+#: social-count-plus.php:359
+msgid "Layout Models"
+msgstr "Layout-modeller"
+
+# @ social-count-plus
+#: social-count-plus.php:77 social-count-plus.php:333
+#: social-count-plus.php:537
+msgid "Settings"
+msgstr "Inställningar"
+
+# @ social-count-plus
+#: social-count-plus.php:537
+msgid "Shortcodes and Functions"
+msgstr "Kortkoder och funktioner"
+
+# @ social-count-plus
+#: social-count-plus.php:585
+msgid ""
+"Use this library to generate your own model layout or display specific data "
+"counters."
+msgstr ""
+"Använd detta bibliotek för att generera din egen layout eller visa specifika "
+"data-räknare."
+
+# @ social-count-plus
+#: social-count-plus.php:587
+msgid "Shortcodes"
+msgstr "Kortkoder"
+
+# @ social-count-plus
+#: social-count-plus.php:591 social-count-plus.php:632
+msgid "Twitter counter"
+msgstr "Twitter-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:595 social-count-plus.php:636
+msgid "Facebook counter"
+msgstr "Facebook-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:599 social-count-plus.php:640
+msgid "YouTube counter"
+msgstr "Youtube-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:619 social-count-plus.php:660
+msgid "Posts counter"
+msgstr "Inläggsräknare"
+
+# @ social-count-plus
+#: social-count-plus.php:623 social-count-plus.php:664
+msgid "Comments counter"
+msgstr "Kommentarsräknare"
+
+# @ social-count-plus
+#: social-count-plus.php:628
+msgid "Functions"
+msgstr "Funktioner"
+
+# @ social-count-plus
+#: social-count-plus.php:668
+msgid "Full widget"
+msgstr "Fullständig widget"
+
+# @ social-count-plus
+#: social-count-plus.php:817
+msgid "Activate/Deactivate"
+msgstr "Aktivera/Avaktivera"
+
+# @ social-count-plus
+#: social-count-plus.php:978 social-count-plus.php:987
+#: social-count-plus.php:990 social-count-plus.php:996
+msgid "followers"
+msgstr "följare"
+
+# @ social-count-plus
+#: social-count-plus.php:981
+msgid "likes"
+msgstr "gillar"
+
+# @ social-count-plus
+#: social-count-plus.php:984
+msgid "subscribers"
+msgstr "prenumeranter"
+
+# @ social-count-plus
+#: social-count-plus.php:999
+msgid "posts"
+msgstr "inlägg"
+
+# @ social-count-plus
+#: social-count-plus.php:1002
+msgid "comments"
+msgstr "kommentarer"
+
+# @ social-count-plus
+#. translators: plugin header field 'Description'
+#: social-count-plus.php:0
+msgid ""
+"Display the counting Twitter followers, Facebook fans, YouTube subscribers "
+"posts and comments."
+msgstr ""
+"Visar räknare för Twitter-följare, Facebook fans, Youtube-prenumeranter, "
+"inlägg och kommentarer."
+
+# @ social-count-plus
+#. translators: plugin header field 'PluginURI'
+#: social-count-plus.php:0
+msgid "https://github.com/claudiosmweb/social-count-plus"
+msgstr "https://github.com/claudiosmweb/social-count-plus"
+
+# @ social-count-plus
+#: social-count-plus.php:107
+#, php-format
+msgid "Create an APP on Twitter in %s and get this information"
+msgstr "Skapa en APP på Twitter på %s och få denna information"
+
+# @ social-count-plus
+#: social-count-plus.php:133 social-count-plus.php:553
+msgid "Twitter Consumer key"
+msgstr "Twitter Consumer key"
+
+# @ social-count-plus
+#: social-count-plus.php:141 social-count-plus.php:554
+msgid "Twitter Consumer secret"
+msgstr "Twitter Consumer secret"
+
+# @ social-count-plus
+#: social-count-plus.php:149 social-count-plus.php:555
+msgid "Twitter Access token"
+msgstr "Twitter Access token"
+
+# @ social-count-plus
+#: social-count-plus.php:157 social-count-plus.php:556
+msgid "Twitter Access token secret"
+msgstr "Twitter Access token secret"
+
+# @ social-count-plus
+#: social-count-plus.php:550
+msgid "To use the counter of Twitter you need to fill the fields:"
+msgstr ""
+"För att använda räknaren för Twitter behöver du fylla i fälten här nedanför:"
+
+# @ social-count-plus
+#: social-count-plus.php:205
+msgid "Google Plus"
+msgstr "Google Plus"
+
+# @ social-count-plus
+#: social-count-plus.php:210
+msgid "Display Google Plus counter"
+msgstr "Visa Google Plus-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:217
+msgid "Google Plus page ID"
+msgstr "Google Plus-ID"
+
+# @ social-count-plus
+#: social-count-plus.php:603 social-count-plus.php:644
+msgid "Google Plus counter"
+msgstr "Google Plus-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:180
+msgid ""
+"ID Facebook page. Must be the numeric ID.<br />You can find this information "
+"clicking to edit your page on Facebook. The URL will be similar to this:<br /"
+">https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
+msgstr ""
+"Din facebooksidas ID-nummer. Måste vara det numeriska ID:t. <br/>Du hittar "
+"denna information genom att klicka på \"redigera sida\" och \"Uppdatera sida"
+"\". Adressen ser liknande ut som denna <br />https://www.facebook.com/pages/"
+"edit/?id=<strong>162354720442454</strong>"
+
+# @ social-count-plus
+#: social-count-plus.php:220
+msgid ""
+"Google Plus page ID. Must be the numeric ID.<br />You can find this "
+"information clicking to edit your page on Google Plus. The URL will be "
+"similar to this:<br />https://plus.google.com/<strong>115161266310935247804</"
+"strong>"
+msgstr ""
+"Ditt Google Plus-kontos ID-nummer. Måste vara det numeriska ID:t: Du hittar "
+"denna information genom att klicka på Redigera din sida på Google Plus. "
+"Adressen ser liknande ut som denna:<br />https://plus.google.com/"
+"<strong>115161266310935247804</strong>"
+
+# @ social-count-plus
+#: social-count-plus.php:374
+msgid "Text Color"
+msgstr "Textfärg"
+
+# @ social-count-plus
+#: social-count-plus.php:109
+#, php-format
+msgid "Get the this information in %s"
+msgstr "Få denna information på %s"
+
+# @ social-count-plus
+#: social-count-plus.php:225
+msgid "Instagram"
+msgstr "Instagram"
+
+# @ social-count-plus
+#: social-count-plus.php:230
+msgid "Display Instagram counter"
+msgstr "Visa Instagram-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:237
+msgid "Instagram Username"
+msgstr "Instagram-användarnamn"
+
+# @ social-count-plus
+#: social-count-plus.php:240
+msgid "Insert the Instagram Username."
+msgstr "Infoga ditt Instagram-användarnamn"
+
+# @ social-count-plus
+#: social-count-plus.php:245
+msgid "Instagram User ID"
+msgstr "Instagram användar-ID"
+
+# @ social-count-plus
+#: social-count-plus.php:248
+msgid "Insert the Instagram User ID."
+msgstr "Infoga ditt Instagrams användar-ID"
+
+# @ social-count-plus
+#: social-count-plus.php:253
+msgid "Instagram Access Token"
+msgstr "Instagram Access Token"
+
+# @ social-count-plus
+#: social-count-plus.php:256
+msgid "Insert the Instagram Access Token."
+msgstr "Infoga ditt Instagram Access Token"
+
+# @ social-count-plus
+#: social-count-plus.php:281
+msgid "SoundCloud"
+msgstr "SoundCloud"
+
+# @ social-count-plus
+#: social-count-plus.php:286
+msgid "Display SoundCloud counter"
+msgstr "Visa SoundCloud-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:293
+msgid "SoundCloud Username"
+msgstr "SoundCloud-användarnamn"
+
+# @ social-count-plus
+#: social-count-plus.php:296
+msgid "Insert the SoundCloud Username."
+msgstr "Infoga ditt SoundCloud-användarnamn"
+
+# @ social-count-plus
+#: social-count-plus.php:304
+#, php-format
+msgid "Insert the SoundCloud APP Client ID. Generate this information in %s"
+msgstr "Infoga SoundCloud APP klient-ID. Generera detta på %s"
+
+# @ social-count-plus
+#: social-count-plus.php:261
+msgid "Steam"
+msgstr "Steam"
+
+# @ social-count-plus
+#: social-count-plus.php:266
+msgid "Display Steam counter"
+msgstr "Visa Steam-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:273
+msgid "Steam group name"
+msgstr "Steam gruppnamn"
+
+# @ social-count-plus
+#: social-count-plus.php:276
+msgid "Insert the Steam Community group name. Example: DOTALT"
+msgstr "Infoga Steams gemenskaps gruppnamn: Till exempel: DOTALT"
+
+# @ social-count-plus
+#: social-count-plus.php:607 social-count-plus.php:648
+msgid "Instagram counter"
+msgstr "Instagram-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:615 social-count-plus.php:656
+msgid "SoundCloud counter"
+msgstr "SoundCloud-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:611 social-count-plus.php:652
+msgid "Steam counter"
+msgstr "Steam-räknare"
+
+# @ social-count-plus
+#: social-count-plus.php:993
+msgid "members"
+msgstr "medlemmar"
+
+# @ social-count-plus
+#: social-count-plus.php:301
+msgid "SoundCloud Client ID"
+msgstr "SoundCloud klient-ID"
+
+# @ social-count-plus
+#. translators: plugin header field 'Author'
+#: social-count-plus.php:0
+msgid "claudiosanches, felipesantana"
+msgstr "claudiosanches, felipesantana"
+
+# @ social-count-plus
+#. translators: plugin header field 'Version'
+#: social-count-plus.php:0
+msgid "2.7.9"
+msgstr "2.7.9"
+
+# @ social-count-plus
+#: social-count-plus.php:338
+msgid "Open URLs in new tab/window"
+msgstr "Öppna URL-adresser i ny flik/fönster"
+
+# @ social-count-plus
+#: social-count-plus.php:343
+msgid "This option add target=\"_blank\" in all counters URLs."
+msgstr ""
+"Denna inställning lägger till target=\"_blank\" på alla räknares URL-"
+"adresser."
+
+# @ social-count-plus
+#: social-count-plus.php:346
+msgid "Add nofollow in URLs"
+msgstr "Lägg till nofollow i URL-adresserna"
+
+# @ social-count-plus
+#: social-count-plus.php:351
+msgid "This option add rel=\"nofollow\" in all counters URLs."
+msgstr ""
+"Denna inställning lägger till rel=\"nofollow\" på alla räknares URL-adresser."
