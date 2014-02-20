@@ -3,7 +3,7 @@
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y8HP99ZJ5Z59L  
 **Tags:** facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode  
 **Requires at least:** 3.8  
-**Tested up to:** 3.8  
+**Tested up to:** 3.8.1  
 **Stable tag:** 2.8.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -22,6 +22,8 @@ The cache avoids not only that your blog be seeking new results every time a pag
 
 #### Shortcodes ####
 
+Displays only the count in plain text:
+
 * Twitter: `[scp code="twitter"]`
 * Facebook: `[scp code="facebook"]`
 * YouTube: `[scp code="youtube"]`
@@ -34,6 +36,8 @@ The cache avoids not only that your blog be seeking new results every time a pag
 
 #### Functions ####
 
+Displays only the count in plain text:
+
 * Twitter: `<?php echo get_scp_twitter(); ?>`
 * Facebook: `<?php echo get_scp_facebook(); ?>`
 * YouTube: `<?php echo get_scp_youtube(); ?>`
@@ -43,6 +47,9 @@ The cache avoids not only that your blog be seeking new results every time a pag
 * SoundCloud: `<?php echo get_scp_soundcloud(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
+
+Displays the widget with icons:
+
 * Widget: `<?php echo get_scp_widget(); ?>`
 
 #### Contribute ####
@@ -67,6 +74,8 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 
 #### Shortcodes ####
 
+Exibe apenas a contagem em texto puro:
+
 * Twitter: `[scp code="twitter"]`
 * Facebook: `[scp code="facebook"]`
 * YouTube: `[scp code="youtube"]`
@@ -79,6 +88,8 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 
 #### Funções ####
 
+Exibe apenas a contagem em texto puro:
+
 * Twitter: `<?php echo get_scp_twitter(); ?>`
 * Facebook: `<?php echo get_scp_facebook(); ?>`
 * YouTube: `<?php echo get_scp_youtube(); ?>`
@@ -88,6 +99,9 @@ O cache não só evita que o seu blog estar buscando novos resultados cada vez q
 * SoundCloud: `<?php echo get_scp_soundcloud(); ?>`
 * Posts: `<?php echo get_scp_posts(); ?>`
 * Comments: `<?php echo get_scp_comments(); ?>`
+
+Exibe o widget com ícones:
+
 * Widget: `<?php echo get_scp_widget(); ?>`
 
 #### Coloborar ####
@@ -124,13 +138,16 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 ### How to changing the amount of times the counter is updated daily? ###
 
-* You can change using the filter `social_count_plus_transient_time`.  Example:
+You can change using the filter `social_count_plus_transient_time`.  
+Example:
+
 
 	function social_count_plus_custom_transient_time( $time ) {
 		return 43200; // 12 hours in seconds.
 	}
 
 	add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transient_time' );
+
 
 ### FAQ em Português: ###
 
@@ -144,13 +161,16 @@ Você pode contribuir com código-fonte em nossa página no [GitHub](https://git
 
 ### Como alterar a quantidade de vezes que o contador é atualizado por dia? ###
 
-* Você pode modificar usando o filtro `social_count_plus_transient_time`.  Exemplo:
+Você pode modificar usando o filtro `social_count_plus_transient_time`.  
+Exemplo:
+
 
 	function social_count_plus_custom_transient_time( $time ) {
 		return 43200; // 12 horas em segundos.
 	}
 
 	add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transient_time' );
+
 
 ## Screenshots ##
 
