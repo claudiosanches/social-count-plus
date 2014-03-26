@@ -89,7 +89,7 @@ class Social_Count_Plus_Counter {
 				$twitter_response = json_decode( $twitter_data['body'], true );
 
 				if ( isset( $twitter_response['followers_count'] ) ) {
-					$twitter_count = $twitter_response['followers_count'];
+					$twitter_count = intval( $twitter_response['followers_count'] );
 
 					$count['twitter'] = $twitter_count;
 					$cache['twitter'] = $twitter_count;
@@ -133,7 +133,7 @@ class Social_Count_Plus_Counter {
 				try {
 					$youtube_body = str_replace( 'yt:', '', $youtube_data['body'] );
 					$youtube_xml = @new SimpleXmlElement( $youtube_body, LIBXML_NOCDATA );
-					$youtube_count = (int) $youtube_xml->statistics['subscriberCount'];
+					$youtube_count = intval( $youtube_xml->statistics['subscriberCount'] );
 
 					$count['youtube'] = $youtube_count;
 					$cache['youtube'] = $youtube_count;
@@ -164,7 +164,7 @@ class Social_Count_Plus_Counter {
 				$googleplus_response = json_decode( $googleplus_data['body'], true );
 
 				if ( isset( $googleplus_response[0]['result']['metadata']['globalCounts']['count'] ) ) {
-					$googleplus_count = $googleplus_response[0]['result']['metadata']['globalCounts']['count'];
+					$googleplus_count = intval( $googleplus_response[0]['result']['metadata']['globalCounts']['count'] );
 
 					$count['googleplus'] = $googleplus_count;
 					$cache['googleplus'] = $googleplus_count;
@@ -195,7 +195,7 @@ class Social_Count_Plus_Counter {
 					&& 200 == $instagram_response['meta']['code']
 					&& isset( $instagram_response['data']['counts']['followed_by'] )
 				) {
-					$instagram_count = $instagram_response['data']['counts']['followed_by'];
+					$instagram_count = intval( $instagram_response['data']['counts']['followed_by'] );
 
 					$count['instagram'] = $instagram_count;
 					$cache['instagram'] = $instagram_count;
@@ -216,7 +216,7 @@ class Social_Count_Plus_Counter {
 			} else {
 				try {
 					$steam_xml = @new SimpleXmlElement( $steam_data['body'], LIBXML_NOCDATA );
-					$steam_count = (int) $steam_xml->groupDetails->memberCount;
+					$steam_count = intval( $steam_xml->groupDetails->memberCount );
 
 					$count['steam'] = $steam_count;
 					$cache['steam'] = $steam_count;
@@ -243,7 +243,7 @@ class Social_Count_Plus_Counter {
 				$soundcloud_response = json_decode( $soundcloud_data['body'], true );
 
 				if ( isset( $soundcloud_response['followers_count'] ) ) {
-					$soundcloud_count = $soundcloud_response['followers_count'];
+					$soundcloud_count = intval( $soundcloud_response['followers_count'] );
 
 					$count['soundcloud'] = $soundcloud_count;
 					$cache['soundcloud'] = $soundcloud_count;
