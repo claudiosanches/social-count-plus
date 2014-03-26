@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches, felipesantana
  * Author URI: http://claudiosmweb.com/
- * Version: 2.8.1
+ * Version: 2.8.2
  * License: GPLv2 or later
  * Text Domain: social-count-plus
  * Domain Path: /languages/
@@ -197,7 +197,15 @@ class Social_Count_Plus {
 				'title' => __( 'YouTube username', 'social-count-plus' ),
 				'default' => null,
 				'type' => 'text',
-				'description' => __( 'Insert the YouTube username. Example: lemos81', 'social-count-plus' ),
+				'description' => __( 'Insert the YouTube username. Example: UCWGz8KbT5IE7PxhSN1jjimw', 'social-count-plus' ),
+				'section' => 'youtube',
+				'menu' => 'socialcountplus_settings'
+			),
+			'youtube_url' => array(
+				'title' => __( 'YouTube Channel URL', 'social-count-plus' ),
+				'default' => null,
+				'type' => 'text',
+				'description' => __( 'Insert the YouTube channel URL. Example: https://www.youtube.com/channel/UCWGz8KbT5IE7PxhSN1jjimw', 'social-count-plus' ),
 				'section' => 'youtube',
 				'menu' => 'socialcountplus_settings'
 			),
@@ -415,6 +423,7 @@ class Social_Count_Plus {
 				'facebook_id'            => get_option( 'scp_facebook' ),
 				// 'youtube_active'         => '',
 				'youtube_user'           => '',
+				'youtube_url'            => '',
 				// 'googleplup_active'      => '',
 				'googleplus_id'          => '',
 				// 'instagram_active'       => '',
@@ -479,15 +488,10 @@ class Social_Count_Plus {
 		} else {
 			$settings_options = get_option( 'socialcountplus_settings' );
 
-			if ( isset( $settings_options['twitter_user'] ) && ! isset( $settings_options['instagram_username'] ) ) {
-				// Update to version 2.7.0.
+			if ( isset( $settings_options['twitter_user'] ) && ! isset( $settings_options['youtube_url'] ) ) {
+				// Update to version 2.8.2.
 				$new_options = array(
-					'instagram_username'     => '',
-					'instagram_user_id'      => '',
-					'instagram_access_token' => '',
-					'steam_group_name'       => '',
-					'soundcloud_username'    => '',
-					'soundcloud_client_id'   => '',
+					'youtube_url' => ''
 				);
 
 				update_option( 'socialcountplus_settings', array_merge( $new_options, $settings ) );
@@ -981,7 +985,7 @@ class Social_Count_Plus {
 				$html .= ( isset( $settings['facebook_active'] ) ) ? $this->get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $count['facebook'], __( 'likes', 'social-count-plus' ), $color, $settings ) : '';
 
 				// YouTube counter.
-				$html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', 'http://www.youtube.com/user/' . $settings['youtube_user'], $count['youtube'], __( 'subscribers', 'social-count-plus' ), $color, $settings ) : '';
+				$html .= ( isset( $settings['youtube_active'] ) ) ? $this->get_view_li( 'youtube', esc_url( $settings['youtube_url'] ), $count['youtube'], __( 'subscribers', 'social-count-plus' ), $color, $settings ) : '';
 
 				// Google Plus counter.
 				$html .= ( isset( $settings['googleplus_active'] ) ) ? $this->get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'social-count-plus' ), $color, $settings ) : '';
