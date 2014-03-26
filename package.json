@@ -1,16 +1,16 @@
 {
-  "name": "social-count-plus",
-  "description": "Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments",
-  "version": "2.8.1",
-  "main": "Gruntfile.js",
-  "dependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.3.1",
-    "grunt-contrib-compass": "~0.1.3",
-    "grunt-contrib-jshint": "~0.2.0",
-    "grunt-contrib-uglify": "~0.1.2",
-    "grunt-rsync": "~0.1.1",
-    "grunt-shell": "~0.2.2",
-    "grunt-contrib-imagemin": "~0.2.1"
-  }
+	"name": "social-count-plus",
+	"description": "Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments",
+	"version": "2.8.2",
+	"main": "Gruntfile.js",
+	"dependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-watch": "~0.3.1",
+		"grunt-contrib-compass": "~0.1.3",
+		"grunt-contrib-jshint": "~0.2.0",
+		"grunt-contrib-uglify": "~0.1.2",
+		"grunt-rsync": "~0.1.1",
+		"grunt-shell": "~0.2.2",
+		"grunt-contrib-imagemin": "~0.2.1"
+	}
 }

@@ -4,7 +4,7 @@
 **Tags:** facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode  
 **Requires at least:** 3.8  
 **Tested up to:** 3.8.1  
-**Stable tag:** 2.8.1  
+**Stable tag:** 2.8.2  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -189,6 +189,12 @@ Exemplo:
 
 ## Changelog ##
 
+### 2.8.2 - 26/03/2014 ###
+
+* Improved the Facebook counter.
+* Improved the validation of data for all counters.
+* Added a option to enter with you YouTube Channel URL.
+
 ### 2.8.1 - 05/02/2014 ###
 
 * Added Swedish translation by [Ramrod](http://profiles.wordpress.org/ramrod).
@@ -302,9 +308,11 @@ Exemplo:
 
 ## Upgrade Notice ##
 
-### 2.8.1 ###
+### 2.8.2 ###
 
-* Added Swedish translation by [Ramrod](http://profiles.wordpress.org/ramrod).
+* Improved the Facebook counter.
+* Improved the validation of data for all counters.
+* Added a option to enter with you YouTube Channel URL.
 
 ## License ##
 
