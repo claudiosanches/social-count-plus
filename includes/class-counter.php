@@ -103,18 +103,19 @@ class Social_Count_Plus_Counter {
 		if ( isset( $settings['facebook_active'] ) && isset( $settings['facebook_id'] ) && ! empty( $settings['facebook_id'] ) ) {
 
 			// Get facebook data.
-			$facebook_data = wp_remote_get( 'http://api.facebook.com/restserver.php?method=facebook.fql.query&query=SELECT%20fan_count%20FROM%20page%20WHERE%20page_id=' . $settings['facebook_id'] );
+			$facebook_data = wp_remote_get( 'http://graph.facebook.com/' . $settings['facebook_id'] );
 
 			if ( is_wp_error( $facebook_data ) ) {
 				$count['facebook'] = ( isset( $cache['facebook'] ) ) ? $cache['facebook'] : 0;
 			} else {
-				try {
-					$facebook_xml = @new SimpleXmlElement( $facebook_data['body'], LIBXML_NOCDATA );
-					$facebook_count = (int) $facebook_xml->page->fan_count;
+				$facebook_response = json_decode( $facebook_data['body'], true );
+
+				if ( isset( $facebook_response['likes'] ) ) {
+					$facebook_count = intval( $facebook_response['likes'] );
 
 					$count['facebook'] = $facebook_count;
 					$cache['facebook'] = $facebook_count;
-				} catch ( Exception $e ) {
+				} else {
 					$count['facebook'] = ( isset( $cache['facebook'] ) ) ? $cache['facebook'] : 0;
 				}
 			}
