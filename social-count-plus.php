@@ -5,7 +5,7 @@
  * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
  * Author: claudiosanches, felipesantana
  * Author URI: http://claudiosmweb.com/
- * Version: 2.8.2
+ * Version: 2.9.0
  * License: GPLv2 or later
  * Text Domain: social-count-plus
  * Domain Path: /languages/
@@ -210,22 +210,33 @@ class Social_Count_Plus {
 				'menu' => 'socialcountplus_settings'
 			),
 			'googleplus' => array(
-				'title' => __( 'Google Plus', 'social-count-plus' ),
+				'title' => __( 'Google+', 'social-count-plus' ),
 				'type' => 'section',
 				'menu' => 'socialcountplus_settings'
 			),
 			'googleplus_active' => array(
-				'title' => __( 'Display Google Plus counter', 'social-count-plus' ),
+				'title' => __( 'Display Google+ counter', 'social-count-plus' ),
 				'default' => null,
 				'type' => 'checkbox',
 				'section' => 'googleplus',
 				'menu' => 'socialcountplus_settings'
 			),
 			'googleplus_id' => array(
-				'title' => __( 'Google Plus page ID', 'social-count-plus' ),
+				'title' => __( 'Google+ ID', 'social-count-plus' ),
 				'default' => null,
 				'type' => 'text',
-				'description' => __( 'Google Plus page ID. Must be the numeric ID.<br />You can find this information clicking to edit your page on Google Plus. The URL will be similar to this:<br />https://plus.google.com/<strong>115161266310935247804</strong>', 'social-count-plus' ),
+				'description' => __( 'Google+ page or profile ID. <br />Example:<br />https://plus.google.com/<strong>115161266310935247804</strong> or https://plus.google.com/<strong>+Ferramentasblog1</strong>', 'social-count-plus' ),
+				'section' => 'googleplus',
+				'menu' => 'socialcountplus_settings'
+			),
+			'googleplus_api_key' => array(
+				'title' => __( 'Google API Key', 'social-count-plus' ),
+				'default' => null,
+				'type' => 'text',
+				'description' => sprintf(
+					__( 'Get your API key creating a project/app in %s, then inside your project go to "APIs & auth > APIs" and turn on the "Google+ API", finally go to "APIs & auth > APIs > Credentials > Public API access" and click in the "CREATE A NEW KEY" button, select the "Browser key" option and click in the "CREATE" button, now just copy your API key and paste here.', 'social-count-plus' ),
+					'<a href="https://console.developers.google.com/project">https://console.developers.google.com/project</a>'
+				),
 				'section' => 'googleplus',
 				'menu' => 'socialcountplus_settings'
 			),
@@ -399,10 +410,11 @@ class Social_Count_Plus {
 
 		foreach ( $this->default_settings() as $key => $value ) {
 			if ( 'section' != $value['type'] ) {
-				if ( 'socialcountplus_design' == $value['menu'] )
+				if ( 'socialcountplus_design' == $value['menu'] ) {
 					$design[ $key ] = $value['default'];
-				else
+				} else {
 					$settings[ $key ] = $value['default'];
+				}
 			}
 		}
 
@@ -488,13 +500,13 @@ class Social_Count_Plus {
 		} else {
 			$settings_options = get_option( 'socialcountplus_settings' );
 
-			if ( isset( $settings_options['twitter_user'] ) && ! isset( $settings_options['youtube_url'] ) ) {
-				// Update to version 2.8.2.
+			if ( isset( $settings_options['twitter_user'] ) && ! isset( $settings_options['googleplus_api_key'] ) ) {
+				// Update to version 2.9.0.
 				$new_options = array(
-					'youtube_url' => ''
+					'googleplus_api_key' => ''
 				);
 
-				update_option( 'socialcountplus_settings', array_merge( $new_options, $settings ) );
+				update_option( 'socialcountplus_settings', array_merge( $new_options, $settings_options ) );
 			} else {
 				// Install default options.
 				$this->install();
@@ -686,8 +698,9 @@ class Social_Count_Plus {
 		$settings_options = get_option( $settings );
 
 		// Create option in wp_options.
-		if ( false == $settings_options || ! isset( $settings_options['instagram_username'] ) )
+		if ( false == $settings_options || ! isset( $settings_options['googleplus_api_key'] ) ) {
 			$this->update();
+		}
 
 		foreach ( $this->default_settings() as $key => $value ) {
 

@@ -144,27 +144,30 @@ class Social_Count_Plus_Counter {
 		}
 
 		// Google Plus.
-		if ( isset( $settings['googleplus_active'] ) && isset( $settings['googleplus_id'] ) && ! empty( $settings['googleplus_id'] ) ) {
+		if (
+			isset( $settings['googleplus_active'] )
+			&& isset( $settings['googleplus_id'] )
+			&& ! empty( $settings['googleplus_id'] )
+			&& isset( $settings['googleplus_api_key'] )
+			&& ! empty( $settings['googleplus_api_key'] )
+		) {
 			$googleplus_id = 'https://plus.google.com/' . $settings['googleplus_id'];
 
 			$googleplus_data_params = array(
-				'method'    => 'POST',
 				'sslverify' => false,
-				'timeout'   => 30,
-				'headers'   => array( 'Content-Type' => 'application/json' ),
-				'body'      => '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"' . $googleplus_id . '","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]'
+				'timeout'   => 60
 			);
 
 			// Get googleplus data.
-			$googleplus_data = wp_remote_get( 'https://clients6.google.com/rpc', $googleplus_data_params );
+			$googleplus_data = wp_remote_get( 'https://www.googleapis.com/plus/v1/people/' . $settings['googleplus_id'] . '?key=' . $settings['googleplus_api_key'], $googleplus_data_params );
 
 			if ( is_wp_error( $googleplus_data ) || '400' <= $googleplus_data['response']['code'] ) {
 				$count['googleplus'] = ( isset( $cache['googleplus'] ) ) ? $cache['googleplus'] : 0;
 			} else {
 				$googleplus_response = json_decode( $googleplus_data['body'], true );
 
-				if ( isset( $googleplus_response[0]['result']['metadata']['globalCounts']['count'] ) ) {
-					$googleplus_count = intval( $googleplus_response[0]['result']['metadata']['globalCounts']['count'] );
+				if ( isset( $googleplus_response['circledByCount'] ) ) {
+					$googleplus_count = intval( $googleplus_response['circledByCount'] );
 
 					$count['googleplus'] = $googleplus_count;
 					$cache['googleplus'] = $googleplus_count;
