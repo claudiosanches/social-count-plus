@@ -74,6 +74,22 @@ You can contribute to the source code in our [GitHub](https://github.com/claudio
 
 * This plugin is released under a GPL license.
 
+= Google+ is not working? =
+
+You probably have not been able to generate API keys as it should.
+
+You can test the API key with the following link:
+
+	https://www.googleapis.com/plus/v1/people/+ClaudioSanches?key=API_KEY_HERE
+
+The answer must contain the following line:
+
+	"circledByCount": XXX,
+
+If you do not find anything related to `circledByCount` means that your API key is incorrect, but do not worry, just follow the steps in this video to generate an valid API key:
+
+https://www.youtube.com/watch?v=kj078EN_hpU
+
 = Why the counter Facebook does not leave the ground? =
 
 * Because you need to have a fan page with more than 15 people in it to run the Facebook API.
