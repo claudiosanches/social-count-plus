@@ -3,7 +3,7 @@
 
 /* General styles */
 .social-count-plus {
-	@include pie-clearfix;
+	@include pie-clearfix();
 
 	.clear {
 		clear: both;
@@ -11,14 +11,17 @@
 
 	ul {
 		list-style: none !important;
+		border: none !important;
 		margin: 0;
 		padding: 0;
 	}
 
 	li {
-		background: none;
+		background: none !important;
+		border: none !important;
 		clear: none !important;
 		float: left;
+		list-style: none !important;
 		margin: 0;
 		padding: 0 0 20px;
 		text-align: center;
@@ -26,7 +29,7 @@
 	}
 
 	.vertical li {
-		@include pie-clearfix;
+		@include pie-clearfix();
 		display: block;
 		float: none;
 		padding-bottom: 10px;
