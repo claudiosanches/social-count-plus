@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: 2.9.0
+Stable tag: 2.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -115,6 +115,11 @@ Example:
 4. Widget.
 
 == Changelog ==
+
+= 2.9.1 - 30/05/2014 =
+
+* Improved the counter styles.
+* Changed the default options in plugin install.
 
 = 2.9.0 - 05/04/2014 =
 
