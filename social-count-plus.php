@@ -50,6 +50,9 @@ class Social_Count_Plus {
 		if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 			$this->admin_includes();
 		}
+
+		$this->includes();
+		$this->include_counters();
 	}
 
 	/**
@@ -81,7 +84,22 @@ class Social_Count_Plus {
 	 * Include admin actions.
 	 */
 	public function admin_includes() {
-		include( 'includes/admin/class-social-count-plus-admin.php' );
+		include 'includes/admin/class-social-count-plus-admin.php';
+	}
+
+	/**
+	 * Include plugin functions.
+	 */
+	public function includes() {
+		include_once 'includes/class-social-count-plus-generator.php';
+		include_once 'includes/abstracts/abstract-social-count-plus-counter.php';
+	}
+
+	/**
+	 * Include counters.
+	 */
+	public function include_counters() {
+		include_once 'includes/counters/class-social-count-plus-facebook-counter.php';
 	}
 }
 
