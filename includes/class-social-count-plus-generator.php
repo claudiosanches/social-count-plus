@@ -32,7 +32,7 @@ class Social_Count_Plus_Generator {
 	 *
 	 * @return array
 	 */
-	public static function update() {
+	public static function get_count() {
 		// Get transient.
 		$total = get_transient( self::$transient );
 
@@ -75,7 +75,7 @@ class Social_Count_Plus_Generator {
 	 *
 	 * @return void
 	 */
-	public static function delete() {
+	public static function delete_count() {
 		delete_transient( self::$transient );
 	}
 
@@ -84,9 +84,9 @@ class Social_Count_Plus_Generator {
 	 *
 	 * @return void
 	 */
-	public static function reset() {
-		self::delete();
-		self::update();
+	public static function reset_count() {
+		self::delete_count();
+		self::get_count();
 	}
 
 }

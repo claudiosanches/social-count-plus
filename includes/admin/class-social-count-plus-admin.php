@@ -311,7 +311,7 @@ class Social_Count_Plus_Admin {
 		// Reset transients when save settings page.
 		if ( isset( $_GET['settings-updated'] ) ) {
 			if ( true == $_GET['settings-updated'] ) {
-				Social_Count_Plus_Generator::reset();
+				Social_Count_Plus_Generator::reset_count();
 			}
 		}
 
