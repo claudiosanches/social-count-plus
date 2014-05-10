@@ -45,8 +45,9 @@ class Social_Count_Plus_Generator {
 		$settings = get_option( 'socialcountplus_settings' );
 		$cache    = get_option( self::$cache );
 		$counters = apply_filters( 'social_count_plus_counters', array(
-			'Social_Count_Plus_Facebook_Counter',
 			'Social_Count_Plus_Twitter_Counter',
+			'Social_Count_Plus_Facebook_Counter',
+			'Social_Count_Plus_YouTube_Counter',
 		) );
 
 		foreach ( $counters as $counter ) {
