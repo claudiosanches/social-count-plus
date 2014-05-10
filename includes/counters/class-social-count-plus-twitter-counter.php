@@ -138,10 +138,10 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 		if ( $this->is_available( $settings ) ) {
 			$user = $settings['twitter_user'];
 
-			$data_params = array(
+			$params = array(
 				'method'    => 'GET',
 				'sslverify' => false,
-				'timeout'   => 30,
+				'timeout'   => 60,
 				'headers'   => array(
 					'Content-Type'  => 'application/x-www-form-urlencoded',
 					'Authorization' => $this->authorization(
@@ -154,8 +154,7 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 				)
 			);
 
-			// Get twitter data.
-			$data = wp_remote_get( $this->api_url . '?screen_name=' . $user, $data_params );
+			$data = wp_remote_get( $this->api_url . '?screen_name=' . $user, $params );
 
 			if ( is_wp_error( $data ) ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;

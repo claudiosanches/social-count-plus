@@ -48,7 +48,12 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 */
 	public function get_total( $settings, $cache ) {
 		if ( $this->is_available( $settings ) ) {
-			$data = wp_remote_get( $this->api_url . $settings['youtube_user'] );
+			$params = array(
+				'sslverify' => false,
+				'timeout'   => 60
+			);
+
+			$data = wp_remote_get( $this->api_url . $settings['youtube_user'], $params );
 
 			if ( is_wp_error( $data ) || '400' <= $data['response']['code'] ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
