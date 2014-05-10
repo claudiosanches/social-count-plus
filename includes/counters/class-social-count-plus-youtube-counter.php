@@ -54,8 +54,8 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				try {
-					$body = str_replace( 'yt:', '', $data['body'] );
-					$xml = @new SimpleXmlElement( $body, LIBXML_NOCDATA );
+					$body  = str_replace( 'yt:', '', $data['body'] );
+					$xml   = @new SimpleXmlElement( $body, LIBXML_NOCDATA );
 					$count = intval( $xml->statistics['subscriberCount'] );
 
 					$this->total = $count;
