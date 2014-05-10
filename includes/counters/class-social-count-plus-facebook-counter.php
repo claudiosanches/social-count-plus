@@ -28,6 +28,17 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 	protected $api_url = 'http://graph.facebook.com/';
 
 	/**
+	 * Test the counter is available.
+	 *
+	 * @param  array $settings Plugin settings.
+	 *
+	 * @return bool
+	 */
+	protected function is_available( $settings ) {
+		return ( isset( $settings['facebook_active'] ) && isset( $settings['facebook_id'] ) && ! empty( $settings['facebook_id'] ) );
+	}
+
+	/**
 	 * Get the total.
 	 *
 	 * @param  array $settings Plugin settings.
@@ -36,11 +47,7 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 	 * @return int
 	 */
 	public function get_total( $settings, $cache ) {
-		if (
-			isset( $settings['facebook_active'] )
-			&& isset( $settings['facebook_id'] )
-			&& ! empty( $settings['facebook_id'] )
-		) {
+		if ( $this->is_available( $settings ) ) {
 
 			// Get facebook data.
 			$facebook_data = wp_remote_get( $this->api_url . $settings['facebook_id'] );

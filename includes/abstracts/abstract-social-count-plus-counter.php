@@ -28,6 +28,17 @@ abstract class Social_Count_Plus_Counter {
 	public $id = '';
 
 	/**
+	 * Test the counter is available.
+	 *
+	 * @param  array $settings Plugin settings.
+	 *
+	 * @return bool
+	 */
+	protected function is_available( $settings ) {
+		return false;
+	}
+
+	/**
 	 * Get the total.
 	 *
 	 * @param  array $settings Plugin settings.
