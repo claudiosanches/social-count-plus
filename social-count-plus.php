@@ -93,6 +93,7 @@ class Social_Count_Plus {
 	public function includes() {
 		include_once 'includes/class-social-count-plus-generator.php';
 		include_once 'includes/abstracts/abstract-social-count-plus-counter.php';
+		include_once 'includes/social-count-plus-functions.php';
 	}
 
 	/**
