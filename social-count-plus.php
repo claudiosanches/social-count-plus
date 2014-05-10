@@ -104,6 +104,7 @@ class Social_Count_Plus {
 		include_once 'includes/counters/class-social-count-plus-youtube-counter.php';
 		include_once 'includes/counters/class-social-count-plus-googleplus-counter.php';
 		include_once 'includes/counters/class-social-count-plus-instagram-counter.php';
+		include_once 'includes/counters/class-social-count-plus-steam-counter.php';
 	}
 }
 
