@@ -52,6 +52,7 @@ class Social_Count_Plus_Generator {
 			'Social_Count_Plus_Instagram_Counter',
 			'Social_Count_Plus_Steam_Counter',
 			'Social_Count_Plus_SoundCloud_Counter',
+			'Social_Count_Plus_Posts_Counter',
 		) );
 
 		foreach ( $counters as $counter ) {
