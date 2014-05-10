@@ -53,7 +53,7 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 				'timeout'   => 60
 			);
 
-			$data = wp_remote_get( 'http://steamcommunity.com/groups/' . $settings['steam_group_name'] . '/memberslistxml/?xml=1', $params );
+			$data = wp_remote_get( $this->api_url . $settings['steam_group_name'] . '/memberslistxml/?xml=1', $params );
 
 			if ( is_wp_error( $data ) || '400' <= $data['response']['code'] ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
