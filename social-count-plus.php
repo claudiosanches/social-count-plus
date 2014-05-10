@@ -53,6 +53,9 @@ class Social_Count_Plus {
 
 		$this->includes();
 		$this->include_counters();
+
+		// Widget.
+		add_action( 'widgets_init', array( $this, 'register_widget' ) );
 	}
 
 	/**
@@ -89,15 +92,21 @@ class Social_Count_Plus {
 
 	/**
 	 * Include plugin functions.
+	 *
+	 * @return void
 	 */
 	public function includes() {
 		include_once 'includes/class-social-count-plus-generator.php';
 		include_once 'includes/abstracts/abstract-social-count-plus-counter.php';
+		include_once 'includes/class-social-count-plus-view.php';
+		include_once 'includes/class-social-count-plus-widget.php';
 		include_once 'includes/social-count-plus-functions.php';
 	}
 
 	/**
 	 * Include counters.
+	 *
+	 * @return void
 	 */
 	public function include_counters() {
 		include_once 'includes/counters/class-social-count-plus-facebook-counter.php';
@@ -109,6 +118,15 @@ class Social_Count_Plus {
 		include_once 'includes/counters/class-social-count-plus-soundcloud-counter.php';
 		include_once 'includes/counters/class-social-count-plus-posts-counter.php';
 		include_once 'includes/counters/class-social-count-plus-comments-counter.php';
+	}
+
+	/**
+	 * Register widget.
+	 *
+	 * @return void
+	 */
+	public function register_widget() {
+		register_widget( 'SocialCountPlus' );
 	}
 }
 

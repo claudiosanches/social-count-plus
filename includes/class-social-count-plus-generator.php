@@ -88,5 +88,4 @@ class Social_Count_Plus_Generator {
 		self::delete_count();
 		self::get_count();
 	}
-
 }

@@ -131,7 +131,5 @@ function get_scp_all() {
  * @return int Widget count.
  */
 function get_scp_widget() {
-	global $social_count_plus;
-
-	return $social_count_plus->view();
+	return Social_Count_Plus_View::get_view();
 }
