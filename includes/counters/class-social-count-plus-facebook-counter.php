@@ -49,20 +49,19 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 	public function get_total( $settings, $cache ) {
 		if ( $this->is_available( $settings ) ) {
 
-			// Get facebook data.
-			$facebook_data = wp_remote_get( $this->api_url . $settings['facebook_id'] );
+			$data = wp_remote_get( $this->api_url . $settings['facebook_id'] );
 
-			if ( is_wp_error( $facebook_data ) ) {
-				$this->total = ( isset( $cache['facebook'] ) ) ? $cache['facebook'] : 0;
+			if ( is_wp_error( $data ) ) {
+				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
-				$facebook_response = json_decode( $facebook_data['body'], true );
+				$response = json_decode( $data['body'], true );
 
-				if ( isset( $facebook_response['likes'] ) ) {
-					$facebook_count = intval( $facebook_response['likes'] );
+				if ( isset( $response['likes'] ) ) {
+					$count = intval( $response['likes'] );
 
-					$this->total = $facebook_count;
+					$this->total = $count;
 				} else {
-					$this->total = ( isset( $cache['facebook'] ) ) ? $cache['facebook'] : 0;
+					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 				}
 			}
 		}
