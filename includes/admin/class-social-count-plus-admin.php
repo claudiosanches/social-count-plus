@@ -43,6 +43,12 @@ class Social_Count_Plus_Admin {
 
 		// Init plugin options form.
 		add_action( 'admin_init', array( $this, 'plugin_settings' ) );
+
+		// Style and scripts.
+		add_action( 'admin_enqueue_scripts', array( $this, 'styles_and_scripts' ) );
+
+		// Actions links.
+		add_filter( 'plugin_action_links_social-count-plus/social-count-plus.php', array( $this, 'action_links' ) );
 	}
 
 	/**
@@ -292,7 +298,7 @@ class Social_Count_Plus_Admin {
 	public function settings_page() {
 		$screen = get_current_screen();
 
-		if ( ! $this->settings_screen && $screen->id === $this->settings_screen ) {
+		if ( ! $this->settings_screen || $screen->id !== $this->settings_screen ) {
 			return;
 		}
 
@@ -320,6 +326,8 @@ class Social_Count_Plus_Admin {
 
 	/**
 	 * Plugin settings form fields.
+	 *
+	 * @return void
 	 */
 	public function plugin_settings() {
 
@@ -485,7 +493,7 @@ class Social_Count_Plus_Admin {
 
 		foreach ( $args['options'] as $label ) {
 			$html .= sprintf( '<input type="radio" id="%1$s_%2$s_%3$s" name="%1$s[%2$s]" value="%3$s"%4$s style="display: block; float: left; margin: 10px 10px 0 0;" />', $tab, $id, $key, checked( $current, $key, false ) );
-			$html .= sprintf( '<label for="%1$s_%2$s_%3$s"> <img src="%4$s" alt="%1$s_%2$s_%3$s" /></label><br style="clear: both;margin-bottom: 20px;" />', $tab, $id, $key, plugins_url( 'demos/' . $label , __FILE__ ) );
+			$html .= sprintf( '<label for="%1$s_%2$s_%3$s"> <img src="%4$s" alt="%1$s_%2$s_%3$s" /></label><br style="clear: both;margin-bottom: 20px;" />', $tab, $id, $key, plugins_url( 'demos/' . $label, plugin_dir_path( dirname( __FILE__ ) ) ) );
 			$key++;
 		}
 
@@ -538,6 +546,39 @@ class Social_Count_Plus_Admin {
 		return $output;
 	}
 
+	/**
+	 * Register admin styles and scripts.
+	 *
+	 * @return void
+	 */
+	public function styles_and_scripts() {
+		$screen = get_current_screen();
+
+		if ( $this->settings_screen && $screen->id === $this->settings_screen ) {
+			wp_enqueue_script( 'wp-color-picker' );
+			wp_enqueue_style( 'wp-color-picker' );
+			wp_enqueue_script( 'social-count-plus-admin', plugins_url( 'assets/js/admin.min.js', plugin_dir_path( dirname( __FILE__ ) ) ), array( 'jquery', 'wp-color-picker' ), null, true );
+		}
+	}
+
+	/**
+	 * Adds custom settings url in plugins page.
+	 *
+	 * @param  array $links Default links.
+	 *
+	 * @return array        Default links and settings link.
+	 */
+	public function action_links( $links ) {
+		$settings = array(
+			'settings' => sprintf(
+				'<a href="%s">%s</a>',
+				admin_url( 'options-general.php?page=social-count-plus' ),
+				__( 'Settings', 'social-count-plus' )
+			)
+		);
+
+		return array_merge( $settings, $links );
+	}
 }
 
 new Social_Count_Plus_Admin;
