@@ -58,10 +58,10 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 			if ( is_wp_error( $data ) ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
-				$response = json_decode( $data['body'], true );
+				$_data = json_decode( $data['body'], true );
 
-				if ( isset( $response['likes'] ) ) {
-					$count = intval( $response['likes'] );
+				if ( isset( $_data['likes'] ) ) {
+					$count = intval( $_data['likes'] );
 
 					$this->total = $count;
 				} else {

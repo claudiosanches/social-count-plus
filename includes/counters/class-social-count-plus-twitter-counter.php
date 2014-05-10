@@ -159,10 +159,10 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 			if ( is_wp_error( $data ) ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
-				$response = json_decode( $data['body'], true );
+				$_data = json_decode( $data['body'], true );
 
-				if ( isset( $response['followers_count'] ) ) {
-					$count = intval( $response['followers_count'] );
+				if ( isset( $_data['followers_count'] ) ) {
+					$count = intval( $_data['followers_count'] );
 
 					$this->total = $count;
 				} else {

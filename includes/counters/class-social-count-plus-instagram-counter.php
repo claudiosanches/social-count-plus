@@ -5,27 +5,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Social Count Plus Google+ Counter.
+ * Social Count Plus Instagram Counter.
  *
- * @package  Social_Count_Plus/GooglePlus_Counter
+ * @package  Social_Count_Plus/Instagram_Counter
  * @category Counter
  * @author   Claudio Sanches
  */
-class Social_Count_Plus_GooglePlus_Counter extends Social_Count_Plus_Counter {
+class Social_Count_Plus_Instagram_Counter extends Social_Count_Plus_Counter {
 
 	/**
 	 * Counter ID.
 	 *
 	 * @var string
 	 */
-	public $id = 'facebook';
+	public $id = 'instagram';
 
 	/**
 	 * API URL.
 	 *
 	 * @var string
 	 */
-	protected $api_url = 'https://www.googleapis.com/plus/v1/people/';
+	protected $api_url = 'https://api.instagram.com/v1/users/';
 
 	/**
 	 * Test the counter is available.
@@ -35,7 +35,7 @@ class Social_Count_Plus_GooglePlus_Counter extends Social_Count_Plus_Counter {
 	 * @return bool
 	 */
 	protected function is_available( $settings ) {
-		return ( isset( $settings['googleplus_active'] ) && isset( $settings['googleplus_id'] ) && ! empty( $settings['googleplus_id'] ) && isset( $settings['googleplus_api_key'] ) && ! empty( $settings['googleplus_api_key'] ) );
+		return ( isset( $settings['instagram_active'] ) && isset( $settings['instagram_user_id'] ) && ! empty( $settings['instagram_user_id'] ) && isset( $settings['instagram_access_token'] ) && ! empty( $settings['instagram_access_token'] ) );
 	}
 
 	/**
@@ -48,22 +48,24 @@ class Social_Count_Plus_GooglePlus_Counter extends Social_Count_Plus_Counter {
 	 */
 	public function get_total( $settings, $cache ) {
 		if ( $this->is_available( $settings ) ) {
-			$id = 'https://plus.google.com/' . $settings['googleplus_id'];
-
 			$params = array(
 				'sslverify' => false,
 				'timeout'   => 60
 			);
 
-			$data = wp_remote_get( $this->api_url . $settings['googleplus_id'] . '?key=' . $settings['googleplus_api_key'], $params );
+			$data = wp_remote_get( $this->api_url . $settings['instagram_user_id'] . '/?access_token=' . $settings['instagram_access_token'], $params );
 
 			if ( is_wp_error( $data ) || '400' <= $data['response']['code'] ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
-				$_data = json_decode( $data['body'], true );
+				$response = json_decode( $data['body'], true );
 
-				if ( isset( $_data['circledByCount'] ) ) {
-					$count = intval( $_data['circledByCount'] );
+				if (
+					isset( $response['meta']['code'] )
+					&& 200 == $response['meta']['code']
+					&& isset( $response['data']['counts']['followed_by'] )
+				) {
+					$count = intval( $response['data']['counts']['followed_by'] );
 
 					$this->total = $count;
 				} else {
