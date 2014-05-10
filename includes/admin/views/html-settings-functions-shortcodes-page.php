@@ -8,6 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <h3><?php _e( 'Shortcodes', 'social-count-plus' ); ?></h3>
 
+<p><?php _e( 'Note: the shortcodes displays only the count in plain text.', 'social-count-plus' ); ?></p>
+
 <table class="form-table">
 	<tr>
 		<th scope="row"><?php _e( 'Twitter counter', 'social-count-plus' ); ?></th>
@@ -48,6 +50,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 </table>
 
 <h3><?php _e( 'Functions', 'social-count-plus' ); ?></h3>
+
+<p><?php _e( 'Note: the functions displays only the count in plain text, except the <code>get_scp_widget()</code> function that displays with images.', 'social-count-plus' ); ?></p>
 
 <table class="form-table">
 	<tr>
