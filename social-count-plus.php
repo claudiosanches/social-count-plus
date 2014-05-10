@@ -100,6 +100,7 @@ class Social_Count_Plus {
 	 */
 	public function include_counters() {
 		include_once 'includes/counters/class-social-count-plus-facebook-counter.php';
+		include_once 'includes/counters/class-social-count-plus-twitter-counter.php';
 	}
 }
 
