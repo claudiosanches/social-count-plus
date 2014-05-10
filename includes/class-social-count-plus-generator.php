@@ -48,6 +48,7 @@ class Social_Count_Plus_Generator {
 			'Social_Count_Plus_Twitter_Counter',
 			'Social_Count_Plus_Facebook_Counter',
 			'Social_Count_Plus_YouTube_Counter',
+			'Social_Count_Plus_GooglePlus_Counter',
 		) );
 
 		foreach ( $counters as $counter ) {
