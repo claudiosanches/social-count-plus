@@ -18,7 +18,7 @@ class Social_Count_Plus_GooglePlus_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public $id = 'facebook';
+	public $id = 'googleplus';
 
 	/**
 	 * API URL.
