@@ -56,6 +56,9 @@ class Social_Count_Plus {
 
 		// Widget.
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
+
+		// Shortcode.
+		add_shortcode( 'scp', array( 'Social_Count_Plus_Shortcodes', 'counter' ) );
 	}
 
 	/**
@@ -100,6 +103,7 @@ class Social_Count_Plus {
 		include_once 'includes/abstracts/abstract-social-count-plus-counter.php';
 		include_once 'includes/class-social-count-plus-view.php';
 		include_once 'includes/class-social-count-plus-widget.php';
+		include_once 'includes/class-social-count-plus-shortcodes.php';
 		include_once 'includes/social-count-plus-functions.php';
 	}
 
