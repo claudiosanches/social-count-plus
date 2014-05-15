@@ -34,7 +34,7 @@ class Social_Count_Plus_GooglePlus_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return bool
 	 */
-	protected function is_available( $settings ) {
+	public function is_available( $settings ) {
 		return ( isset( $settings['googleplus_active'] ) && isset( $settings['googleplus_id'] ) && ! empty( $settings['googleplus_id'] ) && isset( $settings['googleplus_api_key'] ) && ! empty( $settings['googleplus_api_key'] ) );
 	}
 
@@ -55,12 +55,12 @@ class Social_Count_Plus_GooglePlus_Counter extends Social_Count_Plus_Counter {
 				'timeout'   => 60
 			);
 
-			$data = wp_remote_get( $this->api_url . $settings['googleplus_id'] . '?key=' . $settings['googleplus_api_key'], $params );
+			$this->connection = wp_remote_get( $this->api_url . $settings['googleplus_id'] . '?key=' . $settings['googleplus_api_key'], $params );
 
-			if ( is_wp_error( $data ) || '400' <= $data['response']['code'] ) {
+			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
-				$_data = json_decode( $data['body'], true );
+				$_data = json_decode( $this->connection['body'], true );
 
 				if ( isset( $_data['circledByCount'] ) ) {
 					$count = intval( $_data['circledByCount'] );

@@ -49,6 +49,9 @@ class Social_Count_Plus_Admin {
 
 		// Actions links.
 		add_filter( 'plugin_action_links_social-count-plus/social-count-plus.php', array( $this, 'action_links' ) );
+
+		// System status report.
+		add_action( 'admin_init', array( $this, 'report_file' ) );
 	}
 
 	/**
@@ -579,6 +582,77 @@ class Social_Count_Plus_Admin {
 		);
 
 		return array_merge( $settings, $links );
+	}
+
+	/**
+	 * Generate a system report file.
+	 *
+	 * @return string
+	 */
+	public function report_file() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		if ( ! isset( $_GET['page'] ) || ! isset( $_GET['tab'] ) || ! isset( $_GET['debug_file'] ) ) {
+			return;
+		}
+
+		@ob_clean();
+
+		$debug    = array();
+		$settings = get_option( 'socialcountplus_settings' );
+		$cache    = get_option( Social_Count_Plus_Generator::$cache );
+		$content  = '';
+		$counters = apply_filters( 'social_count_plus_counters_test', array(
+			'Social_Count_Plus_Twitter_Counter',
+			'Social_Count_Plus_Facebook_Counter',
+			'Social_Count_Plus_YouTube_Counter',
+			'Social_Count_Plus_GooglePlus_Counter',
+			'Social_Count_Plus_Instagram_Counter',
+			'Social_Count_Plus_Steam_Counter',
+			'Social_Count_Plus_SoundCloud_Counter'
+		) );
+
+		foreach ( $counters as $counter ) {
+			$_counter = new $counter();
+
+			if ( $_counter->is_available( $settings ) ) {
+				$_counter->get_total( $settings, $cache );
+				$debug[ $_counter->id ] = $_counter->debug();
+			}
+		}
+
+		// Set the content.
+		$content .= '# ' .  __( 'General Info', 'social-count-plus' ) . ' #' . PHP_EOL . PHP_EOL;
+		$content .= __( 'Social Count Plus Version', 'social-count-plus' ) . ': ' . Social_Count_Plus::VERSION . PHP_EOL;
+		$content .= __( 'WordPress Version', 'social-count-plus' ) . ': ' . esc_attr( get_bloginfo( 'version' ) ) . PHP_EOL;
+		$content .= __( 'WP Multisite Enabled', 'social-count-plus' ) . ': ' . ( ( is_multisite() ) ? __( 'Yes', 'social-count-plus' ) : __( 'No', 'social-count-plus' ) ) . PHP_EOL;
+		$content .= __( 'Web Server Info', 'social-count-plus' ) . ': ' . esc_html( $_SERVER['SERVER_SOFTWARE'] ) . PHP_EOL;
+		$content .= __( 'PHP Version', 'social-count-plus' ) . ': ' . ( function_exists( 'phpversion' ) ? esc_html( phpversion() ) : '' ) . PHP_EOL;
+		$content .= 'fsockopen: ' . ( function_exists( 'fsockopen' ) ? __( 'Yes', 'social-count-plus' ) : __( 'No', 'social-count-plus' ) ) . PHP_EOL;
+		$content .= 'cURL: ' . ( function_exists( 'curl_init' ) ? __( 'Yes', 'social-count-plus' ) : __( 'No', 'social-count-plus' ) ) . PHP_EOL . PHP_EOL;
+		$content .= '# ' . __( 'Social Connections' ) . ' #';
+		$content .= PHP_EOL . PHP_EOL;
+
+		if ( ! empty( $debug ) ) {
+			foreach ( $debug as $key => $value ) {
+				$content .= '### ' . strtoupper( esc_attr( $key ) ) . ' ###' . PHP_EOL;
+				$content .= print_r( $value, true );
+				$content .= PHP_EOL . PHP_EOL;
+			}
+		} else {
+			$content .= __( 'You do not have any counter that needs to connect remotely currently active', 'social-count-plus' );
+		}
+
+		header( 'Cache-Control: public' );
+		header( 'Content-Description: File Transfer' );
+		header( 'Content-Disposition: attachment; filename=social-count-plus-debug-' . date( 'y-m-d-H-i' ) . '.txt' );
+		header( 'Content-Type: text/plain' );
+		header( 'Content-Transfer-Encoding: binary' );
+
+		echo $content;
+		exit;
 	}
 }
 

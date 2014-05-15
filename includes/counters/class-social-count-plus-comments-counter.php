@@ -34,7 +34,7 @@ class Social_Count_Plus_Comments_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return bool
 	 */
-	protected function is_available( $settings ) {
+	public function is_available( $settings ) {
 		return ( isset( $settings['comments_active'] ) );
 	}
 

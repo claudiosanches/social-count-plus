@@ -34,7 +34,7 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return bool
 	 */
-	protected function is_available( $settings ) {
+	public function is_available( $settings ) {
 		return ( isset( $settings['facebook_active'] ) && isset( $settings['facebook_id'] ) && ! empty( $settings['facebook_id'] ) );
 	}
 
@@ -53,12 +53,12 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 				'timeout'   => 60
 			);
 
-			$data = wp_remote_get( $this->api_url . $settings['facebook_id'], $params );
+			$this->connection = wp_remote_get( $this->api_url . $settings['facebook_id'], $params );
 
-			if ( is_wp_error( $data ) ) {
+			if ( is_wp_error( $this->connection ) ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
-				$_data = json_decode( $data['body'], true );
+				$_data = json_decode( $this->connection['body'], true );
 
 				if ( isset( $_data['likes'] ) ) {
 					$count = intval( $_data['likes'] );

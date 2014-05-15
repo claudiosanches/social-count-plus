@@ -28,13 +28,20 @@ abstract class Social_Count_Plus_Counter {
 	public $id = '';
 
 	/**
+	 * Connection.
+	 *
+	 * @var WP_Error|array
+	 */
+	protected $connection = array();
+
+	/**
 	 * Test the counter is available.
 	 *
 	 * @param  array $settings Plugin settings.
 	 *
 	 * @return bool
 	 */
-	protected function is_available( $settings ) {
+	public function is_available( $settings ) {
 		return false;
 	}
 
@@ -48,5 +55,9 @@ abstract class Social_Count_Plus_Counter {
 	 */
 	public function get_total( $settings, $cache ) {
 		return $this->total;
+	}
+
+	public function debug() {
+		return $this->connection;
 	}
 }

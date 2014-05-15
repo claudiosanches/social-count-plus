@@ -34,7 +34,7 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return bool
 	 */
-	protected function is_available( $settings ) {
+	public function is_available( $settings ) {
 		return ( isset( $settings['steam_active'] ) && isset( $settings['steam_group_name'] ) && ! empty( $settings['steam_group_name'] ) );
 	}
 
@@ -53,13 +53,13 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 				'timeout'   => 60
 			);
 
-			$data = wp_remote_get( $this->api_url . $settings['steam_group_name'] . '/memberslistxml/?xml=1', $params );
+			$this->connection = wp_remote_get( $this->api_url . $settings['steam_group_name'] . '/memberslistxml/?xml=1', $params );
 
-			if ( is_wp_error( $data ) || '400' <= $data['response']['code'] ) {
+			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				try {
-					$xml = @new SimpleXmlElement( $data['body'], LIBXML_NOCDATA );
+					$xml = @new SimpleXmlElement( $this->connection['body'], LIBXML_NOCDATA );
 					$count = intval( $xml->groupDetails->memberCount );
 
 					$this->total = $count;

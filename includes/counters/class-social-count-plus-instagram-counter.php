@@ -34,7 +34,7 @@ class Social_Count_Plus_Instagram_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return bool
 	 */
-	protected function is_available( $settings ) {
+	public function is_available( $settings ) {
 		return ( isset( $settings['instagram_active'] ) && isset( $settings['instagram_user_id'] ) && ! empty( $settings['instagram_user_id'] ) && isset( $settings['instagram_access_token'] ) && ! empty( $settings['instagram_access_token'] ) );
 	}
 
@@ -53,12 +53,12 @@ class Social_Count_Plus_Instagram_Counter extends Social_Count_Plus_Counter {
 				'timeout'   => 60
 			);
 
-			$data = wp_remote_get( $this->api_url . $settings['instagram_user_id'] . '/?access_token=' . $settings['instagram_access_token'], $params );
+			$this->connection = wp_remote_get( $this->api_url . $settings['instagram_user_id'] . '/?access_token=' . $settings['instagram_access_token'], $params );
 
-			if ( is_wp_error( $data ) || '400' <= $data['response']['code'] ) {
+			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
-				$response = json_decode( $data['body'], true );
+				$response = json_decode( $this->connection['body'], true );
 
 				if (
 					isset( $response['meta']['code'] )

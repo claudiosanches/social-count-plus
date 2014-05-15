@@ -34,7 +34,7 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return bool
 	 */
-	protected function is_available( $settings ) {
+	public function is_available( $settings ) {
 		return ( isset( $settings['youtube_active'] ) && isset( $settings['youtube_user'] ) && ! empty( $settings['youtube_user'] ) );
 	}
 
@@ -53,13 +53,13 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 				'timeout'   => 60
 			);
 
-			$data = wp_remote_get( $this->api_url . $settings['youtube_user'], $params );
+			$this->connection = wp_remote_get( $this->api_url . $settings['youtube_user'], $params );
 
-			if ( is_wp_error( $data ) || '400' <= $data['response']['code'] ) {
+			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				try {
-					$body  = str_replace( 'yt:', '', $data['body'] );
+					$body  = str_replace( 'yt:', '', $this->connection['body'] );
 					$xml   = @new SimpleXmlElement( $body, LIBXML_NOCDATA );
 					$count = intval( $xml->statistics['subscriberCount'] );
 
