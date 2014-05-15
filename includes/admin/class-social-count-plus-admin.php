@@ -558,10 +558,12 @@ class Social_Count_Plus_Admin {
 		$screen = get_current_screen();
 
 		if ( $this->settings_screen && $screen->id === $this->settings_screen ) {
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
 			wp_enqueue_script( 'wp-color-picker' );
 			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_style( 'social-count-plus-admin', plugins_url( 'assets/css/admin.css', plugin_dir_path( dirname( __FILE__ ) ) ), array(), Social_Count_Plus::VERSION, 'all' );
-			wp_enqueue_script( 'social-count-plus-admin', plugins_url( 'assets/js/admin.min.js', plugin_dir_path( dirname( __FILE__ ) ) ), array( 'jquery', 'wp-color-picker' ), Social_Count_Plus::VERSION, true );
+			wp_enqueue_script( 'social-count-plus-admin', plugins_url( 'assets/js/admin' . $suffix . '.js', plugin_dir_path( dirname( __FILE__ ) ) ), array( 'jquery', 'wp-color-picker' ), Social_Count_Plus::VERSION, true );
 		}
 	}
 
