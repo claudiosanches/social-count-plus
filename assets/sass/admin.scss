@@ -1,0 +1,36 @@
+/* Status page */
+table#social-count-plus-system-status {
+	tr {
+		&:nth-child(2n) {
+			th, td {
+				background: #fcfcfc;
+			}
+		}
+	}
+	th {
+		font-weight: bold;
+	}
+	td:first-child {
+		width: 20%;
+	}
+	td {
+		padding: 6px 9px;
+		font-size: 1.1em;
+
+		mark {
+			background: transparent none;
+		}
+		mark.yes {
+			color: #7AD03A;
+		}
+		mark.no {
+			color: #999;
+		}
+		mark.error {
+			color: #a00;
+		}
+		ul {
+			margin: 0;
+		}
+	}
+}

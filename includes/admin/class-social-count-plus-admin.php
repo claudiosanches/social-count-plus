@@ -557,7 +557,8 @@ class Social_Count_Plus_Admin {
 		if ( $this->settings_screen && $screen->id === $this->settings_screen ) {
 			wp_enqueue_script( 'wp-color-picker' );
 			wp_enqueue_style( 'wp-color-picker' );
-			wp_enqueue_script( 'social-count-plus-admin', plugins_url( 'assets/js/admin.min.js', plugin_dir_path( dirname( __FILE__ ) ) ), array( 'jquery', 'wp-color-picker' ), null, true );
+			wp_enqueue_style( 'social-count-plus-admin', plugins_url( 'assets/css/admin.css', plugin_dir_path( dirname( __FILE__ ) ) ), array(), Social_Count_Plus::VERSION, 'all' );
+			wp_enqueue_script( 'social-count-plus-admin', plugins_url( 'assets/js/admin.min.js', plugin_dir_path( dirname( __FILE__ ) ) ), array( 'jquery', 'wp-color-picker' ), Social_Count_Plus::VERSION, true );
 		}
 	}
 
