@@ -219,7 +219,12 @@ class Social_Count_Plus_Admin {
 							'title'   => __( 'Display Posts counter', 'social-count-plus' ),
 							'default' => true,
 							'type'    => 'checkbox'
-						)
+						),
+						'post_type' => array(
+							'title'   => __( 'Post type', 'social-count-plus' ),
+							'default' => true,
+							'type'    => 'post_type'
+						),
 					)
 				),
 				'comments' => array(
@@ -378,6 +383,20 @@ class Social_Count_Plus_Admin {
 								)
 							);
 							break;
+						case 'post_type':
+							add_settings_field(
+								$field_id,
+								$field['title'],
+								array( $this, 'post_type_element_callback' ),
+								$settings_id,
+								$section_id,
+								array(
+									'tab'         => $settings_id,
+									'id'          => $field_id,
+									'description' => isset( $field['description'] ) ? $field['description'] : ''
+								)
+							);
+							break;
 						case 'models':
 							add_settings_field(
 								$field_id,
@@ -470,6 +489,34 @@ class Social_Count_Plus_Admin {
 		$current = $this->get_option_value( $id, $default );
 		$html    = sprintf( '<input type="checkbox" id="%1$s" name="%2$s[%1$s]" value="1"%3$s />', $id, $tab, checked( 1, $current, false ) );
 		$html   .= sprintf( '<label for="%s"> %s</label><br />', $id, __( 'Activate/Deactivate', 'social-count-plus' ) );
+
+		// Displays option description.
+		if ( isset( $args['description'] ) ) {
+			$html .= sprintf( '<p class="description">%s</p>', $args['description'] );
+		}
+
+		echo $html;
+	}
+
+	/**
+	 * Post Type element fallback.
+	 *
+	 * @param  array $args Field arguments.
+	 *
+	 * @return string      Post Type field.
+	 */
+	function post_type_element_callback( $args ) {
+		$tab     = $args['tab'];
+		$id      = $args['id'];
+		$default = isset( $args['default'] ) ? $args['default'] : 'posts';
+		$current = $this->get_option_value( $id, $default );
+		$html    = '';
+
+		$html = sprintf( '<select id="%1$s" name="%2$s[%1$s]">', $id, $tab );
+		foreach ( get_post_types( array( 'public' => true ), 'objects' ) as $key => $value ) {
+			$html .= sprintf( '<option value="%s"%s>%s</option>', $key, selected( $current, $key, false ), $value->label );
+		}
+		$html .= '</select>';
 
 		// Displays option description.
 		if ( isset( $args['description'] ) ) {
