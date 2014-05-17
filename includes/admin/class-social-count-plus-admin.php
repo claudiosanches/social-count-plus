@@ -505,7 +505,7 @@ class Social_Count_Plus_Admin {
 	 *
 	 * @return string      Post Type field.
 	 */
-	function post_type_element_callback( $args ) {
+	public function post_type_element_callback( $args ) {
 		$tab     = $args['tab'];
 		$id      = $args['id'];
 		$default = isset( $args['default'] ) ? $args['default'] : 'posts';
@@ -533,7 +533,7 @@ class Social_Count_Plus_Admin {
 	 *
 	 * @return string      Models field.
 	 */
-	function models_element_callback( $args ) {
+	public function models_element_callback( $args ) {
 		$tab     = $args['tab'];
 		$id      = $args['id'];
 		$default = isset( $args['default'] ) ? $args['default'] : 0;
