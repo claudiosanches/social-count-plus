@@ -220,7 +220,7 @@ class Social_Count_Plus_Admin {
 							'default' => true,
 							'type'    => 'checkbox'
 						),
-						'post_type' => array(
+						'posts_post_type' => array(
 							'title'   => __( 'Post type', 'social-count-plus' ),
 							'default' => true,
 							'type'    => 'post_type'
