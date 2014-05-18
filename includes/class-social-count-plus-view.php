@@ -45,10 +45,12 @@ class Social_Count_Plus_View {
 	 * @return string
 	 */
 	public static function get_view() {
-		$settings = get_option( 'socialcountplus_settings' );
-		$design   = get_option( 'socialcountplus_design' );
-		$count    = Social_Count_Plus_Generator::get_count();
-		$color    = isset( $design['text_color'] ) ? $design['text_color'] : '#333333';
+		$settings    = get_option( 'socialcountplus_settings' );
+		$design      = get_option( 'socialcountplus_design' );
+		$count       = Social_Count_Plus_Generator::get_count();
+		$color       = isset( $design['text_color'] ) ? $design['text_color'] : '#333333';
+		$post_type   = ( isset( $settings['posts_post_type'] ) && ! empty( $settings['posts_post_type'] ) ) ? $settings['posts_post_type'] : 'posts';
+		$post_object = get_post_type_object( $post_type );
 
 		// Sets view design.
 		$style = '';
@@ -99,7 +101,7 @@ class Social_Count_Plus_View {
 				$html .= ( isset( $settings['soundcloud_active'] ) ) ? self::get_view_li( 'soundcloud', 'https://soundcloud.com/' . $settings['soundcloud_username'], $count['soundcloud'], __( 'followers', 'social-count-plus' ), $color, $settings ) : '';
 
 				// Posts counter.
-				$html .= ( isset( $settings['posts_active'] ) ) ? self::get_view_li( 'posts', get_home_url(), $count['posts'], __( 'posts', 'social-count-plus' ), $color, $settings ) : '';
+				$html .= ( isset( $settings['posts_active'] ) ) ? self::get_view_li( 'posts', get_home_url(), $count['posts'], strtolower( $post_object->label ), $color, $settings ) : '';
 
 				// Comments counter.
 				$html .= ( isset( $settings['comments_active'] ) ) ? self::get_view_li( 'comments', get_home_url(), $count['comments'], __( 'comments', 'social-count-plus' ), $color, $settings ) : '';
