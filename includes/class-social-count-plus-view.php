@@ -49,7 +49,7 @@ class Social_Count_Plus_View {
 		$design      = get_option( 'socialcountplus_design' );
 		$count       = Social_Count_Plus_Generator::get_count();
 		$color       = isset( $design['text_color'] ) ? $design['text_color'] : '#333333';
-		$post_type   = ( isset( $settings['posts_post_type'] ) && ! empty( $settings['posts_post_type'] ) ) ? $settings['posts_post_type'] : 'posts';
+		$post_type   = ( isset( $settings['posts_post_type'] ) && ! empty( $settings['posts_post_type'] ) ) ? $settings['posts_post_type'] : 'post';
 		$post_object = get_post_type_object( $post_type );
 
 		// Sets view design.
@@ -94,7 +94,7 @@ class Social_Count_Plus_View {
 				// Instagram counter.
 				$html .= ( isset( $settings['instagram_active'] ) ) ? self::get_view_li( 'instagram', 'http://instagram.com/' . $settings['instagram_username'], $count['instagram'], __( 'followers', 'social-count-plus' ), $color, $settings ) : '';
 
-				// Steam counter
+				// Steam counter.
 				$html .= ( isset( $settings['steam_active'] ) ) ? self::get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'social-count-plus' ), $color, $settings ) : '';
 
 				// SoundCloud counter.

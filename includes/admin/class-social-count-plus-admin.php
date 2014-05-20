@@ -222,7 +222,7 @@ class Social_Count_Plus_Admin {
 						),
 						'posts_post_type' => array(
 							'title'   => __( 'Post type', 'social-count-plus' ),
-							'default' => true,
+							'default' => 'post',
 							'type'    => 'post_type'
 						),
 					)
@@ -508,7 +508,7 @@ class Social_Count_Plus_Admin {
 	public function post_type_element_callback( $args ) {
 		$tab     = $args['tab'];
 		$id      = $args['id'];
-		$default = isset( $args['default'] ) ? $args['default'] : 'posts';
+		$default = isset( $args['default'] ) ? $args['default'] : 'post';
 		$current = $this->get_option_value( $id, $default );
 		$html    = '';
 
