@@ -60,6 +60,9 @@ class Social_Count_Plus {
 
 		// Shortcode.
 		add_shortcode( 'scp', array( 'Social_Count_Plus_Shortcodes', 'counter' ) );
+
+		// Scripts.
+		add_action( 'wp_enqueue_scripts', array( $this, 'styles_and_scripts' ) );
 	}
 
 	/**
@@ -132,6 +135,15 @@ class Social_Count_Plus {
 	 */
 	public function register_widget() {
 		register_widget( 'SocialCountPlus' );
+	}
+
+	/**
+	 * Register public styles and scripts.
+	 *
+	 * @return void
+	 */
+	public function styles_and_scripts() {
+		wp_register_style( 'social-count-plus', plugins_url( 'assets/css/counter.css', __FILE__ ), array(), Social_Count_Plus::VERSION, 'all' );
 	}
 }
 

@@ -45,6 +45,8 @@ class Social_Count_Plus_View {
 	 * @return string
 	 */
 	public static function get_view() {
+		wp_enqueue_style( 'social-count-plus' );
+
 		$settings    = get_option( 'socialcountplus_settings' );
 		$design      = get_option( 'socialcountplus_design' );
 		$count       = Social_Count_Plus_Generator::get_count();
