@@ -1,89 +1,105 @@
-module.exports = function(grunt) {
-"use strict";
+/* jshint node:true */
+'use strict';
 
-	grunt.initConfig({
+module.exports = function( grunt ) {
+
+	// auto load grunt tasks
+	require( 'load-grunt-tasks' )( grunt );
+
+	var pluginConfig = {
 
 		// gets the package vars
-		pkg: grunt.file.readJSON("package.json"),
+		pkg: grunt.file.readJSON( 'package.json' ),
+
+		// plugin directories
+		dirs: {
+			js: 'assets/js',
+			css: 'assets/css',
+			sass: 'assets/sass',
+			images: 'assets/images',
+			fonts: 'assets/fonts'
+		},
+
+		// svn settings
 		svn_settings: {
-			path: "../../../../wp_plugins/<%= pkg.name %>",
-			tag: "<%= svn_settings.path %>/tags/<%= pkg.version %>",
-			trunk: "<%= svn_settings.path %>/trunk",
+			path: '../../../../wp_plugins/<%= pkg.name %>',
+			tag: '<%= svn_settings.path %>/tags/<%= pkg.version %>',
+			trunk: '<%= svn_settings.path %>/trunk',
 			exclude: [
-				".editorconfig",
-				".git/",
-				".gitignore",
-				".sass-cache/",
-				"node_modules/",
-				"PSDs/",
-				"assets/sass/",
-				"assets/js/admin.js",
-				"Gruntfile.js",
-				"README.md",
-				"package.json",
-				"config.rb",
-				"*.zip"
+				'.editorconfig',
+				'.git/',
+				'.gitignore',
+				'.jshintrc',
+				'.sass-cache/',
+				'node_modules/',
+				'assets/sass/',
+				'Gruntfile.js',
+				'README.md',
+				'package.json',
+				'*.zip'
 			]
 		},
 
 		// javascript linting with jshint
 		jshint: {
 			options: {
-				"bitwise": true,
-				"eqeqeq": true,
-				"eqnull": true,
-				"immed": true,
-				"newcap": true,
-				"es5": true,
-				"esnext": true,
-				"latedef": true,
-				"noarg": true,
-				"node": true,
-				"undef": false,
-				"browser": true,
-				"trailing": true,
-				"jquery": true,
-				"curly": true
+				jshintrc: '.jshintrc'
 			},
 			all: [
-				"Gruntfile.js",
-				"assets/js/admin.js"
+				'Gruntfile.js',
+				'<%= dirs.js %>/admin.js'
 			]
 		},
 
 		// uglify to concat and minify
 		uglify: {
 			dist: {
-				files: {
-					"assets/js/admin.min.js": ["assets/js/admin.js"]
-				}
+				files: [{
+					expand: true,
+					cwd: '<%= dirs.js %>/',
+					src: [
+						'*.js',
+						'!*.min.js'
+					],
+					dest: '<%= dirs.js %>/',
+					ext: '.min.js'
+				}]
 			}
 		},
 
 		// compass and scss
 		compass: {
+			options: {
+				httpPath: '',
+				environment: 'production',
+				relativeAssets: true,
+				noLineComments: true,
+				outputStyle: 'compressed'
+			},
 			dist: {
 				options: {
-					config: "config.rb",
-					force: true,
-					outputStyle: "compressed"
+					sassDir: '<%= dirs.sass %>',
+					cssDir: '<%= dirs.css %>',
+					imagesDir: '<%= dirs.images %>',
+					javascriptsDir: '<%= dirs.js %>',
+					fontsDir: '<%= dirs.fonts %>'
 				}
 			}
 		},
 
-		// watch for changes and trigger compass
+		// watch for changes and trigger compass, jshint and uglify
 		watch: {
 			compass: {
 				files: [
-					"assets/sass/**"
+					'<%= compass.dist.options.sassDir %>/**'
 				],
-				tasks: ["compass"]
+				tasks: ['compass']
 			},
 			js: {
 				files: [
-					"<%= jshint.all %>"
+					'<%= jshint.all %>'
 				],
-				tasks: ["jshint", "uglify"]
+				tasks: ['jshint', 'uglify']
 			}
 		},
 
@@ -95,91 +111,103 @@ module.exports = function(grunt) {
 					progressive: true
 				},
 				files: [
-				{
-					expand: true,
-					cwd: "./",
-					src: ["**/*.png"],
-					dest: "./"
-				},
-				{
-					expand: true,
-					cwd: "assets/images/",
-					src: ["*.png"],
-					dest: "assets/images/"
-				},
-				{
-					expand: true,
-					cwd: "demos/",
-					src: ["**/*.png"],
-					dest: "demos/"
-				}
+					{
+						expand: true,
+						cwd: '<%= dirs.images %>/',
+						src: '**/*.{png,jpg,gif}',
+						dest: '<%= dirs.images %>/'
+					},
+					{
+						expand: true,
+						cwd: './',
+						src: 'screenshot-*.png',
+						dest: './'
+					}
 				]
 			}
 		},
 
 		// rsync commands used to take the files to svn repository
 		rsync: {
+			options: {
+				args: ['--verbose'],
+				exclude: '<%= svn_settings.exclude %>',
+				syncDest: true,
+				recursive: true
+			},
 			tag: {
-				src: "./",
-				dest: "<%= svn_settings.tag %>",
-				recursive: true,
-				exclude: "<%= svn_settings.exclude %>"
+				options: {
+					src: './',
+					dest: '<%= svn_settings.tag %>'
+				}
 			},
 			trunk: {
-				src: "./",
-				dest: "<%= svn_settings.trunk %>",
-				recursive: true,
-				exclude: "<%= svn_settings.exclude %>"
+				options: {
+				src: './',
+				dest: '<%= svn_settings.trunk %>'
+				}
 			}
 		},
 
 		// shell command to commit the new version of the plugin
 		shell: {
+			// Remove delete files.
+			svn_remove: {
+				command: 'svn st | grep \'^!\' | awk \'{print $2}\' | xargs svn --force delete',
+				options: {
+					stdout: true,
+					stderr: true,
+					execOptions: {
+						cwd: '<%= svn_settings.path %>'
+					}
+				}
+			},
+			// Add new files.
 			svn_add: {
 				command: 'svn add --force * --auto-props --parents --depth infinity -q',
 				options: {
 					stdout: true,
 					stderr: true,
 					execOptions: {
-						cwd: "<%= svn_settings.path %>"
+						cwd: '<%= svn_settings.path %>'
 					}
 				}
 			},
+			// Commit the changes.
 			svn_commit: {
-				command: "svn commit -m 'updated the plugin version to <%= pkg.version %>'",
+				command: 'svn commit -m "updated the plugin version to <%= pkg.version %>"',
 				options: {
 					stdout: true,
 					stderr: true,
 					execOptions: {
-						cwd: "<%= svn_settings.path %>"
+						cwd: '<%= svn_settings.path %>'
 					}
 				}
 			}
 		}
-	});
+	};
 
-	// load tasks
-	grunt.loadNpmTasks("grunt-contrib-watch");
-	grunt.loadNpmTasks("grunt-contrib-jshint");
-	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-contrib-compass");
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks("grunt-rsync");
-	grunt.loadNpmTasks("grunt-shell");
+	// initialize grunt config
+	// --------------------------
+	grunt.initConfig( pluginConfig );
+
+	// register tasks
+	// --------------------------
 
 	// default task
-	grunt.registerTask("default", [
-		"jshint",
-		"compass",
-		"uglify"
-	]);
+	grunt.registerTask( 'default', [
+		'jshint',
+		'compass',
+		'uglify'
+	] );
 
 	// deploy task
-	grunt.registerTask("deploy", [
-		"default",
-		"rsync:tag",
-		"rsync:trunk",
-		"shell:svn_add",
-		"shell:svn_commit"
-	]);
+	grunt.registerTask( 'deploy', [
+		'default',
+		'rsync:tag',
+		'rsync:trunk',
+		'shell:svn_remove',
+		'shell:svn_add',
+		'shell:svn_commit'
+	] );
 };
