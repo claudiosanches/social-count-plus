@@ -52,6 +52,9 @@ class Social_Count_Plus_Admin {
 
 		// System status report.
 		add_action( 'admin_init', array( $this, 'report_file' ) );
+
+		// Install/update plugin options.
+		$this->maybe_install();
 	}
 
 	/**
@@ -59,7 +62,7 @@ class Social_Count_Plus_Admin {
 	 *
 	 * @return array
 	 */
-	protected function plugin_options() {
+	protected static function plugin_options() {
 		$twitter_oauth_description = sprintf( __( 'Create an APP on Twitter in %s and get this information', 'social-count-plus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
 
 		$instagram_access_token = sprintf( __( 'Get the this information in %s', 'social-count-plus' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
@@ -259,7 +262,7 @@ class Social_Count_Plus_Admin {
 					'fields' => array(
 						'models' => array(
 							'title'   => __( 'Layout Models', 'social-count-plus' ),
-							'default' => 0,
+							'default' => '0',
 							'type'    => 'models',
 							'options' => array(
 								'design-default.png',
@@ -340,7 +343,7 @@ class Social_Count_Plus_Admin {
 	public function plugin_settings() {
 
 		// Process the settings.
-		foreach ( $this->plugin_options() as $settings_id => $sections ) {
+		foreach ( self::plugin_options() as $settings_id => $sections ) {
 
 			// Create the sections.
 			foreach ( $sections as $section_id => $section ) {
@@ -703,6 +706,42 @@ class Social_Count_Plus_Admin {
 		echo $content;
 		exit;
 	}
+
+	/**
+	 * Maybe install.
+	 *
+	 * @return void
+	 */
+	public static function maybe_install() {
+		$version = get_option( 'socialcountplus_version', '0' );
+
+		if ( version_compare( $version, Social_Count_Plus::VERSION, '<' ) ) {
+			foreach ( self::plugin_options() as $settings_id => $sections ) {
+				$saved = get_option( $settings_id, array() );
+
+				foreach ( $sections as $section_id => $section ) {
+					foreach ( $section['fields'] as $field_id => $field ) {
+						$default = isset( $field['default'] ) ? $field['default'] : '';
+
+						if ( isset( $saved[ $field_id ] ) || '' === $default ) {
+							continue;
+						}
+
+						$saved[ $field_id ] = $default;
+					}
+				}
+
+				update_option( $settings_id, $saved );
+			}
+
+			// Save plugin version.
+			update_option( 'socialcountplus_version', Social_Count_Plus::VERSION );
+
+			// Reset the counters.
+			Social_Count_Plus_Generator::reset_count();
+		}
+	}
+
 }
 
 new Social_Count_Plus_Admin;

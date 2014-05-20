@@ -47,12 +47,13 @@ class Social_Count_Plus {
 		// Load plugin text domain.
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
+		// Include classes.
+		$this->includes();
+		$this->include_counters();
+
 		if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 			$this->admin_includes();
 		}
-
-		$this->includes();
-		$this->include_counters();
 
 		// Widget.
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
@@ -89,7 +90,7 @@ class Social_Count_Plus {
 	/**
 	 * Include admin actions.
 	 */
-	public function admin_includes() {
+	protected function admin_includes() {
 		include 'includes/admin/class-social-count-plus-admin.php';
 	}
 
@@ -98,7 +99,7 @@ class Social_Count_Plus {
 	 *
 	 * @return void
 	 */
-	public function includes() {
+	protected function includes() {
 		include_once 'includes/class-social-count-plus-generator.php';
 		include_once 'includes/abstracts/abstract-social-count-plus-counter.php';
 		include_once 'includes/class-social-count-plus-view.php';
@@ -112,7 +113,7 @@ class Social_Count_Plus {
 	 *
 	 * @return void
 	 */
-	public function include_counters() {
+	protected function include_counters() {
 		include_once 'includes/counters/class-social-count-plus-facebook-counter.php';
 		include_once 'includes/counters/class-social-count-plus-twitter-counter.php';
 		include_once 'includes/counters/class-social-count-plus-youtube-counter.php';
@@ -140,3 +141,4 @@ class Social_Count_Plus {
 add_action( 'plugins_loaded', array( 'Social_Count_Plus', 'get_instance' ) );
 
 endif;
+
