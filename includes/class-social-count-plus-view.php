@@ -72,6 +72,12 @@ class Social_Count_Plus_View {
 			case 5:
 				$style = 'flat vertical';
 				break;
+			case 6:
+				$style = 'custom';
+				break;
+			case 7:
+				$style = 'custom vertical';
+				break;
 
 			default:
 				$style = 'default';
