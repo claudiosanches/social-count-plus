@@ -279,6 +279,10 @@ class Social_Count_Plus_Admin {
 							'title'   => __( 'Text Color', 'social-count-plus' ),
 							'default' => '#333333',
 							'type'    => 'color'
+						),
+						'icons' => array(
+							'title' => __( 'Order', 'social-count-plus' ),
+							'type'  => 'icons_order'
 						)
 					)
 				)
@@ -328,9 +332,16 @@ class Social_Count_Plus_Admin {
 		}
 
 		// Reset transients when save settings page.
-		if ( isset( $_GET['settings-updated'] ) ) {
+		if ( isset( $_GET['settings-updated'] ) && ! ( isset( $_GET['tab'] ) && 'design' == $_GET['tab'] ) ) {
 			if ( true == $_GET['settings-updated'] ) {
+				// Set transients.
 				Social_Count_Plus_Generator::reset_count();
+
+				// Set the icons order.
+				$icons           = self::get_current_icons();
+				$design          = get_option( 'socialcountplus_design', array() );
+				$design['icons'] = implode( ',', $icons );
+				update_option( 'socialcountplus_design', $design );
 			}
 		}
 
@@ -414,6 +425,20 @@ class Social_Count_Plus_Admin {
 									'id'          => $field_id,
 									'description' => isset( $field['description'] ) ? $field['description'] : '',
 									'options'     => $field['options']
+								)
+							);
+							break;
+						case 'icons_order':
+							add_settings_field(
+								$field_id,
+								$field['title'],
+								array( $this, 'icons_order_element_callback' ),
+								$settings_id,
+								$section_id,
+								array(
+									'tab'         => $settings_id,
+									'id'          => $field_id,
+									'description' => isset( $field['description'] ) ? $field['description'] : ''
 								)
 							);
 							break;
@@ -561,6 +586,34 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
+	 * Icons order element fallback.
+	 *
+	 * @param  array $args Field arguments.
+	 *
+	 * @return string      Icons order field.
+	 */
+	public function icons_order_element_callback( $args ) {
+		$tab       = $args['tab'];
+		$id        = $args['id'];
+		$current   = $this->get_option_value( $id );
+		$html      = '';
+
+		$html .= '<div class="social-count-plus-icons-order">';
+		$html .= sprintf( '<input type="hidden" id="%1$s" name="%2$s[%1$s]" value="%3$s" />', $id, $tab, $current );
+		foreach ( explode( ',', $current ) as $icon ) {
+			$html .= '<div class="social-icon" data-icon="' . $icon . '">' . $icon . '</div>';
+		}
+		$html .= '</div>';
+
+		// Displays option description.
+		if ( isset( $args['description'] ) ) {
+			$html .= sprintf( '<p class="description">%s</p>', $args['description'] );
+		}
+
+		echo $html;
+	}
+
+	/**
 	 * Color element fallback.
 	 *
 	 * @param  array $args Field arguments.
@@ -614,6 +667,7 @@ class Social_Count_Plus_Admin {
 
 			wp_enqueue_script( 'wp-color-picker' );
 			wp_enqueue_style( 'wp-color-picker' );
+			wp_enqueue_script( 'jquery-ui-sortable' );
 			wp_enqueue_style( 'social-count-plus-admin', plugins_url( 'assets/css/admin.css', plugin_dir_path( dirname( __FILE__ ) ) ), array(), Social_Count_Plus::VERSION, 'all' );
 			wp_enqueue_script( 'social-count-plus-admin', plugins_url( 'assets/js/admin' . $suffix . '.js', plugin_dir_path( dirname( __FILE__ ) ) ), array( 'jquery', 'wp-color-picker' ), Social_Count_Plus::VERSION, true );
 		}
@@ -736,6 +790,12 @@ class Social_Count_Plus_Admin {
 				update_option( $settings_id, $saved );
 			}
 
+			// Set the icons order.
+			$icons           = self::get_current_icons();
+			$design          = get_option( 'socialcountplus_design', array() );
+			$design['icons'] = implode( ',', $icons );
+			update_option( 'socialcountplus_design', $design );
+
 			// Save plugin version.
 			update_option( 'socialcountplus_version', Social_Count_Plus::VERSION );
 
@@ -744,6 +804,33 @@ class Social_Count_Plus_Admin {
 		}
 	}
 
+	/**
+	 * Get current icons.
+	 *
+	 * @return array
+	 */
+	protected static function get_current_icons() {
+		$settings = get_option( 'socialcountplus_settings', array() );
+		$design   = get_option( 'socialcountplus_design', array() );
+		$current  = isset( $design['icons'] ) ? explode( ',', $design['icons'] ) : array();
+		$icons    = array();
+
+		if ( function_exists( 'preg_filter' ) ) {
+			$saved = array_values( preg_filter('/^(.*)_active/', '$1', array_keys( $settings ) ) );
+		} else {
+			$saved = array_values( array_diff( preg_replace( '/^(.*)_active/', '$1', array_keys( $settings ) ), array_keys( $settings ) ) );
+		}
+
+		$icons = array_unique( array_filter( array_merge( $current, $saved ) ) );
+
+		// Exclude extra values.
+		$diff = array_diff( $current, $saved );
+		foreach ( $diff as $key => $value ) {
+			unset( $icons[ $key ] );
+		}
+
+		return $icons;
+	}
 }
 
 new Social_Count_Plus_Admin;

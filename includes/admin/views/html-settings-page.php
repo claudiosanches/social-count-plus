@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="wrap">
 	<h2 class="nav-tab-wrapper">
-		<a href="admin.php?page=social-count-plus&amp;tab=settings" class="nav-tab <?php echo $current_tab == 'settings' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Settings', 'social-count-plus' ); ?></a><a href="admin.php?page=social-count-plus&amp;tab=design" class="nav-tab <?php echo $current_tab == 'design' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Design', 'social-count-plus' ); ?></a><a href="admin.php?page=social-count-plus&amp;tab=shortcodes" class="nav-tab <?php echo $current_tab == 'shortcodes' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Shortcodes and Functions', 'social-count-plus' ); ?></a><a href="admin.php?page=social-count-plus&amp;tab=system_status" class="nav-tab <?php echo $current_tab == 'system_status' ? 'nav-tab-active' : ''; ?>"><?php _e( 'System Status', 'social-count-plus' ); ?></a>
+		<a href="options-general.php?page=social-count-plus&amp;tab=settings" class="nav-tab <?php echo $current_tab == 'settings' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Settings', 'social-count-plus' ); ?></a><a href="options-general.php?page=social-count-plus&amp;tab=design" class="nav-tab <?php echo $current_tab == 'design' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Design', 'social-count-plus' ); ?></a><a href="options-general.php?page=social-count-plus&amp;tab=shortcodes" class="nav-tab <?php echo $current_tab == 'shortcodes' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Shortcodes and Functions', 'social-count-plus' ); ?></a><a href="options-general.php?page=social-count-plus&amp;tab=system_status" class="nav-tab <?php echo $current_tab == 'system_status' ? 'nav-tab-active' : ''; ?>"><?php _e( 'System Status', 'social-count-plus' ); ?></a>
 	</h2>
 
 	<?php

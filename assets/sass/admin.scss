@@ -34,3 +34,36 @@ table#social-count-plus-system-status {
 		}
 	}
 }
+
+.social-count-plus-icons-order {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 6px;
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	.social-icon,
+	.social-icon-placeholder {
+		cursor: move;
+		border: 1px solid #ccc;
+		padding: 4px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		margin-right: 5px;
+		float: left;
+	}
+
+	.social-icon-placeholder {
+		background: #eee;
+		border-color: #ddd;
+	}
+}

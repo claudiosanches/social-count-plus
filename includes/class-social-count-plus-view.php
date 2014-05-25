@@ -40,6 +40,126 @@ class Social_Count_Plus_View {
 	}
 
 	/**
+	 * Get the Twitter counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_twitter_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'twitter', 'http://twitter.com/' . $settings['twitter_user'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
+	 * Get the Facebook counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_facebook_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $total, __( 'likes', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
+	 * Get the YouTube counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_youtube_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'youtube', esc_url( $settings['youtube_url'] ), $total, __( 'subscribers', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
+	 * Get the Google+ counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_googleplus_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
+	 * Get the Instagram counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_instagram_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'instagram', 'http://instagram.com/' . $settings['instagram_username'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
+	 * Get the Steam counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_steam_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $total, __( 'members', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
+	 * Get the SoundCloud counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_soundcloud_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'soundcloud', 'https://soundcloud.com/' . $settings['soundcloud_username'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
+	 * Get the Posts counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_posts_counter( $settings, $total, $color ) {
+		$post_type = ( isset( $settings['posts_post_type'] ) && ! empty( $settings['posts_post_type'] ) ) ? $settings['posts_post_type'] : 'post';
+		$post_object = get_post_type_object( $post_type );
+
+		return self::get_view_li( 'posts', get_home_url(), $total, strtolower( $post_object->label ), $color, $settings );
+	}
+
+	/**
+	 * Get the Comments counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_comments_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'comments', get_home_url(), $total, __( 'comments', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
 	 * Widget view.
 	 *
 	 * @return string
@@ -47,12 +167,11 @@ class Social_Count_Plus_View {
 	public static function get_view() {
 		wp_enqueue_style( 'social-count-plus' );
 
-		$settings    = get_option( 'socialcountplus_settings' );
-		$design      = get_option( 'socialcountplus_design' );
-		$count       = Social_Count_Plus_Generator::get_count();
-		$color       = isset( $design['text_color'] ) ? $design['text_color'] : '#333333';
-		$post_type   = ( isset( $settings['posts_post_type'] ) && ! empty( $settings['posts_post_type'] ) ) ? $settings['posts_post_type'] : 'post';
-		$post_object = get_post_type_object( $post_type );
+		$settings = get_option( 'socialcountplus_settings' );
+		$design   = get_option( 'socialcountplus_design' );
+		$count    = Social_Count_Plus_Generator::get_count();
+		$color    = isset( $design['text_color'] ) ? $design['text_color'] : '#333333';
+		$icons    = isset( $design['icons'] ) ? explode( ',', $design['icons'] ) : array();
 
 		// Sets view design.
 		$style = '';
@@ -87,32 +206,10 @@ class Social_Count_Plus_View {
 		$html = '<div class="social-count-plus">';
 			$html .= '<ul class="' . $style . '">';
 
-				// Twitter counter.
-				$html .= ( isset( $settings['twitter_active'] ) ) ? self::get_view_li( 'twitter', 'http://twitter.com/' . $settings['twitter_user'], $count['twitter'], __( 'followers', 'social-count-plus' ), $color, $settings ) : '';
-
-				// Facebook counter.
-				$html .= ( isset( $settings['facebook_active'] ) ) ? self::get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $count['facebook'], __( 'likes', 'social-count-plus' ), $color, $settings ) : '';
-
-				// YouTube counter.
-				$html .= ( isset( $settings['youtube_active'] ) ) ? self::get_view_li( 'youtube', esc_url( $settings['youtube_url'] ), $count['youtube'], __( 'subscribers', 'social-count-plus' ), $color, $settings ) : '';
-
-				// Google Plus counter.
-				$html .= ( isset( $settings['googleplus_active'] ) ) ? self::get_view_li( 'googleplus', 'https://plus.google.com/' . $settings['googleplus_id'], $count['googleplus'], __( 'followers', 'social-count-plus' ), $color, $settings ) : '';
-
-				// Instagram counter.
-				$html .= ( isset( $settings['instagram_active'] ) ) ? self::get_view_li( 'instagram', 'http://instagram.com/' . $settings['instagram_username'], $count['instagram'], __( 'followers', 'social-count-plus' ), $color, $settings ) : '';
-
-				// Steam counter.
-				$html .= ( isset( $settings['steam_active'] ) ) ? self::get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $count['steam'], __( 'members', 'social-count-plus' ), $color, $settings ) : '';
-
-				// SoundCloud counter.
-				$html .= ( isset( $settings['soundcloud_active'] ) ) ? self::get_view_li( 'soundcloud', 'https://soundcloud.com/' . $settings['soundcloud_username'], $count['soundcloud'], __( 'followers', 'social-count-plus' ), $color, $settings ) : '';
-
-				// Posts counter.
-				$html .= ( isset( $settings['posts_active'] ) ) ? self::get_view_li( 'posts', get_home_url(), $count['posts'], strtolower( $post_object->label ), $color, $settings ) : '';
-
-				// Comments counter.
-				$html .= ( isset( $settings['comments_active'] ) ) ? self::get_view_li( 'comments', get_home_url(), $count['comments'], __( 'comments', 'social-count-plus' ), $color, $settings ) : '';
+				foreach ( $icons as $icon ) {
+					$method = 'get_' . $icon . '_counter';
+					$html .= self::$method( $settings, $count[ $icon ], $color );
+				}
 
 			$html .= '</ul>';
 		$html .= '</div>';
