@@ -271,8 +271,8 @@ class Social_Count_Plus_Admin {
 								'design-circle-vertical.png',
 								'design-flat.png',
 								'design-flat-vertical.png',
-								'design-no-icons.png',
-								'design-no-icons-vertical.png'
+								'design-custom.png',
+								'design-custom-vertical.png'
 							)
 						),
 						'text_color' => array(
