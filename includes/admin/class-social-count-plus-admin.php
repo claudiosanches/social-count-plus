@@ -282,7 +282,8 @@ class Social_Count_Plus_Admin {
 						),
 						'icons' => array(
 							'title' => __( 'Order', 'social-count-plus' ),
-							'type'  => 'icons_order'
+							'type'  => 'icons_order',
+							'description' => __( 'This option controls the order of the icons in the widget.', 'social-count-plus' )
 						)
 					)
 				)
@@ -601,7 +602,7 @@ class Social_Count_Plus_Admin {
 		$html .= '<div class="social-count-plus-icons-order">';
 		$html .= sprintf( '<input type="hidden" id="%1$s" name="%2$s[%1$s]" value="%3$s" />', $id, $tab, $current );
 		foreach ( explode( ',', $current ) as $icon ) {
-			$html .= '<div class="social-icon" data-icon="' . $icon . '">' . $icon . '</div>';
+			$html .= '<div class="social-icon" data-icon="' . $icon . '">' . $this->get_icon_name_i18n( $icon ) . '</div>';
 		}
 		$html .= '</div>';
 
@@ -830,6 +831,33 @@ class Social_Count_Plus_Admin {
 		}
 
 		return $icons;
+	}
+
+	/**
+	 * Get icons names.
+	 *
+	 * @param  string $slug
+	 *
+	 * @return string
+	 */
+	protected function get_icon_name_i18n( $slug ) {
+		$names = array(
+			'twitter'    => __( 'Twitter', 'social-count-plus' ),
+			'facebook'   => __( 'Facebook', 'social-count-plus' ),
+			'youtube'    => __( 'YouTube', 'social-count-plus' ),
+			'googleplus' => __( 'Google+', 'social-count-plus' ),
+			'instagram'  => __( 'Instagram', 'social-count-plus' ),
+			'steam'      => __( 'Steam', 'social-count-plus' ),
+			'soundcloud' => __( 'SoundCloud', 'social-count-plus' ),
+			'posts'      => __( 'Posts', 'social-count-plus' ),
+			'comments'   => __( 'Comments', 'social-count-plus' )
+		);
+
+		if ( ! isset( $names[ $slug ] ) ) {
+			return $slug;
+		}
+
+		return $names[ $slug ];
 	}
 }
 

@@ -38,7 +38,7 @@ table#social-count-plus-system-status {
 .social-count-plus-icons-order {
 	background: #fff;
 	border: 1px solid #ddd;
-	padding: 6px;
+	padding: 10px 5px 0 5px;
 	*zoom: 1;
 
 	&:before,
@@ -54,16 +54,15 @@ table#social-count-plus-system-status {
 	.social-icon,
 	.social-icon-placeholder {
 		cursor: move;
-		border: 1px solid #ccc;
+		border: 3px solid #ddd;
 		padding: 4px;
-		-webkit-border-radius: 3px;
-		border-radius: 3px;
-		margin-right: 5px;
+		margin: 0 5px 10px;
 		float: left;
+		font-weight: bold;
 	}
 
 	.social-icon-placeholder {
-		background: #eee;
-		border-color: #ddd;
+		background: #f4f4f4;
+		border-style: dashed;
 	}
 }
