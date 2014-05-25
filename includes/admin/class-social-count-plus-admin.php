@@ -741,7 +741,7 @@ class Social_Count_Plus_Admin {
 		$content .= __( 'PHP Version', 'social-count-plus' ) . ': ' . ( function_exists( 'phpversion' ) ? esc_html( phpversion() ) : '' ) . PHP_EOL;
 		$content .= 'fsockopen: ' . ( function_exists( 'fsockopen' ) ? __( 'Yes', 'social-count-plus' ) : __( 'No', 'social-count-plus' ) ) . PHP_EOL;
 		$content .= 'cURL: ' . ( function_exists( 'curl_init' ) ? __( 'Yes', 'social-count-plus' ) : __( 'No', 'social-count-plus' ) ) . PHP_EOL . PHP_EOL;
-		$content .= '# ' . __( 'Social Connections' ) . ' #';
+		$content .= '# ' . __( 'Social Connections', 'social-count-plus' ) . ' #';
 		$content .= PHP_EOL . PHP_EOL;
 
 		if ( ! empty( $debug ) ) {
