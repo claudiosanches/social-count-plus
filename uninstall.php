@@ -9,3 +9,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) || ! WP_UNINSTALL_PLUGIN || dirname( WP_
 
 delete_option( 'socialcountplus_settings' );
 delete_option( 'socialcountplus_design' );
+delete_option( 'socialcountplus_version' );
