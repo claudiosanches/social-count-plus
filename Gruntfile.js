@@ -31,6 +31,7 @@ module.exports = function( grunt ) {
 				'.gitignore',
 				'.jshintrc',
 				'.sass-cache/',
+				'PSDs/',
 				'node_modules/',
 				'assets/sass/',
 				'Gruntfile.js',
