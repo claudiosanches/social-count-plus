@@ -3,8 +3,8 @@
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y8HP99ZJ5Z59L  
 **Tags:** facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode  
 **Requires at least:** 3.8  
-**Tested up to:** 3.9  
-**Stable tag:** 2.9.1  
+**Tested up to:** 3.9.1  
+**Stable tag:** 3.0.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -14,7 +14,7 @@ Display the counting data of Twitter, Facebook, Google+, YouTube, Instagram, Ste
 
 The Social Count Plus performs counting Twitter followers, Facebook fans, YouTube subscribers, Google+ page/profile followers, Instagram followers, Steam Community group members, SoundCloud follwers, number of posts and comments.
 
-You can view this information via a widget (with account options models icons) or Shortcodes (to be used in posts and pages) or by functions in PHP.
+You can view this information by a widget (with account options models icons) or Shortcodes (to be used in posts and pages) or PHP functions in your theme.
 
 The results of the counters are cached and new values ​​are checked only once a day. This cache can be wiped when published a new post.
 
@@ -107,24 +107,54 @@ Example:
 	add_filter( 'social_count_plus_transient_time', 'social_count_plus_custom_transient_time' );
 
 
+### Can I use my own icons? ###
+
+Yes, you can!
+
+Select one of the options without icons in "WordPress admin > Social Count Plus > Design" and create your own CSS in your theme or anywhere you prefer.
+
+The CSS classes you will need to use:
+
+	.social-count-plus .custom .count-twitter a {}
+	.social-count-plus .custom .count-facebook a {}
+	.social-count-plus .custom .count-youtube a {}
+	.social-count-plus .custom .count-googleplus a {}
+	.social-count-plus .custom .count-instagram a {}
+	.social-count-plus .custom .count-steam a {}
+	.social-count-plus .custom .count-soundcloud a {}
+	.social-count-plus .custom .count-posts a {}
+	.social-count-plus .custom .count-comments a {}
+
+
 ## Screenshots ##
 
-### 1. Plugin settings. ###
-![1. Plugin settings.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-1.png)
+### 1. Settings page. ###
+![1. Settings page.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-1.png)
 
-### 2. Widget models. ###
-![2. Widget models.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-2.png)
+### 2. Design page. ###
+![2. Design page.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-2.png)
 
 ### 3. Shortcodes and Functions API page. ###
 ![3. Shortcodes and Functions API page.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-3.png)
 
-### 4. Widget. ###
-![4. Widget.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-4.png)
+### 4. System Status page. ###
+![4. System Status page.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-4.png)
+
+### 5. Widget. ###
+![5. Widget.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-5.png)
 
 
 ## Changelog ##
 
-### 2.9.1 - 30/05/2014 ###
+### 3.0.0 - 24/05/2014 ###
+
+* Refactored all code.
+* Improved the admin option screens.
+* Added System Status admin screen.
+* Added option to display the widget without icons (this way it is simple for you to add your icons in your theme CSS).
+* Added option to sort the icons order.
+
+### 2.9.1 - 30/04/2014 ###
 
 * Improved the counter styles.
 * Changed the default options in plugin install.
@@ -254,11 +284,13 @@ Example:
 
 ## Upgrade Notice ##
 
-### 2.9.0 ###
+### 3.0.0 ###
 
-* Added new Google Plus API.
-* Added Google Plus API key option.
-* Fixed the Google Plus counter, now is possible grab the pages and profiles followers count.
+* Refactored all code.
+* Improved the admin option screens.
+* Added System Status admin screen.
+* Added option to display the widget without icons (this way it is simple for you to add your icons in your theme CSS).
+* Added option to sort the icons order.
 
 ## License ##
 

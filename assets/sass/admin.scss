@@ -1,0 +1,70 @@
+/* Status page */
+table#social-count-plus-system-status {
+	margin-top: 1.1em;
+
+	tr {
+		&:nth-child(2n) {
+			th, td {
+				background: #fcfcfc;
+			}
+		}
+	}
+	th {
+		font-weight: bold;
+	}
+	td:first-child {
+		width: 20%;
+	}
+	td {
+		padding: 6px 9px;
+		font-size: 1.1em;
+
+		mark {
+			background: transparent none;
+		}
+		mark.yes {
+			color: #7AD03A;
+		}
+		mark.no {
+			color: #999;
+		}
+		mark.error {
+			color: #a00;
+		}
+		ul {
+			margin: 0;
+		}
+	}
+}
+
+.social-count-plus-icons-order {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 10px 5px 0 5px;
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	.social-icon,
+	.social-icon-placeholder {
+		cursor: move;
+		border: 3px solid #ddd;
+		padding: 4px;
+		margin: 0 5px 10px;
+		float: left;
+		font-weight: bold;
+	}
+
+	.social-icon-placeholder {
+		background: #f4f4f4;
+		border-style: dashed;
+	}
+}
