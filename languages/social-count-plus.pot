@@ -1,336 +1,510 @@
-# Copyright (C) 2013 Social Count Plus
+# Copyright (C) 2014 Social Count Plus
 # This file is distributed under the same license as the Social Count Plus package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Social Count Plus 2.7.1\n"
+"Project-Id-Version: Social Count Plus 3.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/social-count-plus\n"
-"POT-Creation-Date: 2013-10-27 00:42:32+00:00\n"
+"POT-Creation-Date: 2014-07-17 02:35:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: includes/class-widget.php:16
-msgid "Display the counter"
-msgstr ""
-
-#. #-#-#-#-#  social-count-plus.pot (Social Count Plus 2.7.1)  #-#-#-#-#
-#. Plugin Name of the plugin/theme
-#: includes/class-widget.php:17 novo.php:484 novo.php:485
-#: social-count-plus.php:484 social-count-plus.php:485
-msgid "Social Count Plus"
-msgstr ""
-
-#: includes/class-widget.php:28
-msgid "Title"
-msgstr ""
-
-#: novo.php:78 novo.php:516 social-count-plus.php:78 social-count-plus.php:516
-msgid "Settings"
-msgstr ""
-
-#: novo.php:108 social-count-plus.php:108
+#: includes/admin/class-social-count-plus-admin.php:66
 msgid "Create an APP on Twitter in %s and get this information"
 msgstr ""
 
-#: novo.php:110 social-count-plus.php:110
+#: includes/admin/class-social-count-plus-admin.php:68
 msgid "Get the this information in %s"
 msgstr ""
 
-#: novo.php:114 social-count-plus.php:114
+#: includes/admin/class-social-count-plus-admin.php:73
+#: includes/admin/class-social-count-plus-admin.php:845
 msgid "Twitter"
 msgstr ""
 
-#: novo.php:119 social-count-plus.php:119
+#: includes/admin/class-social-count-plus-admin.php:76
 msgid "Display Twitter counter"
 msgstr ""
 
-#: novo.php:126 novo.php:531 social-count-plus.php:126
-#: social-count-plus.php:531
+#: includes/admin/class-social-count-plus-admin.php:80
+#: includes/admin/views/html-settings-page.php:24
 msgid "Twitter username"
 msgstr ""
 
-#: novo.php:129 social-count-plus.php:129
+#: includes/admin/class-social-count-plus-admin.php:82
 msgid "Insert the Twitter username. Example: ferramentasblog"
 msgstr ""
 
-#: novo.php:134 novo.php:532 social-count-plus.php:134
-#: social-count-plus.php:532
+#: includes/admin/class-social-count-plus-admin.php:85
+#: includes/admin/views/html-settings-page.php:25
 msgid "Twitter Consumer key"
 msgstr ""
 
-#: novo.php:142 novo.php:533 social-count-plus.php:142
-#: social-count-plus.php:533
+#: includes/admin/class-social-count-plus-admin.php:90
+#: includes/admin/views/html-settings-page.php:26
 msgid "Twitter Consumer secret"
 msgstr ""
 
-#: novo.php:150 novo.php:534 social-count-plus.php:150
-#: social-count-plus.php:534
+#: includes/admin/class-social-count-plus-admin.php:95
+#: includes/admin/views/html-settings-page.php:27
 msgid "Twitter Access token"
 msgstr ""
 
-#: novo.php:158 novo.php:535 social-count-plus.php:158
-#: social-count-plus.php:535
+#: includes/admin/class-social-count-plus-admin.php:100
+#: includes/admin/views/html-settings-page.php:28
 msgid "Twitter Access token secret"
 msgstr ""
 
-#: novo.php:166 social-count-plus.php:166
+#: includes/admin/class-social-count-plus-admin.php:107
+#: includes/admin/class-social-count-plus-admin.php:846
 msgid "Facebook"
 msgstr ""
 
-#: novo.php:171 social-count-plus.php:171
+#: includes/admin/class-social-count-plus-admin.php:110
 msgid "Display Facebook counter"
 msgstr ""
 
-#: novo.php:178 social-count-plus.php:178
+#: includes/admin/class-social-count-plus-admin.php:114
 msgid "Facebook Page ID"
 msgstr ""
 
-#: novo.php:181 social-count-plus.php:181
+#: includes/admin/class-social-count-plus-admin.php:116
 msgid ""
 "ID Facebook page. Must be the numeric ID.<br />You can find this information "
 "clicking to edit your page on Facebook. The URL will be similar to this:<br /"
 ">https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
 msgstr ""
 
-#: novo.php:186 social-count-plus.php:186
+#: includes/admin/class-social-count-plus-admin.php:121
+#: includes/admin/class-social-count-plus-admin.php:847
 msgid "YouTube"
 msgstr ""
 
-#: novo.php:191 social-count-plus.php:191
+#: includes/admin/class-social-count-plus-admin.php:124
 msgid "Display YouTube counter"
 msgstr ""
 
-#: novo.php:198 social-count-plus.php:198
+#: includes/admin/class-social-count-plus-admin.php:128
 msgid "YouTube username"
 msgstr ""
 
-#: novo.php:201 social-count-plus.php:201
-msgid "Insert the YouTube username. Example: lemos81"
+#: includes/admin/class-social-count-plus-admin.php:130
+msgid "Insert the YouTube username. Example: UCWGz8KbT5IE7PxhSN1jjimw"
 msgstr ""
 
-#: novo.php:206 social-count-plus.php:206
-msgid "Google Plus"
+#: includes/admin/class-social-count-plus-admin.php:133
+msgid "YouTube Channel URL"
 msgstr ""
 
-#: novo.php:211 social-count-plus.php:211
-msgid "Display Google Plus counter"
-msgstr ""
-
-#: novo.php:218 social-count-plus.php:218
-msgid "Google Plus page ID"
-msgstr ""
-
-#: novo.php:221 social-count-plus.php:221
+#: includes/admin/class-social-count-plus-admin.php:135
 msgid ""
-"Google Plus page ID. Must be the numeric ID.<br />You can find this "
-"information clicking to edit your page on Google Plus. The URL will be "
-"similar to this:<br />https://plus.google.com/<strong>115161266310935247804</"
-"strong>"
+"Insert the YouTube channel URL. Example: https://www.youtube.com/channel/"
+"UCWGz8KbT5IE7PxhSN1jjimw"
 msgstr ""
 
-#: novo.php:226 social-count-plus.php:226
+#: includes/admin/class-social-count-plus-admin.php:140
+#: includes/admin/class-social-count-plus-admin.php:848
+msgid "Google+"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:143
+msgid "Display Google+ counter"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:147
+msgid "Google+ ID"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:149
+msgid ""
+"Google+ page or profile ID. <br />Example:<br />https://plus.google.com/"
+"<strong>115161266310935247804</strong> or https://plus.google.com/<strong>"
+"+Ferramentasblog1</strong>"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:152
+msgid "Google API Key"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:155
+msgid ""
+"Get your API key creating a project/app in %s, then inside your project go "
+"to \"APIs & auth > APIs\" and turn on the \"Google+ API\", finally go to "
+"\"APIs & auth > APIs > Credentials > Public API access\" and click in the "
+"\"CREATE A NEW KEY\" button, select the \"Browser key\" option and click in "
+"the \"CREATE\" button, now just copy your API key and paste here."
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:162
+#: includes/admin/class-social-count-plus-admin.php:849
 msgid "Instagram"
 msgstr ""
 
-#: novo.php:231 social-count-plus.php:231
+#: includes/admin/class-social-count-plus-admin.php:165
 msgid "Display Instagram counter"
 msgstr ""
 
-#: novo.php:238 social-count-plus.php:238
+#: includes/admin/class-social-count-plus-admin.php:169
 msgid "Instagram Username"
 msgstr ""
 
-#: novo.php:241 social-count-plus.php:241
+#: includes/admin/class-social-count-plus-admin.php:171
 msgid "Insert the Instagram Username."
 msgstr ""
 
-#: novo.php:246 social-count-plus.php:246
+#: includes/admin/class-social-count-plus-admin.php:174
 msgid "Instagram User ID"
 msgstr ""
 
-#: novo.php:249 social-count-plus.php:249
+#: includes/admin/class-social-count-plus-admin.php:176
 msgid "Insert the Instagram User ID."
 msgstr ""
 
-#: novo.php:254 social-count-plus.php:254
+#: includes/admin/class-social-count-plus-admin.php:179
 msgid "Instagram Access Token"
 msgstr ""
 
-#: novo.php:257 social-count-plus.php:257
+#: includes/admin/class-social-count-plus-admin.php:181
 msgid "Insert the Instagram Access Token."
 msgstr ""
 
-#: novo.php:262 social-count-plus.php:262
+#: includes/admin/class-social-count-plus-admin.php:186
+#: includes/admin/class-social-count-plus-admin.php:850
 msgid "Steam"
 msgstr ""
 
-#: novo.php:267 social-count-plus.php:267
+#: includes/admin/class-social-count-plus-admin.php:189
 msgid "Display Steam counter"
 msgstr ""
 
-#: novo.php:274 social-count-plus.php:274
+#: includes/admin/class-social-count-plus-admin.php:193
 msgid "Steam group name"
 msgstr ""
 
-#: novo.php:277 social-count-plus.php:277
+#: includes/admin/class-social-count-plus-admin.php:195
 msgid "Insert the Steam Community group name. Example: DOTALT"
 msgstr ""
 
-#: novo.php:282 social-count-plus.php:282
+#: includes/admin/class-social-count-plus-admin.php:200
+#: includes/admin/class-social-count-plus-admin.php:851
 msgid "SoundCloud"
 msgstr ""
 
-#: novo.php:287 social-count-plus.php:287
+#: includes/admin/class-social-count-plus-admin.php:203
 msgid "Display SoundCloud counter"
 msgstr ""
 
-#: novo.php:294 social-count-plus.php:294
+#: includes/admin/class-social-count-plus-admin.php:207
 msgid "SoundCloud Username"
 msgstr ""
 
-#: novo.php:297 social-count-plus.php:297
+#: includes/admin/class-social-count-plus-admin.php:209
 msgid "Insert the SoundCloud Username."
 msgstr ""
 
-#: novo.php:302 social-count-plus.php:302
+#: includes/admin/class-social-count-plus-admin.php:212
 msgid "SoundCloud Client ID"
 msgstr ""
 
-#: novo.php:305 social-count-plus.php:305
+#: includes/admin/class-social-count-plus-admin.php:214
 msgid "Insert the SoundCloud APP Client ID. Generate this information in %s"
 msgstr ""
 
-#: novo.php:310 social-count-plus.php:310
+#: includes/admin/class-social-count-plus-admin.php:219
+#: includes/admin/class-social-count-plus-admin.php:852
 msgid "Posts"
 msgstr ""
 
-#: novo.php:315 social-count-plus.php:315
+#: includes/admin/class-social-count-plus-admin.php:222
 msgid "Display Posts counter"
 msgstr ""
 
-#: novo.php:322 social-count-plus.php:322
+#: includes/admin/class-social-count-plus-admin.php:227
+msgid "Post type"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:234
+#: includes/admin/class-social-count-plus-admin.php:853
 msgid "Comments"
 msgstr ""
 
-#: novo.php:327 social-count-plus.php:327
+#: includes/admin/class-social-count-plus-admin.php:237
 msgid "Display Comments counter"
 msgstr ""
 
-#: novo.php:334 novo.php:516 social-count-plus.php:334
-#: social-count-plus.php:516
+#: includes/admin/class-social-count-plus-admin.php:244
+#: includes/admin/class-social-count-plus-admin.php:689
+#: includes/admin/views/html-settings-page.php:9
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:247
+msgid "Open URLs in new tab/window"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:249
+msgid "This option add target=\"_blank\" in all counters URLs."
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:252
+msgid "Add nofollow in URLs"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:254
+msgid "This option add rel=\"nofollow\" in all counters URLs."
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:261
+#: includes/admin/views/html-settings-page.php:9
 msgid "Design"
 msgstr ""
 
-#: novo.php:339 social-count-plus.php:339
+#: includes/admin/class-social-count-plus-admin.php:264
 msgid "Layout Models"
 msgstr ""
 
-#: novo.php:354 social-count-plus.php:354
+#: includes/admin/class-social-count-plus-admin.php:279
 msgid "Text Color"
 msgstr ""
 
-#: novo.php:516 social-count-plus.php:516
-msgid "Shortcodes and Functions"
+#: includes/admin/class-social-count-plus-admin.php:284
+msgid "Order"
 msgstr ""
 
-#: novo.php:529 social-count-plus.php:529
-msgid "To use the counter of Twitter you need to fill the fields:"
+#: includes/admin/class-social-count-plus-admin.php:286
+msgid "This option controls the order of the icons in the widget."
 msgstr ""
 
-#: novo.php:564 social-count-plus.php:564
+#. #-#-#-#-#  social-count-plus.pot (Social Count Plus 3.0.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/admin/class-social-count-plus-admin.php:303
+#: includes/admin/class-social-count-plus-admin.php:304
+#: includes/class-social-count-plus-widget.php:18
+msgid "Social Count Plus"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:522
+msgid "Activate/Deactivate"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:736
+msgid "General Info"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:737
+#: includes/admin/views/html-settings-system-status-page.php:11
+msgid "Social Count Plus Version"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:738
+#: includes/admin/views/html-settings-system-status-page.php:15
+msgid "WordPress Version"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:739
+#: includes/admin/views/html-settings-system-status-page.php:19
+msgid "WP Multisite Enabled"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:739
+#: includes/admin/class-social-count-plus-admin.php:742
+#: includes/admin/class-social-count-plus-admin.php:743
+#: includes/admin/views/html-settings-system-status-page.php:20
+msgid "Yes"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:739
+#: includes/admin/class-social-count-plus-admin.php:742
+#: includes/admin/class-social-count-plus-admin.php:743
+#: includes/admin/views/html-settings-system-status-page.php:20
+msgid "No"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:740
+#: includes/admin/views/html-settings-system-status-page.php:23
+msgid "Web Server Info"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:741
+#: includes/admin/views/html-settings-system-status-page.php:27
+msgid "PHP Version"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:744
+msgid "Social Connections"
+msgstr ""
+
+#: includes/admin/class-social-count-plus-admin.php:754
+msgid ""
+"You do not have any counter that needs to connect remotely currently active"
+msgstr ""
+
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:7
 msgid ""
 "Use this library to generate your own model layout or display specific data "
 "counters."
 msgstr ""
 
-#: novo.php:566 social-count-plus.php:566
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:9
 msgid "Shortcodes"
 msgstr ""
 
-#: novo.php:570 novo.php:611 social-count-plus.php:570
-#: social-count-plus.php:611
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:11
+msgid "Note: the shortcodes displays only the count in plain text."
+msgstr ""
+
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:15
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:58
 msgid "Twitter counter"
 msgstr ""
 
-#: novo.php:574 novo.php:615 social-count-plus.php:574
-#: social-count-plus.php:615
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:19
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:62
 msgid "Facebook counter"
 msgstr ""
 
-#: novo.php:578 novo.php:619 social-count-plus.php:578
-#: social-count-plus.php:619
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:23
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:66
 msgid "YouTube counter"
 msgstr ""
 
-#: novo.php:582 novo.php:623 social-count-plus.php:582
-#: social-count-plus.php:623
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:27
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:70
 msgid "Google Plus counter"
 msgstr ""
 
-#: novo.php:586 novo.php:627 social-count-plus.php:586
-#: social-count-plus.php:627
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:31
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:74
 msgid "Instagram counter"
 msgstr ""
 
-#: novo.php:590 novo.php:631 social-count-plus.php:590
-#: social-count-plus.php:631
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:35
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:78
 msgid "Steam counter"
 msgstr ""
 
-#: novo.php:594 novo.php:635 social-count-plus.php:594
-#: social-count-plus.php:635
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:39
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:82
 msgid "SoundCloud counter"
 msgstr ""
 
-#: novo.php:598 novo.php:639 social-count-plus.php:598
-#: social-count-plus.php:639
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:43
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:86
 msgid "Posts counter"
 msgstr ""
 
-#: novo.php:602 novo.php:643 social-count-plus.php:602
-#: social-count-plus.php:643
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:47
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:90
 msgid "Comments counter"
 msgstr ""
 
-#: novo.php:607 social-count-plus.php:607
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:52
 msgid "Functions"
 msgstr ""
 
-#: novo.php:647 social-count-plus.php:647
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:54
+msgid ""
+"Note: the functions displays only the count in plain text, except the "
+"<code>get_scp_widget()</code> function that displays with images."
+msgstr ""
+
+#: includes/admin/views/html-settings-functions-shortcodes-page.php:94
 msgid "Full widget"
 msgstr ""
 
-#: novo.php:796 social-count-plus.php:796
-msgid "Activate/Deactivate"
+#: includes/admin/views/html-settings-page.php:9
+msgid "Shortcodes and Functions"
 msgstr ""
 
-#: novo.php:953 novo.php:962 novo.php:965 novo.php:971
-#: social-count-plus.php:953 social-count-plus.php:962
-#: social-count-plus.php:965 social-count-plus.php:971
+#: includes/admin/views/html-settings-page.php:9
+msgid "System Status"
+msgstr ""
+
+#: includes/admin/views/html-settings-page.php:22
+msgid "To use the counter of Twitter you need to fill the fields:"
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:5
+msgid "Environment"
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:33
+msgid ""
+"Your server does not have fsockopen or cURL enabled. The scripts which "
+"communicate with the social APIs will not work. Contact your hosting "
+"provider."
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:37
+msgid "Your server has fsockopen and cURL enabled."
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:39
+msgid "Your server has fsockopen enabled, cURL is disabled."
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:41
+msgid "Your server has cURL enabled, fsockopen is disabled."
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:47
+msgid "fsockopen/cURL"
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:57
+msgid "wp_remote_get() failed. This may not work with your server."
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:67
+msgid "wp_remote_get() was successful."
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:69
+msgid ""
+"wp_remote_get() failed. This plugin won't work with your server. Contact "
+"your hosting provider. Error:"
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:72
+msgid "WP Remote Get"
+msgstr ""
+
+#: includes/admin/views/html-settings-system-status-page.php:82
+msgid "Get System Report"
+msgstr ""
+
+#: includes/class-social-count-plus-view.php:52
+#: includes/class-social-count-plus-view.php:91
+#: includes/class-social-count-plus-view.php:104
+#: includes/class-social-count-plus-view.php:130
 msgid "followers"
 msgstr ""
 
-#: novo.php:956 social-count-plus.php:956
+#: includes/class-social-count-plus-view.php:65
 msgid "likes"
 msgstr ""
 
-#: novo.php:959 social-count-plus.php:959
+#: includes/class-social-count-plus-view.php:78
 msgid "subscribers"
 msgstr ""
 
-#: novo.php:968 social-count-plus.php:968
+#: includes/class-social-count-plus-view.php:117
 msgid "members"
 msgstr ""
 
-#: novo.php:974 social-count-plus.php:974
-msgid "posts"
+#: includes/class-social-count-plus-view.php:159
+msgid "comments"
 msgstr ""
 
-#: novo.php:977 social-count-plus.php:977
-msgid "comments"
+#: includes/class-social-count-plus-widget.php:19
+msgid "Display the counter"
+msgstr ""
+
+#: includes/class-social-count-plus-widget.php:59
+msgid "Title"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

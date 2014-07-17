@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[social-count-plus.social-count-plus-pot]
+file_filter = languages/social-count-plus-<lang>.po
+source_file = languages/social-count-plus.pot
+source_lang = en
+type = PO
