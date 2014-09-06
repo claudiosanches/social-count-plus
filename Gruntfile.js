@@ -184,6 +184,12 @@ module.exports = function( grunt ) {
 						cwd: '<%= svn_settings.path %>'
 					}
 				}
+			},
+			txpush: {
+				command: 'tx push -s' // push the resources
+			},
+			txpull: {
+				command: 'tx pull -a -f' // pull the .po files
 			}
 		}
 	};
@@ -211,4 +217,8 @@ module.exports = function( grunt ) {
 		'shell:svn_add',
 		'shell:svn_commit'
 	] );
+
+	grunt.registerTask( 'tx_push', [ 'shell:txpush' ]);
+	grunt.registerTask( 'tx_pull', [ 'shell:txpull' ]);
+
 };
