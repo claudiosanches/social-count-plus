@@ -142,6 +142,7 @@ class Social_Count_Plus_View {
 	protected static function get_posts_counter( $settings, $total, $color ) {
 		$post_type = ( isset( $settings['posts_post_type'] ) && ! empty( $settings['posts_post_type'] ) ) ? $settings['posts_post_type'] : 'post';
 		$post_object = get_post_type_object( $post_type );
+		unset($settings['target_blank']);
 
 		return self::get_view_li( 'posts', get_home_url(), $total, strtolower( $post_object->label ), $color, $settings );
 	}
@@ -156,6 +157,7 @@ class Social_Count_Plus_View {
 	 * @return string           Counter html.
 	 */
 	protected static function get_comments_counter( $settings, $total, $color ) {
+		unset($settings['target_blank']);
 		return self::get_view_li( 'comments', get_home_url(), $total, __( 'comments', 'social-count-plus' ), $color, $settings );
 	}
 
