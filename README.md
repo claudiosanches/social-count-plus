@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/claudiosmweb/social-count-plus.png?label=ready&title=Ready)](https://waffle.io/claudiosmweb/social-count-plus)
 # Social Count Plus #
 **Contributors:** claudiosanches, felipesantana  
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y8HP99ZJ5Z59L  
