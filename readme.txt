@@ -140,6 +140,11 @@ The CSS classes you will need to use:
 
 == Changelog ==
 
+= 3.0.1 - 25/12/2014 =
+
+* Used only HTTPS for the social links.
+* Removed rel nofollow and target blank for posts and comments.
+
 = 3.0.0 - 24/05/2014 =
 
 * Refactored all code.

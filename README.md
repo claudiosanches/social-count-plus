@@ -3,8 +3,8 @@
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y8HP99ZJ5Z59L  
 **Tags:** facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode  
 **Requires at least:** 3.8  
-**Tested up to:** 4.0  
-**Stable tag:** 3.0.0  
+**Tested up to:** 4.1  
+**Stable tag:** 3.0.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -133,22 +133,27 @@ The CSS classes you will need to use:
 ## Screenshots ##
 
 ### 1. Settings page. ###
-![1. Settings page.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-1.png)
+![1. Settings page.](http://ps.w.org/social-count-plus/assets/screenshot-1.png)
 
 ### 2. Design page. ###
-![2. Design page.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-2.png)
+![2. Design page.](http://ps.w.org/social-count-plus/assets/screenshot-2.png)
 
 ### 3. Shortcodes and Functions API page. ###
-![3. Shortcodes and Functions API page.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-3.png)
+![3. Shortcodes and Functions API page.](http://ps.w.org/social-count-plus/assets/screenshot-3.png)
 
 ### 4. System Status page. ###
-![4. System Status page.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-4.png)
+![4. System Status page.](http://ps.w.org/social-count-plus/assets/screenshot-4.png)
 
 ### 5. Widget. ###
-![5. Widget.](http://s.wordpress.org/extend/plugins/social-count-plus/screenshot-5.png)
+![5. Widget.](http://ps.w.org/social-count-plus/assets/screenshot-5.png)
 
 
 ## Changelog ##
+
+### 3.0.1 - 25/12/2014 ###
+
+* Used only HTTPS for the social links.
+* Removed rel nofollow and target blank for posts and comments.
 
 ### 3.0.0 - 24/05/2014 ###
 
