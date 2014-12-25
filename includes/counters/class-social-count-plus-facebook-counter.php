@@ -25,7 +25,7 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	protected $api_url = 'http://graph.facebook.com/';
+	protected $api_url = 'https://graph.facebook.com/';
 
 	/**
 	 * Test the counter is available.

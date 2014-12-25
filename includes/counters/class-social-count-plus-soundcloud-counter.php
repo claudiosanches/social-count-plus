@@ -25,7 +25,7 @@ class Social_Count_Plus_SoundCloud_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	protected $api_url = 'http://api.soundcloud.com/users/';
+	protected $api_url = 'https://api.soundcloud.com/users/';
 
 	/**
 	 * Test the counter is available.

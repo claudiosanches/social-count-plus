@@ -25,7 +25,7 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	protected $api_url = 'http://steamcommunity.com/groups/';
+	protected $api_url = 'https://steamcommunity.com/groups/';
 
 	/**
 	 * Test the counter is available.

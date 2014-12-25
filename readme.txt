@@ -3,8 +3,8 @@ Contributors: claudiosanches, felipesantana
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y8HP99ZJ5Z59L
 Tags: facebook, twitter, youtube, google, instagram, soundcloud, steam, counter, widget, shortcode
 Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 3.0.0
+Tested up to: 4.1
+Stable tag: 3.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

@@ -25,7 +25,7 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	protected $api_url = 'http://gdata.youtube.com/feeds/api/users/';
+	protected $api_url = 'https://gdata.youtube.com/feeds/api/users/';
 
 	/**
 	 * Test the counter is available.

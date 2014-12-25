@@ -49,7 +49,7 @@ class Social_Count_Plus_View {
 	 * @return string           Counter html.
 	 */
 	protected static function get_twitter_counter( $settings, $total, $color ) {
-		return self::get_view_li( 'twitter', 'http://twitter.com/' . $settings['twitter_user'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
+		return self::get_view_li( 'twitter', 'https://twitter.com/' . $settings['twitter_user'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
 	}
 
 	/**
@@ -62,7 +62,7 @@ class Social_Count_Plus_View {
 	 * @return string           Counter html.
 	 */
 	protected static function get_facebook_counter( $settings, $total, $color ) {
-		return self::get_view_li( 'facebook', 'http://www.facebook.com/' . $settings['facebook_id'], $total, __( 'likes', 'social-count-plus' ), $color, $settings );
+		return self::get_view_li( 'facebook', 'https://www.facebook.com/' . $settings['facebook_id'], $total, __( 'likes', 'social-count-plus' ), $color, $settings );
 	}
 
 	/**
@@ -101,7 +101,7 @@ class Social_Count_Plus_View {
 	 * @return string           Counter html.
 	 */
 	protected static function get_instagram_counter( $settings, $total, $color ) {
-		return self::get_view_li( 'instagram', 'http://instagram.com/' . $settings['instagram_username'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
+		return self::get_view_li( 'instagram', 'https://instagram.com/' . $settings['instagram_username'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
 	}
 
 	/**
@@ -114,7 +114,7 @@ class Social_Count_Plus_View {
 	 * @return string           Counter html.
 	 */
 	protected static function get_steam_counter( $settings, $total, $color ) {
-		return self::get_view_li( 'steam', 'http://steamcommunity.com/groups/' . $settings['steam_group_name'], $total, __( 'members', 'social-count-plus' ), $color, $settings );
+		return self::get_view_li( 'steam', 'https://steamcommunity.com/groups/' . $settings['steam_group_name'], $total, __( 'members', 'social-count-plus' ), $color, $settings );
 	}
 
 	/**
@@ -142,7 +142,9 @@ class Social_Count_Plus_View {
 	protected static function get_posts_counter( $settings, $total, $color ) {
 		$post_type = ( isset( $settings['posts_post_type'] ) && ! empty( $settings['posts_post_type'] ) ) ? $settings['posts_post_type'] : 'post';
 		$post_object = get_post_type_object( $post_type );
-		unset($settings['target_blank']);
+
+		unset( $settings['target_blank'] );
+		unset( $settings['rel_nofollow'] );
 
 		return self::get_view_li( 'posts', get_home_url(), $total, strtolower( $post_object->label ), $color, $settings );
 	}
@@ -157,7 +159,9 @@ class Social_Count_Plus_View {
 	 * @return string           Counter html.
 	 */
 	protected static function get_comments_counter( $settings, $total, $color ) {
-		unset($settings['target_blank']);
+		unset( $settings['target_blank'] );
+		unset( $settings['rel_nofollow'] );
+
 		return self::get_view_li( 'comments', get_home_url(), $total, __( 'comments', 'social-count-plus' ), $color, $settings );
 	}
 
