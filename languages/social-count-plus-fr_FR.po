@@ -6,14 +6,15 @@ msgstr ""
 "Project-Id-Version: social-count-plus\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/social-count-plus\n"
 "POT-Creation-Date: 2014-07-17 02:35:07+00:00\n"
-"PO-Revision-Date: 2014-07-17 02:35+0000\n"
-"Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
-"Language-Team: French (France) (http://www.transifex.com/projects/p/social-count-plus/language/fr_FR/)\n"
+"PO-Revision-Date: 2014-12-27 15:32+0100\n"
+"Last-Translator: Jonathan <contactwebi86@gmail.com>\n"
+"Language-Team: Suivezlegeek.Fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: includes/admin/class-social-count-plus-admin.php:66
 msgid "Create an APP on Twitter in %s and get this information"
@@ -30,16 +31,16 @@ msgstr "Twitter"
 
 #: includes/admin/class-social-count-plus-admin.php:76
 msgid "Display Twitter counter"
-msgstr "Afficher le compteur twitter"
+msgstr "Afficher le compteur Twitter"
 
 #: includes/admin/class-social-count-plus-admin.php:80
 #: includes/admin/views/html-settings-page.php:24
 msgid "Twitter username"
-msgstr "Pseudo twitter"
+msgstr "Nom d'utilisateur Twitter"
 
 #: includes/admin/class-social-count-plus-admin.php:82
 msgid "Insert the Twitter username. Example: ferramentasblog"
-msgstr "Insérer le pseudo twitter. Exemple: ikiu91"
+msgstr "Insérez le nom d'utilisateur Twitter. Exemple: ikiu91"
 
 #: includes/admin/class-social-count-plus-admin.php:85
 #: includes/admin/views/html-settings-page.php:25
@@ -76,10 +77,13 @@ msgstr "ID de la page Facebook"
 
 #: includes/admin/class-social-count-plus-admin.php:116
 msgid ""
-"ID Facebook page. Must be the numeric ID.<br />You can find this information"
-" clicking to edit your page on Facebook. The URL will be similar to this:<br"
-" />https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
-msgstr "ID de la page Facebook. Doit etre numérique.<br />Vous pouvez trouver cette information en affichant votre page Facebook. L'URL ressemble à ceci : <br />https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
+"ID Facebook page. Must be the numeric ID.<br />You can find this information "
+"clicking to edit your page on Facebook. The URL will be similar to this:<br /"
+">https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
+msgstr ""
+"ID de la page Facebook. Doit etre numérique.<br />Vous pouvez trouver cette "
+"information en affichant votre page Facebook. L'URL ressemble à ceci : <br /"
+">https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>"
 
 #: includes/admin/class-social-count-plus-admin.php:121
 #: includes/admin/class-social-count-plus-admin.php:847
@@ -92,45 +96,51 @@ msgstr "Afficher le compteur YouTube"
 
 #: includes/admin/class-social-count-plus-admin.php:128
 msgid "YouTube username"
-msgstr "Pseudo YouTube"
+msgstr "Nom d'utilisateur YouTube"
 
 #: includes/admin/class-social-count-plus-admin.php:130
 msgid "Insert the YouTube username. Example: UCWGz8KbT5IE7PxhSN1jjimw"
 msgstr ""
+"Insérez le nom d'utilisateur YouTube. Exemple : UCWGz8KbT5IE7PxhSN1jjimw"
 
 #: includes/admin/class-social-count-plus-admin.php:133
 msgid "YouTube Channel URL"
-msgstr ""
+msgstr "URL de votre chaîne Youtube"
 
 #: includes/admin/class-social-count-plus-admin.php:135
 msgid ""
-"Insert the YouTube channel URL. Example: "
-"https://www.youtube.com/channel/UCWGz8KbT5IE7PxhSN1jjimw"
+"Insert the YouTube channel URL. Example: https://www.youtube.com/channel/"
+"UCWGz8KbT5IE7PxhSN1jjimw"
 msgstr ""
+"Insérez l'URL de la chaîne YouTube. Exemple : https://www.youtube.com/"
+"channel/UCWGz8KbT5IE7PxhSN1jjimw"
 
 #: includes/admin/class-social-count-plus-admin.php:140
 #: includes/admin/class-social-count-plus-admin.php:848
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: includes/admin/class-social-count-plus-admin.php:143
 msgid "Display Google+ counter"
-msgstr ""
+msgstr "Afficher le compteur Google+"
 
 #: includes/admin/class-social-count-plus-admin.php:147
 msgid "Google+ ID"
-msgstr ""
+msgstr "ID Google+"
 
 #: includes/admin/class-social-count-plus-admin.php:149
 msgid ""
-"Google+ page or profile ID. <br />Example:<br "
-"/>https://plus.google.com/<strong>115161266310935247804</strong> or "
-"https://plus.google.com/<strong>+Ferramentasblog1</strong>"
+"Google+ page or profile ID. <br />Example:<br />https://plus.google.com/"
+"<strong>115161266310935247804</strong> or https://plus.google.com/<strong>"
+"+Ferramentasblog1</strong>"
 msgstr ""
+"Page Google+ ou ID du profil. <br />Exemple : <br />https://plus.google.com/"
+"<strong>115161266310935247804</strong> ou https://plus.google.com/<strong>"
+"+Ferramentasblog1</strong>"
 
 #: includes/admin/class-social-count-plus-admin.php:152
 msgid "Google API Key"
-msgstr ""
+msgstr "Clé API Google"
 
 #: includes/admin/class-social-count-plus-admin.php:155
 msgid ""
@@ -140,6 +150,12 @@ msgid ""
 "\"CREATE A NEW KEY\" button, select the \"Browser key\" option and click in "
 "the \"CREATE\" button, now just copy your API key and paste here."
 msgstr ""
+"Obtenez votre clé API création d'un projet / application dans %s, puis à "
+"l'intérieur de votre projet, visitez  \"APIs & auth > APIs\" et activez "
+"\"Google+ API\", enfin aller à \"APIs & auth > APIs > Credentials > Public "
+"API access\" et cliquez sur le bouton \"CREATE A NEW KEY\", sélectionnez  "
+"l'option \"Browser key\" et cliquez sur le bouton  \"CREATE\", maintenant "
+"copiez juste votre clé API et coller la ici."
 
 #: includes/admin/class-social-count-plus-admin.php:162
 #: includes/admin/class-social-count-plus-admin.php:849
@@ -152,15 +168,15 @@ msgstr "Afficher le compteur Instagram"
 
 #: includes/admin/class-social-count-plus-admin.php:169
 msgid "Instagram Username"
-msgstr "Pseudo Instagram"
+msgstr "Nom d'utilisateur Instagram"
 
 #: includes/admin/class-social-count-plus-admin.php:171
 msgid "Insert the Instagram Username."
-msgstr "Insérer le pseudo Instagram."
+msgstr "Insérez le nom d'utilisateur Instagram."
 
 #: includes/admin/class-social-count-plus-admin.php:174
 msgid "Instagram User ID"
-msgstr "ID utilisateur  Instagram"
+msgstr "ID utilisateur Instagram"
 
 #: includes/admin/class-social-count-plus-admin.php:176
 msgid "Insert the Instagram User ID."
@@ -172,7 +188,7 @@ msgstr "Instagram Access Token"
 
 #: includes/admin/class-social-count-plus-admin.php:181
 msgid "Insert the Instagram Access Token."
-msgstr "Insérer Instagram Access Token."
+msgstr "Insérez l'Access Token Instagram."
 
 #: includes/admin/class-social-count-plus-admin.php:186
 #: includes/admin/class-social-count-plus-admin.php:850
@@ -189,7 +205,7 @@ msgstr "Nom du groupe Steam"
 
 #: includes/admin/class-social-count-plus-admin.php:195
 msgid "Insert the Steam Community group name. Example: DOTALT"
-msgstr "Insérer le nom du groupe de la communauté Steam. Exemplo: DOTALT"
+msgstr "Insérez le nom du groupe de la communauté Steam. Exemple : DOTALT"
 
 #: includes/admin/class-social-count-plus-admin.php:200
 #: includes/admin/class-social-count-plus-admin.php:851
@@ -202,32 +218,34 @@ msgstr "Afficher le compteur SoundCloud"
 
 #: includes/admin/class-social-count-plus-admin.php:207
 msgid "SoundCloud Username"
-msgstr "Pseudo SoundCloud"
+msgstr "Nom d'utilisateur SoundCloud"
 
 #: includes/admin/class-social-count-plus-admin.php:209
 msgid "Insert the SoundCloud Username."
-msgstr "Insérer le pseudo SoundCloud."
+msgstr "Insérez le nom d'utilisateur SoundCloud."
 
 #: includes/admin/class-social-count-plus-admin.php:212
 msgid "SoundCloud Client ID"
-msgstr "Client ID SoundCloud"
+msgstr "ID Client SoundCloud"
 
 #: includes/admin/class-social-count-plus-admin.php:214
 msgid "Insert the SoundCloud APP Client ID. Generate this information in %s"
-msgstr "Insérer SoundCloud APP Client ID. générez cette information dans %s"
+msgstr ""
+"Insérez l'ID client de l'APP SoundCloud. générez cette information via ce "
+"lien : %s"
 
 #: includes/admin/class-social-count-plus-admin.php:219
 #: includes/admin/class-social-count-plus-admin.php:852
 msgid "Posts"
-msgstr "Posts"
+msgstr "Articles"
 
 #: includes/admin/class-social-count-plus-admin.php:222
 msgid "Display Posts counter"
-msgstr "Afficher le compteur de Posts"
+msgstr "Afficher le compteur d'articles"
 
 #: includes/admin/class-social-count-plus-admin.php:227
 msgid "Post type"
-msgstr ""
+msgstr "Type du poste"
 
 #: includes/admin/class-social-count-plus-admin.php:234
 #: includes/admin/class-social-count-plus-admin.php:853
@@ -246,19 +264,23 @@ msgstr "Paramètres"
 
 #: includes/admin/class-social-count-plus-admin.php:247
 msgid "Open URLs in new tab/window"
-msgstr ""
+msgstr "Ouvri les URLs dans un nouvel onglet/fenêtre"
 
 #: includes/admin/class-social-count-plus-admin.php:249
 msgid "This option add target=\"_blank\" in all counters URLs."
 msgstr ""
+"Cette option ajoute <strong>target=\"_blank\"</strong> dans toutes les URLs "
+"des compteurs."
 
 #: includes/admin/class-social-count-plus-admin.php:252
 msgid "Add nofollow in URLs"
-msgstr ""
+msgstr "Ajouter nofollow dans les URLs"
 
 #: includes/admin/class-social-count-plus-admin.php:254
 msgid "This option add rel=\"nofollow\" in all counters URLs."
 msgstr ""
+"Cette option ajoute <strong>rel=\"nofollow\"</strong> dans toutes les URLs "
+"des compteurs."
 
 #: includes/admin/class-social-count-plus-admin.php:261
 #: includes/admin/views/html-settings-page.php:9
@@ -267,7 +289,7 @@ msgstr "Style"
 
 #: includes/admin/class-social-count-plus-admin.php:264
 msgid "Layout Models"
-msgstr "Modeles de Disposition"
+msgstr "Modèles de mise en page"
 
 #: includes/admin/class-social-count-plus-admin.php:279
 msgid "Text Color"
@@ -275,13 +297,12 @@ msgstr "Couleur du texte"
 
 #: includes/admin/class-social-count-plus-admin.php:284
 msgid "Order"
-msgstr ""
+msgstr "Ordre"
 
 #: includes/admin/class-social-count-plus-admin.php:286
 msgid "This option controls the order of the icons in the widget."
-msgstr ""
+msgstr "Cette option contrôle l'ordre des icônes dans le widget."
 
-#. #-#-#-#-#  social-count-plus.pot (Social Count Plus 3.0.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/admin/class-social-count-plus-admin.php:303
 #: includes/admin/class-social-count-plus-admin.php:304
@@ -295,61 +316,64 @@ msgstr "Activer / Désactiver"
 
 #: includes/admin/class-social-count-plus-admin.php:736
 msgid "General Info"
-msgstr ""
+msgstr "Informations générales"
 
 #: includes/admin/class-social-count-plus-admin.php:737
 #: includes/admin/views/html-settings-system-status-page.php:11
 msgid "Social Count Plus Version"
-msgstr ""
+msgstr "Version de Social Count Plus"
 
 #: includes/admin/class-social-count-plus-admin.php:738
 #: includes/admin/views/html-settings-system-status-page.php:15
 msgid "WordPress Version"
-msgstr ""
+msgstr "Version de Wordpress"
 
 #: includes/admin/class-social-count-plus-admin.php:739
 #: includes/admin/views/html-settings-system-status-page.php:19
 msgid "WP Multisite Enabled"
-msgstr ""
+msgstr "WP Multisite Activé"
 
 #: includes/admin/class-social-count-plus-admin.php:739
 #: includes/admin/class-social-count-plus-admin.php:742
 #: includes/admin/class-social-count-plus-admin.php:743
 #: includes/admin/views/html-settings-system-status-page.php:20
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: includes/admin/class-social-count-plus-admin.php:739
 #: includes/admin/class-social-count-plus-admin.php:742
 #: includes/admin/class-social-count-plus-admin.php:743
 #: includes/admin/views/html-settings-system-status-page.php:20
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: includes/admin/class-social-count-plus-admin.php:740
 #: includes/admin/views/html-settings-system-status-page.php:23
 msgid "Web Server Info"
-msgstr ""
+msgstr "Infos du Serveur Web"
 
 #: includes/admin/class-social-count-plus-admin.php:741
 #: includes/admin/views/html-settings-system-status-page.php:27
 msgid "PHP Version"
-msgstr ""
+msgstr "Version PHP"
 
 #: includes/admin/class-social-count-plus-admin.php:744
 msgid "Social Connections"
-msgstr ""
+msgstr "Connexions sociales"
 
 #: includes/admin/class-social-count-plus-admin.php:754
 msgid ""
 "You do not have any counter that needs to connect remotely currently active"
 msgstr ""
+"Vous n'avez pas de compteur actif qui nescessite une connexion à distance"
 
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:7
 msgid ""
 "Use this library to generate your own model layout or display specific data "
 "counters."
-msgstr "Utilisez cette bibliothèque pour créer votre propre modèle de présentation ou afficher les compteurs de données spécifiques."
+msgstr ""
+"Utilisez cette bibliothèque pour générer votre propre modèle de mise en page "
+"ou afficher les compteurs de données spécifiques."
 
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:9
 msgid "Shortcodes"
@@ -357,7 +381,7 @@ msgstr "Raccourcis"
 
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:11
 msgid "Note: the shortcodes displays only the count in plain text."
-msgstr ""
+msgstr "Note : les shortcodes affichent uniquement le nombre en texte brut."
 
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:15
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:58
@@ -397,7 +421,7 @@ msgstr "Compteur SoundCloud"
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:43
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:86
 msgid "Posts counter"
-msgstr "Compteur de Posts"
+msgstr "Compteur d'Articles"
 
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:47
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:90
@@ -413,6 +437,8 @@ msgid ""
 "Note: the functions displays only the count in plain text, except the "
 "<code>get_scp_widget()</code> function that displays with images."
 msgstr ""
+"Note : les fonctions n'affichent que le nombre en texte clair, à l'exception "
+"de la fonction <code>get_scp_widget()</code> qui affiche les images."
 
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:94
 msgid "Full widget"
@@ -424,7 +450,7 @@ msgstr "Raccourcis et fonctions"
 
 #: includes/admin/views/html-settings-page.php:9
 msgid "System Status"
-msgstr ""
+msgstr "État du système"
 
 #: includes/admin/views/html-settings-page.php:22
 msgid "To use the counter of Twitter you need to fill the fields:"
@@ -432,7 +458,7 @@ msgstr "Pour utiliser le compteur Twitter, vous devez remplir les champs : "
 
 #: includes/admin/views/html-settings-system-status-page.php:5
 msgid "Environment"
-msgstr ""
+msgstr "Environnement"
 
 #: includes/admin/views/html-settings-system-status-page.php:33
 msgid ""
@@ -440,44 +466,50 @@ msgid ""
 "communicate with the social APIs will not work. Contact your hosting "
 "provider."
 msgstr ""
+"Votre serveur n'a pas fsockopen ou cURL activé. Les scripts qui communiquent "
+"avec les API sociaux ne fonctionneront pas. Contactez votre fournisseur "
+"d'hébergement."
 
 #: includes/admin/views/html-settings-system-status-page.php:37
 msgid "Your server has fsockopen and cURL enabled."
-msgstr ""
+msgstr "Votre serveur a fsockopen et cURL activés."
 
 #: includes/admin/views/html-settings-system-status-page.php:39
 msgid "Your server has fsockopen enabled, cURL is disabled."
-msgstr ""
+msgstr "Votre serveur a fsockopen activé et cURL est désactivé."
 
 #: includes/admin/views/html-settings-system-status-page.php:41
 msgid "Your server has cURL enabled, fsockopen is disabled."
-msgstr ""
+msgstr "Votre serveur a cURL activé et fsockopen est désactivé."
 
 #: includes/admin/views/html-settings-system-status-page.php:47
 msgid "fsockopen/cURL"
-msgstr ""
+msgstr "fsockopen/cURL"
 
 #: includes/admin/views/html-settings-system-status-page.php:57
 msgid "wp_remote_get() failed. This may not work with your server."
 msgstr ""
+"wp_remote_get() a échoué. Cela peut ne pas fonctionner avec votre serveur."
 
 #: includes/admin/views/html-settings-system-status-page.php:67
 msgid "wp_remote_get() was successful."
-msgstr ""
+msgstr "wp_remote_get() a réussi."
 
 #: includes/admin/views/html-settings-system-status-page.php:69
 msgid ""
 "wp_remote_get() failed. This plugin won't work with your server. Contact "
 "your hosting provider. Error:"
 msgstr ""
+"wp_remote_get() a échoué. Ce plugin ne fonctionne pas avec votre serveur. "
+"Contactez votre fournisseur d'hébergement. Erreur : "
 
 #: includes/admin/views/html-settings-system-status-page.php:72
 msgid "WP Remote Get"
-msgstr ""
+msgstr "WP Remote Get"
 
 #: includes/admin/views/html-settings-system-status-page.php:82
 msgid "Get System Report"
-msgstr ""
+msgstr "Obtenir le rapport systeme"
 
 #: includes/class-social-count-plus-view.php:52
 #: includes/class-social-count-plus-view.php:91
@@ -496,11 +528,11 @@ msgstr "Abonnés"
 
 #: includes/class-social-count-plus-view.php:117
 msgid "members"
-msgstr "membres"
+msgstr "Membres"
 
 #: includes/class-social-count-plus-view.php:159
 msgid "comments"
-msgstr "commentaires"
+msgstr "Commentaires"
 
 #: includes/class-social-count-plus-widget.php:19
 msgid "Display the counter"
@@ -518,7 +550,9 @@ msgstr "https://github.com/claudiosmweb/social-count-plus"
 msgid ""
 "Display the counting Twitter followers, Facebook fans, YouTube subscribers "
 "posts and comments."
-msgstr "Afficher les compteurs Twitter, les fans Facebook, les abonnés YouTube, les messages et commentaires."
+msgstr ""
+"Affichez les compteurs d'abonnés Twitter, les fans Facebook, les abonnés "
+"YouTube, les messages et commentaires."
 
 #. Author of the plugin/theme
 msgid "claudiosanches, felipesantana"
