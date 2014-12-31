@@ -773,29 +773,33 @@ class Social_Count_Plus_Admin {
 		$version = get_option( 'socialcountplus_version', '0' );
 
 		if ( version_compare( $version, Social_Count_Plus::VERSION, '<' ) ) {
-			foreach ( self::plugin_options() as $settings_id => $sections ) {
-				$saved = get_option( $settings_id, array() );
 
-				foreach ( $sections as $section_id => $section ) {
-					foreach ( $section['fields'] as $field_id => $field ) {
-						$default = isset( $field['default'] ) ? $field['default'] : '';
+			// Install options and updated old versions for 3.0.0.
+			if ( version_compare( $version, '3.0.0', '<' ) ) {
+				foreach ( self::plugin_options() as $settings_id => $sections ) {
+					$saved = get_option( $settings_id, array() );
 
-						if ( isset( $saved[ $field_id ] ) || '' === $default ) {
-							continue;
+					foreach ( $sections as $section_id => $section ) {
+						foreach ( $section['fields'] as $field_id => $field ) {
+							$default = isset( $field['default'] ) ? $field['default'] : '';
+
+							if ( isset( $saved[ $field_id ] ) || '' === $default ) {
+								continue;
+							}
+
+							$saved[ $field_id ] = $default;
 						}
-
-						$saved[ $field_id ] = $default;
 					}
+
+					update_option( $settings_id, $saved );
 				}
 
-				update_option( $settings_id, $saved );
+				// Set the icons order.
+				$icons           = self::get_current_icons();
+				$design          = get_option( 'socialcountplus_design', array() );
+				$design['icons'] = implode( ',', $icons );
+				update_option( 'socialcountplus_design', $design );
 			}
-
-			// Set the icons order.
-			$icons           = self::get_current_icons();
-			$design          = get_option( 'socialcountplus_design', array() );
-			$design['icons'] = implode( ',', $icons );
-			update_option( 'socialcountplus_design', $design );
 
 			// Save plugin version.
 			update_option( 'socialcountplus_version', Social_Count_Plus::VERSION );
