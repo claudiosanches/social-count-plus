@@ -80,7 +80,7 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 	private function signature( $query, $consumer_key, $consumer_secret, $oauth_access_token, $oauth_access_token_secret ) {
 		$oauth = array(
 			'oauth_consumer_key'     => $consumer_key,
-			'oauth_nonce'            => hash_hmac( 'sha1', time(), true ),
+			'oauth_nonce'            => hash_hmac( 'sha1', time(), '1', false ),
 			'oauth_signature_method' => 'HMAC-SHA1',
 			'oauth_token'            => $oauth_access_token,
 			'oauth_timestamp'        => time(),
