@@ -79,4 +79,4 @@
 	</tbody>
 </table>
 
-<p class="submit"><a href="<?php echo add_query_arg( array( 'page' => 'social-count-plus', 'tab' => 'system_status', 'debug_file' => 'true' ), admin_url( 'admin.php' ) ); ?>" class="button-primary"><?php _e( 'Get System Report', 'social-count-plus' ); ?></a></p>
+<p class="submit"><a href="<?php echo esc_url( add_query_arg( array( 'page' => 'social-count-plus', 'tab' => 'system_status', 'debug_file' => 'true' ), admin_url( 'admin.php' ) ) ); ?>" class="button-primary"><?php _e( 'Get System Report', 'social-count-plus' ); ?></a></p>
