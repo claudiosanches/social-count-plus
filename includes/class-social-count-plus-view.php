@@ -29,7 +29,7 @@ class Social_Count_Plus_View {
 		$rel_nofollow = isset( $settings['rel_nofollow'] ) ? ' rel="nofollow"' : '';
 
 		$html = sprintf( '<li class="count-%s">', $slug );
-			$html .= sprintf( '<a class="icon" href="%s"%s%s></a>', esc_url( $url ), $target_blank, $rel_nofollow );
+			$html .= sprintf( '<a class="icon" href="%s"%s%s rel="me"></a>', esc_url( $url ), $target_blank, $rel_nofollow );
 			$html .= '<span class="items">';
 				$html .= sprintf( '<span class="count" style="color: %s !important;">%s</span>', $color, apply_filters( 'social_count_plus_number_format', $count ) );
 				$html .= sprintf( '<span class="label" style="color: %s !important;">%s</span>', $color, $title );
