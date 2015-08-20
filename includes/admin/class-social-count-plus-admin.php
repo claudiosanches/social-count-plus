@@ -63,7 +63,9 @@ class Social_Count_Plus_Admin {
 	 * @return array
 	 */
 	protected static function plugin_options() {
-		$twitter_oauth_description = sprintf( __( 'Create an APP on Twitter in %s and get this information', 'social-count-plus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
+		$twitter_oauth_description = sprintf( __( 'Create an App on Twitter in %s and get this information', 'social-count-plus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
+
+		$facebook_app_description = sprintf( __( 'Create an App on Facebook in %s and get this information', 'social-count-plus' ), '<a href="https://developers.facebook.com/" target="_blank">https://developers.facebook.com/</a>' );
 
 		$instagram_access_token = sprintf( __( 'Get the this information in %s', 'social-count-plus' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
 
@@ -110,10 +112,25 @@ class Social_Count_Plus_Admin {
 							'title'   => __( 'Display Facebook counter', 'social-count-plus' ),
 							'type'    => 'checkbox'
 						),
-						'facebook_id' => array(
-							'title'   => __( 'Facebook Page ID', 'social-count-plus' ),
-							'type'    => 'text',
-							'description' => __( 'ID Facebook page. Must be the numeric ID.<br />You can find this information clicking to edit your page on Facebook. The URL will be similar to this:<br />https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong>', 'social-count-plus' )
+						'facebook_id'     => array(
+							'title'       => __( 'Facebook Page ID', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf(
+								'%s<br />%s<br /><code>https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong></code> %s <code>https://www.facebook.com/<strong>BlogFerramentasBlog</strong></code>',
+								__( 'ID Facebook page. Must be the numeric ID or your page slug.', 'social-count-plus' ),
+								__( 'You can find this information clicking to edit your page on Facebook. The URL will be similar to this:', 'social-count-plus' ),
+								__( 'or', 'social-count-plus' )
+							)
+						),
+						'facebook_app_id' => array(
+							'title'       => __( 'Facebook App ID', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $facebook_app_description
+						),
+						'facebook_app_secret' => array(
+							'title'       => __( 'Facebook App Secret', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $facebook_app_description
 						)
 					)
 				),
@@ -211,7 +228,7 @@ class Social_Count_Plus_Admin {
 						'soundcloud_client_id' => array(
 							'title'       => __( 'SoundCloud Client ID', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the SoundCloud APP Client ID. Generate this information in %s', 'social-count-plus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' )
+							'description' => sprintf( __( 'Insert the SoundCloud App Client ID. Generate this information in %s', 'social-count-plus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' )
 						)
 					)
 				),
