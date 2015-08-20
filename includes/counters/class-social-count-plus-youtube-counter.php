@@ -25,7 +25,7 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	protected $api_url = 'https://gdata.youtube.com/feeds/api/users/';
+	protected $api_url = 'https://www.googleapis.com/youtube/v3/channels';
 
 	/**
 	 * Test the counter is available.
@@ -35,7 +35,7 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 * @return bool
 	 */
 	public function is_available( $settings ) {
-		return ( isset( $settings['youtube_active'] ) && ! empty( $settings['youtube_user'] ) );
+		return ( isset( $settings['youtube_active'] ) && ! empty( $settings['youtube_user'] ) && ! empty( $settings['youtube_api_key'] ) );
 	}
 
 	/**
@@ -48,23 +48,25 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 */
 	public function get_total( $settings, $cache ) {
 		if ( $this->is_available( $settings ) ) {
-			$params = array(
-				'sslverify' => false,
-				'timeout'   => 60
+			$url = sprintf(
+				'%s?part=statistics&id=%s&key=%s',
+				$this->api_url,
+				sanitize_text_field( $settings['youtube_user'] ),
+				sanitize_text_field( $settings['youtube_api_key'] )
 			);
 
-			$this->connection = wp_remote_get( $this->api_url . $settings['youtube_user'], $params );
+			$this->connection = wp_remote_get( $url, array( 'timeout' => 60 ) );
 
-			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
+			if ( is_wp_error( $this->connection ) || 400 <= $this->connection['response']['code'] ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
-				try {
-					$body  = str_replace( 'yt:', '', $this->connection['body'] );
-					$xml   = @new SimpleXmlElement( $body, LIBXML_NOCDATA );
-					$count = intval( $xml->statistics['subscriberCount'] );
+				$_data = json_decode( $this->connection['body'], true );
+
+				if ( isset( $_data['items'][0]['statistics']['subscriberCount'] ) ) {
+					$count = intval( $_data['items'][0]['statistics']['subscriberCount'] );
 
 					$this->total = $count;
-				} catch ( Exception $e ) {
+				} else {
 					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 				}
 			}

@@ -150,6 +150,14 @@ class Social_Count_Plus_Admin {
 							'title'       => __( 'YouTube Channel URL', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => __( 'Insert the YouTube channel URL. Example: https://www.youtube.com/channel/UCWGz8KbT5IE7PxhSN1jjimw', 'social-count-plus' )
+						),
+						'youtube_api_key' => array(
+							'title'       => __( 'Google API Key', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf(
+								__( 'Get your API key creating a project/app in %s, then inside your project go to "APIs & auth > APIs" and turn on the "YouTube API", finally go to "APIs & auth > APIs > Credentials > Public API access" and click in the "CREATE A NEW KEY" button, select the "Browser key" option and click in the "CREATE" button, now just copy your API key and paste here.', 'social-count-plus' ),
+								'<a href="https://console.developers.google.com/project">https://console.developers.google.com/project</a>'
+							)
 						)
 					)
 				),
