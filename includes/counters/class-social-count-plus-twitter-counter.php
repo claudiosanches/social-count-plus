@@ -63,7 +63,7 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 			$return[] = $key . '=' . $value;
 		}
 
-		return $method . "&" . rawurlencode( $url ) . '&' . rawurlencode( implode( '&', $return ) ) . '%26' . rawurlencode( $query );
+		return $method . '&' . rawurlencode( $url ) . '&' . rawurlencode( implode( '&', $return ) ) . '%26' . rawurlencode( $query );
 	}
 
 	/**
@@ -123,7 +123,7 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 	 * @return bool
 	 */
 	public function is_available( $settings ) {
-		return ( isset( $settings['twitter_active'] ) && isset( $settings['twitter_user'] ) && ! empty( $settings['twitter_user'] ) && ! empty( $settings['twitter_consumer_key'] ) && ! empty( $settings['twitter_consumer_secret'] ) && ! empty( $settings['twitter_access_token'] ) && ! empty( $settings['twitter_access_token_secret'] ) );
+		return ( isset( $settings['twitter_active'] ) && ! empty( $settings['twitter_user'] ) && ! empty( $settings['twitter_consumer_key'] ) && ! empty( $settings['twitter_consumer_secret'] ) && ! empty( $settings['twitter_access_token'] ) && ! empty( $settings['twitter_access_token_secret'] ) );
 	}
 
 	/**
@@ -140,7 +140,6 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 
 			$params = array(
 				'method'    => 'GET',
-				'sslverify' => false,
 				'timeout'   => 60,
 				'headers'   => array(
 					'Content-Type'  => 'application/x-www-form-urlencoded',

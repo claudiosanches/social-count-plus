@@ -35,7 +35,7 @@ class Social_Count_Plus_SoundCloud_Counter extends Social_Count_Plus_Counter {
 	 * @return bool
 	 */
 	public function is_available( $settings ) {
-		return ( isset( $settings['soundcloud_active'] ) && isset( $settings['soundcloud_username'] ) && ! empty( $settings['soundcloud_username'] ) && isset( $settings['soundcloud_client_id'] ) && ! empty( $settings['soundcloud_client_id'] ) );
+		return ( isset( $settings['soundcloud_active'] ) && ! empty( $settings['soundcloud_username'] ) && ! empty( $settings['soundcloud_client_id'] ) );
 	}
 
 	/**
@@ -48,12 +48,7 @@ class Social_Count_Plus_SoundCloud_Counter extends Social_Count_Plus_Counter {
 	 */
 	public function get_total( $settings, $cache ) {
 		if ( $this->is_available( $settings ) ) {
-			$params = array(
-				'sslverify' => false,
-				'timeout'   => 60
-			);
-
-			$this->connection = wp_remote_get( $this->api_url . $settings['soundcloud_username'] . '.json?client_id=' . $settings['soundcloud_client_id'], $params );
+			$this->connection = wp_remote_get( $this->api_url . $settings['soundcloud_username'] . '.json?client_id=' . $settings['soundcloud_client_id'], array( 'timeout' => 60 ) );
 
 			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;

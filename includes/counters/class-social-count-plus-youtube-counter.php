@@ -35,7 +35,7 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 * @return bool
 	 */
 	public function is_available( $settings ) {
-		return ( isset( $settings['youtube_active'] ) && isset( $settings['youtube_user'] ) && ! empty( $settings['youtube_user'] ) );
+		return ( isset( $settings['youtube_active'] ) && ! empty( $settings['youtube_user'] ) );
 	}
 
 	/**
