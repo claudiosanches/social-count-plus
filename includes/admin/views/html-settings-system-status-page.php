@@ -55,12 +55,7 @@
 			<?php
 				$remote_status = 'error';
 				$remote_note   = __( 'wp_remote_get() failed. This may not work with your server.', 'social-count-plus' );
-
-				$params = array(
-					'sslverify' => false,
-					'timeout'   => 60,
-				);
-				$response = wp_remote_get( 'http://gdata.youtube.com/feeds/api/users/UCWGz8KbT5IE7PxhSN1jjimw', $params );
+				$response      = wp_remote_get( 'https://httpbin.org/ip', array( 'timeout' => 60 ) );
 
 				if ( ! is_wp_error( $response ) && $response['response']['code'] >= 200 && $response['response']['code'] < 300 ) {
 					$remote_status = 'yes';
