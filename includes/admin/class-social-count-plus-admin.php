@@ -885,7 +885,7 @@ class Social_Count_Plus_Admin {
 	 * @return string
 	 */
 	protected function get_icon_name_i18n( $slug ) {
-		$names = array(
+		$names = apply_filters( 'social_count_plus_icon_name_i18n', array(
 			'twitter'    => __( 'Twitter', 'social-count-plus' ),
 			'facebook'   => __( 'Facebook', 'social-count-plus' ),
 			'youtube'    => __( 'YouTube', 'social-count-plus' ),
@@ -896,7 +896,7 @@ class Social_Count_Plus_Admin {
 			'soundcloud' => __( 'SoundCloud', 'social-count-plus' ),
 			'posts'      => __( 'Posts', 'social-count-plus' ),
 			'comments'   => __( 'Comments', 'social-count-plus' )
-		);
+		) );
 
 		if ( ! isset( $names[ $slug ] ) ) {
 			return $slug;

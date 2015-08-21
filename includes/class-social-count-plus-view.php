@@ -190,7 +190,7 @@ class Social_Count_Plus_View {
 		$design   = get_option( 'socialcountplus_design' );
 		$count    = Social_Count_Plus_Generator::get_count();
 		$color    = isset( $design['text_color'] ) ? $design['text_color'] : '#333333';
-		$icons    = isset( $design['icons'] ) ? explode( ',', $design['icons'] ) : array();
+		$icons    = isset( $design['icons'] ) ? array_map( 'sanitize_key', explode( ',', $design['icons'] ) ) : array();
 
 		// Sets view design.
 		$style = '';
@@ -227,7 +227,11 @@ class Social_Count_Plus_View {
 
 				foreach ( $icons as $icon ) {
 					$method = 'get_' . $icon . '_counter';
-					$html .= self::$method( $settings, $count[ $icon ], $color );
+					if ( method_exists( get_class(), $method ) ) {
+						$html .= self::$method( $settings, $count[ $icon ], $color );
+					} else {
+						$html .= apply_filters( 'social_count_plus_' . $icon . 'html_counter', '', $settings, $count[ $icon ], $color );
+					}
 				}
 
 			$html .= '</ul>';
