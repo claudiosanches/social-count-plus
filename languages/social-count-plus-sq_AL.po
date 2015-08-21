@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Social Count Plus\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/plugins/woocommerce-domination/\n"
-"POT-Creation-Date: 2015-08-21 05:36:27+00:00\n"
-"PO-Revision-Date: 2015-08-21 05:36+0000\n"
+"POT-Creation-Date: 2015-08-21 15:42:56+00:00\n"
+"PO-Revision-Date: 2015-08-21 15:43+0000\n"
 "Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
 "Language-Team: Albanian (Albania) (http://www.transifex.com/claudiosmweb/social-count-plus/language/sq_AL/)\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgid "Get the this information in %s"
 msgstr "Merre këtë informacion në %s"
 
 #: includes/admin/class-social-count-plus-admin.php:75
-#: includes/admin/class-social-count-plus-admin.php:893
+#: includes/admin/class-social-count-plus-admin.php:885
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -43,8 +43,8 @@ msgid "Twitter username"
 msgstr "Emër përdoruesi për Twitter"
 
 #: includes/admin/class-social-count-plus-admin.php:84
-msgid "Insert the Twitter username. Example: ferramentasblog"
-msgstr "Fut emrin e përdoruesit për Twitter. Për shembull: AsamblejaPG"
+msgid "Insert the Twitter username. Example: claudiosmweb"
+msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:87
 #: includes/admin/views/html-settings-page.php:25
@@ -67,7 +67,7 @@ msgid "Twitter Access token secret"
 msgstr "Shenjë sekrete hyrjeje për Twitter"
 
 #: includes/admin/class-social-count-plus-admin.php:109
-#: includes/admin/class-social-count-plus-admin.php:894
+#: includes/admin/class-social-count-plus-admin.php:886
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -102,7 +102,7 @@ msgid "Facebook App Secret"
 msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:138
-#: includes/admin/class-social-count-plus-admin.php:895
+#: includes/admin/class-social-count-plus-admin.php:887
 msgid "YouTube"
 msgstr "YouTube"
 
@@ -111,11 +111,11 @@ msgid "Display YouTube counter"
 msgstr "Shfaq numëruesin për YouTube"
 
 #: includes/admin/class-social-count-plus-admin.php:145
-msgid "YouTube username"
-msgstr "Emër përdoruesi për YouTube"
+msgid "YouTube Channel ID"
+msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:147
-msgid "Insert the YouTube username. Example: %s"
+msgid "Insert the YouTube Channel ID. Example: %s"
 msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:150
@@ -141,7 +141,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:165
-#: includes/admin/class-social-count-plus-admin.php:896
+#: includes/admin/class-social-count-plus-admin.php:888
 msgid "Google+"
 msgstr ""
 
@@ -171,7 +171,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:191
-#: includes/admin/class-social-count-plus-admin.php:897
+#: includes/admin/class-social-count-plus-admin.php:889
 msgid "Instagram"
 msgstr "Instagram"
 
@@ -204,7 +204,7 @@ msgid "Insert the Instagram Access Token."
 msgstr "Fut shenjën e hyrjes për Instagram"
 
 #: includes/admin/class-social-count-plus-admin.php:215
-#: includes/admin/class-social-count-plus-admin.php:898
+#: includes/admin/class-social-count-plus-admin.php:890
 msgid "Steam"
 msgstr "Steam"
 
@@ -221,7 +221,7 @@ msgid "Insert the Steam Community group name. Example: %s"
 msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:229
-#: includes/admin/class-social-count-plus-admin.php:899
+#: includes/admin/class-social-count-plus-admin.php:891
 msgid "Twitch"
 msgstr ""
 
@@ -238,7 +238,7 @@ msgid "Insert your Twitch username."
 msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:243
-#: includes/admin/class-social-count-plus-admin.php:900
+#: includes/admin/class-social-count-plus-admin.php:892
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
@@ -263,7 +263,7 @@ msgid "Insert the SoundCloud App Client ID. Generate this information in %s"
 msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:262
-#: includes/admin/class-social-count-plus-admin.php:901
+#: includes/admin/class-social-count-plus-admin.php:893
 msgid "Posts"
 msgstr "Postime"
 
@@ -276,7 +276,7 @@ msgid "Post type"
 msgstr ""
 
 #: includes/admin/class-social-count-plus-admin.php:277
-#: includes/admin/class-social-count-plus-admin.php:902
+#: includes/admin/class-social-count-plus-admin.php:894
 msgid "Comments"
 msgstr "Komentet"
 
@@ -285,7 +285,7 @@ msgid "Display Comments counter"
 msgstr "Shfaq numëruesin për komentet"
 
 #: includes/admin/class-social-count-plus-admin.php:287
-#: includes/admin/class-social-count-plus-admin.php:732
+#: includes/admin/class-social-count-plus-admin.php:726
 #: includes/admin/views/html-settings-page.php:9
 msgid "Settings"
 msgstr "Cilësimet"
@@ -328,58 +328,58 @@ msgstr ""
 msgid "Social Count Plus"
 msgstr "Social Count Plus"
 
-#: includes/admin/class-social-count-plus-admin.php:565
+#: includes/admin/class-social-count-plus-admin.php:561
 msgid "Activate/Deactivate"
 msgstr "Aktivizo/Çaktivizo"
 
-#: includes/admin/class-social-count-plus-admin.php:780
+#: includes/admin/class-social-count-plus-admin.php:774
 msgid "General Info"
 msgstr ""
 
-#: includes/admin/class-social-count-plus-admin.php:781
+#: includes/admin/class-social-count-plus-admin.php:775
 #: includes/admin/views/html-settings-system-status-page.php:11
 msgid "Social Count Plus Version"
 msgstr ""
 
-#: includes/admin/class-social-count-plus-admin.php:782
+#: includes/admin/class-social-count-plus-admin.php:776
 #: includes/admin/views/html-settings-system-status-page.php:15
 msgid "WordPress Version"
 msgstr ""
 
-#: includes/admin/class-social-count-plus-admin.php:783
+#: includes/admin/class-social-count-plus-admin.php:777
 #: includes/admin/views/html-settings-system-status-page.php:19
 msgid "WP Multisite Enabled"
 msgstr ""
 
-#: includes/admin/class-social-count-plus-admin.php:783
-#: includes/admin/class-social-count-plus-admin.php:786
-#: includes/admin/class-social-count-plus-admin.php:787
+#: includes/admin/class-social-count-plus-admin.php:777
+#: includes/admin/class-social-count-plus-admin.php:780
+#: includes/admin/class-social-count-plus-admin.php:781
 #: includes/admin/views/html-settings-system-status-page.php:20
 msgid "Yes"
 msgstr ""
 
-#: includes/admin/class-social-count-plus-admin.php:783
-#: includes/admin/class-social-count-plus-admin.php:786
-#: includes/admin/class-social-count-plus-admin.php:787
+#: includes/admin/class-social-count-plus-admin.php:777
+#: includes/admin/class-social-count-plus-admin.php:780
+#: includes/admin/class-social-count-plus-admin.php:781
 #: includes/admin/views/html-settings-system-status-page.php:20
 msgid "No"
 msgstr ""
 
-#: includes/admin/class-social-count-plus-admin.php:784
+#: includes/admin/class-social-count-plus-admin.php:778
 #: includes/admin/views/html-settings-system-status-page.php:23
 msgid "Web Server Info"
 msgstr ""
 
-#: includes/admin/class-social-count-plus-admin.php:785
+#: includes/admin/class-social-count-plus-admin.php:779
 #: includes/admin/views/html-settings-system-status-page.php:27
 msgid "PHP Version"
 msgstr ""
 
-#: includes/admin/class-social-count-plus-admin.php:788
+#: includes/admin/class-social-count-plus-admin.php:782
 msgid "Social Connections"
 msgstr ""
 
-#: includes/admin/class-social-count-plus-admin.php:798
+#: includes/admin/class-social-count-plus-admin.php:792
 msgid ""
 "You do not have any counter that needs to connect remotely currently active"
 msgstr ""

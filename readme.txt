@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: facebook, twitter, youtube, google, instagram, soundcloud, steam, twitch, counter, widget, shortcode
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 3.1.0
+Stable tag: 3.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,10 @@ The CSS classes you will need to use:
 5. Widget.
 
 == Changelog ==
+
+= 3.1.1 - 2015/08/21 =
+
+* Fixed YouTube options description. Need a YouTube Channel ID and not a YouTube username.
 
 = 3.1.0 - 2015/08/21 =
 
@@ -318,13 +322,14 @@ The CSS classes you will need to use:
 
 == Upgrade Notice ==
 
-= 3.1.0 =
+= 3.1.1 =
 
 * Added Twitch counter.
 * Added new `social_count_plus_{$icon}html_counter` and `social_count_plus_icon_name_i18n` filters to help add new custom counters.
 * Fixed Facebook counter, now uses the Facebook API.
 * Fixed Google Plus counter, now uses the Google API.
 * Fixed System Status test for `wp_remote_get()`.
+* Fixed YouTube options description. Need a YouTube Channel ID and not a YouTube username.
 
 == License ==
 
