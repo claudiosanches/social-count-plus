@@ -81,7 +81,7 @@ class Social_Count_Plus_Admin {
 						'twitter_user' => array(
 							'title'       => __( 'Twitter username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Insert the Twitter username. Example: ferramentasblog', 'social-count-plus' )
+							'description' => __( 'Insert the Twitter username. Example: claudiosmweb', 'social-count-plus' )
 						),
 						'twitter_consumer_key' => array(
 							'title'       => __( 'Twitter Consumer key', 'social-count-plus' ),
@@ -116,7 +116,7 @@ class Social_Count_Plus_Admin {
 							'title'       => __( 'Facebook Page ID', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => sprintf(
-								'%s<br />%s<br /><code>https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong></code> %s <code>https://www.facebook.com/<strong>BlogFerramentasBlog</strong></code>',
+								'%s<br />%s<br /><code>https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong></code> %s <code>https://www.facebook.com/<strong>WordPress</strong></code>',
 								__( 'ID Facebook page. Must be the numeric ID or your page slug.', 'social-count-plus' ),
 								__( 'You can find this information clicking to edit your page on Facebook. The URL will be similar to this:', 'social-count-plus' ),
 								__( 'or', 'social-count-plus' )
@@ -142,14 +142,14 @@ class Social_Count_Plus_Admin {
 							'type'    => 'checkbox'
 						),
 						'youtube_user' => array(
-							'title'       => __( 'YouTube username', 'social-count-plus' ),
+							'title'       => __( 'YouTube Channel ID', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the YouTube username. Example: %s', 'social-count-plus' ), '<code>UCWGz8KbT5IE7PxhSN1jjimw</code>' )
+							'description' => sprintf( __( 'Insert the YouTube Channel ID. Example: %s', 'social-count-plus' ), '<code>UCWGz8KbT5IE7PxhSN1jjimw</code>' )
 						),
 						'youtube_url' => array(
 							'title'       => __( 'YouTube Channel URL', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the YouTube channel URL. Example: %s', 'social-count-plus' ), '<code>https://www.youtube.com/channel/UCWGz8KbT5IE7PxhSN1jjimw</code>' )
+							'description' => sprintf( __( 'Insert the YouTube channel URL. Example: %s', 'social-count-plus' ), '<code>https://www.youtube.com/user/theclaudiosmweb</code>' )
 						),
 						'youtube_api_key' => array(
 							'title'       => __( 'Google API Key', 'social-count-plus' ),
@@ -172,7 +172,7 @@ class Social_Count_Plus_Admin {
 							'title'       => __( 'Google+ ID', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => sprintf(
-								'%s<br />%s <code>https://plus.google.com/<strong>115161266310935247804</strong></code> or <code>https://plus.google.com/<strong>+Ferramentasblog1</strong></code>',
+								'%s<br />%s <code>https://plus.google.com/<strong>106146333300678794719</strong></code> or <code>https://plus.google.com/<strong>+ClaudioSanches</strong></code>',
 								__( 'Google+ page or profile ID.', 'social-count-plus' ),
 								__( 'Example:', 'social-count-plus' )
 							)
@@ -338,8 +338,6 @@ class Social_Count_Plus_Admin {
 
 	/**
 	 * Add plugin settings menu.
-	 *
-	 * @return void
 	 */
 	public function settings_menu() {
 		$this->settings_screen = add_options_page(
@@ -394,8 +392,6 @@ class Social_Count_Plus_Admin {
 
 	/**
 	 * Plugin settings form fields.
-	 *
-	 * @return void
 	 */
 	public function plugin_settings() {
 
@@ -700,8 +696,6 @@ class Social_Count_Plus_Admin {
 
 	/**
 	 * Register admin styles and scripts.
-	 *
-	 * @return void
 	 */
 	public function styles_and_scripts() {
 		$screen = get_current_screen();
@@ -810,8 +804,6 @@ class Social_Count_Plus_Admin {
 
 	/**
 	 * Maybe install.
-	 *
-	 * @return void
 	 */
 	public static function maybe_install() {
 		$version = get_option( 'socialcountplus_version', '0' );
