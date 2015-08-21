@@ -131,6 +131,19 @@ class Social_Count_Plus_View {
 	}
 
 	/**
+	 * Get the Twitch counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_twitch_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'twitch', 'http://www.twitch.tv/' . $settings['twitch_username'] . '/profile', $total, __( 'followers', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
 	 * Get the Posts counter.
 	 *
 	 * @param  array  $settings Plugin settings.

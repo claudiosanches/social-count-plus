@@ -36,6 +36,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<td><p><code>[scp code=&quot;steam&quot;]</code></p></td>
 	</tr>
 	<tr>
+		<th scope="row"><?php _e( 'Twitch counter', 'social-count-plus' ); ?></th>
+		<td><p><code>[scp code=&quot;twitch&quot;]</code></p></td>
+	</tr>
+	<tr>
 		<th scope="row"><?php _e( 'SoundCloud counter', 'social-count-plus' ); ?></th>
 		<td><p><code>[scp code=&quot;soundcloud&quot;]</code></p></td>
 	</tr>
@@ -77,6 +81,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<tr>
 		<th scope="row"><?php _e( 'Steam counter', 'social-count-plus' ); ?></th>
 		<td><p><code>&lt;?php echo get_scp_steam(); ?&gt;</code></p></td>
+	</tr>
+	<tr>
+		<th scope="row"><?php _e( 'Twitch counter', 'social-count-plus' ); ?></th>
+		<td><p><code>&lt;?php echo get_scp_twitch(); ?&gt;</code></p></td>
 	</tr>
 	<tr>
 		<th scope="row"><?php _e( 'SoundCloud counter', 'social-count-plus' ); ?></th>

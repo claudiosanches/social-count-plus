@@ -116,14 +116,14 @@ module.exports = function( grunt ) {
 					{
 						expand: true,
 						cwd: '<%= dirs.images %>/',
-						src: '**/*.{png,jpg,gif}',
+						src: '*.png',
 						dest: '<%= dirs.images %>/'
 					},
 					{
 						expand: true,
-						cwd: './',
-						src: 'screenshot-*.png',
-						dest: './'
+						cwd: 'demos/',
+						src: '*.png',
+						dest: 'demos/'
 					}
 				]
 			}

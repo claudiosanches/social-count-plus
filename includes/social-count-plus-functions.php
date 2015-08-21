@@ -9,6 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * This functions is deprecated.
  *
+ * @deprecated since ever!
+ *
  * @return int FeedBurner count.
  */
 function get_scp_feed() {
@@ -79,6 +81,17 @@ function get_scp_soundcloud() {
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['soundcloud'];
+}
+
+/**
+ * Twitch counter function.
+ *
+ * @return int Twitch Plus count.
+ */
+function get_scp_twitch() {
+	$count = Social_Count_Plus_Generator::get_count();
+
+	return $count['twitch'];
 }
 
 /**

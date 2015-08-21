@@ -221,6 +221,20 @@ class Social_Count_Plus_Admin {
 						)
 					)
 				),
+				'twitch' => array(
+					'title'  => __( 'Twitch', 'social-count-plus' ),
+					'fields' => array(
+						'twitch_active' => array(
+							'title' => __( 'Display Twitch counter', 'social-count-plus' ),
+							'type'  => 'checkbox'
+						),
+						'twitch_username' => array(
+							'title'       => __( 'Twitch username', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => __( 'Insert your Twitch username.', 'social-count-plus' )
+						)
+					)
+				),
 				'soundcloud' => array(
 					'title'  => __( 'SoundCloud', 'social-count-plus' ),
 					'fields' => array(
@@ -745,6 +759,7 @@ class Social_Count_Plus_Admin {
 			'Social_Count_Plus_GooglePlus_Counter',
 			'Social_Count_Plus_Instagram_Counter',
 			'Social_Count_Plus_Steam_Counter',
+			'Social_Count_Plus_Twitch_Counter',
 			'Social_Count_Plus_SoundCloud_Counter'
 		) );
 
@@ -877,6 +892,7 @@ class Social_Count_Plus_Admin {
 			'googleplus' => __( 'Google+', 'social-count-plus' ),
 			'instagram'  => __( 'Instagram', 'social-count-plus' ),
 			'steam'      => __( 'Steam', 'social-count-plus' ),
+			'twitch'     => __( 'Twitch', 'social-count-plus' ),
 			'soundcloud' => __( 'SoundCloud', 'social-count-plus' ),
 			'posts'      => __( 'Posts', 'social-count-plus' ),
 			'comments'   => __( 'Comments', 'social-count-plus' )
