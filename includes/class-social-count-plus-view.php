@@ -170,6 +170,19 @@ class Social_Count_Plus_View {
 	}
 
 	/**
+	 * Get the Vimeo counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_vimeo_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'vimeo', 'https://vimeo.com/' . $settings['vimeo_username'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
 	 * Get the Posts counter.
 	 *
 	 * @param  array  $settings Plugin settings.

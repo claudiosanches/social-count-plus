@@ -128,6 +128,17 @@ function get_scp_pinterest() {
 }
 
 /**
+ * Vimeo counter function.
+ *
+ * @return int Vimeo count.
+ */
+function get_scp_vimeo() {
+	$count = Social_Count_Plus_Generator::get_count();
+
+	return $count['vimeo'];
+}
+
+/**
  * Posts counter function.
  *
  * @return int Posts count.

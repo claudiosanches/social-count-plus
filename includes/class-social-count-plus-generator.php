@@ -55,8 +55,9 @@ class Social_Count_Plus_Generator {
 			'Social_Count_Plus_SoundCloud_Counter',
 			'Social_Count_Plus_Tumblr_Counter',
 			'Social_Count_Plus_Pinterest_Counter',
+			'Social_Count_Plus_Vimeo_Counter',
 			'Social_Count_Plus_Posts_Counter',
-			'Social_Count_Plus_Comments_Counter',
+			'Social_Count_Plus_Comments_Counter'
 		) );
 
 		foreach ( $counters as $counter ) {

@@ -199,17 +199,17 @@ class Social_Count_Plus_Admin {
 						'instagram_username' => array(
 							'title'       => __( 'Instagram Username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Insert the Instagram Username.', 'social-count-plus' )
+							'description' => __( 'Insert your Instagram Username.', 'social-count-plus' )
 						),
 						'instagram_user_id' => array(
 							'title'       => __( 'Instagram User ID', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Insert the Instagram User ID.', 'social-count-plus' ) . ' ' . $instagram_access_token
+							'description' => __( 'Insert your Instagram User ID.', 'social-count-plus' ) . ' ' . $instagram_access_token
 						),
 						'instagram_access_token' => array(
 							'title'       => __( 'Instagram Access Token', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Insert the Instagram Access Token.', 'social-count-plus' ) . ' ' . $instagram_access_token
+							'description' => __( 'Insert your Instagram Access Token.', 'social-count-plus' ) . ' ' . $instagram_access_token
 						)
 					)
 				),
@@ -223,7 +223,7 @@ class Social_Count_Plus_Admin {
 						'steam_group_name' => array(
 							'title'       => __( 'Steam group name', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the Steam Community group name. Example: %s.', 'social-count-plus' ), '<code>DOTALT</code>' )
+							'description' => sprintf( __( 'Insert your Steam Community group name. Example: %s.', 'social-count-plus' ), '<code>DOTALT</code>' )
 						)
 					)
 				),
@@ -251,12 +251,12 @@ class Social_Count_Plus_Admin {
 						'soundcloud_username' => array(
 							'title'       => __( 'SoundCloud Username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Insert the SoundCloud Username.', 'social-count-plus' )
+							'description' => __( 'Insert your SoundCloud Username.', 'social-count-plus' )
 						),
 						'soundcloud_client_id' => array(
 							'title'       => __( 'SoundCloud Client ID', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the SoundCloud App Client ID. Generate this data in %s.', 'social-count-plus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' )
+							'description' => sprintf( __( 'Insert your SoundCloud App Client ID. Generate this data in %s.', 'social-count-plus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' )
 						)
 					)
 				),
@@ -270,7 +270,7 @@ class Social_Count_Plus_Admin {
 						'tumblr_hostname' => array(
 							'title'       => __( 'Tumblr Hostname', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the Tumblr Hostname. Example: %s.', 'social-count-plus' ), '<code>http://claudiosmweb.tumblr.com/</code>' )
+							'description' => sprintf( __( 'Insert your Tumblr Hostname. Example: %s.', 'social-count-plus' ), '<code>http://claudiosmweb.tumblr.com/</code>' )
 						),
 						'tumblr_consumer_key' => array(
 							'title'       => __( 'Tumblr Consumer Key', 'social-count-plus' ),
@@ -304,7 +304,21 @@ class Social_Count_Plus_Admin {
 						'pinterest_username' => array(
 							'title'       => __( 'Pinterest username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the Pinterest username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
+							'description' => sprintf( __( 'Insert your Pinterest username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
+						)
+					)
+				),
+				'vimeo' => array(
+					'title'  => __( 'Vimeo', 'social-count-plus' ),
+					'fields' => array(
+						'vimeo_active' => array(
+							'title' => __( 'Display Vimeo counter', 'social-count-plus' ),
+							'type'  => 'checkbox'
+						),
+						'vimeo_username' => array(
+							'title'       => __( 'Vimeo username', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Insert your Vimeo username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
 						)
 					)
 				),
@@ -810,7 +824,8 @@ class Social_Count_Plus_Admin {
 			'Social_Count_Plus_Twitch_Counter',
 			'Social_Count_Plus_SoundCloud_Counter',
 			'Social_Count_Plus_Tumblr_Counter',
-			'Social_Count_Plus_Pinterest_Counter'
+			'Social_Count_Plus_Pinterest_Counter',
+			'Social_Count_Plus_Vimeo_Counter'
 		) );
 
 		foreach ( $counters as $counter ) {
@@ -926,14 +941,12 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
-	 * Get icons names.
+	 * Get i18n counters.
 	 *
-	 * @param  string $slug
-	 *
-	 * @return string
+	 * @return array
 	 */
-	protected function get_icon_name_i18n( $slug ) {
-		$names = apply_filters( 'social_count_plus_icon_name_i18n', array(
+	public function get_i18n_counters() {
+		return apply_filters( 'social_count_plus_icon_name_i18n', array(
 			'twitter'    => __( 'Twitter', 'social-count-plus' ),
 			'facebook'   => __( 'Facebook', 'social-count-plus' ),
 			'youtube'    => __( 'YouTube', 'social-count-plus' ),
@@ -944,9 +957,21 @@ class Social_Count_Plus_Admin {
 			'soundcloud' => __( 'SoundCloud', 'social-count-plus' ),
 			'tumblr'     => __( 'Tumblr', 'social-count-plus' ),
 			'pinterest'  => __( 'Pinterest', 'social-count-plus' ),
+			'vimeo'      => __( 'Vimeo', 'social-count-plus' ),
 			'posts'      => __( 'Posts', 'social-count-plus' ),
 			'comments'   => __( 'Comments', 'social-count-plus' )
 		) );
+	}
+
+	/**
+	 * Get icons names.
+	 *
+	 * @param  string $slug
+	 *
+	 * @return string
+	 */
+	protected function get_icon_name_i18n( $slug ) {
+		$names = $this->get_i18n_counters();
 
 		if ( ! isset( $names[ $slug ] ) ) {
 			return $slug;

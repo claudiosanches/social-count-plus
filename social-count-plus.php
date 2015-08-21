@@ -111,18 +111,9 @@ class Social_Count_Plus {
 	 * Include counters.
 	 */
 	protected function include_counters() {
-		include_once 'includes/counters/class-social-count-plus-facebook-counter.php';
-		include_once 'includes/counters/class-social-count-plus-twitter-counter.php';
-		include_once 'includes/counters/class-social-count-plus-youtube-counter.php';
-		include_once 'includes/counters/class-social-count-plus-googleplus-counter.php';
-		include_once 'includes/counters/class-social-count-plus-instagram-counter.php';
-		include_once 'includes/counters/class-social-count-plus-steam-counter.php';
-		include_once 'includes/counters/class-social-count-plus-twitch-counter.php';
-		include_once 'includes/counters/class-social-count-plus-soundcloud-counter.php';
-		include_once 'includes/counters/class-social-count-plus-tumblr-counter.php';
-		include_once 'includes/counters/class-social-count-plus-pinterest-counter.php';
-		include_once 'includes/counters/class-social-count-plus-posts-counter.php';
-		include_once 'includes/counters/class-social-count-plus-comments-counter.php';
+		foreach ( glob( realpath( dirname( __FILE__ ) ) . '/includes/counters/*.php' ) as $filename ) {
+			include_once $filename;
+		}
 	}
 
 	/**
