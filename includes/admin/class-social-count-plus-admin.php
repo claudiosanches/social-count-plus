@@ -144,12 +144,12 @@ class Social_Count_Plus_Admin {
 						'youtube_user' => array(
 							'title'       => __( 'YouTube username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Insert the YouTube username. Example: UCWGz8KbT5IE7PxhSN1jjimw', 'social-count-plus' )
+							'description' => sprintf( __( 'Insert the YouTube username. Example: %s', 'social-count-plus' ), '<code>UCWGz8KbT5IE7PxhSN1jjimw</code>' )
 						),
 						'youtube_url' => array(
 							'title'       => __( 'YouTube Channel URL', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Insert the YouTube channel URL. Example: https://www.youtube.com/channel/UCWGz8KbT5IE7PxhSN1jjimw', 'social-count-plus' )
+							'description' => sprintf( __( 'Insert the YouTube channel URL. Example: %s', 'social-count-plus' ), '<code>https://www.youtube.com/channel/UCWGz8KbT5IE7PxhSN1jjimw</code>' )
 						),
 						'youtube_api_key' => array(
 							'title'       => __( 'Google API Key', 'social-count-plus' ),
@@ -171,7 +171,11 @@ class Social_Count_Plus_Admin {
 						'googleplus_id' => array(
 							'title'       => __( 'Google+ ID', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Google+ page or profile ID. <br />Example:<br />https://plus.google.com/<strong>115161266310935247804</strong> or https://plus.google.com/<strong>+Ferramentasblog1</strong>', 'social-count-plus' )
+							'description' => sprintf(
+								'%s<br />%s <code>https://plus.google.com/<strong>115161266310935247804</strong></code> or <code>https://plus.google.com/<strong>+Ferramentasblog1</strong></code>',
+								__( 'Google+ page or profile ID.', 'social-count-plus' ),
+								__( 'Example:', 'social-count-plus' )
+							)
 						),
 						'googleplus_api_key' => array(
 							'title'       => __( 'Google API Key', 'social-count-plus' ),
@@ -217,7 +221,7 @@ class Social_Count_Plus_Admin {
 						'steam_group_name' => array(
 							'title'       => __( 'Steam group name', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Insert the Steam Community group name. Example: DOTALT', 'social-count-plus' )
+							'description' => sprintf( __( 'Insert the Steam Community group name. Example: %s', 'social-count-plus' ), '<code>DOTALT</code>' )
 						)
 					)
 				),
@@ -285,12 +289,12 @@ class Social_Count_Plus_Admin {
 						'target_blank' => array(
 							'title'       => __( 'Open URLs in new tab/window', 'social-count-plus' ),
 							'type'        => 'checkbox',
-							'description' => __( 'This option add target="_blank" in all counters URLs.', 'social-count-plus' )
+							'description' => sprintf( __( 'This option add %s in all counters URLs.', 'social-count-plus' ), '<code>target="_blank"</code>' )
 						),
 						'rel_nofollow' => array(
 							'title'       => __( 'Add nofollow in URLs', 'social-count-plus' ),
 							'type'        => 'checkbox',
-							'description' => __( 'This option add rel="nofollow" in all counters URLs.', 'social-count-plus' )
+							'description' => sprintf( __( 'This option add %s in all counters URLs.', 'social-count-plus' ), '<code>rel="nofollow"</code>' )
 						),
 					)
 				)
