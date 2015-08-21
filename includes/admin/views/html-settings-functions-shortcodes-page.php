@@ -44,6 +44,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<td><p><code>[scp code=&quot;soundcloud&quot;]</code></p></td>
 	</tr>
 	<tr>
+		<th scope="row"><?php _e( 'Tumblr counter', 'social-count-plus' ); ?></th>
+		<td><p><code>[scp code=&quot;tumblr&quot;]</code></p></td>
+	</tr>
+	<tr>
+		<th scope="row"><?php _e( 'Pinterest counter', 'social-count-plus' ); ?></th>
+		<td><p><code>[scp code=&quot;pinterest&quot;]</code></p></td>
+	</tr>
+	<tr>
 		<th scope="row"><?php _e( 'Posts counter', 'social-count-plus' ); ?></th>
 		<td><p><code>[scp code=&quot;posts&quot;]</code></p></td>
 	</tr>
@@ -89,6 +97,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<tr>
 		<th scope="row"><?php _e( 'SoundCloud counter', 'social-count-plus' ); ?></th>
 		<td><p><code>&lt;?php echo get_scp_soundcloud(); ?&gt;</code></p></td>
+	</tr>
+	<tr>
+		<th scope="row"><?php _e( 'Tumblr counter', 'social-count-plus' ); ?></th>
+		<td><p><code>&lt;?php echo get_scp_tumblr(); ?&gt;</code></p></td>
+	</tr>
+	<tr>
+		<th scope="row"><?php _e( 'Pinterest counter', 'social-count-plus' ); ?></th>
+		<td><p><code>&lt;?php echo get_scp_pinterest(); ?&gt;</code></p></td>
 	</tr>
 	<tr>
 		<th scope="row"><?php _e( 'Posts counter', 'social-count-plus' ); ?></th>

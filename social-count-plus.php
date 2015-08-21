@@ -117,8 +117,10 @@ class Social_Count_Plus {
 		include_once 'includes/counters/class-social-count-plus-googleplus-counter.php';
 		include_once 'includes/counters/class-social-count-plus-instagram-counter.php';
 		include_once 'includes/counters/class-social-count-plus-steam-counter.php';
-		include_once 'includes/counters/class-social-count-plus-soundcloud-counter.php';
 		include_once 'includes/counters/class-social-count-plus-twitch-counter.php';
+		include_once 'includes/counters/class-social-count-plus-soundcloud-counter.php';
+		include_once 'includes/counters/class-social-count-plus-tumblr-counter.php';
+		include_once 'includes/counters/class-social-count-plus-pinterest-counter.php';
 		include_once 'includes/counters/class-social-count-plus-posts-counter.php';
 		include_once 'includes/counters/class-social-count-plus-comments-counter.php';
 	}

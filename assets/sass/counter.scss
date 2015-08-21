@@ -109,7 +109,7 @@
 	}
 
 	/* Sprites */
-	$icons: twitter facebook youtube googleplus posts comments instagram steam soundcloud twitch;
+	$icons: twitter facebook youtube googleplus posts comments instagram steam soundcloud twitch linkedin tumblr pinterest vimeo;
 	$i: 0;
 	@each $icon in $icons {
 		.default .count-#{$icon} a {

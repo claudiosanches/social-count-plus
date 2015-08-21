@@ -86,7 +86,7 @@ function get_scp_soundcloud() {
 /**
  * Twitch counter function.
  *
- * @return int Twitch Plus count.
+ * @return int Twitch count.
  */
 function get_scp_twitch() {
 	$count = Social_Count_Plus_Generator::get_count();
@@ -103,6 +103,28 @@ function get_scp_steam() {
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['steam'];
+}
+
+/**
+ * Tumblr counter function.
+ *
+ * @return int Tumblr count.
+ */
+function get_scp_tumblr() {
+	$count = Social_Count_Plus_Generator::get_count();
+
+	return $count['tumblr'];
+}
+
+/**
+ * Pinterest counter function.
+ *
+ * @return int Pinterest count.
+ */
+function get_scp_pinterest() {
+	$count = Social_Count_Plus_Generator::get_count();
+
+	return $count['pinterest'];
 }
 
 /**

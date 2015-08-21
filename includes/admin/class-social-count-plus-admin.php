@@ -63,11 +63,13 @@ class Social_Count_Plus_Admin {
 	 * @return array
 	 */
 	protected static function plugin_options() {
-		$twitter_oauth_description = sprintf( __( 'Create an App on Twitter in %s and get this information', 'social-count-plus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
+		$twitter_oauth_description = sprintf( __( 'Create an App on Twitter in %s and get this data.', 'social-count-plus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
 
-		$facebook_app_description = sprintf( __( 'Create an App on Facebook in %s and get this information', 'social-count-plus' ), '<a href="https://developers.facebook.com/" target="_blank">https://developers.facebook.com/</a>' );
+		$facebook_app_description = sprintf( __( 'Create an App on Facebook in %s and get this data.', 'social-count-plus' ), '<a href="https://developers.facebook.com/" target="_blank">https://developers.facebook.com/</a>' );
 
-		$instagram_access_token = sprintf( __( 'Get the this information in %s', 'social-count-plus' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
+		$instagram_access_token = sprintf( __( 'Get the this data in %s.', 'social-count-plus' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
+
+		$tumblr_oauth_description = sprintf( __( 'Register an App on Tumblr in %s, when the app is ready click in "Explore API" and allow your app access your Tumblr account and get this data.', 'social-count-plus' ), '<a href="https://www.tumblr.com/oauth/apps" target="_blank">https://www.tumblr.com/oauth/apps</a>' );
 
 		$settings = array(
 			'socialcountplus_settings' => array(
@@ -81,7 +83,7 @@ class Social_Count_Plus_Admin {
 						'twitter_user' => array(
 							'title'       => __( 'Twitter username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => __( 'Insert the Twitter username. Example: claudiosmweb', 'social-count-plus' )
+							'description' => sprintf( __( 'Insert the Twitter username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
 						),
 						'twitter_consumer_key' => array(
 							'title'       => __( 'Twitter Consumer key', 'social-count-plus' ),
@@ -116,9 +118,9 @@ class Social_Count_Plus_Admin {
 							'title'       => __( 'Facebook Page ID', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => sprintf(
-								'%s<br />%s<br /><code>https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong></code> %s <code>https://www.facebook.com/<strong>WordPress</strong></code>',
+								'%s<br />%s<br /><code>https://www.facebook.com/pages/edit/?id=<strong>162354720442454</strong></code> %s <code>https://www.facebook.com/<strong>WordPress</strong></code>.',
 								__( 'ID Facebook page. Must be the numeric ID or your page slug.', 'social-count-plus' ),
-								__( 'You can find this information clicking to edit your page on Facebook. The URL will be similar to this:', 'social-count-plus' ),
+								__( 'You can find this data clicking to edit your page on Facebook. The URL will be similar to this:', 'social-count-plus' ),
 								__( 'or', 'social-count-plus' )
 							)
 						),
@@ -144,12 +146,12 @@ class Social_Count_Plus_Admin {
 						'youtube_user' => array(
 							'title'       => __( 'YouTube Channel ID', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the YouTube Channel ID. Example: %s', 'social-count-plus' ), '<code>UCWGz8KbT5IE7PxhSN1jjimw</code>' )
+							'description' => sprintf( __( 'Insert the YouTube Channel ID. Example: %s.', 'social-count-plus' ), '<code>UCWGz8KbT5IE7PxhSN1jjimw</code>' )
 						),
 						'youtube_url' => array(
 							'title'       => __( 'YouTube Channel URL', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the YouTube channel URL. Example: %s', 'social-count-plus' ), '<code>https://www.youtube.com/user/theclaudiosmweb</code>' )
+							'description' => sprintf( __( 'Insert the YouTube channel URL. Example: %s.', 'social-count-plus' ), '<code>https://www.youtube.com/user/theclaudiosmweb</code>' )
 						),
 						'youtube_api_key' => array(
 							'title'       => __( 'Google API Key', 'social-count-plus' ),
@@ -221,7 +223,7 @@ class Social_Count_Plus_Admin {
 						'steam_group_name' => array(
 							'title'       => __( 'Steam group name', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the Steam Community group name. Example: %s', 'social-count-plus' ), '<code>DOTALT</code>' )
+							'description' => sprintf( __( 'Insert the Steam Community group name. Example: %s.', 'social-count-plus' ), '<code>DOTALT</code>' )
 						)
 					)
 				),
@@ -254,7 +256,55 @@ class Social_Count_Plus_Admin {
 						'soundcloud_client_id' => array(
 							'title'       => __( 'SoundCloud Client ID', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the SoundCloud App Client ID. Generate this information in %s', 'social-count-plus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' )
+							'description' => sprintf( __( 'Insert the SoundCloud App Client ID. Generate this data in %s.', 'social-count-plus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' )
+						)
+					)
+				),
+				'tumblr' => array(
+					'title'  => __( 'Tumblr', 'social-count-plus' ),
+					'fields' => array(
+						'tumblr_active' => array(
+							'title' => __( 'Display Tumblr counter', 'social-count-plus' ),
+							'type'  => 'checkbox'
+						),
+						'tumblr_hostname' => array(
+							'title'       => __( 'Tumblr Hostname', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Insert the Tumblr Hostname. Example: %s.', 'social-count-plus' ), '<code>http://claudiosmweb.tumblr.com/</code>' )
+						),
+						'tumblr_consumer_key' => array(
+							'title'       => __( 'Tumblr Consumer Key', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $tumblr_oauth_description
+						),
+						'tumblr_consumer_secret' => array(
+							'title'       => __( 'Tumblr Consumer Secret', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $tumblr_oauth_description
+						),
+						'tumblr_token' => array(
+							'title'       => __( 'Tumblr Token', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $tumblr_oauth_description
+						),
+						'tumblr_token_secret' => array(
+							'title'       => __( 'Tumblr Token Secret', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $tumblr_oauth_description
+						)
+					)
+				),
+				'pinterest' => array(
+					'title'  => __( 'Pinterest', 'social-count-plus' ),
+					'fields' => array(
+						'pinterest_active' => array(
+							'title' => __( 'Display Pinterest counter', 'social-count-plus' ),
+							'type'  => 'checkbox'
+						),
+						'pinterest_username' => array(
+							'title'       => __( 'Pinterest username', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Insert the Pinterest username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
 						)
 					)
 				),
@@ -758,7 +808,9 @@ class Social_Count_Plus_Admin {
 			'Social_Count_Plus_Instagram_Counter',
 			'Social_Count_Plus_Steam_Counter',
 			'Social_Count_Plus_Twitch_Counter',
-			'Social_Count_Plus_SoundCloud_Counter'
+			'Social_Count_Plus_SoundCloud_Counter',
+			'Social_Count_Plus_Tumblr_Counter',
+			'Social_Count_Plus_Pinterest_Counter'
 		) );
 
 		foreach ( $counters as $counter ) {
@@ -890,6 +942,8 @@ class Social_Count_Plus_Admin {
 			'steam'      => __( 'Steam', 'social-count-plus' ),
 			'twitch'     => __( 'Twitch', 'social-count-plus' ),
 			'soundcloud' => __( 'SoundCloud', 'social-count-plus' ),
+			'tumblr'     => __( 'Tumblr', 'social-count-plus' ),
+			'pinterest'  => __( 'Pinterest', 'social-count-plus' ),
 			'posts'      => __( 'Posts', 'social-count-plus' ),
 			'comments'   => __( 'Comments', 'social-count-plus' )
 		) );
