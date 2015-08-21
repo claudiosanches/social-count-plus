@@ -77,7 +77,7 @@ You can contribute to the source code in our [GitHub](https://github.com/claudio
 
 Some counters depend on third-party APIs to work, follow the next steps to generate API keys for each of them:
 
-= Faceboook =
+= Facebook =
 
 You must create a Facebook app to use the Facebook Graph API.
 
