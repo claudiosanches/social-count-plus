@@ -5,14 +5,14 @@
   "main": "Gruntfile.js",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "load-grunt-tasks": "^0.4.0",
+    "load-grunt-tasks": "^3.2.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-compass": "^0.8.0",
-    "grunt-shell": "^0.7.0",
-    "grunt-rsync": "^0.5.0",
-    "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-imagemin": "^0.7.0"
+    "grunt-contrib-compass": "^1.0.3",
+    "grunt-shell": "^1.1.2",
+    "grunt-rsync": "^0.6.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-imagemin": "^0.9.4"
   },
   "engines": {
     "node": ">=0.8.0",
