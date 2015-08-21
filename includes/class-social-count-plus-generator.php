@@ -73,8 +73,6 @@ class Social_Count_Plus_Generator {
 
 	/**
 	 * Delete the counters.
-	 *
-	 * @return void
 	 */
 	public static function delete_count() {
 		delete_transient( self::$transient );
@@ -82,8 +80,6 @@ class Social_Count_Plus_Generator {
 
 	/**
 	 * Reset the counters.
-	 *
-	 * @return void
 	 */
 	public static function reset_count() {
 		self::delete_count();

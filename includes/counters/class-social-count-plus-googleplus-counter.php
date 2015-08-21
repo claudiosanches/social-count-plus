@@ -48,8 +48,6 @@ class Social_Count_Plus_GooglePlus_Counter extends Social_Count_Plus_Counter {
 	 */
 	public function get_total( $settings, $cache ) {
 		if ( $this->is_available( $settings ) ) {
-			$id = 'https://plus.google.com/' . $settings['googleplus_id'];
-
 			$this->connection = wp_remote_get( $this->api_url . $settings['googleplus_id'] . '?key=' . $settings['googleplus_api_key'], array( 'timeout' => 60 ) );
 
 			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {

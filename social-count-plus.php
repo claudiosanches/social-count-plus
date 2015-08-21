@@ -80,8 +80,6 @@ class Social_Count_Plus {
 
 	/**
 	 * Load the plugin text domain for translation.
-	 *
-	 * @return void
 	 */
 	public function load_plugin_textdomain() {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'social-count-plus' );
@@ -99,8 +97,6 @@ class Social_Count_Plus {
 
 	/**
 	 * Include plugin functions.
-	 *
-	 * @return void
 	 */
 	protected function includes() {
 		include_once 'includes/class-social-count-plus-generator.php';
@@ -113,8 +109,6 @@ class Social_Count_Plus {
 
 	/**
 	 * Include counters.
-	 *
-	 * @return void
 	 */
 	protected function include_counters() {
 		include_once 'includes/counters/class-social-count-plus-facebook-counter.php';
@@ -131,8 +125,6 @@ class Social_Count_Plus {
 
 	/**
 	 * Register widget.
-	 *
-	 * @return void
 	 */
 	public function register_widget() {
 		register_widget( 'SocialCountPlus' );
@@ -140,8 +132,6 @@ class Social_Count_Plus {
 
 	/**
 	 * Register public styles and scripts.
-	 *
-	 * @return void
 	 */
 	public function styles_and_scripts() {
 		wp_register_style( 'social-count-plus', plugins_url( 'assets/css/counter.css', __FILE__ ), array(), Social_Count_Plus::VERSION, 'all' );
