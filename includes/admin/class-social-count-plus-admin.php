@@ -73,37 +73,13 @@ class Social_Count_Plus_Admin {
 
 		$settings = array(
 			'socialcountplus_settings' => array(
-				'twitter' => array(
-					'title'  => __( 'Twitter', 'social-count-plus' ),
+				'comments' => array(
+					'title'  => __( 'Comments', 'social-count-plus' ),
 					'fields' => array(
-						'twitter_active' => array(
-							'title'   => __( 'Display Twitter counter', 'social-count-plus' ),
+						'comments_active' => array(
+							'title'   => __( 'Display Comments counter', 'social-count-plus' ),
+							'default' => true,
 							'type'    => 'checkbox'
-						),
-						'twitter_user' => array(
-							'title'       => __( 'Twitter username', 'social-count-plus' ),
-							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the Twitter username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
-						),
-						'twitter_consumer_key' => array(
-							'title'       => __( 'Twitter Consumer key', 'social-count-plus' ),
-							'type'        => 'text',
-							'description' => $twitter_oauth_description
-						),
-						'twitter_consumer_secret' => array(
-							'title'       => __( 'Twitter Consumer secret', 'social-count-plus' ),
-							'type'        => 'text',
-							'description' => $twitter_oauth_description
-						),
-						'twitter_access_token' => array(
-							'title'       => __( 'Twitter Access token', 'social-count-plus' ),
-							'type'        => 'text',
-							'description' => $twitter_oauth_description
-						),
-						'twitter_access_token_secret' => array(
-							'title'       => __( 'Twitter Access token secret', 'social-count-plus' ),
-							'type'        => 'text',
-							'description' => $twitter_oauth_description
 						)
 					)
 				),
@@ -133,33 +109,6 @@ class Social_Count_Plus_Admin {
 							'title'       => __( 'Facebook App Secret', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => $facebook_app_description
-						)
-					)
-				),
-				'youtube' => array(
-					'title'  => __( 'YouTube', 'social-count-plus' ),
-					'fields' => array(
-						'youtube_active' => array(
-							'title'   => __( 'Display YouTube counter', 'social-count-plus' ),
-							'type'    => 'checkbox'
-						),
-						'youtube_user' => array(
-							'title'       => __( 'YouTube Channel ID', 'social-count-plus' ),
-							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the YouTube Channel ID. Example: %s.', 'social-count-plus' ), '<code>UCWGz8KbT5IE7PxhSN1jjimw</code>' )
-						),
-						'youtube_url' => array(
-							'title'       => __( 'YouTube Channel URL', 'social-count-plus' ),
-							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the YouTube channel URL. Example: %s.', 'social-count-plus' ), '<code>https://www.youtube.com/user/theclaudiosmweb</code>' )
-						),
-						'youtube_api_key' => array(
-							'title'       => __( 'Google API Key', 'social-count-plus' ),
-							'type'        => 'text',
-							'description' => sprintf(
-								__( 'Get your API key creating a project/app in %s, then inside your project go to "APIs & auth > APIs" and turn on the "YouTube API", finally go to "APIs & auth > APIs > Credentials > Public API access" and click in the "CREATE A NEW KEY" button, select the "Browser key" option and click in the "CREATE" button, now just copy your API key and paste here.', 'social-count-plus' ),
-								'<a href="https://console.developers.google.com/project">https://console.developers.google.com/project</a>'
-							)
 						)
 					)
 				),
@@ -213,32 +162,33 @@ class Social_Count_Plus_Admin {
 						)
 					)
 				),
-				'steam' => array(
-					'title'  => __( 'Steam', 'social-count-plus' ),
+				'pinterest' => array(
+					'title'  => __( 'Pinterest', 'social-count-plus' ),
 					'fields' => array(
-						'steam_active' => array(
-							'title' => __( 'Display Steam counter', 'social-count-plus' ),
+						'pinterest_active' => array(
+							'title' => __( 'Display Pinterest counter', 'social-count-plus' ),
 							'type'  => 'checkbox'
 						),
-						'steam_group_name' => array(
-							'title'       => __( 'Steam group name', 'social-count-plus' ),
+						'pinterest_username' => array(
+							'title'       => __( 'Pinterest username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert your Steam Community group name. Example: %s.', 'social-count-plus' ), '<code>DOTALT</code>' )
+							'description' => sprintf( __( 'Insert your Pinterest username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
 						)
 					)
 				),
-				'twitch' => array(
-					'title'  => __( 'Twitch', 'social-count-plus' ),
+				'posts' => array(
+					'title'  => __( 'Posts', 'social-count-plus' ),
 					'fields' => array(
-						'twitch_active' => array(
-							'title' => __( 'Display Twitch counter', 'social-count-plus' ),
-							'type'  => 'checkbox'
+						'posts_active' => array(
+							'title'   => __( 'Display Posts counter', 'social-count-plus' ),
+							'default' => true,
+							'type'    => 'checkbox'
 						),
-						'twitch_username' => array(
-							'title'       => __( 'Twitch username', 'social-count-plus' ),
-							'type'        => 'text',
-							'description' => __( 'Insert your Twitch username.', 'social-count-plus' )
-						)
+						'posts_post_type' => array(
+							'title'   => __( 'Post type', 'social-count-plus' ),
+							'default' => 'post',
+							'type'    => 'post_type'
+						),
 					)
 				),
 				'soundcloud' => array(
@@ -257,6 +207,20 @@ class Social_Count_Plus_Admin {
 							'title'       => __( 'SoundCloud Client ID', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => sprintf( __( 'Insert your SoundCloud App Client ID. Generate this data in %s.', 'social-count-plus' ), '<a href="http://soundcloud.com/you/apps/new" target="_blank">http://soundcloud.com/you/apps/new</a>' )
+						)
+					)
+				),
+				'steam' => array(
+					'title'  => __( 'Steam', 'social-count-plus' ),
+					'fields' => array(
+						'steam_active' => array(
+							'title' => __( 'Display Steam counter', 'social-count-plus' ),
+							'type'  => 'checkbox'
+						),
+						'steam_group_name' => array(
+							'title'       => __( 'Steam group name', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Insert your Steam Community group name. Example: %s.', 'social-count-plus' ), '<code>DOTALT</code>' )
 						)
 					)
 				),
@@ -294,17 +258,51 @@ class Social_Count_Plus_Admin {
 						)
 					)
 				),
-				'pinterest' => array(
-					'title'  => __( 'Pinterest', 'social-count-plus' ),
+				'twitch' => array(
+					'title'  => __( 'Twitch', 'social-count-plus' ),
 					'fields' => array(
-						'pinterest_active' => array(
-							'title' => __( 'Display Pinterest counter', 'social-count-plus' ),
+						'twitch_active' => array(
+							'title' => __( 'Display Twitch counter', 'social-count-plus' ),
 							'type'  => 'checkbox'
 						),
-						'pinterest_username' => array(
-							'title'       => __( 'Pinterest username', 'social-count-plus' ),
+						'twitch_username' => array(
+							'title'       => __( 'Twitch username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert your Pinterest username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
+							'description' => __( 'Insert your Twitch username.', 'social-count-plus' )
+						)
+					)
+				),
+				'twitter' => array(
+					'title'  => __( 'Twitter', 'social-count-plus' ),
+					'fields' => array(
+						'twitter_active' => array(
+							'title'   => __( 'Display Twitter counter', 'social-count-plus' ),
+							'type'    => 'checkbox'
+						),
+						'twitter_user' => array(
+							'title'       => __( 'Twitter username', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Insert the Twitter username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
+						),
+						'twitter_consumer_key' => array(
+							'title'       => __( 'Twitter Consumer key', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $twitter_oauth_description
+						),
+						'twitter_consumer_secret' => array(
+							'title'       => __( 'Twitter Consumer secret', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $twitter_oauth_description
+						),
+						'twitter_access_token' => array(
+							'title'       => __( 'Twitter Access token', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $twitter_oauth_description
+						),
+						'twitter_access_token_secret' => array(
+							'title'       => __( 'Twitter Access token secret', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => $twitter_oauth_description
 						)
 					)
 				),
@@ -322,28 +320,30 @@ class Social_Count_Plus_Admin {
 						)
 					)
 				),
-				'posts' => array(
-					'title'  => __( 'Posts', 'social-count-plus' ),
+				'youtube' => array(
+					'title'  => __( 'YouTube', 'social-count-plus' ),
 					'fields' => array(
-						'posts_active' => array(
-							'title'   => __( 'Display Posts counter', 'social-count-plus' ),
-							'default' => true,
+						'youtube_active' => array(
+							'title'   => __( 'Display YouTube counter', 'social-count-plus' ),
 							'type'    => 'checkbox'
 						),
-						'posts_post_type' => array(
-							'title'   => __( 'Post type', 'social-count-plus' ),
-							'default' => 'post',
-							'type'    => 'post_type'
+						'youtube_user' => array(
+							'title'       => __( 'YouTube Channel ID', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Insert the YouTube Channel ID. Example: %s.', 'social-count-plus' ), '<code>UCWGz8KbT5IE7PxhSN1jjimw</code>' )
 						),
-					)
-				),
-				'comments' => array(
-					'title'  => __( 'Comments', 'social-count-plus' ),
-					'fields' => array(
-						'comments_active' => array(
-							'title'   => __( 'Display Comments counter', 'social-count-plus' ),
-							'default' => true,
-							'type'    => 'checkbox'
+						'youtube_url' => array(
+							'title'       => __( 'YouTube Channel URL', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Insert the YouTube channel URL. Example: %s.', 'social-count-plus' ), '<code>https://www.youtube.com/user/theclaudiosmweb</code>' )
+						),
+						'youtube_api_key' => array(
+							'title'       => __( 'Google API Key', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf(
+								__( 'Get your API key creating a project/app in %s, then inside your project go to "APIs & auth > APIs" and turn on the "YouTube API", finally go to "APIs & auth > APIs > Credentials > Public API access" and click in the "CREATE A NEW KEY" button, select the "Browser key" option and click in the "CREATE" button, now just copy your API key and paste here.', 'social-count-plus' ),
+								'<a href="https://console.developers.google.com/project">https://console.developers.google.com/project</a>'
+							)
 						)
 					)
 				),
