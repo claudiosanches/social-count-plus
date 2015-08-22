@@ -45,19 +45,20 @@ class Social_Count_Plus_Generator {
 		$settings = get_option( 'socialcountplus_settings' );
 		$cache    = get_option( self::$cache );
 		$counters = apply_filters( 'social_count_plus_counters', array(
-			'Social_Count_Plus_Twitter_Counter',
+			'Social_Count_Plus_Comments_Counter',
 			'Social_Count_Plus_Facebook_Counter',
-			'Social_Count_Plus_YouTube_Counter',
 			'Social_Count_Plus_GooglePlus_Counter',
 			'Social_Count_Plus_Instagram_Counter',
-			'Social_Count_Plus_Steam_Counter',
-			'Social_Count_Plus_Twitch_Counter',
-			'Social_Count_Plus_SoundCloud_Counter',
-			'Social_Count_Plus_Tumblr_Counter',
+			'Social_Count_Plus_LinkedIn_Counter',
 			'Social_Count_Plus_Pinterest_Counter',
-			'Social_Count_Plus_Vimeo_Counter',
 			'Social_Count_Plus_Posts_Counter',
-			'Social_Count_Plus_Comments_Counter'
+			'Social_Count_Plus_SoundCloud_Counter',
+			'Social_Count_Plus_Steam_Counter',
+			'Social_Count_Plus_Tumblr_Counter',
+			'Social_Count_Plus_Twitch_Counter',
+			'Social_Count_Plus_Twitter_Counter',
+			'Social_Count_Plus_Vimeo_Counter',
+			'Social_Count_Plus_YouTube_Counter',
 		) );
 
 		foreach ( $counters as $counter ) {

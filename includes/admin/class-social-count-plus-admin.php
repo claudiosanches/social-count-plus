@@ -77,7 +77,7 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'Comments', 'social-count-plus' ),
 					'fields' => array(
 						'comments_active' => array(
-							'title'   => __( 'Display Comments counter', 'social-count-plus' ),
+							'title'   => __( 'Display Comments Counter', 'social-count-plus' ),
 							'default' => true,
 							'type'    => 'checkbox'
 						)
@@ -87,7 +87,7 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'Facebook', 'social-count-plus' ),
 					'fields' => array(
 						'facebook_active' => array(
-							'title'   => __( 'Display Facebook counter', 'social-count-plus' ),
+							'title'   => __( 'Display Facebook Counter', 'social-count-plus' ),
 							'type'    => 'checkbox'
 						),
 						'facebook_id'     => array(
@@ -116,7 +116,7 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'Google+', 'social-count-plus' ),
 					'fields' => array(
 						'googleplus_active' => array(
-							'title' => __( 'Display Google+ counter', 'social-count-plus' ),
+							'title' => __( 'Display Google+ Counter', 'social-count-plus' ),
 							'type'  => 'checkbox'
 						),
 						'googleplus_id' => array(
@@ -142,7 +142,7 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'Instagram', 'social-count-plus' ),
 					'fields' => array(
 						'instagram_active' => array(
-							'title' => __( 'Display Instagram counter', 'social-count-plus' ),
+							'title' => __( 'Display Instagram Counter', 'social-count-plus' ),
 							'type'  => 'checkbox'
 						),
 						'instagram_username' => array(
@@ -162,15 +162,34 @@ class Social_Count_Plus_Admin {
 						)
 					)
 				),
+				'linkedin' => array(
+					'title'  => __( 'LinkedIn', 'social-count-plus' ),
+					'fields' => array(
+						'linkedin_active' => array(
+							'title' => __( 'Display LinkedIn counter', 'social-count-plus' ),
+							'type'  => 'checkbox'
+						),
+						'linkedin_company_id' => array(
+							'title'       => __( 'LinkedIn Company ID', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Insert your LinkedIn Company ID. Get your Company ID in %s.', 'social-count-plus' ), '<a href="https://socialcountplus-linkedin.herokuapp.com/">https://socialcountplus-linkedin.herokuapp.com/</a>' )
+						),
+						'linkedin_access_token' => array(
+							'title'       => __( 'LinkedIn Access Token', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Get your Access Token in %s.', 'social-count-plus' ), '<a href="https://socialcountplus-linkedin.herokuapp.com/">https://socialcountplus-linkedin.herokuapp.com/</a>' )
+						)
+					)
+				),
 				'pinterest' => array(
 					'title'  => __( 'Pinterest', 'social-count-plus' ),
 					'fields' => array(
 						'pinterest_active' => array(
-							'title' => __( 'Display Pinterest counter', 'social-count-plus' ),
+							'title' => __( 'Display Pinterest Counter', 'social-count-plus' ),
 							'type'  => 'checkbox'
 						),
 						'pinterest_username' => array(
-							'title'       => __( 'Pinterest username', 'social-count-plus' ),
+							'title'       => __( 'Pinterest Username', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => sprintf( __( 'Insert your Pinterest username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
 						)
@@ -180,12 +199,12 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'Posts', 'social-count-plus' ),
 					'fields' => array(
 						'posts_active' => array(
-							'title'   => __( 'Display Posts counter', 'social-count-plus' ),
+							'title'   => __( 'Display Posts Counter', 'social-count-plus' ),
 							'default' => true,
 							'type'    => 'checkbox'
 						),
 						'posts_post_type' => array(
-							'title'   => __( 'Post type', 'social-count-plus' ),
+							'title'   => __( 'Post Type', 'social-count-plus' ),
 							'default' => 'post',
 							'type'    => 'post_type'
 						),
@@ -195,7 +214,7 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'SoundCloud', 'social-count-plus' ),
 					'fields' => array(
 						'soundcloud_active' => array(
-							'title' => __( 'Display SoundCloud counter', 'social-count-plus' ),
+							'title' => __( 'Display SoundCloud Counter', 'social-count-plus' ),
 							'type'  => 'checkbox'
 						),
 						'soundcloud_username' => array(
@@ -214,11 +233,11 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'Steam', 'social-count-plus' ),
 					'fields' => array(
 						'steam_active' => array(
-							'title' => __( 'Display Steam counter', 'social-count-plus' ),
+							'title' => __( 'Display Steam Counter', 'social-count-plus' ),
 							'type'  => 'checkbox'
 						),
 						'steam_group_name' => array(
-							'title'       => __( 'Steam group name', 'social-count-plus' ),
+							'title'       => __( 'Steam Group Name', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => sprintf( __( 'Insert your Steam Community group name. Example: %s.', 'social-count-plus' ), '<code>DOTALT</code>' )
 						)
@@ -262,11 +281,11 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'Twitch', 'social-count-plus' ),
 					'fields' => array(
 						'twitch_active' => array(
-							'title' => __( 'Display Twitch counter', 'social-count-plus' ),
+							'title' => __( 'Display Twitch Counter', 'social-count-plus' ),
 							'type'  => 'checkbox'
 						),
 						'twitch_username' => array(
-							'title'       => __( 'Twitch username', 'social-count-plus' ),
+							'title'       => __( 'Twitch Username', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => __( 'Insert your Twitch username.', 'social-count-plus' )
 						)
@@ -276,11 +295,11 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'Twitter', 'social-count-plus' ),
 					'fields' => array(
 						'twitter_active' => array(
-							'title'   => __( 'Display Twitter counter', 'social-count-plus' ),
+							'title'   => __( 'Display Twitter Counter', 'social-count-plus' ),
 							'type'    => 'checkbox'
 						),
 						'twitter_user' => array(
-							'title'       => __( 'Twitter username', 'social-count-plus' ),
+							'title'       => __( 'Twitter Username', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => sprintf( __( 'Insert the Twitter username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
 						),
@@ -310,11 +329,11 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'Vimeo', 'social-count-plus' ),
 					'fields' => array(
 						'vimeo_active' => array(
-							'title' => __( 'Display Vimeo counter', 'social-count-plus' ),
+							'title' => __( 'Display Vimeo Counter', 'social-count-plus' ),
 							'type'  => 'checkbox'
 						),
 						'vimeo_username' => array(
-							'title'       => __( 'Vimeo username', 'social-count-plus' ),
+							'title'       => __( 'Vimeo Username', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => sprintf( __( 'Insert your Vimeo username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
 						)
@@ -324,7 +343,7 @@ class Social_Count_Plus_Admin {
 					'title'  => __( 'YouTube', 'social-count-plus' ),
 					'fields' => array(
 						'youtube_active' => array(
-							'title'   => __( 'Display YouTube counter', 'social-count-plus' ),
+							'title'   => __( 'Display YouTube Counter', 'social-count-plus' ),
 							'type'    => 'checkbox'
 						),
 						'youtube_user' => array(
@@ -815,17 +834,18 @@ class Social_Count_Plus_Admin {
 		$cache    = get_option( Social_Count_Plus_Generator::$cache );
 		$content  = '';
 		$counters = apply_filters( 'social_count_plus_counters_test', array(
-			'Social_Count_Plus_Twitter_Counter',
 			'Social_Count_Plus_Facebook_Counter',
-			'Social_Count_Plus_YouTube_Counter',
 			'Social_Count_Plus_GooglePlus_Counter',
 			'Social_Count_Plus_Instagram_Counter',
-			'Social_Count_Plus_Steam_Counter',
-			'Social_Count_Plus_Twitch_Counter',
-			'Social_Count_Plus_SoundCloud_Counter',
-			'Social_Count_Plus_Tumblr_Counter',
+			'Social_Count_Plus_LinkedIn_Counter',
 			'Social_Count_Plus_Pinterest_Counter',
-			'Social_Count_Plus_Vimeo_Counter'
+			'Social_Count_Plus_SoundCloud_Counter',
+			'Social_Count_Plus_Steam_Counter',
+			'Social_Count_Plus_Tumblr_Counter',
+			'Social_Count_Plus_Twitch_Counter',
+			'Social_Count_Plus_Twitter_Counter',
+			'Social_Count_Plus_Vimeo_Counter',
+			'Social_Count_Plus_YouTube_Counter',
 		) );
 
 		foreach ( $counters as $counter ) {
@@ -947,19 +967,20 @@ class Social_Count_Plus_Admin {
 	 */
 	public function get_i18n_counters() {
 		return apply_filters( 'social_count_plus_icon_name_i18n', array(
-			'twitter'    => __( 'Twitter', 'social-count-plus' ),
+			'comments'   => __( 'Comments', 'social-count-plus' ),
 			'facebook'   => __( 'Facebook', 'social-count-plus' ),
-			'youtube'    => __( 'YouTube', 'social-count-plus' ),
 			'googleplus' => __( 'Google+', 'social-count-plus' ),
 			'instagram'  => __( 'Instagram', 'social-count-plus' ),
-			'steam'      => __( 'Steam', 'social-count-plus' ),
-			'twitch'     => __( 'Twitch', 'social-count-plus' ),
-			'soundcloud' => __( 'SoundCloud', 'social-count-plus' ),
-			'tumblr'     => __( 'Tumblr', 'social-count-plus' ),
+			'linkedin'   => __( 'LinkedIn', 'social-count-plus' ),
 			'pinterest'  => __( 'Pinterest', 'social-count-plus' ),
-			'vimeo'      => __( 'Vimeo', 'social-count-plus' ),
 			'posts'      => __( 'Posts', 'social-count-plus' ),
-			'comments'   => __( 'Comments', 'social-count-plus' )
+			'soundcloud' => __( 'SoundCloud', 'social-count-plus' ),
+			'steam'      => __( 'Steam', 'social-count-plus' ),
+			'tumblr'     => __( 'Tumblr', 'social-count-plus' ),
+			'twitch'     => __( 'Twitch', 'social-count-plus' ),
+			'twitter'    => __( 'Twitter', 'social-count-plus' ),
+			'vimeo'      => __( 'Vimeo', 'social-count-plus' ),
+			'youtube'    => __( 'YouTube', 'social-count-plus' ),
 		) );
 	}
 

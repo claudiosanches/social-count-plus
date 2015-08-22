@@ -161,6 +161,17 @@ function get_scp_comments() {
 }
 
 /**
+ * LinkedIn counter function.
+ *
+ * @return int LinkedIn count.
+ */
+function get_scp_linkedin() {
+	$count = Social_Count_Plus_Generator::get_count();
+
+	return $count['comments'];
+}
+
+/**
  * All counters function.
  *
  * @return array All counts.

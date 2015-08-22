@@ -35,7 +35,7 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 	 * @return bool
 	 */
 	public function is_available( $settings ) {
-		return ( isset( $settings['steam_active'] ) && ! empty( $settings['steam_group_name'] ) );
+		return isset( $settings['steam_active'] ) && ! empty( $settings['steam_group_name'] );
 	}
 
 	/**

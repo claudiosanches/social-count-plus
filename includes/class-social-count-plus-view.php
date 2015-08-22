@@ -183,6 +183,19 @@ class Social_Count_Plus_View {
 	}
 
 	/**
+	 * Get the LinkedIn counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_linkedin_counter( $settings, $total, $color ) {
+		return self::get_view_li( 'linkedin', 'https://www.linkedin.com/company/' . $settings['linkedin_company_id'], $total, __( 'followers', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
 	 * Get the Posts counter.
 	 *
 	 * @param  array  $settings Plugin settings.
