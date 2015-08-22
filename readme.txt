@@ -66,7 +66,6 @@ You can contribute to the source code in our [GitHub](https://github.com/claudio
 
 * Flat icons set, Instagram, SoundCloud and Steam icons by [Felipe Santana](http://wordpress.org/support/profile/felipesantana)
 * Steam counter by [Tadas Krivickas](http://wordpress.org/support/profile/tkrivickas)
-* Instagram access token generator by [Pedro Rogério](http://www.pinceladasdaweb.com.br/)
 * `wp_remote_get()` connection test with [httpbin](https://httpbin.org/)
 
 == Installation ==
@@ -76,6 +75,14 @@ You can contribute to the source code in our [GitHub](https://github.com/claudio
 * Navigate to Settings -> Social Count Plus and fill the plugin options.
 
 Some counters depend on third-party APIs to work, follow the next steps to generate API keys for each of them:
+
+= Instagram =
+
+Get your User ID and Access Token in: https://socialcountplus-instagram.herokuapp.com/
+
+= LinkedIn =
+
+Get your Company ID and Access Token in: https://socialcountplus-linkedin.herokuapp.com/
 
 = Facebook =
 

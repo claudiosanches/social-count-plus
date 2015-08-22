@@ -67,7 +67,7 @@ class Social_Count_Plus_Admin {
 
 		$facebook_app_description = sprintf( __( 'Create an App on Facebook in %s and get this data.', 'social-count-plus' ), '<a href="https://developers.facebook.com/" target="_blank">https://developers.facebook.com/</a>' );
 
-		$instagram_access_token = sprintf( __( 'Get the this data in %s.', 'social-count-plus' ), '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a>' );
+		$instagram_access_token = sprintf( __( 'Get the this data in %s.', 'social-count-plus' ), '<a href="https://socialcountplus-instagram.herokuapp.com/" target="_blank">https://socialcountplus-instagram.herokuapp.com/</a>' );
 
 		$tumblr_oauth_description = sprintf( __( 'Register an App on Tumblr in %s, when the app is ready click in "Explore API" and allow your app access your Tumblr account and get this data.', 'social-count-plus' ), '<a href="https://www.tumblr.com/oauth/apps" target="_blank">https://www.tumblr.com/oauth/apps</a>' );
 
@@ -133,7 +133,7 @@ class Social_Count_Plus_Admin {
 							'type'        => 'text',
 							'description' => sprintf(
 								__( 'Get your API key creating a project/app in %s, then inside your project go to "APIs & auth > APIs" and turn on the "Google+ API", finally go to "APIs & auth > APIs > Credentials > Public API access" and click in the "CREATE A NEW KEY" button, select the "Browser key" option and click in the "CREATE" button, now just copy your API key and paste here.', 'social-count-plus' ),
-								'<a href="https://console.developers.google.com/project">https://console.developers.google.com/project</a>'
+								'<a href="https://console.developers.google.com/project" target="_blank">https://console.developers.google.com/project</a>'
 							)
 						)
 					)
@@ -172,12 +172,12 @@ class Social_Count_Plus_Admin {
 						'linkedin_company_id' => array(
 							'title'       => __( 'LinkedIn Company ID', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert your LinkedIn Company ID. Get your Company ID in %s.', 'social-count-plus' ), '<a href="https://socialcountplus-linkedin.herokuapp.com/">https://socialcountplus-linkedin.herokuapp.com/</a>' )
+							'description' => sprintf( __( 'Insert your LinkedIn Company ID. Get your Company ID in %s.', 'social-count-plus' ), '<a href="https://socialcountplus-linkedin.herokuapp.com/" target="_blank">https://socialcountplus-linkedin.herokuapp.com/</a>' )
 						),
 						'linkedin_access_token' => array(
 							'title'       => __( 'LinkedIn Access Token', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Get your Access Token in %s.', 'social-count-plus' ), '<a href="https://socialcountplus-linkedin.herokuapp.com/">https://socialcountplus-linkedin.herokuapp.com/</a>' )
+							'description' => sprintf( __( 'Get your Access Token in %s.', 'social-count-plus' ), '<a href="https://socialcountplus-linkedin.herokuapp.com/" target="_blank">https://socialcountplus-linkedin.herokuapp.com/</a>' )
 						)
 					)
 				),
@@ -361,7 +361,7 @@ class Social_Count_Plus_Admin {
 							'type'        => 'text',
 							'description' => sprintf(
 								__( 'Get your API key creating a project/app in %s, then inside your project go to "APIs & auth > APIs" and turn on the "YouTube API", finally go to "APIs & auth > APIs > Credentials > Public API access" and click in the "CREATE A NEW KEY" button, select the "Browser key" option and click in the "CREATE" button, now just copy your API key and paste here.', 'social-count-plus' ),
-								'<a href="https://console.developers.google.com/project">https://console.developers.google.com/project</a>'
+								'<a href="https://console.developers.google.com/project" target="_blank">https://console.developers.google.com/project</a>'
 							)
 						)
 					)
