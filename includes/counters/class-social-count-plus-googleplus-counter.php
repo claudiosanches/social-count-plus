@@ -78,6 +78,8 @@ class Social_Count_Plus_GooglePlus_Counter extends Social_Count_Plus_Counter {
 	 * @return string
 	 */
 	public static function get_view( $settings, $total, $text_color ) {
-		return self::get_view_li( self::$id, 'https://plus.google.com/' . $settings['googleplus_id'], $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		$googleplus_id = ! empty( $settings['googleplus_id'] ) ? $settings['googleplus_id'] : '';
+
+		return self::get_view_li( self::$id, 'https://plus.google.com/' . $googleplus_id, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

@@ -85,6 +85,8 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 * @return string
 	 */
 	public static function get_view( $settings, $total, $text_color ) {
-		return self::get_view_li( self::$id, esc_url( $settings['youtube_url'] ), $total, __( 'subscribers', 'social-count-plus' ), $text_color, $settings );
+		$youtube_url = ! empty( $settings['youtube_url'] ) ? $settings['youtube_url'] : '';
+
+		return self::get_view_li( self::$id, $youtube_url, $total, __( 'subscribers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

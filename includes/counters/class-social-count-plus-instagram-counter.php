@@ -82,6 +82,8 @@ class Social_Count_Plus_Instagram_Counter extends Social_Count_Plus_Counter {
 	 * @return string
 	 */
 	public static function get_view( $settings, $total, $text_color ) {
-		return self::get_view_li( self::$id, 'https://instagram.com/' . $settings['instagram_username'], $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		$instagram_username = ! empty( $settings['instagram_username'] ) ? $settings['instagram_username'] : '';
+
+		return self::get_view_li( self::$id, 'https://instagram.com/' . $instagram_username, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

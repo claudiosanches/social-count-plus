@@ -77,6 +77,8 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 	 * @return string
 	 */
 	public static function get_view( $settings, $total, $text_color ) {
-		return self::get_view_li( self::$id, 'https://steamcommunity.com/groups/' . $settings['steam_group_name'], $total, __( 'members', 'social-count-plus' ), $text_color, $settings );
+		$steam_group_name = ! empty( $settings['steam_group_name'] ) ? $settings['steam_group_name'] : '';
+
+		return self::get_view_li( self::$id, 'https://steamcommunity.com/groups/' . $steam_group_name, $total, __( 'members', 'social-count-plus' ), $text_color, $settings );
 	}
 }

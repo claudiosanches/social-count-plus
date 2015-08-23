@@ -425,16 +425,7 @@ class Social_Count_Plus_Admin {
 							'title'   => __( 'Layout Models', 'social-count-plus' ),
 							'default' => '0',
 							'type'    => 'models',
-							'options' => array(
-								'design-default.png',
-								'design-default-vertical.png',
-								'design-circle.png',
-								'design-circle-vertical.png',
-								'design-flat.png',
-								'design-flat-vertical.png',
-								'design-custom.png',
-								'design-custom-vertical.png'
-							)
+							'options' => array( 0 ,1, 2, 3, 4, 5, 6, 7 )
 						),
 						'text_color' => array(
 							'title'   => __( 'Text Color', 'social-count-plus' ),
@@ -771,12 +762,51 @@ class Social_Count_Plus_Admin {
 		$default = isset( $args['default'] ) ? $args['default'] : 0;
 		$current = $this->get_option_value( $id, $default );
 		$html    = '';
-		$key     = 0;
 
-		foreach ( $args['options'] as $label ) {
-			$html .= sprintf( '<input type="radio" id="%1$s_%2$s_%3$s" name="%1$s[%2$s]" value="%3$s"%4$s style="display: block; float: left; margin: 10px 10px 0 0;" />', $tab, $id, $key, checked( $current, $key, false ) );
-			$html .= sprintf( '<label for="%1$s_%2$s_%3$s"> <img src="%4$s" alt="%1$s_%2$s_%3$s" /></label><br style="clear: both;margin-bottom: 20px;" />', $tab, $id, $key, plugins_url( 'demos/' . $label, plugin_dir_path( dirname( __FILE__ ) ) ) );
-			$key++;
+		foreach ( $args['options'] as $option ) {
+			$html .= sprintf( '<input type="radio" name="%1$s[%2$s]" class="social-count-plus-model-input" value="%3$s"%4$s />', $tab, $id, $option, checked( $current, $option, false ) );
+
+			$style = '';
+			switch ( $option ) {
+				case 1:
+					$style = 'default vertical';
+					break;
+				case 2:
+					$style = 'circle';
+					break;
+				case 3:
+					$style = 'circle vertical';
+					break;
+				case 4:
+					$style = 'flat';
+					break;
+				case 5:
+					$style = 'flat vertical';
+					break;
+				case 6:
+					$style = 'custom';
+					break;
+				case 7:
+					$style = 'custom vertical';
+					break;
+
+				default:
+					$style = 'default';
+					break;
+			}
+
+			$html .= '<div class="social-count-plus">';
+				$html .= '<ul class="' . $style . '">';
+
+					foreach ( $this->get_i18n_counters() as $slug => $name ) {
+						$class = 'social_count_plus_' . $slug . '_counter';
+						if ( class_exists( $class ) ) {
+							$html .= $class::get_view( array(), 100, '#333333' );
+						}
+					}
+
+				$html .= '</ul>';
+			$html .= '</div>';
 		}
 
 		// Displays option description.
@@ -865,6 +895,7 @@ class Social_Count_Plus_Admin {
 		if ( $this->settings_screen && $screen->id === $this->settings_screen ) {
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
+			wp_enqueue_style( 'social-count-plus', plugins_url( 'assets/css/counter.css', plugin_dir_path( dirname( __FILE__ ) ) ), array(), Social_Count_Plus::VERSION, 'all' );
 			wp_enqueue_script( 'wp-color-picker' );
 			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_script( 'jquery-ui-sortable' );

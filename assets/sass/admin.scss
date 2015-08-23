@@ -16,8 +16,8 @@ table#social-count-plus-system-status {
 		width: 20%;
 	}
 	td {
-		padding: 6px 9px;
 		font-size: 1.1em;
+		padding: 6px 9px;
 
 		mark {
 			background: transparent none;
@@ -38,10 +38,10 @@ table#social-count-plus-system-status {
 }
 
 .social-count-plus-icons-order {
+	*zoom: 1;
 	background: #fff;
 	border: 1px solid #ddd;
 	padding: 10px 5px 0 5px;
-	*zoom: 1;
 
 	&:before,
 	&:after {
@@ -55,16 +55,30 @@ table#social-count-plus-system-status {
 
 	.social-icon,
 	.social-icon-placeholder {
-		cursor: move;
 		border: 3px solid #ddd;
-		padding: 4px;
-		margin: 0 5px 10px;
+		cursor: move;
 		float: left;
 		font-weight: bold;
+		margin: 0 5px 10px;
+		padding: 4px;
 	}
 
 	.social-icon-placeholder {
 		background: #f4f4f4;
 		border-style: dashed;
 	}
+}
+
+.social-count-plus {
+	margin-bottom: 20px;
+
+	.vertical li:not(:first-child) {
+		margin-left: 26px;
+	}
+}
+
+.social-count-plus-model-input {
+	display: block !important;
+	float: left !important;
+	margin: 10px 10px 0 0 !important;
 }

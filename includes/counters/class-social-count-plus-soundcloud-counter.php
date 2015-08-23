@@ -78,6 +78,8 @@ class Social_Count_Plus_SoundCloud_Counter extends Social_Count_Plus_Counter {
 	 * @return string
 	 */
 	public static function get_view( $settings, $total, $text_color ) {
-		return self::get_view_li( self::$id, 'https://soundcloud.com/' . $settings['soundcloud_username'], $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		$soundcloud_username = ! empty( $settings['soundcloud_username'] ) ? $settings['soundcloud_username'] : '';
+
+		return self::get_view_li( self::$id, 'https://soundcloud.com/' . $soundcloud_username, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

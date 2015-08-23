@@ -87,6 +87,8 @@ class Social_Count_Plus_Pinterest_Counter extends Social_Count_Plus_Counter {
 	 * @return string
 	 */
 	public static function get_view( $settings, $total, $text_color ) {
-		return self::get_view_li( self::$id, 'https://www.pinterest.com/' . $settings['pinterest_username'], $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		$pinterest_username = ! empty( $settings['pinterest_username'] ) ? $settings['pinterest_username'] : '';
+
+		return self::get_view_li( self::$id, 'https://www.pinterest.com/' . $pinterest_username, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

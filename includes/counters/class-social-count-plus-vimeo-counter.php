@@ -78,6 +78,8 @@ class Social_Count_Plus_Vimeo_Counter extends Social_Count_Plus_Counter {
 	 * @return string
 	 */
 	public static function get_view( $settings, $total, $text_color ) {
-		return self::get_view_li( self::$id, 'https://vimeo.com/' . $settings['vimeo_username'], $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		$vimeo_username = ! empty( $settings['vimeo_username'] ) ? $settings['vimeo_username'] : '';
+
+		return self::get_view_li( self::$id, 'https://vimeo.com/' . $vimeo_username, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

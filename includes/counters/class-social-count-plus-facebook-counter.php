@@ -1,4 +1,4 @@
-<?php
+facebook_id<?php
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -109,6 +109,8 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 	 * @return string
 	 */
 	public static function get_view( $settings, $total, $text_color ) {
-		return self::get_view_li( self::$id, 'https://www.facebook.com/' . $settings['facebook_id'], $total, __( 'likes', 'social-count-plus' ), $text_color, $settings );
+		$facebook_id = ! empty( $settings['facebook_id'] ) ? $settings['facebook_id'] : '';
+
+		return self::get_view_li( self::$id, 'https://www.facebook.com/' . $facebook_id, $total, __( 'likes', 'social-count-plus' ), $text_color, $settings );
 	}
 }
