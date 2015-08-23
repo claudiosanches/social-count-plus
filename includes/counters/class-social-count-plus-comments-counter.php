@@ -51,7 +51,7 @@ class Social_Count_Plus_Comments_Counter extends Social_Count_Plus_Counter {
 			$data = wp_count_comments();
 
 			if ( is_wp_error( $data ) ) {
-				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
+				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 			} else {
 				$count = intval( $data->approved );
 

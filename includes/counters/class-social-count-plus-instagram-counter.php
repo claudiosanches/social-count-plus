@@ -51,7 +51,7 @@ class Social_Count_Plus_Instagram_Counter extends Social_Count_Plus_Counter {
 			$this->connection = wp_remote_get( $this->api_url . $settings['instagram_user_id'] . '/?access_token=' . $settings['instagram_access_token'], array( 'timeout' => 60 ) );
 
 			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
-				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
+				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 			} else {
 				$response = json_decode( $this->connection['body'], true );
 
@@ -64,7 +64,7 @@ class Social_Count_Plus_Instagram_Counter extends Social_Count_Plus_Counter {
 
 					$this->total = $count;
 				} else {
-					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
+					$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 				}
 			}
 		}

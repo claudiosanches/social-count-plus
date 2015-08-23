@@ -51,7 +51,7 @@ class Social_Count_Plus_Pinterest_Counter extends Social_Count_Plus_Counter {
 			$this->connection = wp_remote_get( $this->api_url . sanitize_text_field( $settings['pinterest_username'] ), array( 'timeout' => 60 ) );
 
 			if ( is_wp_error( $this->connection ) ) {
-				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
+				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 			} else {
 				$count = 0;
 
@@ -66,7 +66,7 @@ class Social_Count_Plus_Pinterest_Counter extends Social_Count_Plus_Counter {
 				if ( 0 < $count ) {
 					$this->total = $count;
 				} else {
-					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
+					$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 				}
 
 				// Just to make the system report more clear...

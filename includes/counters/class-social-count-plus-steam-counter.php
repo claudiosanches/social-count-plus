@@ -51,7 +51,7 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 			$this->connection = wp_remote_get( $this->api_url . $settings['steam_group_name'] . '/memberslistxml/?xml=1', array( 'timeout' => 60 ) );
 
 			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
-				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
+				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 			} else {
 				try {
 					$xml = @new SimpleXmlElement( $this->connection['body'], LIBXML_NOCDATA );
@@ -59,7 +59,7 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 
 					$this->total = $count;
 				} catch ( Exception $e ) {
-					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
+					$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 				}
 			}
 		}

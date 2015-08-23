@@ -58,14 +58,14 @@ class Social_Count_Plus_LinkedIn_Counter extends Social_Count_Plus_Counter {
 			$this->connection = wp_remote_get( sprintf( $this->api_url, sanitize_text_field( $settings['linkedin_company_id'] ) ), $params );
 
 			if ( is_wp_error( $this->connection ) || 200 != $this->connection['response']['code'] ) {
-				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
+				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 			} else {
 				$count = intval( $this->connection['body'] );
 
 				if ( 0 < $count ) {
 					$this->total = $count;
 				} else {
-					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
+					$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 				}
 			}
 		}
