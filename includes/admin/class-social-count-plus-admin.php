@@ -766,34 +766,7 @@ class Social_Count_Plus_Admin {
 		foreach ( $args['options'] as $option ) {
 			$html .= sprintf( '<input type="radio" name="%1$s[%2$s]" class="social-count-plus-model-input" value="%3$s"%4$s />', $tab, $id, $option, checked( $current, $option, false ) );
 
-			$style = '';
-			switch ( $option ) {
-				case 1:
-					$style = 'default vertical';
-					break;
-				case 2:
-					$style = 'circle';
-					break;
-				case 3:
-					$style = 'circle vertical';
-					break;
-				case 4:
-					$style = 'flat';
-					break;
-				case 5:
-					$style = 'flat vertical';
-					break;
-				case 6:
-					$style = 'custom';
-					break;
-				case 7:
-					$style = 'custom vertical';
-					break;
-
-				default:
-					$style = 'default';
-					break;
-			}
+			$style = Social_Count_Plus_View::get_view_model( $option );
 
 			$html .= '<div class="social-count-plus">';
 				$html .= '<ul class="' . $style . '">';
