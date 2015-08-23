@@ -30,6 +30,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	<?php endif; ?>
 
+	<?php include 'html-help-us.php'; ?>
+
 	<form method="post" action="options.php">
 		<?php
 			if ( 'design' == $current_tab ) {
