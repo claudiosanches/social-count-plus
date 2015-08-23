@@ -25,7 +25,7 @@ abstract class Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public $id = '';
+	public static $id = '';
 
 	/**
 	 * Connection.
@@ -57,6 +57,50 @@ abstract class Social_Count_Plus_Counter {
 		return $this->total;
 	}
 
+	/**
+	 * Get the li element.
+	 *
+	 * @param  string $slug     Item slug.
+	 * @param  string $url      Item url.
+	 * @param  int    $count    Item count.
+	 * @param  string $title    Item title.
+	 * @param  array  $settings Item settings.
+	 *
+	 * @return string           HTML li element.
+	 */
+	protected static function get_view_li( $slug, $url, $count, $title, $color, $settings ) {
+		$target_blank = isset( $settings['target_blank'] ) ? ' target="_blank"' : '';
+		$rel_nofollow = isset( $settings['rel_nofollow'] ) ? ' rel="nofollow"' : '';
+
+		$html = sprintf( '<li class="count-%s">', $slug );
+			$html .= sprintf( '<a class="icon" href="%s"%s%s></a>', esc_url( $url ), $target_blank, $rel_nofollow );
+			$html .= '<span class="items">';
+				$html .= sprintf( '<span class="count" style="color: %s !important;">%s</span>', $color, apply_filters( 'social_count_plus_number_format', $count ) );
+				$html .= sprintf( '<span class="label" style="color: %s !important;">%s</span>', $color, $title );
+			$html .= '</span>';
+		$html .= '</li>';
+
+		return $html;
+	}
+
+	/**
+	 * Get conter view.
+	 *
+	 * @param  array  $settings   Plugin settings.
+	 * @param  int    $total      Counter total.
+	 * @param  string $text_color Text color.
+	 *
+	 * @return string
+	 */
+	public static function get_view( $settings, $total, $text_color ) {
+		return '';
+	}
+
+	/**
+	 * Debug.
+	 *
+	 * @return array
+	 */
 	public function debug() {
 		return $this->connection;
 	}

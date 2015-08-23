@@ -912,7 +912,7 @@ class Social_Count_Plus_Admin {
 
 			if ( $_counter->is_available( $settings ) ) {
 				$_counter->get_total( $settings, $cache );
-				$debug[ $_counter->id ] = $_counter->debug();
+				$debug[ $_counter::$id ] = $_counter->debug();
 			}
 		}
 

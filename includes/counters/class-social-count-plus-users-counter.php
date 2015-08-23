@@ -18,7 +18,7 @@ class Social_Count_Plus_Users_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public $id = 'users';
+	public static $id = 'users';
 
 	/**
 	 * API URL.
@@ -58,5 +58,21 @@ class Social_Count_Plus_Users_Counter extends Social_Count_Plus_Counter {
 		}
 
 		return $this->total;
+	}
+
+	/**
+	 * Get conter view.
+	 *
+	 * @param  array  $settings   Plugin settings.
+	 * @param  int    $total      Counter total.
+	 * @param  string $text_color Text color.
+	 *
+	 * @return string
+	 */
+	public static function get_view( $settings, $total, $text_color ) {
+		unset( $settings['target_blank'] );
+		unset( $settings['rel_nofollow'] );
+
+		return self::get_view_li( self::$id, get_home_url(), $total, __( 'users', 'social-count-plus' ), $text_color, $settings );
 	}
 }

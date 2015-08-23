@@ -18,7 +18,7 @@ class Social_Count_Plus_Posts_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public $id = 'posts';
+	public static $id = 'posts';
 
 	/**
 	 * API URL.
@@ -61,5 +61,24 @@ class Social_Count_Plus_Posts_Counter extends Social_Count_Plus_Counter {
 		}
 
 		return $this->total;
+	}
+
+	/**
+	 * Get conter view.
+	 *
+	 * @param  array  $settings   Plugin settings.
+	 * @param  int    $total      Counter total.
+	 * @param  string $text_color Text color.
+	 *
+	 * @return string
+	 */
+	public static function get_view( $settings, $total, $text_color ) {
+		$post_type = ( isset( $settings['posts_post_type'] ) && ! empty( $settings['posts_post_type'] ) ) ? $settings['posts_post_type'] : 'post';
+		$post_object = get_post_type_object( $post_type );
+
+		unset( $settings['target_blank'] );
+		unset( $settings['rel_nofollow'] );
+
+		return self::get_view_li( self::$id, get_home_url(), $total, strtolower( $post_object->label ), $text_color, $settings );
 	}
 }

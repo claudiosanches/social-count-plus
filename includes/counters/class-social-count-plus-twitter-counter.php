@@ -18,7 +18,7 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public $id = 'twitter';
+	public static $id = 'twitter';
 
 	/**
 	 * API URL.
@@ -171,5 +171,18 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 		}
 
 		return $this->total;
+	}
+
+	/**
+	 * Get conter view.
+	 *
+	 * @param  array  $settings   Plugin settings.
+	 * @param  int    $total      Counter total.
+	 * @param  string $text_color Text color.
+	 *
+	 * @return string
+	 */
+	public static function get_view( $settings, $total, $text_color ) {
+		return self::get_view_li( self::$id, 'https://twitter.com/' . $settings['twitter_user'], $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }
