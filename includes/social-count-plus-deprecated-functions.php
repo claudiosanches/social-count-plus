@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return int FeedBurner count.
  */
 function get_scp_feed() {
+	_deprecated_function( 'get_scp_feed', 'ever!' );
+
 	return 0;
 }
 
@@ -25,6 +27,8 @@ function get_scp_feed() {
  * @return int Twitter count.
  */
 function get_scp_twitter() {
+	_deprecated_function( 'get_scp_twitter', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['twitter'];
@@ -38,6 +42,8 @@ function get_scp_twitter() {
  * @return int Facebook count.
  */
 function get_scp_facebook() {
+	_deprecated_function( 'get_scp_facebook', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['facebook'];
@@ -51,6 +57,8 @@ function get_scp_facebook() {
  * @return int YouTube count.
  */
 function get_scp_youtube() {
+	_deprecated_function( 'get_scp_youtube', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['youtube'];
@@ -64,6 +72,8 @@ function get_scp_youtube() {
  * @return int Google Plus count.
  */
 function get_scp_googleplus() {
+	_deprecated_function( 'get_scp_googleplus', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['googleplus'];
@@ -77,6 +87,8 @@ function get_scp_googleplus() {
  * @return int Instagram Plus count.
  */
 function get_scp_instagram() {
+	_deprecated_function( 'get_scp_instagram', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['instagram'];
@@ -90,6 +102,8 @@ function get_scp_instagram() {
  * @return int SoundCloud Plus count.
  */
 function get_scp_soundcloud() {
+	_deprecated_function( 'get_scp_soundcloud', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['soundcloud'];
@@ -103,6 +117,8 @@ function get_scp_soundcloud() {
  * @return int Twitch count.
  */
 function get_scp_twitch() {
+	_deprecated_function( 'get_scp_twitch', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['twitch'];
@@ -116,6 +132,8 @@ function get_scp_twitch() {
  * @return int Steam Community group member count.
  */
 function get_scp_steam() {
+	_deprecated_function( 'get_scp_steam', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['steam'];
@@ -129,6 +147,8 @@ function get_scp_steam() {
  * @return int Posts count.
  */
 function get_scp_posts() {
+	_deprecated_function( 'get_scp_posts', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['posts'];
@@ -142,6 +162,8 @@ function get_scp_posts() {
  * @return int Comments count.
  */
 function get_scp_comments() {
+	_deprecated_function( 'get_scp_comments', '3.2.0', 'get_scp_counter' );
+
 	$count = Social_Count_Plus_Generator::get_count();
 
 	return $count['comments'];
