@@ -1,4 +1,4 @@
-facebook_id<?php
+<?php
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
