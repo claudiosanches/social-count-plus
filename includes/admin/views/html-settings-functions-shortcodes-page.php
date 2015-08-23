@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php foreach ( $this->get_i18n_counters() as $slug => $name ) : ?>
 		<tr>
 			<th scope="row"><?php printf( __( '%s counter', 'social-count-plus' ), esc_html( $name ) ); ?></th>
-			<td><p><code>&lt;?php echo get_scp_<?php echo esc_html( $slug ); ?>(); ?&gt;</code></p></td>
+			<td><p><code>&lt;?php echo get_scp_counter( '<?php echo esc_html( $slug ); ?>' ); ?&gt;</code></p></td>
 		</tr>
 	<?php endforeach; ?>
 	<tr>

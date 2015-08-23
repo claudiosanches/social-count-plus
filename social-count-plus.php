@@ -105,6 +105,7 @@ class Social_Count_Plus {
 		include_once 'includes/class-social-count-plus-widget.php';
 		include_once 'includes/class-social-count-plus-shortcodes.php';
 		include_once 'includes/social-count-plus-functions.php';
+		include_once 'includes/social-count-plus-deprecated-functions.php';
 	}
 
 	/**
