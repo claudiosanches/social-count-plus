@@ -325,6 +325,21 @@ class Social_Count_Plus_Admin {
 						)
 					)
 				),
+				'users' => array(
+					'title'  => __( 'Users', 'social-count-plus' ),
+					'fields' => array(
+						'users_active' => array(
+							'title'   => __( 'Display Users Counter', 'social-count-plus' ),
+							'default' => true,
+							'type'    => 'checkbox'
+						),
+						'users_user_role' => array(
+							'title'   => __( 'User Role', 'social-count-plus' ),
+							'default' => 'subscriber',
+							'type'    => 'user_role'
+						),
+					)
+				),
 				'vimeo' => array(
 					'title'  => __( 'Vimeo', 'social-count-plus' ),
 					'fields' => array(
@@ -536,6 +551,20 @@ class Social_Count_Plus_Admin {
 								)
 							);
 							break;
+						case 'user_role':
+							add_settings_field(
+								$field_id,
+								$field['title'],
+								array( $this, 'user_role_element_callback' ),
+								$settings_id,
+								$section_id,
+								array(
+									'tab'         => $settings_id,
+									'id'          => $field_id,
+									'description' => isset( $field['description'] ) ? $field['description'] : ''
+								)
+							);
+							break;
 						case 'models':
 							add_settings_field(
 								$field_id,
@@ -668,6 +697,36 @@ class Social_Count_Plus_Admin {
 		$html = sprintf( '<select id="%1$s" name="%2$s[%1$s]">', $id, $tab );
 		foreach ( get_post_types( array( 'public' => true ), 'objects' ) as $key => $value ) {
 			$html .= sprintf( '<option value="%s"%s>%s</option>', $key, selected( $current, $key, false ), $value->label );
+		}
+		$html .= '</select>';
+
+		// Displays option description.
+		if ( isset( $args['description'] ) ) {
+			$html .= sprintf( '<p class="description">%s</p>', $args['description'] );
+		}
+
+		echo $html;
+	}
+
+	/**
+	 * User Role element fallback.
+	 *
+	 * @param  array $args Field arguments.
+	 *
+	 * @return string      User Role field.
+	 */
+	public function user_role_element_callback( $args ) {
+		global $wp_roles;
+
+		$tab     = $args['tab'];
+		$id      = $args['id'];
+		$default = isset( $args['default'] ) ? $args['default'] : 'subscriber';
+		$current = $this->get_option_value( $id, $default );
+		$html    = '';
+
+		$html = sprintf( '<select id="%1$s" name="%2$s[%1$s]">', $id, $tab );
+		foreach ( $wp_roles->get_names() as $key => $value ) {
+			$html .= sprintf( '<option value="%s"%s>%s</option>', $key, selected( $current, $key, false ), $value );
 		}
 		$html .= '</select>';
 
@@ -979,6 +1038,7 @@ class Social_Count_Plus_Admin {
 			'tumblr'     => __( 'Tumblr', 'social-count-plus' ),
 			'twitch'     => __( 'Twitch', 'social-count-plus' ),
 			'twitter'    => __( 'Twitter', 'social-count-plus' ),
+			'users'      => __( 'Users', 'social-count-plus' ),
 			'vimeo'      => __( 'Vimeo', 'social-count-plus' ),
 			'youtube'    => __( 'YouTube', 'social-count-plus' ),
 		) );

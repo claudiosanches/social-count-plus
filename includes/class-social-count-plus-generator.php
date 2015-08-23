@@ -57,6 +57,7 @@ class Social_Count_Plus_Generator {
 			'Social_Count_Plus_Tumblr_Counter',
 			'Social_Count_Plus_Twitch_Counter',
 			'Social_Count_Plus_Twitter_Counter',
+			'Social_Count_Plus_Users_Counter',
 			'Social_Count_Plus_Vimeo_Counter',
 			'Social_Count_Plus_YouTube_Counter',
 		) );

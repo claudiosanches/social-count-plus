@@ -168,7 +168,18 @@ function get_scp_comments() {
 function get_scp_linkedin() {
 	$count = Social_Count_Plus_Generator::get_count();
 
-	return $count['comments'];
+	return $count['linkedin'];
+}
+
+/**
+ * Users counter function.
+ *
+ * @return int Users count.
+ */
+function get_scp_users() {
+	$count = Social_Count_Plus_Generator::get_count();
+
+	return $count['users'];
 }
 
 /**

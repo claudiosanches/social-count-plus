@@ -231,6 +231,22 @@ class Social_Count_Plus_View {
 	}
 
 	/**
+	 * Get the Users counter.
+	 *
+	 * @param  array  $settings Plugin settings.
+	 * @param  int    $total    Counter total.
+	 * @param  string $color    Text color.
+	 *
+	 * @return string           Counter html.
+	 */
+	protected static function get_users_counter( $settings, $total, $color ) {
+		unset( $settings['target_blank'] );
+		unset( $settings['rel_nofollow'] );
+
+		return self::get_view_li( 'users', get_home_url(), $total, __( 'users', 'social-count-plus' ), $color, $settings );
+	}
+
+	/**
 	 * Widget view.
 	 *
 	 * @return string
