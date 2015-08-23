@@ -25,7 +25,7 @@ class Social_Count_Plus_Twitch_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	protected $api_url = 'https://api.twitch.tv/kraken/streams';
+	protected $api_url = 'https://api.twitch.tv/kraken/channels/';
 
 	/**
 	 * Test the counter is available.
@@ -48,15 +48,22 @@ class Social_Count_Plus_Twitch_Counter extends Social_Count_Plus_Counter {
 	 */
 	public function get_total( $settings, $cache ) {
 		if ( $this->is_available( $settings ) ) {
-			$this->connection = wp_remote_get( $this->api_url . '?channel=' . sanitize_text_field( $settings['twitch_username'] ), array( 'timeout' => 60 ) );
+			$params = array(
+				'timeout' => 60,
+				'headers' => array(
+					'accept' => 'application/vnd.twitchtv.v3+json'
+				)
+			);
+
+			$this->connection = wp_remote_get( $this->api_url . sanitize_text_field( $settings['twitch_username'] ), $params );
 
 			if ( is_wp_error( $this->connection ) || ( isset( $this->connection['response']['code'] ) && 200 != $this->connection['response']['code'] ) ) {
 				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
 			} else {
 				$_data = json_decode( $this->connection['body'], true );
 
-				if ( isset( $_data['streams'][0]['channel']['followers'] ) ) {
-					$count = intval( $_data['streams'][0]['channel']['followers'] );
+				if ( isset( $_data['followers'] ) ) {
+					$count = intval( $_data['followers'] );
 
 					$this->total = $count;
 				} else {
