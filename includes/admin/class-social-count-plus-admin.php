@@ -117,6 +117,20 @@ class Social_Count_Plus_Admin {
 						)
 					)
 				),
+				'github' => array(
+					'title'  => __( 'GitHub', 'social-count-plus' ),
+					'fields' => array(
+						'github_active' => array(
+							'title'   => __( 'Display GitHub Counter', 'social-count-plus' ),
+							'type'    => 'checkbox'
+						),
+						'github_username' => array(
+							'title'       => __( 'GitHub Username', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => sprintf( __( 'Insert your GitHub username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
+						),
+					)
+				),
 				'googleplus' => array(
 					'title'  => __( 'Google+', 'social-count-plus' ),
 					'fields' => array(
@@ -918,6 +932,7 @@ class Social_Count_Plus_Admin {
 		$content  = '';
 		$counters = apply_filters( 'social_count_plus_counters_test', array(
 			'Social_Count_Plus_Facebook_Counter',
+			'Social_Count_Plus_GitHub_Counter',
 			'Social_Count_Plus_GooglePlus_Counter',
 			'Social_Count_Plus_Instagram_Counter',
 			'Social_Count_Plus_LinkedIn_Counter',
@@ -1052,6 +1067,7 @@ class Social_Count_Plus_Admin {
 		return apply_filters( 'social_count_plus_icon_name_i18n', array(
 			'comments'   => __( 'Comments', 'social-count-plus' ),
 			'facebook'   => __( 'Facebook', 'social-count-plus' ),
+			'github'     => __( 'GitHub', 'social-count-plus' ),
 			'googleplus' => __( 'Google+', 'social-count-plus' ),
 			'instagram'  => __( 'Instagram', 'social-count-plus' ),
 			'linkedin'   => __( 'LinkedIn', 'social-count-plus' ),

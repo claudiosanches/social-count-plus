@@ -47,6 +47,7 @@ class Social_Count_Plus_Generator {
 		$counters = apply_filters( 'social_count_plus_counters', array(
 			'Social_Count_Plus_Comments_Counter',
 			'Social_Count_Plus_Facebook_Counter',
+			'Social_Count_Plus_GitHub_Counter',
 			'Social_Count_Plus_GooglePlus_Counter',
 			'Social_Count_Plus_Instagram_Counter',
 			'Social_Count_Plus_LinkedIn_Counter',

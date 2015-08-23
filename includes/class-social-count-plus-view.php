@@ -13,6 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Social_Count_Plus_View {
 
+	/**
+	 * Get view model.
+	 *
+	 * @param  int $model
+	 *
+	 * @return string
+	 */
 	public static function get_view_model( $model ) {
 		$models = array(
 			'default',

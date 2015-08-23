@@ -118,12 +118,6 @@ module.exports = function( grunt ) {
 						cwd: '<%= dirs.images %>/',
 						src: '*.png',
 						dest: '<%= dirs.images %>/'
-					},
-					{
-						expand: true,
-						cwd: 'demos/',
-						src: '*.png',
-						dest: 'demos/'
 					}
 				]
 			}
