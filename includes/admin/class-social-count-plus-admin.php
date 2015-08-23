@@ -80,6 +80,11 @@ class Social_Count_Plus_Admin {
 							'title'   => __( 'Display Comments Counter', 'social-count-plus' ),
 							'default' => true,
 							'type'    => 'checkbox'
+						),
+						'comments_url' => array(
+							'title'   => __( 'URL', 'social-count-plus' ),
+							'default' => get_home_url(),
+							'type'    => 'text'
 						)
 					)
 				),
@@ -208,6 +213,11 @@ class Social_Count_Plus_Admin {
 							'default' => 'post',
 							'type'    => 'post_type'
 						),
+						'posts_url' => array(
+							'title'   => __( 'URL', 'social-count-plus' ),
+							'default' => get_home_url(),
+							'type'    => 'text'
+						)
 					)
 				),
 				'soundcloud' => array(
@@ -338,6 +348,11 @@ class Social_Count_Plus_Admin {
 							'default' => 'subscriber',
 							'type'    => 'user_role'
 						),
+						'users_url' => array(
+							'title'   => __( 'URL', 'social-count-plus' ),
+							'default' => get_home_url(),
+							'type'    => 'text'
+						)
 					)
 				),
 				'vimeo' => array(

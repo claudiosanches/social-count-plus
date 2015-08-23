@@ -70,9 +70,11 @@ class Social_Count_Plus_Users_Counter extends Social_Count_Plus_Counter {
 	 * @return string
 	 */
 	public static function get_view( $settings, $total, $text_color ) {
+		$url = ! empty( $settings['users_url'] ) ? $settings['users_url'] : get_home_url();
+
 		unset( $settings['target_blank'] );
 		unset( $settings['rel_nofollow'] );
 
-		return self::get_view_li( self::$id, get_home_url(), $total, __( 'users', 'social-count-plus' ), $text_color, $settings );
+		return self::get_view_li( self::$id, $url, $total, __( 'users', 'social-count-plus' ), $text_color, $settings );
 	}
 }
