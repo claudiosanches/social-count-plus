@@ -13,6 +13,21 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Social_Count_Plus_View {
 
+	public static function get_view_model( $model ) {
+		$models = array(
+			'default',
+			'default vertical',
+			'circle',
+			'circle vertical',
+			'flat',
+			'flat vertical',
+			'custom',
+			'custom vertical'
+		);
+
+		return isset( $models[ $model ] ) ? $models[ $model ] : 'default';
+	}
+
 	/**
 	 * Widget view.
 	 *
@@ -26,36 +41,7 @@ class Social_Count_Plus_View {
 		$count    = Social_Count_Plus_Generator::get_count();
 		$color    = isset( $design['text_color'] ) ? $design['text_color'] : '#333333';
 		$icons    = isset( $design['icons'] ) ? array_map( 'sanitize_key', explode( ',', $design['icons'] ) ) : array();
-
-		// Sets view design.
-		$style = '';
-		switch ( $design['models'] ) {
-			case 1:
-				$style = 'default vertical';
-				break;
-			case 2:
-				$style = 'circle';
-				break;
-			case 3:
-				$style = 'circle vertical';
-				break;
-			case 4:
-				$style = 'flat';
-				break;
-			case 5:
-				$style = 'flat vertical';
-				break;
-			case 6:
-				$style = 'custom';
-				break;
-			case 7:
-				$style = 'custom vertical';
-				break;
-
-			default:
-				$style = 'default';
-				break;
-		}
+		$style    = self::get_view_model( $design['models'] );
 
 		$html = '<div class="social-count-plus">';
 			$html .= '<ul class="' . $style . '">';
