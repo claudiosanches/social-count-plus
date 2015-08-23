@@ -348,6 +348,11 @@ class Social_Count_Plus_Admin {
 							'default' => 'subscriber',
 							'type'    => 'user_role'
 						),
+						'users_label' => array(
+							'title'   => __( 'Label', 'social-count-plus' ),
+							'default' => __( 'users', 'social-count-plus' ),
+							'type'    => 'text'
+						),
 						'users_url' => array(
 							'title'   => __( 'URL', 'social-count-plus' ),
 							'default' => get_home_url(),
