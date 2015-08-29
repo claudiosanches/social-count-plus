@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Social Count Plus
  * Plugin URI: https://github.com/claudiosmweb/social-count-plus
- * Description: Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments.
- * Author: Claudio Sanches, Felipe Santana
+ * Description: Displays your numbers in Facebook, GitHub, Google+, Instagram, LinkedIn, Pinterest, SoundCloud, Steam Community, Tumblr, Twitch, Twitter, Vimeo, Youtube, posts, comments and users.
+ * Author: Claudio Sanches
  * Author URI: http://claudiosmweb.com/
  * Version: 3.1.1
  * License: GPLv2 or later
