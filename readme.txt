@@ -147,8 +147,16 @@ The CSS classes you will need to use:
 
 == Changelog ==
 
-= 3.2.0 - 2015/08/23 =
+= 3.2.0 - 2015/08/31 =
 
+* Added GitHub integration.
+* Added LinkedIn integration.
+* Added Pinterest integration.
+* Added Tumblr integration.
+* Added Vimeo integration.
+* Added users integration.
+* Added new "URL" options for comments and posts.
+* Improved the Twitch integration.
 
 = 3.1.1 - 2015/08/21 =
 
@@ -156,10 +164,10 @@ The CSS classes you will need to use:
 
 = 3.1.0 - 2015/08/21 =
 
-* Added Twitch counter.
+* Added Twitch integration.
 * Added new `social_count_plus_{$icon}html_counter` and `social_count_plus_icon_name_i18n` filters to help add new custom counters.
-* Fixed Facebook counter, now uses the Facebook API.
-* Fixed Google Plus counter, now uses the Google API.
+* Fixed Facebook integration, now uses the Facebook API.
+* Fixed Google+ integration, now uses the Google API.
 * Fixed System Status test for `wp_remote_get()`.
 
 = 3.0.3 - 2015/04/21 =
