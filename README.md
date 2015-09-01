@@ -1,58 +1,40 @@
 # Social Count Plus #
-**Contributors:** claudiosanches, felipesantana  
+**Contributors:** claudiosanches, felipesantana, deblynprado  
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y8HP99ZJ5Z59L  
-**Tags:** facebook, twitter, youtube, google, instagram, soundcloud, steam, twitch, counter, widget, shortcode  
+**Tags:** counter, widget, shortcode, facebook, github, googleplus, instagram, linkedin, pinterest, soundcloud, steam, tumblr, twitch, twitter, vimeo, youtube  
 **Requires at least:** 4.0  
 **Tested up to:** 4.3  
-**Stable tag:** 3.1.1  
+**Stable tag:** 3.2.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
-Display the counting data of Twitter, Facebook, Google+, YouTube, Instagram, Steam Community, Twitch, SoundCloud posts and comments.
+Displays your numbers in Facebook, GitHub, Google+, Instagram, LinkedIn, Pinterest, SoundCloud, Steam Community, Tumblr, Twitch, Twitter, Vimeo, Youtube, posts, comments and users.
 
 ## Description ##
 
-The Social Count Plus performs counting Twitter followers, Facebook fans, YouTube subscribers, Google+ page/profile followers, Instagram followers, Steam Community group members, Twitch channel followers, SoundCloud follwers, number of posts and comments.
+The Social Count Plus performs counting for:
+
+- Comments total
+- Facebook page fans
+- GitHub followers
+- Google+ page/profile followers
+- Instagram followers
+- LinkedIn company followers
+- Pinterest followers
+- Posts total
+- SoundCloud follwers
+- Steam Community group members
+- Tumblr followers
+- Twitch channel followers
+- Twitter followers
+- Users total
+- Vimeo followers
 
 You can view this information by a widget (with account options models icons) or Shortcodes (to be used in posts and pages) or PHP functions in your theme.
 
 The results of the counters are cached and new values ​​are checked only once a day. This cache can be wiped when published a new post.
 
 The cache avoids not only that your blog be seeking new results every time a page is loaded, but also prevents collapse of services from Twitter and Facebook, if one of these services does not respond, the counter displays the last count it was successful.
-
-#### Shortcodes ####
-
-Displays only the count in plain text:
-
-* Twitter: `[scp code="twitter"]`
-* Facebook: `[scp code="facebook"]`
-* YouTube: `[scp code="youtube"]`
-* Google Plus: `[scp code="googleplus"]`
-* Instagram: `[scp code="instagram"]`
-* Steam: `[scp code="steam"]`
-* Twitch: `[scp code="twitch"]`
-* SoundCloud: `[scp code="soundcloud"]`
-* Posts: `[scp code="posts"]`
-* Comments: `[scp code="comments"]`
-
-#### Functions ####
-
-Displays only the count in plain text:
-
-* Twitter: `<?php echo get_scp_twitter(); ?>`
-* Facebook: `<?php echo get_scp_facebook(); ?>`
-* YouTube: `<?php echo get_scp_youtube(); ?>`
-* Google Plus: `<?php echo get_scp_googleplus(); ?>`
-* Instagram: `<?php echo get_scp_instagram(); ?>`
-* Steam: `<?php echo get_scp_steam(); ?>`
-* Twitch: `<?php echo get_scp_twitch(); ?>`
-* SoundCloud: `<?php echo get_scp_soundcloud(); ?>`
-* Posts: `<?php echo get_scp_posts(); ?>`
-* Comments: `<?php echo get_scp_comments(); ?>`
-
-Displays the widget with icons:
-
-* Widget: `<?php echo get_scp_widget(); ?>`
 
 #### Translate ####
 
@@ -66,7 +48,6 @@ You can contribute to the source code in our [GitHub](https://github.com/claudio
 
 * Flat icons set, Instagram, SoundCloud and Steam icons by [Felipe Santana](http://wordpress.org/support/profile/felipesantana)
 * Steam counter by [Tadas Krivickas](http://wordpress.org/support/profile/tkrivickas)
-* Instagram access token generator by [Pedro Rogério](http://www.pinceladasdaweb.com.br/)
 * `wp_remote_get()` connection test with [httpbin](https://httpbin.org/)
 
 ## Installation ##
@@ -76,6 +57,14 @@ You can contribute to the source code in our [GitHub](https://github.com/claudio
 * Navigate to Settings -> Social Count Plus and fill the plugin options.
 
 Some counters depend on third-party APIs to work, follow the next steps to generate API keys for each of them:
+
+### Instagram ###
+
+Get your User ID and Access Token in: https://socialcountplus-instagram.herokuapp.com/
+
+### LinkedIn ###
+
+Get your Company ID and Access Token in: https://socialcountplus-linkedin.herokuapp.com/
 
 ### Facebook ###
 
@@ -168,16 +157,27 @@ The CSS classes you will need to use:
 
 ## Changelog ##
 
+### 3.2.0 - 2015/08/31 ###
+
+* Added GitHub integration.
+* Added LinkedIn integration.
+* Added Pinterest integration.
+* Added Tumblr integration.
+* Added Vimeo integration.
+* Added users integration.
+* Added new "URL" options for comments and posts.
+* Improved the Twitch integration.
+
 ### 3.1.1 - 2015/08/21 ###
 
 * Fixed YouTube options description. Need a YouTube Channel ID and not a YouTube username.
 
 ### 3.1.0 - 2015/08/21 ###
 
-* Added Twitch counter.
+* Added Twitch integration.
 * Added new `social_count_plus_{$icon}html_counter` and `social_count_plus_icon_name_i18n` filters to help add new custom counters.
-* Fixed Facebook counter, now uses the Facebook API.
-* Fixed Google Plus counter, now uses the Google API.
+* Fixed Facebook integration, now uses the Facebook API.
+* Fixed Google+ integration, now uses the Google API.
 * Fixed System Status test for `wp_remote_get()`.
 
 ### 3.0.3 - 2015/04/21 ###
@@ -332,14 +332,16 @@ The CSS classes you will need to use:
 
 ## Upgrade Notice ##
 
-### 3.1.1 ###
+### 3.2.0 ###
 
-* Added Twitch counter.
-* Added new `social_count_plus_{$icon}html_counter` and `social_count_plus_icon_name_i18n` filters to help add new custom counters.
-* Fixed Facebook counter, now uses the Facebook API.
-* Fixed Google Plus counter, now uses the Google API.
-* Fixed System Status test for `wp_remote_get()`.
-* Fixed YouTube options description. Need a YouTube Channel ID and not a YouTube username.
+* Added GitHub integration.
+* Added LinkedIn integration.
+* Added Pinterest integration.
+* Added Tumblr integration.
+* Added Vimeo integration.
+* Added users integration.
+* Added new "URL" options for comments and posts.
+* Improved the Twitch integration.
 
 ## License ##
 

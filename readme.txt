@@ -322,14 +322,16 @@ The CSS classes you will need to use:
 
 == Upgrade Notice ==
 
-= 3.1.1 =
+= 3.2.0 =
 
-* Added Twitch counter.
-* Added new `social_count_plus_{$icon}html_counter` and `social_count_plus_icon_name_i18n` filters to help add new custom counters.
-* Fixed Facebook counter, now uses the Facebook API.
-* Fixed Google Plus counter, now uses the Google API.
-* Fixed System Status test for `wp_remote_get()`.
-* Fixed YouTube options description. Need a YouTube Channel ID and not a YouTube username.
+* Added GitHub integration.
+* Added LinkedIn integration.
+* Added Pinterest integration.
+* Added Tumblr integration.
+* Added Vimeo integration.
+* Added users integration.
+* Added new "URL" options for comments and posts.
+* Improved the Twitch integration.
 
 == License ==
 
