@@ -65,7 +65,7 @@ class Social_Count_Plus_Generator {
 
 		foreach ( $counters as $counter ) {
 			$_counter = new $counter();
-			$total[ $_counter::$id ] = $_counter->get_total( $settings, $cache );
+			$total[ $_counter->id ] = $_counter->get_total( $settings, $cache );
 		}
 
 		// Update plugin extra cache.

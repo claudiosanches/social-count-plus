@@ -788,7 +788,9 @@ class Social_Count_Plus_Admin {
 					foreach ( $this->get_i18n_counters() as $slug => $name ) {
 						$class = 'social_count_plus_' . $slug . '_counter';
 						if ( class_exists( $class ) ) {
-							$html .= $class::get_view( array(), 100, '#333333' );
+							$_class = new $class();
+
+							$html .= $_class->get_view( array(), 100, '#333333' );
 						}
 					}
 
@@ -951,7 +953,7 @@ class Social_Count_Plus_Admin {
 
 			if ( $_counter->is_available( $settings ) ) {
 				$_counter->get_total( $settings, $cache );
-				$debug[ $_counter::$id ] = $_counter->debug();
+				$debug[ $_counter->id ] = $_counter->debug();
 			}
 		}
 

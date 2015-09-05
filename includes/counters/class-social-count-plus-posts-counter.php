@@ -18,7 +18,7 @@ class Social_Count_Plus_Posts_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public static $id = 'posts';
+	public $id = 'posts';
 
 	/**
 	 * API URL.
@@ -52,7 +52,7 @@ class Social_Count_Plus_Posts_Counter extends Social_Count_Plus_Counter {
 			$data      = wp_count_posts( $post_type );
 
 			if ( is_wp_error( $data ) ) {
-				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				$count = intval( $data->publish );
 
@@ -72,7 +72,7 @@ class Social_Count_Plus_Posts_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return string
 	 */
-	public static function get_view( $settings, $total, $text_color ) {
+	public function get_view( $settings, $total, $text_color ) {
 		$post_type   = ( isset( $settings['posts_post_type'] ) && ! empty( $settings['posts_post_type'] ) ) ? $settings['posts_post_type'] : 'post';
 		$post_object = get_post_type_object( $post_type );
 		$url         = ! empty( $settings['posts_url'] ) ? $settings['posts_url'] : get_home_url();
@@ -80,6 +80,6 @@ class Social_Count_Plus_Posts_Counter extends Social_Count_Plus_Counter {
 		unset( $settings['target_blank'] );
 		unset( $settings['rel_nofollow'] );
 
-		return self::get_view_li( self::$id, $url, $total, strtolower( $post_object->label ), $text_color, $settings );
+		return $this->get_view_li( $this->id, $url, $total, strtolower( $post_object->label ), $text_color, $settings );
 	}
 }

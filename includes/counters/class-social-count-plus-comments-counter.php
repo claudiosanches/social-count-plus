@@ -18,7 +18,7 @@ class Social_Count_Plus_Comments_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public static $id = 'comments';
+	public $id = 'comments';
 
 	/**
 	 * API URL.
@@ -51,7 +51,7 @@ class Social_Count_Plus_Comments_Counter extends Social_Count_Plus_Counter {
 			$data = wp_count_comments();
 
 			if ( is_wp_error( $data ) ) {
-				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				$count = intval( $data->approved );
 
@@ -71,12 +71,12 @@ class Social_Count_Plus_Comments_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return string
 	 */
-	public static function get_view( $settings, $total, $text_color ) {
+	public function get_view( $settings, $total, $text_color ) {
 		$url = ! empty( $settings['comments_url'] ) ? $settings['comments_url'] : get_home_url();
 
 		unset( $settings['target_blank'] );
 		unset( $settings['rel_nofollow'] );
 
-		return self::get_view_li( self::$id, $url, $total, __( 'comments', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( $this->id, $url, $total, __( 'comments', 'social-count-plus' ), $text_color, $settings );
 	}
 }

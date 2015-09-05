@@ -18,7 +18,7 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public static $id = 'steam';
+	public $id = 'steam';
 
 	/**
 	 * API URL.
@@ -51,7 +51,7 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 			$this->connection = wp_remote_get( $this->api_url . $settings['steam_group_name'] . '/memberslistxml/?xml=1', array( 'timeout' => 60 ) );
 
 			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
-				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				try {
 					$xml = @new SimpleXmlElement( $this->connection['body'], LIBXML_NOCDATA );
@@ -59,7 +59,7 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 
 					$this->total = $count;
 				} catch ( Exception $e ) {
-					$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 				}
 			}
 		}
@@ -76,9 +76,9 @@ class Social_Count_Plus_Steam_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return string
 	 */
-	public static function get_view( $settings, $total, $text_color ) {
+	public function get_view( $settings, $total, $text_color ) {
 		$steam_group_name = ! empty( $settings['steam_group_name'] ) ? $settings['steam_group_name'] : '';
 
-		return self::get_view_li( self::$id, 'https://steamcommunity.com/groups/' . $steam_group_name, $total, __( 'members', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( $this->id, 'https://steamcommunity.com/groups/' . $steam_group_name, $total, __( 'members', 'social-count-plus' ), $text_color, $settings );
 	}
 }

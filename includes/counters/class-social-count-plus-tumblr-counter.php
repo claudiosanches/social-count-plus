@@ -18,7 +18,7 @@ class Social_Count_Plus_Tumblr_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public static $id = 'tumblr';
+	public $id = 'tumblr';
 
 	/**
 	 * API URL.
@@ -155,7 +155,7 @@ class Social_Count_Plus_Tumblr_Counter extends Social_Count_Plus_Counter {
 			$this->connection = wp_remote_get( sprintf( $this->api_url, $hostname ), $params );
 
 			if ( is_wp_error( $this->connection ) || ( isset( $this->connection['response']['code'] ) && 200 != $this->connection['response']['code'] ) ) {
-				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				$_data = json_decode( $this->connection['body'], true );
 
@@ -164,7 +164,7 @@ class Social_Count_Plus_Tumblr_Counter extends Social_Count_Plus_Counter {
 
 					$this->total = $count;
 				} else {
-					$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 				}
 			}
 		}
@@ -181,9 +181,9 @@ class Social_Count_Plus_Tumblr_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return string
 	 */
-	public static function get_view( $settings, $total, $text_color ) {
+	public function get_view( $settings, $total, $text_color ) {
 		$tumblr_hostname = ! empty( $settings['tumblr_hostname'] ) ? $settings['tumblr_hostname'] : '';
 
-		return self::get_view_li( self::$id, $tumblr_hostname, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( $this->id, $tumblr_hostname, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

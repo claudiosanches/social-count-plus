@@ -25,7 +25,7 @@ abstract class Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public static $id = '';
+	public $id = '';
 
 	/**
 	 * Connection.
@@ -68,7 +68,7 @@ abstract class Social_Count_Plus_Counter {
 	 *
 	 * @return string           HTML li element.
 	 */
-	protected static function get_view_li( $slug, $url, $count, $title, $color, $settings ) {
+	protected function get_view_li( $slug, $url, $count, $title, $color, $settings ) {
 		$target_blank = isset( $settings['target_blank'] ) ? ' target="_blank"' : '';
 		$rel_nofollow = isset( $settings['rel_nofollow'] ) ? ' rel="nofollow"' : '';
 
@@ -92,7 +92,7 @@ abstract class Social_Count_Plus_Counter {
 	 *
 	 * @return string
 	 */
-	public static function get_view( $settings, $total, $text_color ) {
+	public function get_view( $settings, $total, $text_color ) {
 		return '';
 	}
 

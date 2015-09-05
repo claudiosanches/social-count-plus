@@ -20,7 +20,7 @@ class Social_Count_Plus_View {
 	 *
 	 * @return string
 	 */
-	public static function get_view_model( $model ) {
+	public function get_view_model( $model ) {
 		$models = array(
 			'default',
 			'default vertical',
@@ -40,7 +40,7 @@ class Social_Count_Plus_View {
 	 *
 	 * @return string
 	 */
-	public static function get_view() {
+	public function get_view() {
 		wp_enqueue_style( 'social-count-plus' );
 
 		$settings = get_option( 'socialcountplus_settings' );
@@ -56,7 +56,9 @@ class Social_Count_Plus_View {
 				foreach ( $icons as $icon ) {
 					$class = 'social_count_plus_' . $icon . '_counter';
 					if ( class_exists( $class ) && isset( $count[ $icon ] ) ) {
-						$html .= $class::get_view( $settings, $count[ $icon ], $color );
+						$_class = new $class();
+
+						$html .= $_class->get_view( $settings, $count[ $icon ], $color );
 					} else {
 						$html .= apply_filters( 'social_count_plus_' . $icon . 'html_counter', '', $settings, $count[ $icon ], $color );
 					}

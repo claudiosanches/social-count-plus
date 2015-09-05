@@ -18,7 +18,7 @@ class Social_Count_Plus_SoundCloud_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public static $id = 'soundcloud';
+	public $id = 'soundcloud';
 
 	/**
 	 * API URL.
@@ -51,7 +51,7 @@ class Social_Count_Plus_SoundCloud_Counter extends Social_Count_Plus_Counter {
 			$this->connection = wp_remote_get( $this->api_url . $settings['soundcloud_username'] . '.json?client_id=' . $settings['soundcloud_client_id'], array( 'timeout' => 60 ) );
 
 			if ( is_wp_error( $this->connection ) || '400' <= $this->connection['response']['code'] ) {
-				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				$response = json_decode( $this->connection['body'], true );
 
@@ -60,7 +60,7 @@ class Social_Count_Plus_SoundCloud_Counter extends Social_Count_Plus_Counter {
 
 					$this->total = $count;
 				} else {
-					$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 				}
 			}
 		}
@@ -77,9 +77,9 @@ class Social_Count_Plus_SoundCloud_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return string
 	 */
-	public static function get_view( $settings, $total, $text_color ) {
+	public function get_view( $settings, $total, $text_color ) {
 		$soundcloud_username = ! empty( $settings['soundcloud_username'] ) ? $settings['soundcloud_username'] : '';
 
-		return self::get_view_li( self::$id, 'https://soundcloud.com/' . $soundcloud_username, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( $this->id, 'https://soundcloud.com/' . $soundcloud_username, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

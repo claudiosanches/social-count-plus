@@ -18,7 +18,7 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public static $id = 'youtube';
+	public $id = 'youtube';
 
 	/**
 	 * API URL.
@@ -58,7 +58,7 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 			$this->connection = wp_remote_get( $url, array( 'timeout' => 60 ) );
 
 			if ( is_wp_error( $this->connection ) || 400 <= $this->connection['response']['code'] ) {
-				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				$_data = json_decode( $this->connection['body'], true );
 
@@ -67,7 +67,7 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 
 					$this->total = $count;
 				} else {
-					$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 				}
 			}
 		}
@@ -84,9 +84,9 @@ class Social_Count_Plus_YouTube_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return string
 	 */
-	public static function get_view( $settings, $total, $text_color ) {
+	public function get_view( $settings, $total, $text_color ) {
 		$youtube_url = ! empty( $settings['youtube_url'] ) ? $settings['youtube_url'] : '';
 
-		return self::get_view_li( self::$id, $youtube_url, $total, __( 'subscribers', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( $this->id, $youtube_url, $total, __( 'subscribers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

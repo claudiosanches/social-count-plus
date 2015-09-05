@@ -18,7 +18,7 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	public static $id = 'facebook';
+	public $id = 'facebook';
 
 	/**
 	 * API URL.
@@ -82,7 +82,7 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 			$this->connection = wp_remote_get( $url, array( 'timeout' => 60 ) );
 
 			if ( is_wp_error( $this->connection ) || ( isset( $this->connection['response']['code'] ) && 200 != $this->connection['response']['code'] ) ) {
-				$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 			} else {
 				$_data = json_decode( $this->connection['body'], true );
 
@@ -91,7 +91,7 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 
 					$this->total = $count;
 				} else {
-					$this->total = ( isset( $cache[ self::$id ] ) ) ? $cache[ self::$id ] : 0;
+					$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;
 				}
 			}
 		}
@@ -108,9 +108,9 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @return string
 	 */
-	public static function get_view( $settings, $total, $text_color ) {
+	public function get_view( $settings, $total, $text_color ) {
 		$facebook_id = ! empty( $settings['facebook_id'] ) ? $settings['facebook_id'] : '';
 
-		return self::get_view_li( self::$id, 'https://www.facebook.com/' . $facebook_id, $total, __( 'likes', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( $this->id, 'https://www.facebook.com/' . $facebook_id, $total, __( 'likes', 'social-count-plus' ), $text_color, $settings );
 	}
 }
