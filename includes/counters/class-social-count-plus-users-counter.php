@@ -50,7 +50,9 @@ class Social_Count_Plus_Users_Counter extends Social_Count_Plus_Counter {
 		if ( $this->is_available( $settings ) ) {
 			$users = count_users();
 
-			if ( ! empty( $users['avail_roles'][ $settings['users_user_role'] ] ) ) {
+			if ( 'all' == $settings['users_user_role'] ) {
+				$this->total = intval( $users['total_users'] );
+			} else if ( ! empty( $users['avail_roles'][ $settings['users_user_role'] ] ) ) {
 				$this->total = intval( $users['avail_roles'][ $settings['users_user_role'] ] );
 			} else {
 				$this->total = 0;

@@ -753,6 +753,7 @@ class Social_Count_Plus_Admin {
 		foreach ( $wp_roles->get_names() as $key => $value ) {
 			$html .= sprintf( '<option value="%s"%s>%s</option>', $key, selected( $current, $key, false ), $value );
 		}
+		$html .= sprintf( '<option value="%s"%s>%s</option>', 'all', selected( $current, 'all', false ), __( 'All Roles', 'social-count-plus' ) );
 		$html .= '</select>';
 
 		// Displays option description.
