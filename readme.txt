@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: counter, widget, shortcode, facebook, github, googleplus, instagram, linkedin, pinterest, soundcloud, steam, tumblr, twitch, twitter, vimeo, youtube
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 3.2.0
+Stable tag: 3.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -146,6 +146,11 @@ The CSS classes you will need to use:
 5. Widget.
 
 == Changelog ==
+
+= 3.3.0 - 2015/09/05 =
+
+* Added option to show all user roles in users integration.
+* Fixed errors in PHP 5.2.
 
 = 3.2.0 - 2015/08/31 =
 
@@ -322,16 +327,10 @@ The CSS classes you will need to use:
 
 == Upgrade Notice ==
 
-= 3.2.0 =
+= 3.3.0 =
 
-* Added GitHub integration.
-* Added LinkedIn integration.
-* Added Pinterest integration.
-* Added Tumblr integration.
-* Added Vimeo integration.
-* Added users integration.
-* Added new "URL" options for comments and posts.
-* Improved the Twitch integration.
+* Added option to show all user roles in users integration.
+* Fixed errors in PHP 5.2.
 
 == License ==
 
