@@ -20,7 +20,7 @@ class Social_Count_Plus_View {
 	 *
 	 * @return string
 	 */
-	public function get_view_model( $model ) {
+	public static function get_view_model( $model ) {
 		$models = array(
 			'default',
 			'default vertical',
@@ -40,7 +40,7 @@ class Social_Count_Plus_View {
 	 *
 	 * @return string
 	 */
-	public function get_view() {
+	public static function get_view() {
 		wp_enqueue_style( 'social-count-plus' );
 
 		$settings = get_option( 'socialcountplus_settings' );
