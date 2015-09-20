@@ -38,7 +38,7 @@ The cache avoids not only that your blog be seeking new results every time a pag
 
 #### Translate ####
 
-You can contribute to the source code in our [GitHub](https://www.transifex.com/claudiosmweb/social-count-plus/) page.
+You can contribute to the source code in our [Transifex](https://www.transifex.com/claudiosmweb/social-count-plus/) page.
 
 #### Contribute ####
 
