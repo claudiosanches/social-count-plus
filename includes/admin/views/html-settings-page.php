@@ -43,6 +43,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 			} else if ( 'system_status' == $current_tab ) {
 				include 'html-settings-system-status-page.php';
 			} else {
+				$options      = self::get_plugin_options();
+				$options      = $options['socialcountplus_settings'];
+				$options_keys = array_keys( $options );
+				$last         = end( $options_keys );
+
+				echo '<ul class="subsubsub">';
+				foreach ( $options as $section => $data ) {
+					echo '<li><a href="#section-' . esc_attr( $section ) . '">' . esc_html( $data['title'] ) .  '</a>';
+					echo $last !== $section ? ' | ' : '';
+					echo '</li>';
+				}
+				echo '</ul><br class="clear">';
+
 				settings_fields( 'socialcountplus_settings' );
 				do_settings_sections( 'socialcountplus_settings' );
 				submit_button();

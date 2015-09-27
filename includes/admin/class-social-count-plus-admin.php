@@ -58,11 +58,11 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
-	 * Plugin options.
+	 * Get the plugin options.
 	 *
 	 * @return array
 	 */
-	protected static function plugin_options() {
+	protected static function get_plugin_options() {
 		$twitter_oauth_description = sprintf( __( 'Create an App on Twitter in %s and get this data.', 'social-count-plus' ), '<a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a>' );
 
 		$facebook_app_description = sprintf( __( 'Create an App on Facebook in %s and get this data.', 'social-count-plus' ), '<a href="https://developers.facebook.com/" target="_blank">https://developers.facebook.com/</a>' );
@@ -519,14 +519,14 @@ class Social_Count_Plus_Admin {
 	public function plugin_settings() {
 
 		// Process the settings.
-		foreach ( self::plugin_options() as $settings_id => $sections ) {
+		foreach ( self::get_plugin_options() as $settings_id => $sections ) {
 
 			// Create the sections.
 			foreach ( $sections as $section_id => $section ) {
 				add_settings_section(
 					$section_id,
 					$section['title'],
-					'__return_false',
+					array( $this, 'title_element_callback' ),
 					$settings_id
 				);
 
@@ -660,11 +660,18 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
-	 * Text element fallback.
+	 * Title element callback.
 	 *
-	 * @param  array $args Field arguments.
+	 * @param array $args Field arguments.
+	 */
+	public function title_element_callback( $args ) {
+		echo ! empty( $args['id'] ) ? '<div id="section-' . esc_attr( $args['id'] ) . '"></div>' : '';
+	}
+
+	/**
+	 * Text element callback.
 	 *
-	 * @return string      Text field.
+	 * @param array $args Field arguments.
 	 */
 	public function text_element_callback( $args ) {
 		$tab     = $args['tab'];
@@ -683,11 +690,9 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
-	 * Checkbox field fallback.
+	 * Checkbox field callback.
 	 *
-	 * @param  array $args Field arguments.
-	 *
-	 * @return string      Checkbox field.
+	 * @param array $args Field arguments.
 	 */
 	public function checkbox_element_callback( $args ) {
 		$tab     = $args['tab'];
@@ -706,11 +711,9 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
-	 * Post Type element fallback.
+	 * Post Type element callback.
 	 *
-	 * @param  array $args Field arguments.
-	 *
-	 * @return string      Post Type field.
+	 * @param array $args Field arguments.
 	 */
 	public function post_type_element_callback( $args ) {
 		$tab     = $args['tab'];
@@ -734,11 +737,9 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
-	 * User Role element fallback.
+	 * User Role element callback.
 	 *
-	 * @param  array $args Field arguments.
-	 *
-	 * @return string      User Role field.
+	 * @param array $args Field arguments.
 	 */
 	public function user_role_element_callback( $args ) {
 		global $wp_roles;
@@ -765,11 +766,9 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
-	 * Models element fallback.
+	 * Models element callback.
 	 *
-	 * @param  array $args Field arguments.
-	 *
-	 * @return string      Models field.
+	 * @param array $args Field arguments.
 	 */
 	public function models_element_callback( $args ) {
 		$tab     = $args['tab'];
@@ -808,11 +807,9 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
-	 * Icons order element fallback.
+	 * Icons order element callback.
 	 *
-	 * @param  array $args Field arguments.
-	 *
-	 * @return string      Icons order field.
+	 * @param array $args Field arguments.
 	 */
 	public function icons_order_element_callback( $args ) {
 		$tab       = $args['tab'];
@@ -836,11 +833,9 @@ class Social_Count_Plus_Admin {
 	}
 
 	/**
-	 * Color element fallback.
+	 * Color element callback.
 	 *
-	 * @param  array $args Field arguments.
-	 *
-	 * @return string      Color field.
+	 * @param array $args Field arguments.
 	 */
 	public function color_element_callback( $args ) {
 		$tab     = $args['tab'];
@@ -1000,7 +995,7 @@ class Social_Count_Plus_Admin {
 
 			// Install options and updated old versions for 3.0.0.
 			if ( version_compare( $version, '3.0.0', '<' ) ) {
-				foreach ( self::plugin_options() as $settings_id => $sections ) {
+				foreach ( self::get_plugin_options() as $settings_id => $sections ) {
 					$saved = get_option( $settings_id, array() );
 
 					foreach ( $sections as $section_id => $section ) {
