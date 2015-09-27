@@ -70,19 +70,25 @@ Get your Company ID and Access Token in: https://socialcountplus-linkedin.heroku
 
 You must create a Facebook app to use the Facebook Graph API.
 
+Log in https://developers.facebook.com/ and go to "My Apps > Add a New App".
+
+Then follow the steps in this video:
+
 https://www.youtube.com/watch?v=LgavLDh7GPA
 
 Once the App is ready, just copy the App ID and App Secret.
 
 ### Google+ and YouTube ###
 
-Generate a valid Google API Key for Google+ and YouTube:
+It's required a Google API Key for Google+ and YouTube.
+
+Access https://console.developers.google.com/project to create you Google API key following this steps:
 
 https://www.youtube.com/watch?v=EAQA-tJUWas
 
 ### Twitter ###
 
-You need create a Twitter App and copy the Consumer key, Consumer secret, Access token and Access token secret:
+You need access https://dev.twitter.com/apps, then create a Twitter App and copy the Consumer key, Consumer secret, Access token and Access token secret:
 
 https://www.youtube.com/watch?v=26dpo-g_jQc
 
@@ -125,17 +131,28 @@ Select one of the options without icons in "WordPress admin > Social Count Plus 
 
 The CSS classes you will need to use:
 
-	.social-count-plus .custom .count-twitter a {}
+	.social-count-plus .custom .count-comments a {}
 	.social-count-plus .custom .count-facebook a {}
-	.social-count-plus .custom .count-youtube a {}
+	.social-count-plus .custom .count-github a {}
 	.social-count-plus .custom .count-googleplus a {}
 	.social-count-plus .custom .count-instagram a {}
-	.social-count-plus .custom .count-steam a {}
-	.social-count-plus .custom .count-twitch a {}
-	.social-count-plus .custom .count-soundcloud a {}
+	.social-count-plus .custom .count-linkedin a {}
+	.social-count-plus .custom .count-pinterest a {}
 	.social-count-plus .custom .count-posts a {}
-	.social-count-plus .custom .count-comments a {}
+	.social-count-plus .custom .count-soundcloud a {}
+	.social-count-plus .custom .count-steam a {}
+	.social-count-plus .custom .count-tumblr a {}
+	.social-count-plus .custom .count-twitch a {}
+	.social-count-plus .custom .count-twitter a {}
+	.social-count-plus .custom .count-users a {}
+	.social-count-plus .custom .count-vimeo a {}
 
+
+### Having troubles? ###
+
+If you have any problems with the numbers, go to the plugin settings and then to the "System Status" tab and click the "Get System Report" button.
+
+Copy the report file content and paste it in [gist.github.com](https://gist.github.com) or [pastebin.com](http://pastebin.com), save and get a link, finally create a topic in our [support forum](https://wordpress.org/support/plugin/social-count-plus).
 
 ## Screenshots ##
 
