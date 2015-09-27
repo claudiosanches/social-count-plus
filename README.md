@@ -4,7 +4,7 @@
 **Tags:** counter, widget, shortcode, facebook, github, googleplus, instagram, linkedin, pinterest, soundcloud, steam, tumblr, twitch, twitter, vimeo, youtube  
 **Requires at least:** 4.0  
 **Tested up to:** 4.3  
-**Stable tag:** 3.3.0  
+**Stable tag:** 3.3.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -173,6 +173,10 @@ Copy the report file content and paste it in [gist.github.com](https://gist.gith
 
 
 ## Changelog ##
+
+### 3.3.1 - 2015/09/28 ###
+
+* Added submenu in settings page.
 
 ### 3.3.0 - 2015/09/05 ###
 
@@ -354,10 +358,9 @@ Copy the report file content and paste it in [gist.github.com](https://gist.gith
 
 ## Upgrade Notice ##
 
-### 3.3.0 ###
+### 3.3.1 ###
 
-* Added option to show all user roles in users integration.
-* Fixed errors in PHP 5.2.
+* Added submenu in settings page.
 
 ## License ##
 
