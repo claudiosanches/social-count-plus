@@ -125,16 +125,21 @@ Select one of the options without icons in "WordPress admin > Social Count Plus 
 
 The CSS classes you will need to use:
 
-	.social-count-plus .custom .count-twitter a {}
+	.social-count-plus .custom .count-comments a {}
 	.social-count-plus .custom .count-facebook a {}
-	.social-count-plus .custom .count-youtube a {}
+	.social-count-plus .custom .count-github a {}
 	.social-count-plus .custom .count-googleplus a {}
 	.social-count-plus .custom .count-instagram a {}
-	.social-count-plus .custom .count-steam a {}
-	.social-count-plus .custom .count-twitch a {}
-	.social-count-plus .custom .count-soundcloud a {}
+	.social-count-plus .custom .count-linkedin a {}
+	.social-count-plus .custom .count-pinterest a {}
 	.social-count-plus .custom .count-posts a {}
-	.social-count-plus .custom .count-comments a {}
+	.social-count-plus .custom .count-soundcloud a {}
+	.social-count-plus .custom .count-steam a {}
+	.social-count-plus .custom .count-tumblr a {}
+	.social-count-plus .custom .count-twitch a {}
+	.social-count-plus .custom .count-twitter a {}
+	.social-count-plus .custom .count-users a {}
+	.social-count-plus .custom .count-vimeo a {}
 
 
 == Screenshots ==
