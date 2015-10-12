@@ -74,9 +74,7 @@ Log in https://developers.facebook.com/ and go to "My Apps > Add a New App".
 
 Then follow the steps in this video:
 
-https://www.youtube.com/watch?v=LgavLDh7GPA
-
-Once the App is ready, just copy the App ID and App Secret.
+https://www.youtube.com/watch?v=m1QArbW2z4A
 
 = Google+ and YouTube =
 
