@@ -36,10 +36,6 @@ The results of the counters are cached and new values ​​are checked only onc
 
 The cache avoids not only that your blog be seeking new results every time a page is loaded, but also prevents collapse of services from Twitter and Facebook, if one of these services does not respond, the counter displays the last count it was successful.
 
-#### Translate ####
-
-You can contribute to the source code in our [Transifex](https://www.transifex.com/claudiosmweb/social-count-plus/) page.
-
 #### Contribute ####
 
 You can contribute to the source code in our [GitHub](https://github.com/claudiosmweb/social-count-plus) page.
