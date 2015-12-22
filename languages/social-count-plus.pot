@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Social Count Plus 3.3.1\n"
+"Project-Id-Version: Social Count Plus 3.3.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/plugins/woocommerce-domination/\n"
-"POT-Creation-Date: 2015-09-27 23:08:13+00:00\n"
+"POT-Creation-Date: 2015-12-22 18:42:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -522,16 +522,18 @@ msgstr ""
 msgid "You do not have any counter that needs to connect remotely currently active"
 msgstr ""
 
-#: includes/admin/views/html-help-us.php:11
-msgid "Help us keep the %s free making a %s or rate %s on %s. Thank you in advance!"
+#: includes/admin/views/html-help-us.php:9
+msgid ""
+"Help us keep the %s plugin free making a donation or rate %s on "
+"WordPress.org. Thank you in advance!"
 msgstr ""
 
-#: includes/admin/views/html-help-us.php:11
-msgid "donation"
+#: includes/admin/views/html-help-us.php:10
+msgid "Make a donation"
 msgstr ""
 
-#: includes/admin/views/html-help-us.php:11
-msgid "WordPress.org"
+#: includes/admin/views/html-help-us.php:10
+msgid "Make a review"
 msgstr ""
 
 #: includes/admin/views/html-settings-functions-shortcodes-page.php:7
