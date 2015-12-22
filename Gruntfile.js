@@ -1,12 +1,9 @@
 /* jshint node:true */
-'use strict';
+var expandHomeDir = require( 'expand-home-dir' );
 
 module.exports = function( grunt ) {
 
-	// auto load grunt tasks
-	require( 'load-grunt-tasks' )( grunt );
-
-	var pluginConfig = {
+	grunt.initConfig({
 
 		// gets the package vars
 		pkg: grunt.file.readJSON( 'package.json' ),
@@ -22,7 +19,7 @@ module.exports = function( grunt ) {
 
 		// svn settings
 		svn_settings: {
-			path: '../../../../wp_plugins/<%= pkg.name %>',
+			path: expandHomeDir( '~/Projects/wordpress-plugins-svn/' ) + '<%= pkg.name %>',
 			tag: '<%= svn_settings.path %>/tags/<%= pkg.version %>',
 			trunk: '<%= svn_settings.path %>/trunk',
 			exclude: [
@@ -164,13 +161,6 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		po2mo: {
-			files: {
-				src: 'languages/*.po',
-				expand: true
-			}
-		},
-
 		// rsync commands used to take the files to svn repository
 		rsync: {
 			options: {
@@ -227,22 +217,20 @@ module.exports = function( grunt ) {
 						cwd: '<%= svn_settings.path %>'
 					}
 				}
-			},
-			txpush: {
-				command: 'tx push -s' // push the resources
-			},
-			txpull: {
-				command: 'tx pull -a -f' // pull the .po files
 			}
 		}
-	};
+	});
 
-	// initialize grunt config
-	// --------------------------
-	grunt.initConfig( pluginConfig );
-
-	// register tasks
-	// --------------------------
+	// Load tasks
+	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-contrib-compass' );
+	grunt.loadNpmTasks( 'grunt-contrib-imagemin' );
+	grunt.loadNpmTasks( 'grunt-checktextdomain' );
+	grunt.loadNpmTasks( 'grunt-wp-i18n' );
+	grunt.loadNpmTasks( 'grunt-rsync' );
+	grunt.loadNpmTasks( 'grunt-shell' );
 
 	// default task
 	grunt.registerTask( 'default', [
@@ -260,8 +248,4 @@ module.exports = function( grunt ) {
 		'shell:svn_add',
 		'shell:svn_commit'
 	] );
-
-	grunt.registerTask( 'tx_push', [ 'shell:txpush' ]);
-	grunt.registerTask( 'tx_pull', [ 'shell:txpull' ]);
-
 };

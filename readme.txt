@@ -22,7 +22,7 @@ The Social Count Plus performs counting for:
 - LinkedIn company followers
 - Pinterest followers
 - Posts total
-- SoundCloud follwers
+- SoundCloud followers
 - Steam Community group members
 - Tumblr followers
 - Twitch channel followers
