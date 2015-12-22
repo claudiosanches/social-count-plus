@@ -55,12 +55,18 @@ class Social_Count_Plus_View {
 
 				foreach ( $icons as $icon ) {
 					$class = 'social_count_plus_' . $icon . '_counter';
-					if ( class_exists( $class ) && isset( $count[ $icon ] ) ) {
-						$_class = new $class();
 
-						$html .= $_class->get_view( $settings, $count[ $icon ], $color );
+					if ( ! isset( $count[ $icon ] ) ) {
+						continue;
+					}
+
+					$total = apply_filters( 'social_count_plus_number_format', $count[ $icon ] );
+
+					if ( class_exists( $class ) ) {
+						$_class = new $class();
+						$html  .= $_class->get_view( $settings, $total, $color );
 					} else {
-						$html .= apply_filters( 'social_count_plus_' . $icon . 'html_counter', '', $settings, $count[ $icon ], $color );
+						$html .= apply_filters( 'social_count_plus_' . $icon . 'html_counter', '', $settings, $total, $color );
 					}
 				}
 

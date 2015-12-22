@@ -135,4 +135,3 @@ class Social_Count_Plus {
 add_action( 'plugins_loaded', array( 'Social_Count_Plus', 'get_instance' ) );
 
 endif;
-
