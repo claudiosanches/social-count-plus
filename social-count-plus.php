@@ -82,9 +82,6 @@ class Social_Count_Plus {
 	 * Load the plugin text domain for translation.
 	 */
 	public function load_plugin_textdomain() {
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'social-count-plus' );
-
-		load_textdomain( 'social-count-plus', trailingslashit( WP_LANG_DIR ) . 'social-count-plus/social-count-plus-' . $locale . '.mo' );
 		load_plugin_textdomain( 'social-count-plus', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
