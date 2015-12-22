@@ -78,7 +78,7 @@ It's required a Google API Key for Google+ and YouTube.
 
 Access https://console.developers.google.com/project to create you Google API key following this steps:
 
-https://www.youtube.com/watch?v=EAQA-tJUWas
+https://www.youtube.com/watch?v=KufdCMLMuFs
 
 = Twitter =
 
