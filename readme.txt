@@ -30,7 +30,7 @@ The Social Count Plus performs counting for:
 - Users total
 - Vimeo followers
 
-You can display our numbers using a Widget (with links and ícons) or Shortcodes (to be used in posts and pages) or PHP functions in your theme.
+You can display your numbers using a Widget (with links and ícons) or Shortcodes (to be used in posts and pages) or PHP functions in your theme.
 
 The results of the counters are cached and new values ​​are checked only once a day. This cache can be wiped when published a new post.
 
