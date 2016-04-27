@@ -5,7 +5,7 @@
  * Description: Displays your numbers in Facebook, GitHub, Google+, Instagram, LinkedIn, Pinterest, SoundCloud, Steam Community, Tumblr, Twitch, Twitter, Vimeo, Youtube, posts, comments and users.
  * Author: Claudio Sanches
  * Author URI: http://claudiosmweb.com/
- * Version: 3.3.2
+ * Version: 3.3.3
  * License: GPLv2 or later
  * Text Domain: social-count-plus
  * Domain Path: /languages/
@@ -31,7 +31,7 @@ class Social_Count_Plus {
 	 *
 	 * @var string
 	 */
-	const VERSION = '3.3.2';
+	const VERSION = '3.3.3';
 
 	/**
 	 * Instance of this class.

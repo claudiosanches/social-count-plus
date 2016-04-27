@@ -3,8 +3,8 @@ Contributors: claudiosanches, felipesantana, deblynprado
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y8HP99ZJ5Z59L
 Tags: counter, widget, shortcode, facebook, github, googleplus, instagram, linkedin, pinterest, soundcloud, steam, tumblr, twitch, twitter, vimeo, youtube
 Requires at least: 4.0
-Tested up to: 4.4
-Stable tag: 3.3.2
+Tested up to: 4.5
+Stable tag: 3.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -178,6 +178,10 @@ Copy the report file content and paste it in [gist.github.com](https://gist.gith
 
 == Changelog ==
 
+= 3.3.3 - 2016/04/26 =
+
+* Updated the Facebook API to support APPs v2.5 or later.
+
 = 3.3.2 - 2015/09/28 =
 
 * Restored the `social_count_plus_number_format` filter.
@@ -191,53 +195,8 @@ Copy the report file content and paste it in [gist.github.com](https://gist.gith
 * Added option to show all user roles in users integration.
 * Fixed errors in PHP 5.2.
 
-= 3.2.0 - 2015/08/31 =
-
-* Added GitHub integration.
-* Added LinkedIn integration.
-* Added Pinterest integration.
-* Added Tumblr integration.
-* Added Vimeo integration.
-* Added users integration.
-* Added new "URL" options for comments and posts.
-* Improved the Twitch integration.
-
-= 3.1.1 - 2015/08/21 =
-
-* Fixed YouTube options description. Need a YouTube Channel ID and not a YouTube username.
-
-= 3.1.0 - 2015/08/21 =
-
-* Added Twitch integration.
-* Added new `social_count_plus_{$icon}html_counter` and `social_count_plus_icon_name_i18n` filters to help add new custom counters.
-* Fixed Facebook integration, now uses the Facebook API.
-* Fixed Google+ integration, now uses the Google API.
-* Fixed System Status test for `wp_remote_get()`.
-
-= 3.0.3 - 2015/04/21 =
-
-* Fixed errors in HHVM.
-* Fixed potential XSS vulnerability with add_query_arg().
-
-= 3.0.2 - 2014/12/30 =
-
-* Fixed the install/update method.
-
-= 3.0.1 - 2014/12/25 =
-
-* Used only HTTPS for the social links.
-* Removed rel nofollow and target blank for posts and comments.
-
-= 3.0.0 - 2014/05/24 =
-
-* Refactored all code.
-* Improved the admin option screens.
-* Added System Status admin screen.
-* Added option to display the widget without icons (this way it is simple for you to add your icons in your theme CSS).
-* Added option to sort the icons order.
-
 == Upgrade Notice ==
 
-= 3.3.2 =
+= 3.3.3 =
 
-* Restored the `social_count_plus_number_format` filter.
+* Updated the Facebook API to support APPs v2.5 or later.
