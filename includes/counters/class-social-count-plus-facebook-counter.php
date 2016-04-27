@@ -73,8 +73,8 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 		if ( $this->is_available( $settings ) ) {
 			$access_token = $this->get_access_token( $settings );
 			$url = sprintf(
-				'%s%s?fields=likes&%s',
-				$this->api_url,
+				'%s%s?fields=fan_count&%s',
+				$this->api_url . 'v2.6/',
 				sanitize_text_field( $settings['facebook_id'] ),
 				$access_token
 			);
@@ -86,8 +86,8 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 			} else {
 				$_data = json_decode( $this->connection['body'], true );
 
-				if ( isset( $_data['likes'] ) ) {
-					$count = intval( $_data['likes'] );
+				if ( isset( $_data['fan_count'] ) ) {
+					$count = intval( $_data['fan_count'] );
 
 					$this->total = $count;
 				} else {
