@@ -184,6 +184,6 @@ class Social_Count_Plus_Tumblr_Counter extends Social_Count_Plus_Counter {
 	public function get_view( $settings, $total, $text_color ) {
 		$tumblr_hostname = ! empty( $settings['tumblr_hostname'] ) ? $settings['tumblr_hostname'] : '';
 
-		return $this->get_view_li( $this->id, $tumblr_hostname, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( $tumblr_hostname, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

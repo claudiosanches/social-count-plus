@@ -80,6 +80,6 @@ class Social_Count_Plus_GitHub_Counter extends Social_Count_Plus_Counter {
 	public function get_view( $settings, $total, $text_color ) {
 		$github_username = ! empty( $settings['github_username'] ) ? $settings['github_username'] : '';
 
-		return $this->get_view_li( $this->id, 'https://github.com/' . $github_username, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( 'https://github.com/' . $github_username, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

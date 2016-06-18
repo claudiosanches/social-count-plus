@@ -87,6 +87,6 @@ class Social_Count_Plus_Twitch_Counter extends Social_Count_Plus_Counter {
 	public function get_view( $settings, $total, $text_color ) {
 		$twitch_username = ! empty( $settings['twitch_username'] ) ? $settings['twitch_username'] : '';
 
-		return $this->get_view_li( $this->id, 'http://www.twitch.tv/' . $twitch_username . '/profile', $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( 'http://www.twitch.tv/' . $twitch_username . '/profile', $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

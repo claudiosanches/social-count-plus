@@ -185,6 +185,6 @@ class Social_Count_Plus_Twitter_Counter extends Social_Count_Plus_Counter {
 	public function get_view( $settings, $total, $text_color ) {
 		$twitter_user = ! empty( $settings['twitter_user'] ) ? $settings['twitter_user'] : '';
 
-		return $this->get_view_li( $this->id, 'https://twitter.com/' . $twitter_user, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( 'https://twitter.com/' . $twitter_user, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

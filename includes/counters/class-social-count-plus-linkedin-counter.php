@@ -85,6 +85,6 @@ class Social_Count_Plus_LinkedIn_Counter extends Social_Count_Plus_Counter {
 	public function get_view( $settings, $total, $text_color ) {
 		$linkedin_company_id = ! empty( $settings['linkedin_company_id'] ) ? $settings['linkedin_company_id'] : '';
 
-		return $this->get_view_li( $this->id, 'https://www.linkedin.com/company/' . $linkedin_company_id, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
+		return $this->get_view_li( 'https://www.linkedin.com/company/' . $linkedin_company_id, $total, __( 'followers', 'social-count-plus' ), $text_color, $settings );
 	}
 }

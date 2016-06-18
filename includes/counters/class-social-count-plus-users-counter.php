@@ -78,6 +78,6 @@ class Social_Count_Plus_Users_Counter extends Social_Count_Plus_Counter {
 		unset( $settings['target_blank'] );
 		unset( $settings['rel_nofollow'] );
 
-		return $this->get_view_li( $this->id, $url, $total, $label, $text_color, $settings );
+		return $this->get_view_li( $url, $total, $label, $text_color, $settings );
 	}
 }
