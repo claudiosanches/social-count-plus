@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: counter, widget, shortcode, facebook, github, googleplus, instagram, linkedin, pinterest, soundcloud, steam, tumblr, twitch, twitter, vimeo, youtube
 Requires at least: 4.0
 Tested up to: 4.5
-Stable tag: 3.3.3
+Stable tag: 3.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -178,6 +178,11 @@ Copy the report file content and paste it in [gist.github.com](https://gist.gith
 
 == Changelog ==
 
+= 3.3.4 - 2016/06/18 =
+
+* Improved the widget styles, not forcing styles anymore (just select the color as empty). Thanks to Sinisa Nikolic.
+* Added `social_count_plus_label` filter.
+
 = 3.3.3 - 2016/04/26 =
 
 * Updated the Facebook API to support APPs v2.5 or later.
@@ -197,6 +202,7 @@ Copy the report file content and paste it in [gist.github.com](https://gist.gith
 
 == Upgrade Notice ==
 
-= 3.3.3 =
+= 3.3.4 =
 
-* Updated the Facebook API to support APPs v2.5 or later.
+* Improved the widget styles, not forcing styles anymore (just select the color as empty). Thanks to Sinisa Nikolic.
+* Added `social_count_plus_label` filter.
