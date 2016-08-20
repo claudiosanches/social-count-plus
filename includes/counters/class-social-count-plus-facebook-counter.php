@@ -25,7 +25,7 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 	 *
 	 * @var string
 	 */
-	protected $api_url = 'https://graph.facebook.com/';
+	protected $api_url = 'https://graph.facebook.com';
 
 	/**
 	 * Test the counter is available.
@@ -74,7 +74,7 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 			$access_token = $this->get_access_token( $settings );
 			$url = sprintf(
 				'%s%s?fields=fan_count&%s',
-				$this->api_url . 'v2.6/',
+				$this->api_url . '/v2.7/',
 				sanitize_text_field( $settings['facebook_id'] ),
 				$access_token
 			);
