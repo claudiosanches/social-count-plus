@@ -57,7 +57,8 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 		if ( is_wp_error( $access_token ) || ( isset( $access_token['response']['code'] ) && 200 != $access_token['response']['code'] ) ) {
 			return '';
 		} else {
-			return sanitize_text_field( $access_token['body'] );
+			$access_token = json_decode( $access_token['body'], true );
+			return sanitize_text_field( $access_token['access_token'] );
 		}
 	}
 
@@ -73,7 +74,7 @@ class Social_Count_Plus_Facebook_Counter extends Social_Count_Plus_Counter {
 		if ( $this->is_available( $settings ) ) {
 			$access_token = $this->get_access_token( $settings );
 			$url = sprintf(
-				'%s%s?fields=fan_count&%s',
+				'%s%s?fields=fan_count&access_token=%s',
 				$this->api_url . '/v2.7/',
 				sanitize_text_field( $settings['facebook_id'] ),
 				$access_token
