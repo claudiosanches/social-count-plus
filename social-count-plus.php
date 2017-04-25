@@ -89,20 +89,20 @@ class Social_Count_Plus {
 	 * Include admin actions.
 	 */
 	protected function admin_includes() {
-		include 'includes/admin/class-social-count-plus-admin.php';
+		include dirname( __FILE__ ) . '/includes/admin/class-social-count-plus-admin.php';
 	}
 
 	/**
 	 * Include plugin functions.
 	 */
 	protected function includes() {
-		include_once 'includes/class-social-count-plus-generator.php';
-		include_once 'includes/abstracts/abstract-social-count-plus-counter.php';
-		include_once 'includes/class-social-count-plus-view.php';
-		include_once 'includes/class-social-count-plus-widget.php';
-		include_once 'includes/class-social-count-plus-shortcodes.php';
-		include_once 'includes/social-count-plus-functions.php';
-		include_once 'includes/social-count-plus-deprecated-functions.php';
+		include_once dirname( __FILE__ ) . '/includes/class-social-count-plus-generator.php';
+		include_once dirname( __FILE__ ) . '/includes/abstracts/abstract-social-count-plus-counter.php';
+		include_once dirname( __FILE__ ) . '/includes/class-social-count-plus-view.php';
+		include_once dirname( __FILE__ ) . '/includes/class-social-count-plus-widget.php';
+		include_once dirname( __FILE__ ) . '/includes/class-social-count-plus-shortcodes.php';
+		include_once dirname( __FILE__ ) . '/includes/social-count-plus-functions.php';
+		include_once dirname( __FILE__ ) . '/includes/social-count-plus-deprecated-functions.php';
 	}
 
 	/**
