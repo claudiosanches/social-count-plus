@@ -1,3 +1,9 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
+
 <table id="social-count-plus-system-status" class="widefat" cellspacing="0">
 
 	<thead>
