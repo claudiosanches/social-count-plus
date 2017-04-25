@@ -3,8 +3,8 @@
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y8HP99ZJ5Z59L  
 **Tags:** counter, widget, shortcode, facebook, github, googleplus, instagram, linkedin, pinterest, soundcloud, steam, tumblr, twitch, twitter, vimeo, youtube  
 **Requires at least:** 4.0  
-**Tested up to:** 4.6  
-**Stable tag:** 3.3.5  
+**Tested up to:** 4.7  
+**Stable tag:** 3.3.6  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -188,6 +188,10 @@ Copy the report file content and paste it in [gist.github.com](https://gist.gith
 
 ## Changelog ##
 
+### 3.3.6 - 2017/04/25 ###
+
+* Fixed Facebook integration according with new Facebook API requirements (Thanks to [tc33](https://github.com/claudiosanches/social-count-plus/pull/38)).
+
 ### 3.3.5 - 2016/08/20 ###
 
 * Update and fixed the Facebook integration.
@@ -216,6 +220,6 @@ Copy the report file content and paste it in [gist.github.com](https://gist.gith
 
 ## Upgrade Notice ##
 
-### 3.3.5 ###
+### 3.3.6 ###
 
-* Update and fixed the Facebook integration.
+* Fixed Facebook integration according with new Facebook API requirements.
