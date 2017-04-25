@@ -29,7 +29,7 @@ class SocialCountPlus extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', $instance['title'] );
+		$title = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
 
 		echo $args['before_widget'];
 
