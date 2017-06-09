@@ -80,7 +80,7 @@ abstract class Social_Count_Plus_Counter {
 			$html .= '</span>';
 		$html .= '</li>';
 
-		return $html;
+		return apply_filters( 'social_count_plus_get_view_li', $html, $url, $count, $label, $color, $settings, $this->id );
 	}
 
 	/**
