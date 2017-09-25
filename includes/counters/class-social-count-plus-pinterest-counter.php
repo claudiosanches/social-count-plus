@@ -60,7 +60,7 @@ class Social_Count_Plus_Pinterest_Counter extends Social_Count_Plus_Counter {
 					$regex = '/property\=\"pinterestapp:followers\" name\=\"pinterestapp:followers\" content\=\"(.*?)" data-app/';
 					preg_match( $regex, $this->connection['body'], $tags );
 
-					$count = intval( $tags[1] );
+					$count = isset( $tags[1] ) ? intval( $tags[1] ) : 0;
 				}
 
 				if ( 0 < $count ) {
