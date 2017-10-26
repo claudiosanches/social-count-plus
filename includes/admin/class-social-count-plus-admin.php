@@ -126,7 +126,7 @@ class Social_Count_Plus_Admin {
 						'github_username' => array(
 							'title'       => __( 'GitHub Username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert your GitHub username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
+							'description' => sprintf( __( 'Insert your GitHub username. Example: %s.', 'social-count-plus' ), '<code>claudiosanches</code>' )
 						),
 					)
 				),
@@ -329,7 +329,7 @@ class Social_Count_Plus_Admin {
 						'twitter_user' => array(
 							'title'       => __( 'Twitter Username', 'social-count-plus' ),
 							'type'        => 'text',
-							'description' => sprintf( __( 'Insert the Twitter username. Example: %s.', 'social-count-plus' ), '<code>claudiosmweb</code>' )
+							'description' => sprintf( __( 'Insert the Twitter username. Example: %s.', 'social-count-plus' ), '<code>claudiosanchesm</code>' )
 						),
 						'twitter_consumer_key' => array(
 							'title'       => __( 'Twitter Consumer key', 'social-count-plus' ),

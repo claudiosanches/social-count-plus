@@ -1,10 +1,10 @@
 {
   "name": "social-count-plus",
   "description": "Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments",
-  "version": "3.3.6",
+  "version": "3.4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/claudiosmweb/social-count-plus"
+    "url": "https://github.com/claudiosanches/social-count-plus"
   },
   "main": "Gruntfile.js",
   "devDependencies": {

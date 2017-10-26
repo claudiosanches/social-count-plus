@@ -3,8 +3,8 @@
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y8HP99ZJ5Z59L  
 **Tags:** counter, widget, shortcode, facebook, github, googleplus, instagram, linkedin, pinterest, soundcloud, steam, tumblr, twitch, twitter, vimeo, youtube  
 **Requires at least:** 4.0  
-**Tested up to:** 4.7  
-**Stable tag:** 3.3.6  
+**Tested up to:** 4.9  
+**Stable tag:** 3.4.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -38,7 +38,7 @@ The cache avoids not only that your blog be seeking new results every time a pag
 
 #### Contribute ####
 
-You can contribute to the source code in our [GitHub](https://github.com/claudiosmweb/social-count-plus) page.
+You can contribute to the source code in our [GitHub](https://github.com/claudiosanches/social-count-plus) page.
 
 #### Credits ####
 
@@ -187,6 +187,12 @@ Copy the report file content and paste it in [gist.github.com](https://gist.gith
 
 
 ## Changelog ##
+
+### 3.4.0 - 2017/10/25 ###
+
+- Updated Twitch integration requiring "Twitch Client ID".
+- Fixed PHP notices when Pinterest profile does not exist.
+- Introduced the `social_count_plus_get_view_li` filter.
 
 ### 3.3.6 - 2017/04/25 ###
 
