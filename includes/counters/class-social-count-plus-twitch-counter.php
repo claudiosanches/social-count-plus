@@ -35,7 +35,7 @@ class Social_Count_Plus_Twitch_Counter extends Social_Count_Plus_Counter {
 	 * @return bool
 	 */
 	public function is_available( $settings ) {
-		return isset( $settings['twitch_active'] ) && ! empty( $settings['twitch_username'] );
+		return isset( $settings['twitch_active'] ) && ! empty( $settings['twitch_username'] ) && ! empty( $settings['twitch_client_ID'] );
 	}
 
 	/**
@@ -50,12 +50,9 @@ class Social_Count_Plus_Twitch_Counter extends Social_Count_Plus_Counter {
 		if ( $this->is_available( $settings ) ) {
 			$params = array(
 				'timeout' => 60,
-				'headers' => array(
-					'accept' => 'application/vnd.twitchtv.v3+json'
-				)
 			);
 
-			$this->connection = wp_remote_get( $this->api_url . sanitize_text_field( $settings['twitch_username'] ), $params );
+			$this->connection = wp_remote_get( esc_url_raw( $this->api_url . $settings['twitch_username'] . '?client_id=' . $settings['twitch_client_ID'] ), $params );
 
 			if ( is_wp_error( $this->connection ) || ( isset( $this->connection['response']['code'] ) && 200 != $this->connection['response']['code'] ) ) {
 				$this->total = ( isset( $cache[ $this->id ] ) ) ? $cache[ $this->id ] : 0;

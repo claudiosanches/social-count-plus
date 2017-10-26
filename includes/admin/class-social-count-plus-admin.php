@@ -311,8 +311,13 @@ class Social_Count_Plus_Admin {
 							'title'       => __( 'Twitch Username', 'social-count-plus' ),
 							'type'        => 'text',
 							'description' => __( 'Insert your Twitch username.', 'social-count-plus' )
-						)
-					)
+						),
+						'twitch_client_ID' => array(
+							'title'       => __( 'Twitch Client ID', 'social-count-plus' ),
+							'type'        => 'text',
+							'description' => __( 'Insert your Twitch Client ID.', 'social-count-plus' ),
+						),
+					),
 				),
 				'twitter' => array(
 					'title'  => __( 'Twitter', 'social-count-plus' ),
