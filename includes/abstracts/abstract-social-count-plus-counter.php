@@ -69,11 +69,10 @@ abstract class Social_Count_Plus_Counter {
 	 */
 	protected function get_view_li( $url, $count, $label, $color, $settings ) {
 		$target_blank = isset( $settings['target_blank'] ) ? ' target="_blank"' : '';
-		$rel_nofollow = isset( $settings['rel_nofollow'] ) ? ' rel="nofollow"' : '';
 		$styles       = ! empty( $color ) ? ' style="color: ' . $color . ' !important;"' : '';
 
 		$html = sprintf( '<li class="count-%s">', $this->id );
-			$html .= sprintf( '<a class="icon" href="%s"%s%s></a>', esc_url( $url ), $target_blank, $rel_nofollow );
+			$html .= sprintf( '<a class="icon" href="%s" rel="nofollow noopener noreferrer"%s></a>', esc_url( $url ), $target_blank );
 			$html .= '<span class="items">';
 				$html .= sprintf( '<span class="count"%s>%s</span>', $styles, apply_filters( 'social_count_plus_number_format', $count ) );
 				$html .= sprintf( '<span class="label"%s>%s</span>', $styles, apply_filters( 'social_count_plus_label', $label, $this->id ) );

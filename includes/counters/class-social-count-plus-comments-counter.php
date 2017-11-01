@@ -75,7 +75,6 @@ class Social_Count_Plus_Comments_Counter extends Social_Count_Plus_Counter {
 		$url = ! empty( $settings['comments_url'] ) ? $settings['comments_url'] : get_home_url();
 
 		unset( $settings['target_blank'] );
-		unset( $settings['rel_nofollow'] );
 
 		return $this->get_view_li( $url, $total, __( 'comments', 'social-count-plus' ), $text_color, $settings );
 	}

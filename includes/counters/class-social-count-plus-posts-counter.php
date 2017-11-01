@@ -78,7 +78,6 @@ class Social_Count_Plus_Posts_Counter extends Social_Count_Plus_Counter {
 		$url         = ! empty( $settings['posts_url'] ) ? $settings['posts_url'] : get_home_url();
 
 		unset( $settings['target_blank'] );
-		unset( $settings['rel_nofollow'] );
 
 		return $this->get_view_li( $url, $total, strtolower( $post_object->label ), $text_color, $settings );
 	}

@@ -76,7 +76,6 @@ class Social_Count_Plus_Users_Counter extends Social_Count_Plus_Counter {
 		$label = ! empty( $settings['users_label'] ) ? $settings['users_label'] : __( 'users', 'social-count-plus' );
 
 		unset( $settings['target_blank'] );
-		unset( $settings['rel_nofollow'] );
 
 		return $this->get_view_li( $url, $total, $label, $text_color, $settings );
 	}

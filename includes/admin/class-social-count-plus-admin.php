@@ -427,11 +427,6 @@ class Social_Count_Plus_Admin {
 							'type'        => 'checkbox',
 							'description' => sprintf( __( 'This option add %s in all counters URLs.', 'social-count-plus' ), '<code>target="_blank"</code>' )
 						),
-						'rel_nofollow' => array(
-							'title'       => __( 'Add nofollow in URLs', 'social-count-plus' ),
-							'type'        => 'checkbox',
-							'description' => sprintf( __( 'This option add %s in all counters URLs.', 'social-count-plus' ), '<code>rel="nofollow"</code>' )
-						),
 					)
 				)
 			),
