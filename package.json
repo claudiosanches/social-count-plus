@@ -1,7 +1,7 @@
 {
   "name": "social-count-plus",
   "description": "Display the counting Twitter followers, Facebook fans, YouTube subscribers posts and comments",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/claudiosanches/social-count-plus"
