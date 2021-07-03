@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Social Count Plus
- * Plugin URI: https://github.com/claudiosanches/social-count-plus
+ * Plugin URI: https://github.com/cpacc/cpac-social-count-plus
  * Description: Displays your numbers in Facebook, GitHub, Google+, Instagram, LinkedIn, Pinterest, SoundCloud, Steam Community, Tumblr, Twitch, Twitter, Vimeo, Youtube, posts, comments and users.
- * Author: Claudio Sanches
- * Author URI: https://claudiosanches.com/
- * Version: 3.4.1
+ * Author: Canadian Partnership Against Cancer
+ * Author URI: https://www.partnershipagainstcancer.ca/
+ * Version: 3.5.0
  * License: GPLv2 or later
  * Text Domain: social-count-plus
  * Domain Path: /languages/
@@ -31,7 +31,7 @@ class Social_Count_Plus {
 	 *
 	 * @var string
 	 */
-	const VERSION = '3.4.1';
+	const VERSION = '3.5.0';
 
 	/**
 	 * Instance of this class.
@@ -82,7 +82,7 @@ class Social_Count_Plus {
 	 * Load the plugin text domain for translation.
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'social-count-plus', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'cpac-social-count-plus', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**

@@ -72,7 +72,7 @@ abstract class Social_Count_Plus_Counter {
 		$styles       = ! empty( $color ) ? ' style="color: ' . $color . ' !important;"' : '';
 
 		$html = sprintf( '<li class="count-%s">', $this->id );
-			$html .= sprintf( '<a class="icon" href="%s" rel="nofollow noopener noreferrer"%s></a>', esc_url( $url ), $target_blank );
+			$html .= sprintf( '<a class="icon" href="%s" rel="nofollow noopener noreferrer"%s>%s</a>', esc_url( $url ), $target_blank, '<span class="sr-only">' . $this->id . ' counter widget</span>' );
 			$html .= '<span class="items">';
 				$html .= sprintf( '<span class="count"%s>%s</span>', $styles, apply_filters( 'social_count_plus_number_format', $count ) );
 				$html .= sprintf( '<span class="label"%s>%s</span>', $styles, apply_filters( 'social_count_plus_label', $label, $this->id ) );
