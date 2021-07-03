@@ -125,7 +125,7 @@ class Social_Count_Plus {
 	 * Register public styles and scripts.
 	 */
 	public function styles_and_scripts() {
-		wp_register_style( 'cpac-social-count-plus', plugins_url( 'assets/css/counter.css', __FILE__ ), array(), Social_Count_Plus::VERSION, 'all' );
+		wp_register_style( 'social-count-plus', plugins_url( 'assets/css/counter.css', __FILE__ ), array(), Social_Count_Plus::VERSION, 'all' );
 	}
 }
 
